@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Request</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.gliimConstruct { color: #d7875f; }
+.Comment { color: #0000c0; }
+.Constant { color: #c00000; }
+.Special { color: #c000c0; }
+.Statement { color: #af5f00; }
+.PreProc { color: #c000c0; }
+.Type { color: #008000; }
+.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
+.Identifier { color: #008080; }
+.gliimClauseOutput { color: #008700; }
+.gliimClause { color: #005fd7; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Request</div><hr/>Gliimly applications run by processing requests. A request always takes form of an HTTP request, meaning a URL, an optional HTTP request body, and any environment variables. This is regardless of whether it's a <a href='http://gliimly.github.io/service.html'>service</a> or a <a href='http://gliimly.github.io/single-run.html'>single-run</a> application. <br/>
+<div class="vsub"><a id="Handling of requests"></a>Handling of requests</div>
+Each requests is handled with <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> statement, which implements its functionality. This handling of requests is based on the names of .gliim source files. The request name must match the file name that implements it. <br/>
+<br/>
+For example, file "buy_item.gliim" handles request "buy-item" by implementing a <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> "/buy-item" in it. A leading forward slash is optional, but usually specified. Note that an underscore in .gliim source file can be replaced with hyphen ("-") in the begin-handler name. Also, a double underscore in .gliim source file name can be replaced with forward slash ("/") in the begin-handler name.<br/>
+<br/>
+Here is an example of implementing a request "buy-item":<br/>
+<div class='code'>
+<pre id='code_1'>
+<span class="gliimConstruct"> begin-handler</span> /buy-item
+<span class="gliimConstruct">     get-param</span> some_param
+<span class="gliimConstruct">     @</span>Bought item: <span class="gliimConstruct">&lt;&lt;p-out</span> some_param<span class="gliimConstruct">&gt;&gt;</span>
+<span class="gliimConstruct"> end-handler</span></pre>
+</div><br/>
+<div class="vsub"><a id="Make a request with URL"></a>Make a request with URL</div>
+A "request URL" is a URL that an outside caller (such as a web browser) uses to execute your Gliimly code. Aside from the scheme, domain and port, it's made up of:<br/>
+<ul><li>application path,<br/>
+</li><li>request path, and<br/>
+</li><li>URL parameters.</li></ul>
+Here's a breakdown of URL structure:<br/>
+<div class='ncode'>
+<pre id='code_1'>
+&lt;scheme&gt;://&lt;domain&gt;[:&lt;port&gt;]&lt;application path&gt;&lt;request path&gt;&lt;parameters&gt;</pre>
+</div><br/>
+For example, in the following URL, "/my_app" is application path, "/my-request" is request path and "/par1=val1/par2=val2" are parameters "par1" and "par2" with values "val1" and "val2":<br/>
+<div class='ncode'>
+<pre id='code_2'>
+https://your.website.com/my_app/my-request/par1=val1/par2=val2</pre>
+</div><br/>
+Together, application path, request path are called URL path.<br/>
+<br/>
+<span style="font-weight:bold;">- Application path</span><br/>
+The leading part of URL's path is called "application path". By default, application path is the application name (see <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> with "-i" option); if it's "shopping", then the default application path is:<br/>
+<div class='ncode'>
+<pre id='code_3'>
+/shopping</pre>
+</div><br/>
+Application name can contain alphanumerical characters, underscores and hyphens.<br/>
+<span style="font-weight:bold;">- Customizing application path</span><br/>
+You can change the application path by specifying it with "--path" parameter in <a href='http://gliimly.github.io/gg.html'>gg</a> when building; each application must have its own unique path. Note that whatever it may be, the application name must always be its last path segment. For example, if your application name is "shopping", then the application path may be:<br/>
+<div class='ncode'>
+<pre id='code_4'>
+/api/v2/shopping</pre>
+</div><br/>
+An example of specifying the custom application path:<br/>
+<div class="shcode">
+<pre id='code_1'>
+gg <span class="Special">-q</span> <span class="Special">--path</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/api/v2/shopping</span><span class="Statement">&quot;</span></pre>
+</div><br/>
+<div class="vsub"><a id="Request path"></a>Request path</div>
+Request path follows the application path, and by default it's the request name preceded with a forward slash, for instance:<br/>
+<div class='ncode'>
+<pre id='code_5'>
+https://some.web.site/shopping/buy-item</pre>
+</div><br/>
+In this case the application path is "/shopping" and the request path is "/buy-item" (which means the request name is "buy-item"). The source file name must match the request name (with a hyphen converted to underscore ("_")), thus the .gliim file that implements this request would be "buy_item.gliim".<br/>
+<br/>
+A request name can be made up of alphanumeric characters, hyphen or underscore ("_") only, and can start only with an alphabet character.<br/>
+<span style="font-weight:bold;">- Hierarchical request path</span><br/>
+A request path can reflect a hierarchy, such as for example a hierarchy of resources, methods etc. For instance, if your <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> is:<br/>
+<div class='code'>
+<pre id='code_2'>
+<span class="gliimConstruct"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="gliimConstruct">     .</span>..
+<span class="gliimConstruct"> end-handler</span></pre>
+</div><br/>
+then the URL to call it would be:<br/>
+<div class='ncode'>
+<pre id='code_6'>
+https://some.web.site/shopping/items/wine-collection/red-wine/buy-item</pre>
+</div><br/>
+and would be implemented in file "items__wine_collection__red_wine__buy_item.gliim". Note that, while hyphens are converted to an underscore, forward slashes are converted to two underscores for a .gliim source code file name.<br/>
+<div class="vsub"><a id="URL parameters"></a>URL parameters</div>
+The actual input parameters follow after the request path, and can be specified in a number of ways. A parameter value is generally URL encoded in any case.<br/>
+<span style="font-weight:bold;">- Path segments</span><br/>
+A common way is to specify name and value separated by an equal sign within a single path segment:<br/>
+<div class='ncode'>
+<pre id='code_7'>
+https://some.web.site/shopping/buy-item/sku=4811/price=600/</pre>
+</div><br/>
+This way, you have a readable representation of parameter names and values, while still maintaining the hierarchical form which conveys how are the parameters structured.<br/>
+<br/>
+Here, the required request name is "buy_item" and there are two other parameters ("sku" and "price") with values of "4811" and "600" respectively. <br/>
+<span style="font-weight:bold;">- Query string</span><br/>
+Parameters can be specified after a question mark in a "name=value" form. For example, the full URL (with the same parameter values as above) may be:<br/>
+<div class='ncode'>
+<pre id='code_8'>
+https://some.web.site/shopping/buy-items?sku=4811&amp;price=600</pre>
+</div><br/>
+<span style="font-weight:bold;">- Mixed</span><br/>
+You can specify some or a mix of the above ways to write parameters, for instance the above URL can be written as:<br/>
+<div class='ncode'>
+<pre id='code_9'>
+https://some.web.site/shopping/buy-item/sku=4811?price=600</pre>
+</div><br/>
+<span style="font-weight:bold;">- Parameters</span><br/>
+A parameter name can be comprised of alphanumeric characters, hyphens and underscores, and it must start with an alphabet character. Any hyphens are converted to underscores for the purpose of obtaining parameter value, see <a href='http://gliimly.github.io/get-param.html'>get-param</a>.<br/>
+<br/>
+Structuring your parameters, i.e. the order in a query path or path segments, and which ones (if any) are in a query string, is determined by you. Regardless of your choices, the code that handles a request is the same. In the example used here, you can obtain the parameters in request handler source file "buy_item.gliim":<br/>
+<div class='code'>
+<pre id='code_3'>
+<span class="gliimConstruct"> begin-handler</span> /buy-item
+<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+
+<span class="gliimConstruct">     get-param</span> sku
+<span class="gliimConstruct">     get-param</span> price
+
+<span class="gliimConstruct">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="gliimClause"> :</span> price, sku<span class="gliimClause"> no-loop</span>
+<span class="gliimConstruct">     @</span>OKAY
+<span class="gliimConstruct"> end-handler</span></pre>
+</div><br/>
+For a hierarchical URL path, you would write the same:<br/>
+<div class='code'>
+<pre id='code_4'>
+<span class="gliimConstruct"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+
+<span class="gliimConstruct">     get-param</span> sku
+<span class="gliimConstruct">     get-param</span> price
+
+<span class="gliimConstruct">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="gliimClause"> :</span> price, sku<span class="gliimClause"> no-loop</span>
+<span class="gliimConstruct"> end-handler</span></pre>
+</div><br/>
+<div class="vsub"><a id="Maximum length"></a>Maximum length</div>
+Maximum length of a request URL is 2500 bytes.<br/>
+<div class="vsub"><a id="How Gliimly handles requests"></a>How Gliimly handles requests</div>
+An incoming request is handled by a first available process:<br/>
+<ul><li>For a <a href='http://gliimly.github.io/single-run.html'>single-run</a> application, there is only a single process, and it handles a single requests before it exits. <br/>
+</li><li>For a <a href='http://gliimly.github.io/service.html'>service</a> application, there can be any number of processes running. A process is chosen to service a request if it is currently not serving other requests; this way there are no processes waiting idle unnecessarily. Each process is identical and can serve any request, i.e. it has all request handlers available to it. Thus, when a process is chosen to serve a request, then this process will simply execute its begin-handler.</li></ul>
+<span style="font-weight:bold;">- Processing a request</span><br/>
+To handle a request, a process first calls a Gliimly dispatcher, which is automatically generated. It uses a request name to call the appropriate request handler, as explained above. <br/>
+<br/>
+You can implement two hooks into request handling: one that executes before each request (<a href='http://gliimly.github.io/before-handler.html'>before-handler</a>) and one that executes afterwards (<a href='http://gliimly.github.io/after-handler.html'>after-handler</a>). <br/>
+<br/>
+At the end of the request, all request memory and all file handles allocated by Gliimly will be freed, except for process-scoped memory (see <a href='http://gliimly.github.io/memory-handling.html'>memory-handling</a>).<br/>
+<span style="font-weight:bold;">- Performance</span><br/>
+Gliimly uses a hash table to match a request with a handler function. Typically, it takes only a single lookup to find the handler function, regardless of the number of possible request names a process may serve (be it 10 or 10,000 different request names). Gliimly pre-generates a hash table at compile time, so no run-time cycles are spent on creating it. Also, the hash table is created as a continuous block of memory in the program's data segment, which loads as a part of the program (as a single memory copy) and is very fast because accessing the data needs no pointer translations. As a result, Gliimly dispatcher is extremely fast.<br/>
+<span style="font-weight:bold;">- Unrecognized requests</span><br/>
+If no request has been recognized (i.e. request name does not match any request-handling .gliim source file), then <br/>
+<ul><li>no request handler will execute, <br/>
+</li><li><a href='http://gliimly.github.io/before-handler.html'>before-handler</a> and <a href='http://gliimly.github.io/after-handler.html'>after-handler</a> will not execute either,<br/>
+</li><li>and a "Request not found" error will be reported via <a href='http://gliimly.github.io/report-error.html'>report-error</a>.</li></ul>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Requests</span><br/>
+<a href='http://gliimly.github.io/request.html'>request</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2024 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

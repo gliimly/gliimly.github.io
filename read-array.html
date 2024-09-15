@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Read array</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.gliimConstruct { color: #d7875f; }
+.Comment { color: #0000c0; }
+.Constant { color: #c00000; }
+.Special { color: #c000c0; }
+.Statement { color: #af5f00; }
+.PreProc { color: #c000c0; }
+.Type { color: #008000; }
+.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
+.Identifier { color: #008080; }
+.gliimClauseOutput { color: #008700; }
+.gliimClause { color: #005fd7; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read array</div><hr/><span style="font-weight:bold;">Purpose</span>: Get data from array.<br/>
+<br/>
+<div class='code'>
+<pre id='code_1'>
+ <span class="Comment">// Random access to array data:</span>
+
+<span class="gliimConstruct"> read-array</span> &lt;array&gt; \
+    <span class="gliimClauseOutput"> key</span> &lt;key&gt; \
+    <span class="gliimClauseOutput"> value</span> &lt;value&gt; \
+     [<span class="gliimClause"> delete</span> [ &lt;delete&gt; ] ] \
+     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]
+
+ <span class="Comment">// Sequential access to array data:</span>
+
+<span class="gliimConstruct"> read-array</span> &lt;array&gt;<span class="gliimClause"> traverse begin</span>
+
+<span class="gliimConstruct"> read-array</span> &lt;array&gt;<span class="gliimClause"> traverse</span> \
+    <span class="gliimClauseOutput"> key</span> &lt;key&gt; \
+    <span class="gliimClauseOutput"> value</span> &lt;value&gt;  \
+     [<span class="gliimClause"> delete</span> [ &lt;delete&gt; ] ] \
+     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] \</pre>
+</div><br/>
+<div class="vsub"><a id="Without "traverse" clause"></a>Without "traverse" clause</div>
+read-array will obtain an element from &lt;array&gt;, which is a string &lt;value&gt; (in "value" clause) based on a string &lt;key&gt; (in "key" clause). &lt;array&gt; was created by <a href='http://gliimly.github.io/new-array.html'>new-array</a>. <br/>
+<br/>
+You can also delete an element from the array by using "delete" clause - the &lt;value&gt; is still obtained though it is no longer in the array table. The array element is deleted if "delete" clause is used without boolean expression &lt;delete&gt;, or if &lt;delete&gt; evaluates to true.<br/>
+<br/>
+If no &lt;key&gt; was found in the array table, &lt;status&gt; number (in "status" clause) is GG_ERR_EXIST and &lt;value&gt; is unchanged, otherwise &lt;status&gt; is GG_OKAY. <br/>
+<div class="vsub"><a id="With "traverse" clause"></a>With "traverse" clause</div>
+read-array with "traverse" clause obtains &lt;key&gt; and &lt;value&gt; of the current element, and then positions to the next one. You can also delete this element from the array by using "delete" clause - the &lt;key&gt; and &lt;value&gt; are still obtained though the element is no longer in the array table. The array element is deleted if "delete" clause is used without boolean expression &lt;delete&gt;, or if &lt;delete&gt; evaluates to true.<br/>
+<br/>
+Use "begin" clause to position at the very first element. This is useful if you wish to get all the key/value pairs from a array table - note they are not extracted in any particular order. When there are no more elements, &lt;key&gt; and &lt;value&gt; are unchanged and &lt;status&gt; number (in "status" clause) is GG_ERR_EXIST, otherwise &lt;status&gt; is GG_OKAY.<br/>
+<br/>
+You may search, add or delete elements while traversing a array table, and this will be reflected in all elements not yet traversed.<br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+In this example, new array is created, a key/value pair is written to it, and then the value is obtained and the element deleted; return status is checked:<br/>
+<div class='code'>
+<pre id='code_2'>
+ <span class="Comment">// Create new array</span>
+<span class="gliimConstruct"> new-array</span> h
+
+ <span class="Comment">// Write to array</span>
+<span class="gliimConstruct"> write-array</span> h<span class="gliimClause"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;some data&quot;</span>
+
+ <span class="Comment">// Read from array</span>
+<span class="gliimConstruct"> read-array</span> h<span class="gliimClauseOutput"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="gliimClauseOutput"> value</span> res<span class="gliimClauseOutput"> status</span> f<span class="gliimClause"> delete</span>
+<span class="gliimConstruct"> if-true</span> f<span class="gliimClause"> equal</span> GG_ERR_EXIST
+<span class="gliimConstruct">     @</span>No data in array!
+<span class="gliimConstruct"> else-if</span>
+<span class="gliimConstruct">     @</span>Deleted value is <span class="gliimConstruct">&lt;&lt;p-out</span> res<span class="gliimConstruct">&gt;&gt;</span>
+<span class="gliimConstruct"> end-if</span></pre>
+</div><br/>
+The following will traverse the entire array and display all the data:<br/>
+<div class='code'>
+<pre id='code_3'>
+ <span class="Comment">// Position at the beginning of array table</span>
+<span class="gliimConstruct"> read-array</span> h<span class="gliimClause"> traverse begin</span>
+<span class="gliimConstruct"> start-loop</span>
+     <span class="Comment">// Get elements, one by one, until NULL returned as a key</span>
+<span class="gliimConstruct">     read-array</span> h<span class="gliimClause"> traverse</span><span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> r<span class="gliimClauseOutput"> status</span> f
+<span class="gliimConstruct">     if-true</span> f<span class="gliimClause"> equal</span> GG_ERR_EXIST
+         <span class="Statement">break</span>;
+<span class="gliimConstruct">     end-if</span>
+<span class="gliimConstruct">     pf-out</span> <span class="Constant">&quot;Key [</span><span class="Special">%s</span><span class="Constant">] data [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, k, r
+<span class="gliimConstruct"> end-loop</span></pre>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Array</span><br/>
+<a href='http://gliimly.github.io/get-array.html'>get-array</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/new-array.html'>new-array</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/purge-array.html'>purge-array</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/read-array.html'>read-array</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/resize-array.html'>resize-array</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/write-array.html'>write-array</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2024 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+

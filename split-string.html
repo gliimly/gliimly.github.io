@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Split string</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+
+body, html {
+    color:black;
+    text-rendering: optimizelegibility;
+    background-color: white;
+    min-height: 150%;
+    font-family: "Times New Roman";
+    font-weight:400;
+    font-size:18px;
+    line-height:27px;
+    letter-spacing: 2px;
+    z-index: 1;
+    height: 100%;
+    text-align:left;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+}
+
+body {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+    
+.ncode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.shcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.sqlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.htmlcode {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+.code {
+    letter-spacing: 0px;
+    font-size:14px;
+    font-family: monospace;
+    display:inline-block;
+    max-width:100%;
+    min-width:90%;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:15px;
+    border: 2px solid #d6d6d6;
+    background-color:#f5f7f4;
+    white-space:nowrap;
+}
+
+/*Just like h1 but for pdf conversion it would be indented this way it's not*/
+.vhub {
+    display: block;
+   font-size: 1.6em;
+   margin-top: 0.63em;
+   margin-bottom: 0.63em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+/*Just like h2 but for pdf conversion it would be indented this way it's not*/
+.vsub {
+    display: block;
+   font-size: 1.25em;
+   margin-top: 0.53em;
+   margin-bottom: 0.53em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+}
+
+ul {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+li {
+  margin-left: 0.75vw;
+  padding-left: 0;
+}
+
+/* this must be last, as it overrides previous settings, for mobile */
+@media (hover: none) {
+a {
+   display: inline-block;
+   padding-top: 3px;
+   padding-bottom: 2px;
+}
+body {
+    padding-left:2vw;
+    padding-right:2vw;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing: 1px;
+}
+}
+
+/*The following is for code snippets that are highlighted by 2html vim*/
+pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
+.gliimConstruct { color: #d7875f; }
+.Comment { color: #0000c0; }
+.Constant { color: #c00000; }
+.Special { color: #c000c0; }
+.Statement { color: #af5f00; }
+.PreProc { color: #c000c0; }
+.Type { color: #008000; }
+.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
+.Identifier { color: #008080; }
+.gliimClauseOutput { color: #008700; }
+.gliimClause { color: #005fd7; }
+/*end of highlighted snippets*/
+
+a {
+    text-decoration:none;
+    padding-bottom: 0px; 
+    color:inherit;
+    border-bottom: 2px solid #ab9e9e;
+}
+a:hover {
+    text-decoration: none;
+    color:black;
+    border-bottom: 1px solid red;
+}
+/*do not underline links nor should they be active*/
+pre a {
+    text-decoration:none;
+    color:black;
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.gliimSnippet {display:none;}
+
+ul {
+  list-style-type:square;
+  list-style-position: outside;
+}
+
+</style>
+
+
+</head>
+<body>
+<!--GLIIMMENU13-->
+
+<!--GLIIMENDMENU13-->
+
+
+
+<!--BEGVDOC90-->
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Split string</div><hr/><span style="font-weight:bold;">Purpose</span>: Split a string into pieces based on a delimiter.<br/>
+<br/>
+<div class='code'>
+<pre id='code_1'>
+<span class="gliimConstruct"> split-string</span>  &lt;string&gt;<span class="gliimClause"> with</span> &lt;delimiter&gt;<span class="gliimClauseOutput"> to</span> &lt;result&gt;
+
+<span class="gliimConstruct"> split-string</span><span class="gliimClause"> delete</span> &lt;result&gt;</pre>
+</div><br/>
+split-string will find all instances of string &lt;delimiter&gt; in &lt;string&gt; and then split it into pieces delimited by string &lt;delimiter&gt;. The &lt;result&gt; can be used with <a href='http://gliimly.github.io/read-split.html'>read-split</a> to obtain the pieces and with split-string to delete it (use "delete" clause with &lt;result&gt; to delete it).<br/>
+<br/>
+All pieces produced will be trimmed both on left and right. If a piece is double quoted, then double quotes are removed. For instance save this code in "ps.gliim" in a separate directory:<br/>
+<div class='code'>
+<pre id='code_2'>
+<span class="gliimConstruct"> %%</span> parse
+<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="gliimConstruct">     set-string</span> clist = <span class="Constant">&quot;a , b, </span><span class="Special">\&quot;</span><span class="Constant">c , d</span><span class="Special">\&quot;</span><span class="Constant"> , e&quot;</span>
+<span class="gliimConstruct">     split-string</span> clist<span class="gliimClause"> with</span> <span class="Constant">&quot;,&quot;</span><span class="gliimClauseOutput"> to</span> res<span class="gliimClauseOutput"> count</span> tot
+<span class="gliimConstruct">     start-loop</span><span class="gliimClause"> repeat</span> tot<span class="gliimClauseOutput"> use</span> i
+<span class="gliimConstruct">         read-split</span> i<span class="gliimClause"> from</span> res<span class="gliimClauseOutput"> to</span> item<span class="gliimClauseOutput"> status</span> st
+<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> not-equal</span> GG_OKAY
+<span class="gliimConstruct">             break-loop</span>
+<span class="gliimConstruct">         end-if</span>
+         <span class="Comment">// Output each item</span>
+<span class="gliimConstruct">         pf-out</span> <span class="Constant">&quot; [</span><span class="Special">%s</span><span class="Constant">]&quot;</span>, item
+<span class="gliimConstruct">     end-loop</span>
+<span class="gliimConstruct"> %%</span></pre>
+</div><br/>
+Create the application, build and run it:<br/>
+<div class="shcode">
+<pre id='code_1'>
+sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> ps
+gg <span class="Special">-q</span>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/parse</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
+</div><br/>
+The output would be:<br/>
+<div class='ncode'>
+<pre id='code_1'>
+ [a] [b] [c , d] [e]</pre>
+</div><br/>
+split-string is useful for parsing CSV (Comma Separated Values) or any other kind of separated values, where separator can be any string of any length, for example if you're parsing an encoded URL-string, then "&amp;amp;" may be a separator, as in the example below.<br/>
+<div class="vsub"><a id="Examples"></a>Examples</div>
+The following will parse a string containing name/value pairs (such as "name=value") separated by string "&amp;amp;":<br/>
+<div class='code'>
+<pre id='code_3'>
+<span class="gliimConstruct"> %%</span> /parse-url
+<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+     <span class="Comment">// Data to parse - data/value pairs delimited by </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment"> string, and data and value delimited by equal sign:</span>
+<span class="gliimConstruct">     set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
+
+     <span class="Comment">// Split string first into pieces based on </span><span class="Constant">&quot;amp;&quot;</span>
+<span class="gliimConstruct">     split-string</span> url<span class="gliimClause"> with</span> <span class="Constant">&quot;&amp;amp;&quot;</span><span class="gliimClauseOutput"> to</span> url_var<span class="gliimClauseOutput"> count</span> tot
+
+     <span class="Comment">// For each of name=value pairs, split it with equal sign</span>
+<span class="gliimConstruct">     start-loop</span><span class="gliimClause"> repeat</span> tot<span class="gliimClauseOutput"> use</span> i
+         <span class="Comment">// Get a url pair (each separated with </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment">)</span>
+<span class="gliimConstruct">         read-split</span> i<span class="gliimClause"> from</span> url_var<span class="gliimClauseOutput"> to</span> item
+         <span class="Comment">// Then split that with </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> </span>
+<span class="gliimConstruct">         split-string</span> item<span class="gliimClause"> with</span> <span class="Constant">&quot;=&quot;</span><span class="gliimClauseOutput"> to</span> item_var
+         <span class="Comment">// Get name and value</span>
+<span class="gliimConstruct">         read-split</span> 1<span class="gliimClause"> from</span> item_var<span class="gliimClauseOutput"> to</span> name
+<span class="gliimConstruct">         read-split</span> 2<span class="gliimClause"> from</span> item_var<span class="gliimClauseOutput"> to</span> val
+<span class="gliimConstruct">         pf-out</span> <span class="Constant">&quot;Variable </span><span class="Special">%s</span><span class="Constant"> has value </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, val
+<span class="gliimConstruct">     end-loop</span>
+<span class="gliimConstruct"> %%</span></pre>
+</div><br/>
+The result is:<br/>
+<div class='ncode'>
+<pre id='code_2'>
+Variable x has value 23
+Variable y has value good
+Variable z has value hello_world</pre>
+</div><br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Strings</span><br/>
+<a href='http://gliimly.github.io/copy-string.html'>copy-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/count-substring.html'>count-substring</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/delete-string.html'>delete-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/lower-string.html'>lower-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/read-split.html'>read-split</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/replace-string.html'>replace-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/set-string.html'>set-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/split-string.html'>split-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/string-length.html'>string-length</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/trim-string.html'>trim-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/upper-string.html'>upper-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/write-string.html'>write-string</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
+<!--ENDVDOC90-->
+<br/><div style='width:100%;clear:both;'>
+<hr/>
+<!--GLIIMFOOT77--><span style='font-size:80%'><a href="http://gliimly.github.io/copyright.html">Copyright</a> (c) 2019-2024 Gliim LLC. All contents on this web site is "AS IS" without warranties or guarantees of any kind.</span>
+</div><br/></body></html>
+
+
