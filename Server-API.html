@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -268,17 +263,17 @@ In this example, "example.gliim" will use C functions from "example.c", and "exa
  <span class="PreProc">#include </span><span class="Constant">&quot;gliim.h&quot;</span>
 
  <span class="Type">void</span> get_factorial(gg_num f, gg_num *res)
-<span class="gliimConstruct"> {</span>
+<span class="Statement"> {</span>
      *res = <span class="Constant">1</span>;
      gg_num i;
-     <span class="Statement">for</span> (i = 2; i &lt;= f; i++) {
+     <span class="Statement">for</span> (i = <span class="Constant">2</span>; i &lt;= f; i++) {
          *res *= i;
-<span class="gliimConstruct">     }</span>
-<span class="gliimConstruct"> }</span>
+<span class="Statement">     }</span>
+<span class="Statement"> }</span>
 
- <span class="PreProc">#</span>define<span class="PreProc"> </span>MEMSIZE<span class="PreProc"> </span>200
+ <span class="PreProc">#</span>define<span class="PreProc"> </span>MEMSIZE<span class="PreProc"> </span><span class="Constant">200</span>
  <span class="Type">void</span> fact_msg (gg_num i, <span class="Type">char</span> **res)
-<span class="gliimConstruct"> {</span>
+<span class="Statement"> {</span>
      <span class="Comment">// gliim rule: outgoing string must NOT free or realloc its incoming value</span>
      <span class="Comment">// all else is allowed</span>
      <span class="Type">char</span> *r = gg_malloc (MEMSIZE);
@@ -289,7 +284,7 @@ In this example, "example.gliim" will use C functions from "example.c", and "exa
      <span class="Comment">// you can also use gg_mem_set_len() with bw as length for higher performance </span>
      <span class="Comment">// (but also higher memory usage)</span>
      *res = gg_realloc (gg_mem_get_id(r), bw);
-<span class="gliimConstruct"> }</span></pre>
+<span class="Statement"> }</span></pre>
 </div><br/>
 File "example.h" declares the above functions:<br/>
 <div class='code'>
@@ -300,20 +295,19 @@ File "example.h" declares the above functions:<br/>
 File "example.gliim" will call the above functions and display the results:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> extended-mode</span>
+<span class="Statement"> extended-mode</span>
 
-<span class="gliimConstruct"> begin-handler</span> /example
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> begin-handler</span> /example
 
-<span class="gliimConstruct">     set-number</span> fact
-<span class="gliimConstruct">     call-extended</span> get_factorial (10, &amp;fact)
-<span class="gliimConstruct">     @</span>Factorial is <span class="gliimConstruct">&lt;&lt;p-num</span> fact<span class="gliimConstruct">&gt;&gt;</span>
+<span class="Statement">     set-number</span> fact
+<span class="Statement">     call-extended</span> get_factorial (<span class="Constant">10</span>, &amp;fact)
+<span class="Statement">     @</span>Factorial is <span class="Statement">&lt;&lt;p-num</span> fact<span class="Statement">&gt;&gt;</span>
 
-<span class="gliimConstruct">     set-string</span> res
-<span class="gliimConstruct">     call-extended</span> fact_msg (10, &amp;res)
-<span class="gliimConstruct">     p-out</span> res
-<span class="gliimConstruct">     @</span>
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement">     set-string</span> res
+<span class="Statement">     call-extended</span> fact_msg (<span class="Constant">10</span>, &amp;res)
+<span class="Statement">     p-out</span> res
+<span class="Statement">     @</span>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 Create application "example":<br/>
 <div class="shcode">

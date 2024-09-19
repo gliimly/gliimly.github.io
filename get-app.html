@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> get-app</span> \
-    <span class="gliimClause"> name</span> |<span class="gliimClause"> directory</span> |<span class="gliimClause"> trace-directory</span> |<span class="gliimClause"> file-directory</span> \
-         |<span class="gliimClause"> db-vendor</span> &lt;database configuration&gt; |<span class="gliimClause"> upload-size</span> \
-         |<span class="gliimClause"> path</span> |<span class="gliimClause"> is-service</span> \
-    <span class="gliimClauseOutput"> to</span> &lt;variable&gt;</pre>
+<span class="Statement"> get-app</span> \
+    <span class="Identifier"> name</span> |<span class="Identifier"> directory</span> |<span class="Identifier"> trace-directory</span> |<span class="Identifier"> file-directory</span> \
+         |<span class="Identifier"> db-vendor</span> &lt;database configuration&gt; |<span class="Identifier"> upload-size</span> \
+         |<span class="Identifier"> path</span> |<span class="Identifier"> is-service</span> \
+    <span class="Type"> to</span> &lt;variable&gt;</pre>
 </div><br/>
 Application-related variables can be obtained with get-app statement. The following application variables can be obtained (they are all strings unless indicated otherwise):<br/>
 <ul><li>"name" returns the name of your application, as specified when created (see <a href='http://gliimly.github.io/mgrg.html'>mgrg</a>). <br/>
@@ -249,15 +244,15 @@ Application-related variables can be obtained with get-app statement. The follow
 Get the name of Gliimly application:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> get-app</span><span class="gliimClause"> name</span><span class="gliimClauseOutput"> to</span> appname</pre>
+<span class="Statement"> get-app</span><span class="Identifier"> name</span><span class="Type"> to</span> appname</pre>
 </div><br/>
 Get the vendor of database db:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> get-app</span><span class="gliimClause"> db-vendor</span> db<span class="gliimClauseOutput"> to</span> dbv
-<span class="gliimConstruct"> if-true</span> dbv<span class="gliimClause"> equal</span> GG_POSTGRES
+<span class="Statement"> get-app</span><span class="Identifier"> db-vendor</span> db<span class="Type"> to</span> dbv
+<span class="Statement"> if-true</span> dbv<span class="Identifier"> equal</span> GG_POSTGRES
      <span class="Comment">// do something Postgres specific</span>
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Application information</span><br/>

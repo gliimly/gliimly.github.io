@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> new-message</span> &lt;message&gt; [<span class="gliimClause"> from</span> &lt;string&gt; ]</pre>
+<span class="Statement"> new-message</span> &lt;message&gt; [<span class="Identifier"> from</span> &lt;string&gt; ]</pre>
 </div><br/>
 new-message will create a new &lt;message&gt; object.<br/>
 <br/>
@@ -240,19 +235,18 @@ If new-message is used without "from" clause, data can be added to &lt;message&g
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> begin-handler</span> /msg
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     new-message</span> msg
-<span class="gliimConstruct">     write-message</span> msg<span class="gliimClause"> key</span> <span class="Constant">&quot;weather&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;nice&quot;</span>
-<span class="gliimConstruct">     write-message</span> msg<span class="gliimClause"> key</span> <span class="Constant">&quot;distance&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;near&quot;</span>
-<span class="gliimConstruct">     start-loop</span>
-<span class="gliimConstruct">         read-message</span> msg<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v<span class="gliimClauseOutput"> status</span> s
-<span class="gliimConstruct">         if-true</span> s<span class="gliimClause"> not-equal</span> GG_OKAY
-<span class="gliimConstruct">             break-loop</span>
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">         @</span>Key is <span class="gliimConstruct">&lt;&lt;p-out</span> k<span class="gliimConstruct">&gt;&gt;</span> and value is <span class="gliimConstruct">&lt;&lt;p-out</span> v<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     end-loop</span>
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /msg
+<span class="Statement">     new-message</span> msg
+<span class="Statement">     write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;weather&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;nice&quot;</span>
+<span class="Statement">     write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;distance&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;near&quot;</span>
+<span class="Statement">     start-loop</span>
+<span class="Statement">         read-message</span> msg<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> s
+<span class="Statement">         if-true</span> s<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">             break-loop</span>
+<span class="Statement">         end-if</span>
+<span class="Statement">         @</span>Key is <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> and value is <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     end-loop</span>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Messages</span><br/>

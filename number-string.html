@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> number-string</span> &lt;number&gt; [<span class="gliimClauseOutput"> to</span> &lt;string&gt; ] \
-     [<span class="gliimClause"> base</span> &lt;base&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> number-string</span> &lt;number&gt; [<span class="Type"> to</span> &lt;string&gt; ] \
+     [<span class="Identifier"> base</span> &lt;base&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 &lt;number&gt; is converted to &lt;string&gt; in "to" clause, using &lt;base&gt; in "base" clause, where &lt;base&gt; is by default 10. &lt;base&gt; can be between 2 and 36, inclusive. &lt;number&gt; can be positive or negative (i.e. signed) and can be of any integer type up to 64-bit (char, int, long, long long etc.). &nbsp;If "to" clause is omitted, then &lt;number&gt; is printed out.<br/>
 <br/>
@@ -245,20 +240,20 @@ Use of number-string (and <a href='http://gliimly.github.io/p-num.html'>p-num</a
 The following will allocate memory for string "x" to be "801":<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-number</span> x = 801
-<span class="gliimConstruct"> number-string</span> x<span class="gliimClauseOutput"> to</span> res</pre>
+<span class="Statement"> set-number</span> x = <span class="Constant">801</span>
+<span class="Statement"> number-string</span> x<span class="Type"> to</span> res</pre>
 </div><br/>
 The following will store "-238f" to string "res":<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-number</span> x = -9103
-<span class="gliimConstruct"> number-string</span> x<span class="gliimClauseOutput"> to</span> res<span class="gliimClause"> base</span> 16</pre>
+<span class="Statement"> set-number</span> x = -<span class="Constant">9103</span>
+<span class="Statement"> number-string</span> x<span class="Type"> to</span> res<span class="Identifier"> base</span> <span class="Constant">16</span></pre>
 </div><br/>
 To print out a number -131:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> set-number</span> x = -131
-<span class="gliimConstruct"> number-string</span> x</pre>
+<span class="Statement"> set-number</span> x = -<span class="Constant">131</span>
+<span class="Statement"> number-string</span> x</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Numbers</span><br/>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -232,21 +227,21 @@ ul {
 <pre id='code_1'>
  <span class="Comment">// Random access to array data:</span>
 
-<span class="gliimConstruct"> read-array</span> &lt;array&gt; \
-    <span class="gliimClauseOutput"> key</span> &lt;key&gt; \
-    <span class="gliimClauseOutput"> value</span> &lt;value&gt; \
-     [<span class="gliimClause"> delete</span> [ &lt;delete&gt; ] ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]
+<span class="Statement"> read-array</span> &lt;array&gt; \
+    <span class="Type"> key</span> &lt;key&gt; \
+    <span class="Type"> value</span> &lt;value&gt; \
+     [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
+     [<span class="Type"> status</span> &lt;status&gt; ]
 
  <span class="Comment">// Sequential access to array data:</span>
 
-<span class="gliimConstruct"> read-array</span> &lt;array&gt;<span class="gliimClause"> traverse begin</span>
+<span class="Statement"> read-array</span> &lt;array&gt;<span class="Identifier"> traverse begin</span>
 
-<span class="gliimConstruct"> read-array</span> &lt;array&gt;<span class="gliimClause"> traverse</span> \
-    <span class="gliimClauseOutput"> key</span> &lt;key&gt; \
-    <span class="gliimClauseOutput"> value</span> &lt;value&gt;  \
-     [<span class="gliimClause"> delete</span> [ &lt;delete&gt; ] ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] \</pre>
+<span class="Statement"> read-array</span> &lt;array&gt;<span class="Identifier"> traverse</span> \
+    <span class="Type"> key</span> &lt;key&gt; \
+    <span class="Type"> value</span> &lt;value&gt;  \
+     [<span class="Identifier"> delete</span> [ &lt;delete&gt; ] ] \
+     [<span class="Type"> status</span> &lt;status&gt; ] \</pre>
 </div><br/>
 <div class="vsub"><a id="Without "traverse" clause"></a>Without "traverse" clause</div>
 read-array will obtain an element from &lt;array&gt;, which is a string &lt;value&gt; (in "value" clause) based on a string &lt;key&gt; (in "key" clause). &lt;array&gt; was created by <a href='http://gliimly.github.io/new-array.html'>new-array</a>. <br/>
@@ -265,32 +260,32 @@ In this example, new array is created, a key/value pair is written to it, and th
 <div class='code'>
 <pre id='code_2'>
  <span class="Comment">// Create new array</span>
-<span class="gliimConstruct"> new-array</span> h
+<span class="Statement"> new-array</span> h
 
  <span class="Comment">// Write to array</span>
-<span class="gliimConstruct"> write-array</span> h<span class="gliimClause"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;some data&quot;</span>
+<span class="Statement"> write-array</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span>
 
  <span class="Comment">// Read from array</span>
-<span class="gliimConstruct"> read-array</span> h<span class="gliimClauseOutput"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="gliimClauseOutput"> value</span> res<span class="gliimClauseOutput"> status</span> f<span class="gliimClause"> delete</span>
-<span class="gliimConstruct"> if-true</span> f<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">     @</span>No data in array!
-<span class="gliimConstruct"> else-if</span>
-<span class="gliimConstruct">     @</span>Deleted value is <span class="gliimConstruct">&lt;&lt;p-out</span> res<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> read-array</span> h<span class="Type"> key</span> <span class="Constant">&quot;X0029&quot;</span><span class="Type"> value</span> res<span class="Type"> status</span> f<span class="Identifier"> delete</span>
+<span class="Statement"> if-true</span> f<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">     @</span>No data in array!
+<span class="Statement"> else-if</span>
+<span class="Statement">     @</span>Deleted value is <span class="Statement">&lt;&lt;p-out</span> res<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 The following will traverse the entire array and display all the data:<br/>
 <div class='code'>
 <pre id='code_3'>
  <span class="Comment">// Position at the beginning of array table</span>
-<span class="gliimConstruct"> read-array</span> h<span class="gliimClause"> traverse begin</span>
-<span class="gliimConstruct"> start-loop</span>
+<span class="Statement"> read-array</span> h<span class="Identifier"> traverse begin</span>
+<span class="Statement"> start-loop</span>
      <span class="Comment">// Get elements, one by one, until NULL returned as a key</span>
-<span class="gliimConstruct">     read-array</span> h<span class="gliimClause"> traverse</span><span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> r<span class="gliimClauseOutput"> status</span> f
-<span class="gliimConstruct">     if-true</span> f<span class="gliimClause"> equal</span> GG_ERR_EXIST
+<span class="Statement">     read-array</span> h<span class="Identifier"> traverse</span><span class="Type"> key</span> k<span class="Type"> value</span> r<span class="Type"> status</span> f
+<span class="Statement">     if-true</span> f<span class="Identifier"> equal</span> GG_ERR_EXIST
          <span class="Statement">break</span>;
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct">     pf-out</span> <span class="Constant">&quot;Key [</span><span class="Special">%s</span><span class="Constant">] data [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, k, r
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement">     end-if</span>
+<span class="Statement">     pf-out</span> <span class="Constant">&quot;Key [</span><span class="Special">%s</span><span class="Constant">] data [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, k, r
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Array</span><br/>

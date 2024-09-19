@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> hash-string</span> &lt;string&gt;<span class="gliimClauseOutput"> to</span> &lt;result&gt; \
-     [<span class="gliimClause"> binary</span> [ &lt;binary&gt; ] \
-     [<span class="gliimClause"> digest</span> &lt;digest algorithm&gt; ]</pre>
+<span class="Statement"> hash-string</span> &lt;string&gt;<span class="Type"> to</span> &lt;result&gt; \
+     [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] \
+     [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]</pre>
 </div><br/>
 hash-string produces by default a SHA256 hash of &lt;string&gt; (if "digest" clause is not used), and stores the result into &lt;result&gt;. You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode">
@@ -247,17 +242,17 @@ Without "binary" clause, or if &lt;binary&gt; evaluates to false, each binary by
 String "hash" will have a hashed value of the given string, an example of which might look like "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855":<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="gliimClauseOutput"> to</span> hash</pre>
+<span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash</pre>
 </div><br/>
 Using a different digest:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="gliimClauseOutput"> to</span> hash<span class="gliimClause"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span></pre>
+<span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span></pre>
 </div><br/>
 Producing a binary value instead of a null-terminated hexadecimal string:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="gliimClauseOutput"> to</span> hash<span class="gliimClause"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span><span class="gliimClause"> binary</span></pre>
+<span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span><span class="Identifier"> binary</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>

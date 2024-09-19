@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -242,7 +237,7 @@ An object must immediately follow the statement's name, while clauses may be spe
 For example, in the following Gliimly code:<br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> encrypt-data</span> orig_data<span class="gliimClause"> input-length</span> 6<span class="gliimClause"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="gliimClause"> salt</span> newsalt<span class="gliimClauseOutput"> to</span> res<span class="gliimClause"> binary</span></pre>
+<span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span></pre>
 </div><br/>
 encrypt-data is the statement's name, and "orig_data" is its object. The clauses are:<br/>
 <ul><li>input-length 6<br/>
@@ -253,22 +248,22 @@ encrypt-data is the statement's name, and "orig_data" is its object. The clauses
 The clauses can be in any order, so the above can be restated as:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> encrypt-data</span> orig_data<span class="gliimClauseOutput"> to</span> res<span class="gliimClause"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="gliimClause"> salt</span> newsalt<span class="gliimClause"> binary input-length</span> 6</pre>
+<span class="Statement"> encrypt-data</span> orig_data<span class="Type"> to</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Identifier"> binary input-length</span> <span class="Constant">6</span></pre>
 </div><br/>
 Gliimly documentation provides a concise BNF-like notation of how each statement works, which in case of <a href='http://gliimly.github.io/encrypt-data.html'>encrypt-data</a> is (backslash simply allows continuing to multiple lines, while two backslashes add a new line in between):<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> encrypt-data</span> &lt;data&gt;<span class="gliimClauseOutput"> to</span> &lt;result&gt; \
-     [<span class="gliimClause"> input-length</span> &lt;input length&gt; ] \
-     [<span class="gliimClause"> binary</span> [ &lt;binary&gt; ] ] \
-     (<span class="gliimClause"> password</span> &lt;password&gt; \
-         [<span class="gliimClause"> salt</span> &lt;salt&gt; [<span class="gliimClause"> salt-length</span> &lt;salt length&gt; ] ] \
-         [<span class="gliimClause"> iterations</span> &lt;iterations&gt; ] \
-         [<span class="gliimClause"> cipher</span> &lt;cipher algorithm&gt; ] \
-         [<span class="gliimClause"> digest</span> &lt;digest algorithm&gt; ]
-         [<span class="gliimClause"> cache</span> ]
-         [<span class="gliimClause"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
-     [<span class="gliimClause"> init-vector</span> &lt;init vector&gt; ]</pre>
+<span class="Statement"> encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
+     [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
+     [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
+     (<span class="Identifier"> password</span> &lt;password&gt; \
+         [<span class="Identifier"> salt</span> &lt;salt&gt; [<span class="Identifier"> salt-length</span> &lt;salt length&gt; ] ] \
+         [<span class="Identifier"> iterations</span> &lt;iterations&gt; ] \
+         [<span class="Identifier"> cipher</span> &lt;cipher algorithm&gt; ] \
+         [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]
+         [<span class="Identifier"> cache</span> ]
+         [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
+     [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
 </div><br/>
 Note the color scheme: clauses with input data are in blue, and with output data in green.<br/>
 <br/>
@@ -283,10 +278,10 @@ A group of clauses that cannot be separated, or to remove ambiguity, are enclose
 Keywords (other than statement names such as encrypt-data above) are generally specific to each statement. So, keyword "salt", for example, has meaning only within encrypt-data and a few other related statements. In order to have the freedom to choose your variable names, you can simply surround them in parenthesis (i.e. "(" and ")") and use any names you want, even keywords, for example:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> set-string</span> password = <span class="Constant">&quot;some password&quot;</span>
-<span class="gliimConstruct"> set-string</span> salt = <span class="Constant">&quot;0123456789012345&quot;</span>
-<span class="gliimConstruct"> encrypt-data</span> <span class="Constant">&quot;some data&quot;</span><span class="gliimClause"> password</span> (password)<span class="gliimClause"> salt</span> (salt)<span class="gliimClauseOutput"> to</span> enc_data
-<span class="gliimConstruct"> p-out</span> enc_data</pre>
+<span class="Statement"> set-string</span> password = <span class="Constant">&quot;some password&quot;</span>
+<span class="Statement"> set-string</span> salt = <span class="Constant">&quot;0123456789012345&quot;</span>
+<span class="Statement"> encrypt-data</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> password</span> (password)<span class="Identifier"> salt</span> (salt)<span class="Type"> to</span> enc_data
+<span class="Statement"> p-out</span> enc_data</pre>
 </div><br/>
 In this example, keywords "password" and "salt" are used as variable names as well.<br/>
 <br/>
@@ -295,19 +290,19 @@ Note that while you can use tab characters at the beginning of the line (such as
 To split a statement into multiple lines (including string continuations), use a backslash (\), for instance:<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> encrypt-data</span> orig_data<span class="gliimClause"> input-length</span> 6 \
-    <span class="gliimClause"> password</span> <span class="Constant">&quot;my</span><span class="Special">\</span>
-<span class="Constant">     pass&quot;</span><span class="gliimClause"> salt</span> \
-     newsalt<span class="gliimClauseOutput"> to</span> res<span class="gliimClause"> binary</span></pre>
+<span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span> \
+    <span class="Identifier"> password</span> <span class="Constant">&quot;my</span><span class="Special">\</span>
+<span class="Constant">     pass&quot;</span><span class="Identifier"> salt</span> \
+     newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span></pre>
 </div><br/>
 Note that all statements are always left-trimmed for whitespace. Thus the resulting string literal in the above example is "mypass", and not "my &nbsp; pass", as the whitespaces prior to line starting with "pass" are trimmed first. Also, all statements are right-trimmed for white space, except if backslash is used at the end, in which case any spaces prior to backslash are conserved. For that reason, in the above example there is a space prior to a backslash where clauses need to be separated.<br/>
 <div class="vsub"><a id="Comments"></a>Comments</div>
 You can use both C style (i.e. /* ... */) and C++ style (i.e. //) comments with Gliimly statements, including within statements, for example:<br/>
 <div class='code'>
 <pre id='code_6'>
-<span class="gliimConstruct"> run-query</span> @db = \
+<span class="Statement"> run-query</span> @db = \
      <span class="Constant">&quot;select firstName, lastName from employee where yearOfHire&gt;='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \
-    <span class="gliimClauseOutput"> output</span> <span class="Comment">/*</span><span class="Comment"> comment within </span><span class="Comment">*/</span> firstName, lastName<span class="gliimClause"> :</span> <span class="Constant">&quot;2015&quot;</span> <span class="Comment">// other comment</span></pre>
+    <span class="Type"> output</span> <span class="Comment">/*</span><span class="Comment"> comment within </span><span class="Comment">*/</span> firstName, lastName<span class="Identifier"> :</span> <span class="Constant">&quot;2015&quot;</span> <span class="Comment">// other comment</span></pre>
 </div><br/>
 <div class="vsub"><a id="Error handling"></a>Error handling</div>
 A statement that fails for reasons that are generally irrecoverable will <a href='http://gliimly.github.io/error-handling.html'>error out</a>, for example out of memory or disk space, bad input parameters etc. <br/>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> @</span>&lt;text&gt;
+<span class="Statement"> @</span>&lt;text&gt;
 
-<span class="gliimConstruct"> !</span>&lt;verbatim text&gt;</pre>
+<span class="Statement"> !</span>&lt;verbatim text&gt;</pre>
 </div><br/>
 Outputting free form text is done by starting the line with "@" or "!". The text is output unencoded with a new line appended.<br/>
 <br/>
@@ -247,13 +242,13 @@ Note that all characters are output as they are written, including the escape ch
 Outputting "Hello there": <br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> @</span>Hello there</pre>
+<span class="Statement"> @</span>Hello there</pre>
 </div><br/>
 You can use other Gliimly statements inlined and mixed with the text you are outputting:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
-<span class="gliimConstruct"> @</span>Today's weather is <span class="gliimConstruct">&lt;&lt;p-out</span> weatherType<span class="gliimConstruct">&gt;&gt;</span></pre>
+<span class="Statement"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
+<span class="Statement"> @</span>Today's weather is <span class="Statement">&lt;&lt;p-out</span> weatherType<span class="Statement">&gt;&gt;</span></pre>
 </div><br/>
 which would output <br/>
 <div class='ncode'>
@@ -263,13 +258,13 @@ Today&apos;s weather is sunny</pre>
 With "!" statement, the text is also output, and this example produces the same "Hello there" output as "@":<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> !</span>Hello there</pre>
+<span class="Statement"> !</span>Hello there</pre>
 </div><br/>
 In contrast to "@" statement, "!" statement outputs all texts verbatim &nbsp;and does not execute any inline code:<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
-<span class="gliimConstruct"> !</span>Today's weather is &lt;&lt;p-out weatherType&gt;&gt;</pre>
+<span class="Statement"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
+<span class="Statement"> !</span>Today's weather is &lt;&lt;p-out weatherType&gt;&gt;</pre>
 </div><br/>
 which would output <br/>
 <div class='ncode'>

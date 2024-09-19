@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -234,17 +229,16 @@ Note that <a href='http://gliimly.github.io/if-true.html'>if-true</a>, <a href='
 The following code will first print out "outside" and then "inside" twice, illustrating the fact that variable "s1" is defined only in the outer scope once. Variable "s2" exists only in inner scope:<br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> begin-handler</span> /scope
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     @</span><span class="gliimConstruct">&lt;&lt;p-out</span> s1<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     set-string</span> s1=<span class="Constant">&quot;outside&quot;</span>
-<span class="gliimConstruct">     {</span>
-<span class="gliimConstruct">         set-string</span> s2=<span class="Constant">&quot;inner variable&quot;</span>
-<span class="gliimConstruct">         set-string</span> s1=<span class="Constant">&quot;inside&quot;</span>
-<span class="gliimConstruct">         @</span><span class="gliimConstruct">&lt;&lt;p-out</span> s1<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     }</span>
-<span class="gliimConstruct">     @</span><span class="gliimConstruct">&lt;&lt;p-out</span> s1<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /scope
+<span class="Statement">     @</span><span class="Statement">&lt;&lt;p-out</span> s1<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     set-string</span> s1=<span class="Constant">&quot;outside&quot;</span>
+<span class="Statement">     {</span>
+<span class="Statement">         set-string</span> s2=<span class="Constant">&quot;inner variable&quot;</span>
+<span class="Statement">         set-string</span> s1=<span class="Constant">&quot;inside&quot;</span>
+<span class="Statement">         @</span><span class="Statement">&lt;&lt;p-out</span> s1<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     }</span>
+<span class="Statement">     @</span><span class="Statement">&lt;&lt;p-out</span> s1<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>

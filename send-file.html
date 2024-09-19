@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,15 +225,15 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> send-file</span> &lt;file&gt; [<span class="gliimClause"> headers</span> \
-     [<span class="gliimClause"> content-type</span> &lt;content type&gt; ] \
-     [<span class="gliimClause"> download</span> [ &lt;download&gt; ] ] \
-     [<span class="gliimClause"> etag</span> [ &lt;etag&gt; ] ] \
-     [<span class="gliimClause"> file-name</span> &lt;file name&gt; ] \
-     [ (<span class="gliimClause"> cache-control</span> &lt;cache control&gt; ) |<span class="gliimClause"> no-cache</span> ] \
-     [<span class="gliimClause"> status-id</span> &lt;status id&gt; ] \
-     [<span class="gliimClause"> status-text</span> &lt;status text&gt; ] \
-     [<span class="gliimClause"> custom</span> &lt;header name&gt;=&lt;header value&gt; [ , ... ] ]
+<span class="Statement"> send-file</span> &lt;file&gt; [<span class="Identifier"> headers</span> \
+     [<span class="Identifier"> content-type</span> &lt;content type&gt; ] \
+     [<span class="Identifier"> download</span> [ &lt;download&gt; ] ] \
+     [<span class="Identifier"> etag</span> [ &lt;etag&gt; ] ] \
+     [<span class="Identifier"> file-name</span> &lt;file name&gt; ] \
+     [ (<span class="Identifier"> cache-control</span> &lt;cache control&gt; ) |<span class="Identifier"> no-cache</span> ] \
+     [<span class="Identifier"> status-id</span> &lt;status id&gt; ] \
+     [<span class="Identifier"> status-text</span> &lt;status text&gt; ] \
+     [<span class="Identifier"> custom</span> &lt;header name&gt;=&lt;header value&gt; [ , ... ] ]
      <span class="Error">]</span></pre>
 </div><br/>
 When a client requests download of a file, you can use send-file to provide &lt;file&gt;, which is its location on the server, and is either a full path or relative to the application home directory (see <a href='http://gliimly.github.io/directories.html'>directories</a>). Note however that you can never use dot-dot (i.e. "..") in &lt;file&gt; - this is a security measure to avoid path-traversal attacks. Thus the file name should never have ".." in it, and if it does, the program will <a href='http://gliimly.github.io/error-handling.html'>error out</a>.<br/>
@@ -250,14 +245,14 @@ The following are subclauses that allow setting any custom header:<br/>
 </li><li>&lt;cache control&gt; is the cache control HTTP header. "no-cache" instructs the client not to cache. Only one of "cache-control" and "no-cache" can be used. An example of &lt;cache control&gt;:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> send-file</span> <span class="Constant">&quot;somepic.jpg&quot;</span><span class="gliimClause"> headers cache-control</span> <span class="Constant">&quot;max-age: 3600&quot;</span></pre>
+<span class="Statement"> send-file</span> <span class="Constant">&quot;somepic.jpg&quot;</span><span class="Identifier"> headers cache-control</span> <span class="Constant">&quot;max-age: 3600&quot;</span></pre>
 </div><br/>
 </li><li>If "etag" is used without boolean expression &lt;etag&gt;, or if &lt;etag&gt; evaluates to true, then "ETAG" header will be generated (a timestamp) and included, otherwise it is not. The time stamp is of last modification date of the file (and typically used to cache a file on client if it hasn't changed on the server). "etag" is useful to let the client know to download the file only once if it hasn't changed, thus saving network and computing resources. ETAG header is used only for <a href='http://gliimly.github.io/send-file.html'>send-file</a>.<br/>
 </li><li>&lt;status id&gt; and &lt;status text&gt; are status settings for the response, as strings (such as "425" for "status-id" and "Too early" for "status-text"). <br/>
 </li><li>To set any type of generic HTTP header, use "custom" subclause, where &lt;header name&gt; and &lt;header value&gt; represent the name and value of a single header. Multiple headers are separated by a comma. There is no limit on the maximum number of such headers, other than of the underyling HTTP protocol. You must not use "custom" to set headers already set elsewhere (such as "etag" for instance), as that may cause unpredictable behavior. For instance this sets two custom headers:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> out-header</span><span class="gliimClause"> use custom</span> <span class="Constant">&quot;CustomOption3&quot;</span>=<span class="Constant">&quot;CustomValue3&quot;</span>, <span class="Constant">&quot;Status&quot;</span>=<span class="Constant">&quot;418 I'm a teapot&quot;</span></pre>
+<span class="Statement"> out-header</span><span class="Identifier"> use custom</span> <span class="Constant">&quot;CustomOption3&quot;</span>=<span class="Constant">&quot;CustomValue3&quot;</span>, <span class="Constant">&quot;Status&quot;</span>=<span class="Constant">&quot;418 I'm a teapot&quot;</span></pre>
 </div><br/>
 "custom" subclause lets you use any custom headers that exist today or may be added in the future, as well as any headers of your own design.</li></ul>
 <div class="vsub"><a id="Cookies"></a>Cookies</div>
@@ -266,18 +261,18 @@ Any cookies set prior to send-file (see <a href='http://gliimly.github.io/set-co
 To send a document back to the browser and show it (i.e. display):<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> send-file</span> <span class="Constant">&quot;/home/gliim/files/myfile.jpg&quot;</span><span class="gliimClause"> headers content-type</span> <span class="Constant">&quot;image/jpg&quot;</span></pre>
+<span class="Statement"> send-file</span> <span class="Constant">&quot;/home/gliim/files/myfile.jpg&quot;</span><span class="Identifier"> headers content-type</span> <span class="Constant">&quot;image/jpg&quot;</span></pre>
 </div><br/>
 An example to display a PDF document:<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> set-string</span> pdf_doc=<span class="Constant">&quot;/home/mydir/myfile.pdf&quot;</span>
-<span class="gliimConstruct"> send-file</span> pdf_doc<span class="gliimClause"> headers content-type</span> <span class="Constant">&quot;application/pdf&quot;</span></pre>
+<span class="Statement"> set-string</span> pdf_doc=<span class="Constant">&quot;/home/mydir/myfile.pdf&quot;</span>
+<span class="Statement"> send-file</span> pdf_doc<span class="Identifier"> headers content-type</span> <span class="Constant">&quot;application/pdf&quot;</span></pre>
 </div><br/>
 If you want to send a file for download (with the dialog), use "download" clause. This way the document is not displayed but the "Save As" (or similar) window shows up, for example to download a "PDF" document:<br/>
 <div class='code'>
 <pre id='code_6'>
-<span class="gliimConstruct"> send-file</span> <span class="Constant">&quot;/home/user/file.pdf&quot;</span><span class="gliimClause"> headers download content-type</span> <span class="Constant">&quot;application/pdf&quot;</span></pre>
+<span class="Statement"> send-file</span> <span class="Constant">&quot;/home/user/file.pdf&quot;</span><span class="Identifier"> headers download content-type</span> <span class="Constant">&quot;application/pdf&quot;</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Web</span><br/>

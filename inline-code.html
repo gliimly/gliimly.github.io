@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -239,37 +234,36 @@ The following statements can be inlined: <a href='http://gliimly.github.io/p-pat
 <a href='http://gliimly.github.io/p-out.html'>p-out</a> statement displays a string, and in the following code it's used to display a result within an <a href='http://gliimly.github.io/output-statement.html'>output-statement</a> (i.e. within "@" statement):<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> run-query</span> =<span class="Constant">&quot;select firstName, lastName from people&quot;</span><span class="gliimClauseOutput"> output</span> firstName, lastName
-<span class="gliimConstruct">    @</span>&lt;tr&gt;
-<span class="gliimConstruct">    @</span>    &lt;td&gt;
-<span class="gliimConstruct">    @</span>        First name is <span class="gliimConstruct">&lt;&lt;p-out</span>  firstName<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">    @</span>    &lt;/td&gt;
-<span class="gliimConstruct">    @</span>    &lt;td&gt;
-<span class="gliimConstruct">    @</span>        Last name is <span class="gliimConstruct">&lt;&lt;p-out</span> lastName<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">    @</span>    &lt;/td&gt;
-<span class="gliimConstruct">    @</span>&lt;/tr&gt;
-<span class="gliimConstruct"> end-query</span></pre>
+<span class="Statement"> run-query</span> =<span class="Constant">&quot;select firstName, lastName from people&quot;</span><span class="Type"> output</span> firstName, lastName
+<span class="Statement">    @</span>&lt;tr&gt;
+<span class="Statement">    @</span>    &lt;td&gt;
+<span class="Statement">    @</span>        First name is <span class="Statement">&lt;&lt;p-out</span>  firstName<span class="Statement">&gt;&gt;</span>
+<span class="Statement">    @</span>    &lt;/td&gt;
+<span class="Statement">    @</span>    &lt;td&gt;
+<span class="Statement">    @</span>        Last name is <span class="Statement">&lt;&lt;p-out</span> lastName<span class="Statement">&gt;&gt;</span>
+<span class="Statement">    @</span>    &lt;/td&gt;
+<span class="Statement">    @</span>&lt;/tr&gt;
+<span class="Statement"> end-query</span></pre>
 </div><br/>
 In the code below, "some_req" is a request handler that outputs some text, and it's used inline to output "Hello world":<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> @</span>Hello <span class="gliimConstruct">&lt;&lt;sub-handler</span> <span class="Constant">&quot;/some-req&quot;</span><span class="gliimConstruct">&gt;&gt;</span></pre>
+<span class="Statement"> @</span>Hello <span class="Statement">&lt;&lt;sub-handler</span> <span class="Constant">&quot;/some-req&quot;</span><span class="Statement">&gt;&gt;</span></pre>
 </div><br/>
 <a href='http://gliimly.github.io/sub-handler.html'>sub-handler</a> "some-req" would simply output "world":<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> %%</span> /some-req
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     @</span>world
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement"> %%</span> /some-req
+<span class="Statement">     @</span>world
+<span class="Statement"> %%</span></pre>
 </div><br/>
 A <a href='http://gliimly.github.io/write-string.html'>write-string</a> is typically used with output statements; in this case we print the value of another string, resulting in "There is 42 minutes left!":<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> set-string</span> mins=<span class="Constant">&quot;42&quot;</span>
-<span class="gliimConstruct"> ((</span> my_string
-<span class="gliimConstruct"> @</span>There is <span class="gliimConstruct">&lt;&lt;p-out</span> mins<span class="gliimConstruct">&gt;&gt;</span> minutes left!
-<span class="gliimConstruct"> ))</span></pre>
+<span class="Statement"> set-string</span> mins=<span class="Constant">&quot;42&quot;</span>
+<span class="Statement"> ((</span> my_string
+<span class="Statement"> @</span>There is <span class="Statement">&lt;&lt;p-out</span> mins<span class="Statement">&gt;&gt;</span> minutes left!
+<span class="Statement"> ))</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Language</span><br/>

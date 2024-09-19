@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -254,9 +249,9 @@ port=3306</pre>
 Database statements that perform queries (such as <a href='http://gliimly.github.io/run-query.html'>run-query</a>) must specify the database configuration file used, unless your application uses only a single database. Such configuration is given by "@&lt;database config file&gt;" (for instance in <a href='http://gliimly.github.io/run-query.html'>run-query</a> or <a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a>). For example, in:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> run-query</span> @mydb=<span class="Constant">&quot;select name from employees&quot;</span>
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> end-query</span></pre>
+<span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;select name from employees&quot;</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> end-query</span></pre>
 </div><br/>
 the query is performed on a database specified by the configuration file "mydb", as in (assuming it's PostgreSQL database):<br/>
 <div class='code'>
@@ -268,9 +263,9 @@ You do not need to manually connect to the database; when your application uses 
 If a database is the only one used by your application, you can omit it, as in:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> run-query</span> =<span class="Constant">&quot;select name from employees&quot;</span>
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> end-query</span></pre>
+<span class="Statement"> run-query</span> =<span class="Constant">&quot;select name from employees&quot;</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> end-query</span></pre>
 </div><br/>
 <div class="vsub"><a id="Connection settings"></a>Connection settings</div>
 The contents of a configuration file depends on the database used:<br/>

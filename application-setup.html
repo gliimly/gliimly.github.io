@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -238,11 +233,11 @@ If your application does not use database(s), you can skip this part.<br/>
 You can setup your database(s) in any way you see fit, and this includes creating the database objects (such as tables or indexes) used by your application; all Gliimly needs to know is the connection parameters, which include database login information (but can include other things as well). For each database in use, you must provide a <a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a> in the same directory as your Gliimly source code. This file contains the database connection parameters - these parameters are database-specific. For example, if your code has statements like:<br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> run-query</span> @mydb = ...
+<span class="Statement"> run-query</span> @mydb = ...
 
  <span class="Comment">//or</span>
 
-<span class="gliimConstruct"> begin-transaction</span> @sales_db</pre>
+<span class="Statement"> begin-transaction</span> @sales_db</pre>
 </div><br/>
 then you must have files "mydb" and "sales_db" present. For example, MariaDB config file might look like:<br/>
 <div class='ncode'>

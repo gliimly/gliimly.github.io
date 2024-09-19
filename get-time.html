@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,15 +225,15 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> get-time</span><span class="gliimClauseOutput"> to</span> &lt;time var&gt; \
-     [<span class="gliimClause"> timezone</span> &lt;tz&gt; ] \
-     [<span class="gliimClause"> year</span> &lt;year&gt; ] \
-     [<span class="gliimClause"> month</span> &lt;month&gt; ] \
-     [<span class="gliimClause"> day</span> &lt;day&gt; ] \
-     [<span class="gliimClause"> hour</span> &lt;hour&gt; ] \
-     [<span class="gliimClause"> minute</span> &lt;minute&gt; ] \
-     [<span class="gliimClause"> second</span> &lt;second&gt; ] \
-     [<span class="gliimClause"> format</span> &lt;format&gt; ]</pre>
+<span class="Statement"> get-time</span><span class="Type"> to</span> &lt;time var&gt; \
+     [<span class="Identifier"> timezone</span> &lt;tz&gt; ] \
+     [<span class="Identifier"> year</span> &lt;year&gt; ] \
+     [<span class="Identifier"> month</span> &lt;month&gt; ] \
+     [<span class="Identifier"> day</span> &lt;day&gt; ] \
+     [<span class="Identifier"> hour</span> &lt;hour&gt; ] \
+     [<span class="Identifier"> minute</span> &lt;minute&gt; ] \
+     [<span class="Identifier"> second</span> &lt;second&gt; ] \
+     [<span class="Identifier"> format</span> &lt;format&gt; ]</pre>
 </div><br/>
 get-time produces &lt;time var&gt; variable that contains string with time. &lt;time var&gt; is <a href='http://gliimly.github.io/memory-handling.html'>allocated memory</a>.<br/>
 <br/>
@@ -254,24 +249,24 @@ So for example to get the time in Phoenix, Arizona you could use "America/Phoeni
 Each variable specified with "year", "month", "day", "hour", "minute" or "second" is a time to be added or subtracted to/from current date. For example "year 2" means add 2 years to the current date, and "year -4" means subtract 4 years, whereas "hour -4" means &nbsp;subtract 4 hours, etc. So for example, a moment in time that is 2 years into the future minus 5 days minus 1 hour is:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> get-time</span><span class="gliimClauseOutput"> to</span> time_var<span class="gliimClause"> year</span> 2<span class="gliimClause"> day</span> -5<span class="gliimClause"> hour</span> -1</pre>
+<span class="Statement"> get-time</span><span class="Type"> to</span> time_var<span class="Identifier"> year</span> <span class="Constant">2</span><span class="Identifier"> day</span> -<span class="Constant">5</span><span class="Identifier"> hour</span> -<span class="Constant">1</span></pre>
 </div><br/>
 &lt;format&gt; allows you to get the time in any string format you like, using the specifiers available in C "strftime". For example, if &lt;format&gt; is "%A, %B %d %Y, %l:%M %p %Z", it will produce something like "Sunday, November 28 2021, 9:07 PM MST". The default format is "UTC/GMT" format, which for instance, is suitable for use with cookie timestamps, and looks something like "Mon, 16 Jul 2012 00:03:01 GMT".<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To get current time in "GMT" timezone, in a format that is suitable for use with <a href='http://gliimly.github.io/set-cookie.html'>set-cookie</a> (for example to set expiration date):<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> get-time</span><span class="gliimClauseOutput"> to</span> mytime</pre>
+<span class="Statement"> get-time</span><span class="Type"> to</span> mytime</pre>
 </div><br/>
 To get the time in the same format, only 1 year and 2 months in the future:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> get-time</span><span class="gliimClauseOutput"> to</span> mytime<span class="gliimClause"> year</span> 1<span class="gliimClause"> month</span> 2</pre>
+<span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span></pre>
 </div><br/>
 An example of a future date (1 year, 3 months, 4 days, 7 hours, 15 minutes and 22 seconds into the future), in a specific format (see "strftime"):<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> get-time</span><span class="gliimClauseOutput"> to</span> time_var<span class="gliimClause"> timezone</span> <span class="Constant">&quot;MST&quot;</span><span class="gliimClause"> year</span> 1<span class="gliimClause"> month</span> 3<span class="gliimClause"> day</span> 4<span class="gliimClause"> hour</span> 7<span class="gliimClause"> minute</span> 15<span class="gliimClause"> second</span> 22<span class="gliimClause"> format</span> <span class="Constant">&quot;</span><span class="Special">%A</span><span class="Constant">, %B </span><span class="Special">%d</span><span class="Constant"> %Y, %l:%M </span><span class="Special">%p</span><span class="Constant"> %Z&quot;</span></pre>
+<span class="Statement"> get-time</span><span class="Type"> to</span> time_var<span class="Identifier"> timezone</span> <span class="Constant">&quot;MST&quot;</span><span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">3</span><span class="Identifier"> day</span> <span class="Constant">4</span><span class="Identifier"> hour</span> <span class="Constant">7</span><span class="Identifier"> minute</span> <span class="Constant">15</span><span class="Identifier"> second</span> <span class="Constant">22</span><span class="Identifier"> format</span> <span class="Constant">&quot;</span><span class="Special">%A</span><span class="Constant">, %B </span><span class="Special">%d</span><span class="Constant"> %Y, %l:%M </span><span class="Special">%p</span><span class="Constant"> %Z&quot;</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Time</span><br/>

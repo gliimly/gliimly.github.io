@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -246,9 +241,9 @@ All input and output is contained in a single variable of type "gg_cli", the poi
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// You could also do:</span>
  <span class="Comment">// memset ((char*)&amp;req, </span><span class="Constant">0</span><span class="Comment">, sizeof(gg_cli));</span>
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> .</span>..
  <span class="Comment">// Set members of 'req' variable (see below)</span>
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> .</span>..
  <span class="Comment">// Make a call</span>
  <span class="Type">int</span> result = gg_cli_request (&amp;req);</pre>
 </div><br/>
@@ -276,7 +271,7 @@ Type "gg_cli" is defined as (i.e. public members of it):<br/>
      <span class="Type">int</span> thread_id; <span class="Comment">// custom ID when executing in a multithreaded fashion</span>
      <span class="Type">volatile</span> <span class="Type">char</span> done; <span class="Comment">// indicator that the request has completed</span>
      <span class="Type">int</span> return_code; <span class="Comment">// the return code from gg_cli_request()</span>
-<span class="gliimConstruct"> }</span> gg_cli;</pre>
+<span class="Statement"> }</span> gg_cli;</pre>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Mandatory input</span><br/>
@@ -297,12 +292,12 @@ The following members of "gg_cli" type must be supplied in order to make a call 
 "env" is any environment variables that should be passed along to the service. You can access those in Gliimly via "environment" clause of <a href='http://gliimly.github.io/get-sys.html'>get-sys</a> statement. This is an array of strings, where name/value pairs are specified one after the other, and which always must end with NULL. For example, if you want to use variable "REMOTE_USER" with value "John" and variable "MY_VARIABLE" with value "8000", then it might look like this:<br/>
 <div class='code'>
 <pre id='code_4'>
- <span class="Type">char</span> *env[5];
- env[0] = <span class="Constant">&quot;REMOTE_USER&quot;</span>;
- env[1] = <span class="Constant">&quot;John&quot;</span>
- env[2] = <span class="Constant">&quot;MY_VARIABLE&quot;</span>;
- env[3] = <span class="Constant">&quot;8000&quot;</span>
- env[4] = <span class="Constant">NULL</span>;</pre>
+ <span class="Type">char</span> *env[<span class="Constant">5</span>];
+ env[<span class="Constant">0</span>] = <span class="Constant">&quot;REMOTE_USER&quot;</span>;
+ env[<span class="Constant">1</span>] = <span class="Constant">&quot;John&quot;</span>
+ env[<span class="Constant">2</span>] = <span class="Constant">&quot;MY_VARIABLE&quot;</span>;
+ env[<span class="Constant">3</span>] = <span class="Constant">&quot;8000&quot;</span>
+ env[<span class="Constant">4</span>] = <span class="Constant">NULL</span>;</pre>
 </div><br/>
 Thus, if you are passing N environment variables to the service, you must size "env" as "char*" array with 2*N+1 elements.<br/>
 <br/>
@@ -349,12 +344,12 @@ Data returned from a request is valid only if "gg_cli_request()" returned GG_OKA
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// Setup the req variable</span>
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> .</span>..
  <span class="Comment">// Execute request</span>
  <span class="Statement">if</span> (gg_cli_request (&amp;req) == GG_OKAY) {
      <span class="Type">char</span> *data = gg_cli_data (req); <span class="Comment">// data response</span>
      <span class="Type">int</span> data_len = req-&gt;data_len; <span class="Comment">// length of data response in bytes</span>
-<span class="gliimConstruct"> }</span></pre>
+<span class="Statement"> }</span></pre>
 </div><br/>
 "data_len" member of "gg_cli" type will have the length of data response in bytes. The reply is always null-terminated as a courtesy, and "data_len" does not include the terminating null byte.<br/>
 <br/>
@@ -366,12 +361,12 @@ An error reply returned from a service is valid only if "gg_cli_request()" retur
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// Setup the req variable</span>
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> .</span>..
  <span class="Comment">// Execute request</span>
  <span class="Statement">if</span> (gg_cli_request (&amp;req) == GG_OKAY) {
      <span class="Type">char</span> *err = gg_cli_error (req); <span class="Comment">// error response</span>
      <span class="Type">int</span> err_len = req-&gt;error_len; <span class="Comment">// length of error response in bytes</span>
-<span class="gliimConstruct"> }</span></pre>
+<span class="Statement"> }</span></pre>
 </div><br/>
 "gg_cli_error()" returns any error messages from a service response, i.e. data passed to "error" stream. It is comprised of any service output when "to-error" clause is used in <a href='http://gliimly.github.io/pf-out.html'>pf-out</a>, <a href='http://gliimly.github.io/pf-url.html'>pf-url</a> and <a href='http://gliimly.github.io/pf-web.html'>pf-web</a>, as well as any output from <a href='http://gliimly.github.io/report-error.html'>report-error</a>. <br/>
 <br/>
@@ -383,7 +378,7 @@ Once you have obtained the result of a request, and when no longer needed, you s
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
  <span class="Comment">// Setup the req variable</span>
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> .</span>..
  <span class="Comment">// Execute request</span>
  gg_cli_request (&amp;req);
  <span class="Comment">// .. Use the result ..</span>
@@ -428,26 +423,26 @@ For example, functions "get_output()" and "get_err()" will capture data as it ar
 <pre id='code_11'>
  <span class="Comment">// Output hook</span>
  <span class="Type">void</span> get_output(<span class="Type">char</span> *d, <span class="Type">int</span> l, gg_cli *req)
-<span class="gliimConstruct"> {</span>
+<span class="Statement"> {</span>
      printf(<span class="Constant">&quot;Got output of [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">] in thread [</span><span class="Special">%d</span><span class="Constant">]&quot;</span>, l, d, l, req-&gt;thread_id);
-<span class="gliimConstruct"> }</span>
+<span class="Statement"> }</span>
 
  <span class="Comment">// Error hook</span>
  <span class="Type">void</span> get_err(<span class="Type">char</span> *d, <span class="Type">int</span> l, gg_cli *req)
-<span class="gliimConstruct"> {</span>
+<span class="Statement"> {</span>
      printf(<span class="Constant">&quot;Got error of [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">], status [</span><span class="Special">%d</span><span class="Constant">]&quot;</span>, l, d, l, req-&gt;req_status);
-<span class="gliimConstruct"> }</span>
+<span class="Statement"> }</span>
 
  <span class="Comment">// Completion hook</span>
  <span class="Type">void</span> get_complete(<span class="Type">char</span> *data, <span class="Type">int</span> data_len, <span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req)
-<span class="gliimConstruct"> {</span>
+<span class="Statement"> {</span>
      printf(<span class="Constant">&quot;Got data [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">] and error of [</span><span class="Special">%.*s</span><span class="Constant">] of length [</span><span class="Special">%d</span><span class="Constant">], status [</span><span class="Special">%d</span><span class="Constant">], thread [</span><span class="Special">%d</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, data_len, data, data_len, err_len, err, err_len, req-&gt;req_status, req-&gt;thread_id);
-<span class="gliimConstruct"> }</span>
+<span class="Statement"> }</span>
 
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> .</span>..
 
  gg_cli req = {<span class="Constant">0</span>};
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> .</span>..
  <span class="Comment">// Register output and error hooks, as well as a completion hook</span>
  req.out_hook = &amp;get_output;
  req.err_hook = &amp;get_err;
@@ -477,7 +472,7 @@ The following example is a simple demonstration, with minimum of options used. C
  <span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
 
  <span class="Type">void</span> main ()
-<span class="gliimConstruct"> {</span>
+<span class="Statement"> {</span>
      <span class="Comment">// Request type gg_cli - create a request variable and zero it out</span>
      gg_cli req = {<span class="Constant">0</span>};
 
@@ -496,7 +491,7 @@ The following example is a simple demonstration, with minimum of options used. C
 
      <span class="Comment">// Free up resources so there are no memory leaks</span>
      gg_cli_delete(&amp;req);
-<span class="gliimConstruct"> }</span></pre>
+<span class="Statement"> }</span></pre>
 </div><br/>
 To make this client application:<br/>
 <div class="shcode">
@@ -506,12 +501,10 @@ gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><sp
 In this case, you're using a Unix socket to communicate with the Gliimly service. To test with a Gliimly service handler, copy the following code to "hello_simple.gliim" file in a separate directory:<br/>
 <div class='code'>
 <pre id='code_14'>
-<span class="gliimConstruct"> begin-handler</span> /hello_simple
-<span class="gliimConstruct">    silent-header</span>
-<span class="gliimConstruct">    out-header</span><span class="gliimClause"> default</span>
-
-<span class="gliimConstruct">    @</span>Hi there!
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /hello_simple
+<span class="Statement">    silent-header</span>
+<span class="Statement">    @</span>Hi there!
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 Create and make the Gliimly application and run it via local Unix socket:<br/>
 <div class="shcode">
@@ -540,11 +533,11 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
  <span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
 
  <span class="Type">void</span> main ()
-<span class="gliimConstruct"> {</span>
+<span class="Statement"> {</span>
      <span class="Comment">// Request type gg_cli - create a request variable</span>
      gg_cli req;
      <span class="Comment">// Initialize request</span>
-     memset (&amp;req, 0, <span class="Statement">sizeof</span>(req));
+     memset (&amp;req, <span class="Constant">0</span>, <span class="Statement">sizeof</span>(req));
 
      <span class="Comment">// Add </span><span class="Constant">3</span><span class="Comment"> environment variables (in the form of name, value, name, value, ... , NULL)</span>
      <span class="Type">char</span> *env[] = { <span class="Constant">&quot;REMOTE_USER&quot;</span>, <span class="Constant">&quot;John&quot;</span>, <span class="Constant">&quot;SOME_VAR&quot;</span>, <span class="Constant">&quot;SOME</span><span class="Special">\n</span><span class="Constant">VALUE&quot;</span>, <span class="Constant">&quot;NEW_VAR&quot;</span>, <span class="Constant">&quot;1000&quot;</span>, <span class="Constant">NULL</span> };
@@ -589,11 +582,11 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
         printf(<span class="Constant">&quot;Data [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, gg_cli_data(&amp;req));
         <span class="Comment">// Any error message from service</span>
         printf(<span class="Constant">&quot;Error [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, gg_cli_error(&amp;req));
-<span class="gliimConstruct">     }</span>
+<span class="Statement">     }</span>
 
      <span class="Comment">// Free up resources so there are no memory leaks</span>
      gg_cli_delete(&amp;req);
-<span class="gliimConstruct"> }</span></pre>
+<span class="Statement"> }</span></pre>
 </div><br/>
 Note that the URL parameters (i.e. "req.url_params") could have been written as a combination of a path segment and query string (see <a href='http://gliimly.github.io/request.html'>request</a>):<br/>
 <div class='code'>
@@ -613,42 +606,41 @@ gcc <span class="Special">-o</span> cli1 cli1.c <span class="PreProc">$(</span><
 To test it, you can create a Gliimly application. Copy this to "hello.gliim" file in a separate directory:<br/>
 <div class='code'>
 <pre id='code_19'>
-<span class="gliimConstruct"> begin-handler</span> /hello
-<span class="gliimConstruct">     silent-header</span>
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> begin-handler</span> /hello
+<span class="Statement">     silent-header</span>
 
      <span class="Comment">// Get request body</span>
-<span class="gliimConstruct">     request-body</span> rb
+<span class="Statement">     request-body</span> rb
 
      <span class="Comment">// Input params</span>
-<span class="gliimConstruct">     get-param</span> par1
-<span class="gliimConstruct">     get-param</span> par2
+<span class="Statement">     get-param</span> par1
+<span class="Statement">     get-param</span> par2
 
      <span class="Comment">// Get environment variables passed on from the client</span>
-<span class="gliimConstruct">     get-sys</span><span class="gliimClause"> environment</span> <span class="Constant">&quot;REMOTE_USER&quot;</span><span class="gliimClauseOutput"> to</span> ruser
-<span class="gliimConstruct">     get-sys</span><span class="gliimClause"> environment</span> <span class="Constant">&quot;SOME_VAR&quot;</span><span class="gliimClauseOutput"> to</span> somev
-<span class="gliimConstruct">     get-sys</span><span class="gliimClause"> environment</span> <span class="Constant">&quot;NEW_VAR&quot;</span><span class="gliimClauseOutput"> to</span> newv
+<span class="Statement">     get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;REMOTE_USER&quot;</span><span class="Type"> to</span> ruser
+<span class="Statement">     get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;SOME_VAR&quot;</span><span class="Type"> to</span> somev
+<span class="Statement">     get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;NEW_VAR&quot;</span><span class="Type"> to</span> newv
 
      <span class="Comment">// Output, print the environment variables, the PID of server process and the request body received from the client</span>
-<span class="gliimConstruct">     get-req</span><span class="gliimClause"> process-id</span><span class="gliimClauseOutput"> to</span> pid
-<span class="gliimConstruct">     @</span>Hello World! [<span class="gliimConstruct">&lt;&lt;p-out</span> ruser<span class="gliimConstruct">&gt;&gt;</span>] [<span class="gliimConstruct">&lt;&lt;p-out</span> somev<span class="gliimConstruct">&gt;&gt;</span>] [<span class="gliimConstruct">&lt;&lt;p-out</span> newv<span class="gliimConstruct">&gt;&gt;</span>] [<span class="gliimConstruct">&lt;&lt;p-out</span> par1<span class="gliimConstruct">&gt;&gt;</span>] [<span class="gliimConstruct">&lt;&lt;p-out</span> par2<span class="gliimConstruct">&gt;&gt;</span>] <span class="gliimConstruct">&lt;&lt;p-num</span> pid<span class="gliimConstruct">&gt;&gt;</span> <span class="gliimConstruct">&lt;&lt;p-out</span> rb<span class="gliimConstruct">&gt;&gt;</span>
+<span class="Statement">     get-req</span><span class="Identifier"> process-id</span><span class="Type"> to</span> pid
+<span class="Statement">     @</span>Hello World! [<span class="Statement">&lt;&lt;p-out</span> ruser<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> somev<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> newv<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> par1<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> par2<span class="Statement">&gt;&gt;</span>] <span class="Statement">&lt;&lt;p-num</span> pid<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> rb<span class="Statement">&gt;&gt;</span>
 
      <span class="Comment">// Output back a number of lines, generally as </span><span class="Constant">&quot;Output line #&lt;num of line&gt;&quot;</span>
      <span class="Comment">// After line #</span><span class="Constant">1418</span><span class="Comment">, print out </span><span class="Constant">&quot;Line 1419 has an error&quot;</span><span class="Comment"> to stderr</span>
      <span class="Comment">// After line #</span><span class="Constant">4418</span><span class="Comment">, report an error and exit</span>
      <span class="Comment">// This demostrates outputting data to both stdout and stderr</span>
-<span class="gliimConstruct">     start-loop</span><span class="gliimClause"> repeat</span> 8000<span class="gliimClauseOutput"> use</span> i<span class="gliimClause"> start-with</span> 0
-<span class="gliimConstruct">         @</span>Output line #<span class="gliimConstruct">&lt;&lt;p-num</span> i<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">         if-true</span> i<span class="gliimClause"> equal</span> 1419
-<span class="gliimConstruct">             pf-out</span> <span class="Constant">&quot;Line </span><span class="Special">%ld</span><span class="Constant"> has an error</span><span class="Special">\n</span><span class="Constant">&quot;</span>, i<span class="gliimClause"> to-error</span>
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">         if-true</span> i<span class="gliimClause"> equal</span> 4419
+<span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">8000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span>
+<span class="Statement">         @</span>Output line #<span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span>
+<span class="Statement">         if-true</span> i<span class="Identifier"> equal</span> <span class="Constant">1419</span>
+<span class="Statement">             pf-out</span> <span class="Constant">&quot;Line </span><span class="Special">%ld</span><span class="Constant"> has an error</span><span class="Special">\n</span><span class="Constant">&quot;</span>, i<span class="Identifier"> to-error</span>
+<span class="Statement">         end-if</span>
+<span class="Statement">         if-true</span> i<span class="Identifier"> equal</span> <span class="Constant">4419</span>
              <span class="Comment">// Exit code of the service execution</span>
-<span class="gliimConstruct">             handler-status</span> 82
-<span class="gliimConstruct">             report-error</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;Some error!&quot;</span>
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">     end-loop</span>
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement">             handler-status</span> <span class="Constant">82</span>
+<span class="Statement">             report-error</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;Some error!&quot;</span>
+<span class="Statement">         end-if</span>
+<span class="Statement">     end-loop</span>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 Create and make the Gliimly application and run it on local TCP port 2301 to match the client above:<br/>
 <div class="shcode">

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> delete-cookie</span> &lt;cookie name&gt; [<span class="gliimClause"> path</span> &lt;cookie path&gt; ] [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] [<span class="gliimClause"> secure</span> &lt;secure&gt; ]</pre>
+<span class="Statement"> delete-cookie</span> &lt;cookie name&gt; [<span class="Identifier"> path</span> &lt;cookie path&gt; ] [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> secure</span> &lt;secure&gt; ]</pre>
 </div><br/>
 delete-cookie marks a cookie named &lt;cookie name&gt; for deletion, so it is sent back in the reply telling the client (such as browser) to delete it. <br/>
 <br/>
@@ -238,7 +233,7 @@ Newer client implementations require a cookie deletion to use a secure context i
 <br/>
 &lt;cookie name&gt; is a cookie that was either received from the client as a part of the request, or was added with <a href='http://gliimly.github.io/set-cookie.html'>set-cookie</a>. <br/>
 <br/>
-A cookie can be deleted before or after sending out a header (see <a href='http://gliimly.github.io/out-header.html'>out-header</a>). However a cookie must be deleted prior to outputting any actual response (such as with <a href='http://gliimly.github.io/output-statement.html'>output-statement</a> or <a href='http://gliimly.github.io/p-out.html'>p-out</a> for example), or the request will error out (see <a href='http://gliimly.github.io/error-handling.html'>error-handling</a>).<br/>
+A cookie can be deleted before or after header is sent out (see <a href='http://gliimly.github.io/out-header.html'>out-header</a>). However a cookie must be deleted prior to outputting any actual response (such as with <a href='http://gliimly.github.io/output-statement.html'>output-statement</a> or <a href='http://gliimly.github.io/p-out.html'>p-out</a> for example), or the request will error out (see <a href='http://gliimly.github.io/error-handling.html'>error-handling</a>).<br/>
 <br/>
 &lt;status&gt; (in "status" clause) is the number that will be GG_ERR_EXIST if the cookie did not exist, or 0 or greater if it did.<br/>
 <br/>
@@ -246,9 +241,9 @@ The same cookie name may be stored under different URL paths. You can use "path"
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> delete-cookie</span> <span class="Constant">&quot;my_cookie&quot;</span>
-<span class="gliimConstruct"> set-bool</span> is_secure = <span class="Constant">true</span>
-<span class="gliimConstruct"> delete-cookie</span> <span class="Constant">&quot;my_cookie&quot;</span><span class="gliimClause"> path</span> <span class="Constant">&quot;/path&quot;</span><span class="gliimClause"> secure</span> is_secure</pre>
+<span class="Statement"> delete-cookie</span> <span class="Constant">&quot;my_cookie&quot;</span>
+<span class="Statement"> set-bool</span> is_secure = <span class="Constant">true</span>
+<span class="Statement"> delete-cookie</span> <span class="Constant">&quot;my_cookie&quot;</span><span class="Identifier"> path</span> <span class="Constant">&quot;/path&quot;</span><span class="Identifier"> secure</span> is_secure</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Cookies</span><br/>

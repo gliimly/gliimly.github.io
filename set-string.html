@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> set-string</span> &lt;variable&gt; [ = &lt;string&gt; ] [<span class="gliimClause"> process-scope</span> ] [<span class="gliimClause"> unquoted</span> ]</pre>
+<span class="Statement"> set-string</span> &lt;variable&gt; [ = &lt;string&gt; ] [<span class="Identifier"> process-scope</span> ] [<span class="Identifier"> unquoted</span> ]</pre>
 </div><br/>
 String variable &lt;variable&gt; will be assigned a value of &lt;string&gt; if clause "=" is present; otherwise &lt;variable&gt; is assigned an empty string.<br/>
 <br/>
@@ -239,24 +234,24 @@ If "process-scope" clause is used, then &lt;variable&gt; will be of process scop
 If "unquoted" clause is used, then &lt;string&gt; literal is unquoted, and everything from equal clause ("=") to the rest of the line is a &lt;string&gt;; in this case there is no need to escape double quotes or backslashes. Note that in this case, "unquoted" and any other clause must appear prior to equal clause ("=") and after variable, because they wouldn't otherwise be recognized. For instance:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> my_string<span class="gliimClause"> unquoted</span> = this is <span class="Constant">&quot;some&quot;</span> string where there escape characters like \n do <span class="Constant">&quot;not work&quot;</span></pre>
+<span class="Statement"> set-string</span> my_string<span class="Identifier"> unquoted</span> = this is <span class="Constant">&quot;some&quot;</span> string where there escape characters like \n do <span class="Constant">&quot;not work&quot;</span></pre>
 </div><br/>
 This is the same as:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-string</span> my_string = <span class="Constant">&quot;this is </span><span class="Special">\&quot;</span><span class="Constant">some</span><span class="Special">\&quot;</span><span class="Constant"> string where there escape characters like </span><span class="Special">\\</span><span class="Constant">n do </span><span class="Special">\&quot;</span><span class="Constant">not work</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span></pre>
+<span class="Statement"> set-string</span> my_string = <span class="Constant">&quot;this is </span><span class="Special">\&quot;</span><span class="Constant">some</span><span class="Special">\&quot;</span><span class="Constant"> string where there escape characters like </span><span class="Special">\\</span><span class="Constant">n do </span><span class="Special">\&quot;</span><span class="Constant">not work</span><span class="Special">\&quot;</span><span class="Constant">&quot;</span></pre>
 </div><br/>
 "unquoted" clause is useful when writing string literals that would otherwise need lots of escaping.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Initialize "my_string" variable to "":<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> set-string</span> my_string</pre>
+<span class="Statement"> set-string</span> my_string</pre>
 </div><br/>
 Initialize "my_string" variable to "abc":<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> set-string</span> my_string = <span class="Constant">&quot;abc&quot;</span></pre>
+<span class="Statement"> set-string</span> my_string = <span class="Constant">&quot;abc&quot;</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

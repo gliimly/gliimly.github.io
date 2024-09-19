@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,8 +225,8 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> decode-hex</span> &lt;data&gt;<span class="gliimClauseOutput"> to</span> &lt;output&gt; \
-     [<span class="gliimClause"> input-length</span> &lt;input length&gt; ]</pre>
+<span class="Statement"> decode-hex</span> &lt;data&gt;<span class="Type"> to</span> &lt;output&gt; \
+     [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
 </div><br/>
 decode-hex will decode hexadecimal string &lt;data&gt; to string &lt;output&gt; given in "to" clause. <br/>
 <br/>
@@ -240,8 +235,8 @@ decode-hex will decode hexadecimal string &lt;data&gt; to string &lt;output&gt; 
 Get the original binary data from a hexadecimal string "hexdata". The output string "binout" is created:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> hexdata = <span class="Constant">&quot;0041000F414200&quot;</span>
-<span class="gliimConstruct"> decode-hex</span> hexdata<span class="gliimClauseOutput"> to</span> binout</pre>
+<span class="Statement"> set-string</span> hexdata = <span class="Constant">&quot;0041000F414200&quot;</span>
+<span class="Statement"> decode-hex</span> hexdata<span class="Type"> to</span> binout</pre>
 </div><br/>
 The value of "binout" will be binary data equal to this C literal:<br/>
 <div class='code'>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> write-fifo</span> &lt;list&gt; \
-    <span class="gliimClause"> key</span> &lt;key&gt; \
-    <span class="gliimClause"> value</span> &lt;value&gt;</pre>
+<span class="Statement"> write-fifo</span> &lt;list&gt; \
+    <span class="Identifier"> key</span> &lt;key&gt; \
+    <span class="Identifier"> value</span> &lt;value&gt;</pre>
 </div><br/>
 write-fifo adds a pair of key/value pointers to the FIFO &lt;list&gt;, specified with strings &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
 <br/>
@@ -240,8 +235,8 @@ It always adds elements to the end of the list. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> new-fifo</span> nf
-<span class="gliimConstruct"> write-fifo</span> nf<span class="gliimClause"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;myvalue&quot;</span></pre>
+<span class="Statement"> new-fifo</span> nf
+<span class="Statement"> write-fifo</span> nf<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">FIFO</span><br/>

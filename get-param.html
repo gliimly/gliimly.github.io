@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> get-param</span> &lt;name&gt; [<span class="gliimClause"> type</span> &lt;type&gt; ]</pre>
+<span class="Statement"> get-param</span> &lt;name&gt; [<span class="Identifier"> type</span> &lt;type&gt; ]</pre>
 </div><br/>
 get-param stores a parameter value in variable &lt;name&gt;. A parameter is a name/value pair kept by Gliimly for each request. The parameter's name must match &lt;name&gt;. A parameter can be of any type. A parameter is set either:<br/>
 <ul><li>by the caller in <a href='http://gliimly.github.io/request.html'>request URL</a>, or<br/>
@@ -254,8 +249,8 @@ As an example, for HTML form input parameters named "param1" with value "value1"
 you can get these parameters and print out their values by using:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> get-param</span> param1
-<span class="gliimConstruct"> get-param</span> param2</pre>
+<span class="Statement"> get-param</span> param1
+<span class="Statement"> get-param</span> param2</pre>
 </div><br/>
 A request may be in the form of a web link URL, and getting the parameter values is the same:<br/>
 <div class='ncode'>
@@ -266,15 +261,15 @@ http://&lt;your web server&gt;/&lt;app name&gt;/&lt;request name&gt;&amp;param1=
 Use <a href='http://gliimly.github.io/set-param.html'>set-param</a> to replace the value of an existing parameter, or create a new one. For instance:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> get-param</span> par1
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> set-param</span> par1=<span class="Constant">&quot;new value&quot;</span></pre>
+<span class="Statement"> get-param</span> par1
+<span class="Statement"> .</span>..
+<span class="Statement"> set-param</span> par1=<span class="Constant">&quot;new value&quot;</span></pre>
 </div><br/>
 In this case the value of an existing parameter "par1" is replaced with "new value". In the following code a new parameter is created, which can be retrieved later with get-param:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> set-param</span> par1=<span class="Constant">&quot;new value&quot;</span>
-<span class="gliimConstruct"> get-param</span> par1</pre>
+<span class="Statement"> set-param</span> par1=<span class="Constant">&quot;new value&quot;</span>
+<span class="Statement"> get-param</span> par1</pre>
 </div><br/>
 See <a href='http://gliimly.github.io/sub-handler.html'>sub-handler</a> for more examples.<br/>
 <div class="vsub"><a id="Duplicate input parameter names"></a>Duplicate input parameter names</div>

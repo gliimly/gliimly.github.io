@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> exit-handler</span> [ &lt;request status&gt; ]</pre>
+<span class="Statement"> exit-handler</span> [ &lt;request status&gt; ]</pre>
 </div><br/>
 Exits current request by transferring control directly after the top-level <a href='http://gliimly.github.io/request.html'>request</a> dispatcher. If there is an <a href='http://gliimly.github.io/after-handler.html'>after-handler</a>, it will still execute, unless exit-handler is called from <a href='http://gliimly.github.io/before-handler.html'>before-handler</a>.<br/>
 <br/>
@@ -239,31 +234,31 @@ Exits current request by transferring control directly after the top-level <a hr
 Returning status of 20:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> begin-handler</span> /req-handler
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct">     handler-status</span> 20
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct">     exit-handler</span>
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /req-handler
+<span class="Statement">     .</span>..
+<span class="Statement">     handler-status</span> <span class="Constant">20</span>
+<span class="Statement">     .</span>..
+<span class="Statement">     exit-handler</span>
+<span class="Statement">     .</span>..
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 Returning status of 0:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> begin-handler</span> /req-handler
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct">     exit-handler</span>
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /req-handler
+<span class="Statement">     .</span>..
+<span class="Statement">     exit-handler</span>
+<span class="Statement">     .</span>..
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 Returning status of 10:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> begin-handler</span> /req-handler
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct">     exit-handler</span> 10
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /req-handler
+<span class="Statement">     .</span>..
+<span class="Statement">     exit-handler</span> <span class="Constant">10</span>
+<span class="Statement">     .</span>..
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>

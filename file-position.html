@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> file-position</span><span class="gliimClause"> file-id</span> &lt;file id&gt; \
-     (<span class="gliimClause"> set</span> &lt;position&gt; ) | (<span class="gliimClauseOutput"> get</span> &lt;position&gt; ) \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> file-position</span><span class="Identifier"> file-id</span> &lt;file id&gt; \
+     (<span class="Identifier"> set</span> &lt;position&gt; ) | (<span class="Type"> get</span> &lt;position&gt; ) \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 file-position will set or get position for a file opened with <a href='http://gliimly.github.io/open-file.html'>open-file</a>, where &lt;file id&gt; is an open file identifier.<br/>
 <br/>
@@ -247,10 +242,10 @@ Note that setting position past the last byte of file is okay for writing - in t
 Open file "testwrite" and set file byte position to 100, then obtain it later:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="gliimClauseOutput"> file-id</span> nf
-<span class="gliimConstruct"> file-position</span><span class="gliimClause"> file-id</span> nf<span class="gliimClause"> set</span> 100
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> file-position</span><span class="gliimClause"> file-id</span> nf<span class="gliimClauseOutput"> get</span> pos</pre>
+<span class="Statement"> open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf
+<span class="Statement"> file-position</span><span class="Identifier"> file-id</span> nf<span class="Identifier"> set</span> <span class="Constant">100</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> file-position</span><span class="Identifier"> file-id</span> nf<span class="Type"> get</span> pos</pre>
 </div><br/>
 See also <a href='http://gliimly.github.io/open-file.html'>open-file</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

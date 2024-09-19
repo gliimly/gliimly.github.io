@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> read-list</span> &lt;list&gt; \
-    <span class="gliimClauseOutput"> key</span> &lt;key&gt; \
-    <span class="gliimClauseOutput"> value</span> &lt;value&gt; \
-     [<span class="gliimClause"> update-value</span> &lt;update value&gt; ] [<span class="gliimClause"> update-key</span> &lt;update key&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> read-list</span> &lt;list&gt; \
+    <span class="Type"> key</span> &lt;key&gt; \
+    <span class="Type"> value</span> &lt;value&gt; \
+     [<span class="Identifier"> update-value</span> &lt;update value&gt; ] [<span class="Identifier"> update-key</span> &lt;update key&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 read-list retrieves an element from the linked &lt;list&gt;, storing it into &lt;key&gt; string (in "key" clause) and &lt;value&gt; string (in "value" clause). After each read-list, the list's current element remains at the element read; use <a href='http://gliimly.github.io/position-list.html'>position-list</a> to move it (for instance to the next one). <br/>
 <br/>
@@ -249,36 +244,36 @@ You can update the element's key with "update-key" clause by specifying &lt;upda
 In this example, a linked list is created, and three key/value pairs added. They are then retrieved from the last towards the first element, and then again in the opposite direction:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> new-list</span> mylist
+<span class="Statement"> new-list</span> mylist
 
  <span class="Comment">// Add data to the list</span>
-<span class="gliimConstruct"> write-list</span> mylist<span class="gliimClause"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;value1&quot;</span>
-<span class="gliimConstruct"> write-list</span> mylist<span class="gliimClause"> key</span> <span class="Constant">&quot;key2&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;value2&quot;</span>
-<span class="gliimConstruct"> write-list</span> mylist<span class="gliimClause"> key</span> <span class="Constant">&quot;key3&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;value3&quot;</span>
+<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
+<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value2&quot;</span>
+<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key3&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value3&quot;</span>
 
-<span class="gliimConstruct"> position-list</span> mylist<span class="gliimClause"> last</span>
-<span class="gliimConstruct"> start-loop</span>
+<span class="Statement"> position-list</span> mylist<span class="Identifier"> last</span>
+<span class="Statement"> start-loop</span>
     <span class="Comment">// Get data from the list starting with the last one, producing value1, value2, value3</span>
-<span class="gliimConstruct">    read-list</span> mylist<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v
-<span class="gliimConstruct">    @</span>Obtained key <span class="gliimConstruct">&lt;&lt;p-out</span> k<span class="gliimConstruct">&gt;&gt;</span> with value <span class="gliimConstruct">&lt;&lt;p-out</span> v<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">    position-list</span> mylist<span class="gliimClause"> previous</span><span class="gliimClauseOutput"> status</span> s
+<span class="Statement">    read-list</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v
+<span class="Statement">    @</span>Obtained key <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">    position-list</span> mylist<span class="Identifier"> previous</span><span class="Type"> status</span> s
     <span class="Comment">// Check if no more data</span>
-<span class="gliimConstruct">    if-true</span> s<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">        break-loop</span>
-<span class="gliimConstruct">    end-if</span>
-<span class="gliimConstruct"> end-loop</span>
+<span class="Statement">    if-true</span> s<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">        break-loop</span>
+<span class="Statement">    end-if</span>
+<span class="Statement"> end-loop</span>
 
  <span class="Comment">// Now the list is positioned at the first element, reading produces value3, value2, value1</span>
-<span class="gliimConstruct"> start-loop</span>
-<span class="gliimConstruct">    read-list</span> mylist<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v<span class="gliimClauseOutput"> status</span> s
-<span class="gliimConstruct">    if-true</span> s<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">        break-loop</span>
-<span class="gliimConstruct">    end-if</span>
-<span class="gliimConstruct">    @</span>Again obtained key <span class="gliimConstruct">&lt;&lt;p-out</span> k<span class="gliimConstruct">&gt;&gt;</span> with value <span class="gliimConstruct">&lt;&lt;p-out</span> v<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">    position-list</span> mylist<span class="gliimClause"> next</span>
-<span class="gliimConstruct"> end-loop</span>
+<span class="Statement"> start-loop</span>
+<span class="Statement">    read-list</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> s
+<span class="Statement">    if-true</span> s<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">        break-loop</span>
+<span class="Statement">    end-if</span>
+<span class="Statement">    @</span>Again obtained key <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">    position-list</span> mylist<span class="Identifier"> next</span>
+<span class="Statement"> end-loop</span>
 
-<span class="gliimConstruct"> purge-list</span> mylist</pre>
+<span class="Statement"> purge-list</span> mylist</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Linked list</span><br/>

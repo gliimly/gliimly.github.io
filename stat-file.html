@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> stat-file</span> &lt;file&gt; \
-    <span class="gliimClause"> size</span> |<span class="gliimClause"> type</span> |<span class="gliimClause"> path</span> |<span class="gliimClause"> name</span> \
-    <span class="gliimClauseOutput"> to</span> &lt;variable&gt;</pre>
+<span class="Statement"> stat-file</span> &lt;file&gt; \
+    <span class="Identifier"> size</span> |<span class="Identifier"> type</span> |<span class="Identifier"> path</span> |<span class="Identifier"> name</span> \
+    <span class="Type"> to</span> &lt;variable&gt;</pre>
 </div><br/>
 stat-file obtains information about &lt;file&gt;, which is either the full path of a file or directory, or a name relative to the application home directory (see <a href='http://gliimly.github.io/directories.html'>directories</a>). <br/>
 <br/>
@@ -245,24 +240,24 @@ Clause "path" (in string &lt;variable&gt;) obtains the fully resolved path of th
 To get file size in variable "sz", which is created here:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> stat-file</span> <span class="Constant">&quot;/home/user/file&quot;</span><span class="gliimClause"> size</span><span class="gliimClauseOutput"> to</span> sz</pre>
+<span class="Statement"> stat-file</span> <span class="Constant">&quot;/home/user/file&quot;</span><span class="Identifier"> size</span><span class="Type"> to</span> sz</pre>
 </div><br/>
 To determine if the object is a file or a directory:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> stat-file</span> <span class="Constant">&quot;/home/user/some_name&quot;</span><span class="gliimClause"> type</span><span class="gliimClauseOutput"> to</span> what
-<span class="gliimConstruct"> if-true</span> what<span class="gliimClause"> equal</span> GG_FILE
-<span class="gliimConstruct">    @</span>It's a file!
-<span class="gliimConstruct"> else-if</span> what<span class="gliimClause"> equal</span> GG_DIR
-<span class="gliimConstruct">    @</span>It's a directory!
-<span class="gliimConstruct"> else-if</span>
-<span class="gliimConstruct">    @</span>Doesn't exist!
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> stat-file</span> <span class="Constant">&quot;/home/user/some_name&quot;</span><span class="Identifier"> type</span><span class="Type"> to</span> what
+<span class="Statement"> if-true</span> what<span class="Identifier"> equal</span> GG_FILE
+<span class="Statement">    @</span>It's a file!
+<span class="Statement"> else-if</span> what<span class="Identifier"> equal</span> GG_DIR
+<span class="Statement">    @</span>It's a directory!
+<span class="Statement"> else-if</span>
+<span class="Statement">    @</span>Doesn't exist!
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 Get the fully resolved path of a file to string variable "fp", which is created here.<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> stat-file</span> <span class="Constant">&quot;../file&quot;</span><span class="gliimClause"> path</span><span class="gliimClauseOutput"> to</span> fp</pre>
+<span class="Statement"> stat-file</span> <span class="Constant">&quot;../file&quot;</span><span class="Identifier"> path</span><span class="Type"> to</span> fp</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Files</span><br/>

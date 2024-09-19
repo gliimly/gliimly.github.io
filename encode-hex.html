@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> encode-hex</span> &lt;data&gt;<span class="gliimClauseOutput"> to</span> &lt;output&gt; \
-     [<span class="gliimClause"> input-length</span> &lt;input length&gt; ] \
-     [<span class="gliimClause"> prefix</span> &lt;prefix&gt; ]</pre>
+<span class="Statement"> encode-hex</span> &lt;data&gt;<span class="Type"> to</span> &lt;output&gt; \
+     [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
+     [<span class="Identifier"> prefix</span> &lt;prefix&gt; ]</pre>
 </div><br/>
 encode-hex will encode string &lt;data&gt; to hexadecimal string &lt;output&gt; given in "to" clause which consists of digits "0"-"9" and letters "a"-"f". <br/>
 <br/>
@@ -241,8 +236,8 @@ The length of &lt;data&gt; to encode may be given with &lt;input length&gt; numb
 Create hexadecimal string from binary data "mydata" of length 7, prefixed with string "\\\\x" (which is typically needed for PostgreSQL binary input to queries). The output string "hexout" is created:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> mydata = <span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;A&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\xF</span><span class="Constant">&quot;&quot;AB&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x04</span><span class="Constant">&quot;</span>
-<span class="gliimConstruct"> encode-hex</span> mydata<span class="gliimClauseOutput"> to</span> hexout<span class="gliimClause"> input-length</span> 7<span class="gliimClause"> prefix</span> <span class="Constant">&quot;</span><span class="Special">\\\\</span><span class="Constant">x&quot;</span></pre>
+<span class="Statement"> set-string</span> mydata = <span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;A&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\xF</span><span class="Constant">&quot;&quot;AB&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x04</span><span class="Constant">&quot;</span>
+<span class="Statement"> encode-hex</span> mydata<span class="Type"> to</span> hexout<span class="Identifier"> input-length</span> <span class="Constant">7</span><span class="Identifier"> prefix</span> <span class="Constant">&quot;</span><span class="Special">\\\\</span><span class="Constant">x&quot;</span></pre>
 </div><br/>
 The value of "hexout" will be:<br/>
 <div class='code'>

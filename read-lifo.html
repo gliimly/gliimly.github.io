@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,10 +225,10 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> read-lifo</span> &lt;list&gt; \
-    <span class="gliimClauseOutput"> key</span> &lt;key&gt; \
-    <span class="gliimClauseOutput"> value</span> &lt;value&gt; \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> read-lifo</span> &lt;list&gt; \
+    <span class="Type"> key</span> &lt;key&gt; \
+    <span class="Type"> value</span> &lt;value&gt; \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 read-lifo retrieves an element from the LIFO &lt;list&gt; into &lt;key&gt; string &nbsp;(in "key" clause) and &lt;value&gt; string (in "value" clause).<br/>
 <br/>
@@ -244,46 +239,45 @@ If the element is successfuly retrieved, &lt;status&gt; number (in "status" clau
 In this example, a LIFO list is created, and two key/value pairs added. They are then retrieved in a loop and printed out (twice with rewind), and then the list is purged:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> %%</span> /lifo
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     new-lifo</span> mylist
+<span class="Statement"> %%</span> /lifo
+<span class="Statement">     new-lifo</span> mylist
 
      <span class="Comment">// Add data to the list</span>
-<span class="gliimConstruct">     write-lifo</span> mylist<span class="gliimClause"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;value1&quot;</span>
-<span class="gliimConstruct">     write-lifo</span> mylist<span class="gliimClause"> key</span> <span class="Constant">&quot;some2&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;other2&quot;</span>
+<span class="Statement">     write-lifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
+<span class="Statement">     write-lifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;some2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;other2&quot;</span>
 
-<span class="gliimConstruct">     start-loop</span>
+<span class="Statement">     start-loop</span>
         <span class="Comment">// Get data from the list</span>
-<span class="gliimConstruct">        read-lifo</span> mylist<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v<span class="gliimClauseOutput"> status</span> st
+<span class="Statement">        read-lifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
 
         <span class="Comment">// Check if no more data</span>
-<span class="gliimConstruct">        if-true</span> st<span class="gliimClause"> not-equal</span> GG_OKAY
-<span class="gliimConstruct">            break-loop</span>
-<span class="gliimConstruct">        end-if</span>
+<span class="Statement">        if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">            break-loop</span>
+<span class="Statement">        end-if</span>
 
-<span class="gliimConstruct">        @</span>Obtained key <span class="gliimConstruct">&lt;&lt;p-out</span> k<span class="gliimConstruct">&gt;&gt;</span> with value <span class="gliimConstruct">&lt;&lt;p-out</span> v<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     end-loop</span>
+<span class="Statement">        @</span>Obtained key <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     end-loop</span>
 
      <span class="Comment">// Go through the list again, use rewind-lifo for that</span>
-<span class="gliimConstruct">     rewind-lifo</span> mylist
+<span class="Statement">     rewind-lifo</span> mylist
 
-<span class="gliimConstruct">     start-loop</span>
-<span class="gliimConstruct">        read-lifo</span> mylist<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">        if-true</span> st<span class="gliimClause"> not-equal</span> GG_OKAY
-<span class="gliimConstruct">            break-loop</span>
-<span class="gliimConstruct">        end-if</span>
-<span class="gliimConstruct">        @</span>Again obtained key <span class="gliimConstruct">&lt;&lt;p-out</span> k<span class="gliimConstruct">&gt;&gt;</span> with value <span class="gliimConstruct">&lt;&lt;p-out</span> v<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     end-loop</span>
+<span class="Statement">     start-loop</span>
+<span class="Statement">        read-lifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">            break-loop</span>
+<span class="Statement">        end-if</span>
+<span class="Statement">        @</span>Again obtained key <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     end-loop</span>
 
      <span class="Comment">// Delete all in LIFO</span>
-<span class="gliimConstruct">     purge-lifo</span> mylist
+<span class="Statement">     purge-lifo</span> mylist
      <span class="Comment">// Verify nothing is left</span>
-<span class="gliimConstruct">     rewind-lifo</span> mylist
-<span class="gliimConstruct">     read-lifo</span> mylist<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">     if-true</span> st<span class="gliimClause"> not-equal</span> GG_OKAY
-<span class="gliimConstruct">        @</span>LIFO is empty
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">     rewind-lifo</span> mylist
+<span class="Statement">     read-lifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
+<span class="Statement">     if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">        @</span>LIFO is empty
+<span class="Statement">     end-if</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">LIFO</span><br/>

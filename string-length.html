@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> string-length</span> &lt;string&gt;<span class="gliimClauseOutput"> to</span> &lt;length&gt;</pre>
+<span class="Statement"> string-length</span> &lt;string&gt;<span class="Type"> to</span> &lt;length&gt;</pre>
 </div><br/>
 string-length will place the number of bytes in &lt;string&gt; into number &lt;length&gt;.<br/>
 <br/>
@@ -239,14 +234,14 @@ Note that &lt;string&gt; does not need to be null-terminated, meaning it can be 
 Variable "len" will be 6:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> str = <span class="Constant">&quot;string&quot;</span>
-<span class="gliimConstruct"> string-length</span> str<span class="gliimClauseOutput"> to</span> len</pre>
+<span class="Statement"> set-string</span> str = <span class="Constant">&quot;string&quot;</span>
+<span class="Statement"> string-length</span> str<span class="Type"> to</span> len</pre>
 </div><br/>
 Variable "len2" will be 18 - the string has a null character in the middle of it:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-string</span> str2 = <span class="Constant">&quot;string&quot;</span> <span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant"> after null&quot;</span>
-<span class="gliimConstruct"> string-length</span> str2<span class="gliimClauseOutput"> to</span> len2</pre>
+<span class="Statement"> set-string</span> str2 = <span class="Constant">&quot;string&quot;</span> <span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant"> after null&quot;</span>
+<span class="Statement"> string-length</span> str2<span class="Type"> to</span> len2</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

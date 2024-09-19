@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> count-substring</span> &lt;substring&gt;<span class="gliimClause"> in</span> &lt;string&gt;<span class="gliimClauseOutput"> to</span> &lt;count&gt; [<span class="gliimClause"> case-insensitive</span> [ &lt;case insensitive&gt; ] ]</pre>
+<span class="Statement"> count-substring</span> &lt;substring&gt;<span class="Identifier"> in</span> &lt;string&gt;<span class="Type"> to</span> &lt;count&gt; [<span class="Identifier"> case-insensitive</span> [ &lt;case insensitive&gt; ] ]</pre>
 </div><br/>
 count-substring counts the number of occurrences of &lt;substring&gt; in &lt;string&gt; and stores the result in &lt;count&gt; (specified in "to" clause). By default, search is case-sensitive. If you use "case-insensitive" clause without boolean expression &lt;case insensitive&gt;, or if &lt;case insensitive&gt; evaluates to true, then the search is case-insensitive.<br/>
 <br/>
@@ -239,14 +234,14 @@ If &lt;substring&gt; is empty (""), &lt;count&gt; is 0.<br/>
 In the following example, 1 occurrence will be found after the first count-substring, and 2 after the second (since case insensitive search is used there):<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> sub = <span class="Constant">&quot;world&quot;</span>
-<span class="gliimConstruct"> set-string</span> str = <span class="Constant">&quot;Hello world and hello World!&quot;</span>
+<span class="Statement"> set-string</span> sub = <span class="Constant">&quot;world&quot;</span>
+<span class="Statement"> set-string</span> str = <span class="Constant">&quot;Hello world and hello World!&quot;</span>
 
-<span class="gliimConstruct"> count-substring</span> sub<span class="gliimClause"> in</span> str<span class="gliimClauseOutput"> to</span> num_occ
-<span class="gliimConstruct"> pf-out</span> <span class="Constant">&quot;Found </span><span class="Special">%ld</span><span class="Constant"> occurrences!</span><span class="Special">\n</span><span class="Constant">&quot;</span>, num_occ
+<span class="Statement"> count-substring</span> sub<span class="Identifier"> in</span> str<span class="Type"> to</span> num_occ
+<span class="Statement"> pf-out</span> <span class="Constant">&quot;Found </span><span class="Special">%ld</span><span class="Constant"> occurrences!</span><span class="Special">\n</span><span class="Constant">&quot;</span>, num_occ
 
-<span class="gliimConstruct"> count-substring</span> sub<span class="gliimClause"> in</span> str<span class="gliimClauseOutput"> to</span> num_occ<span class="gliimClause"> case-insensitive</span>
-<span class="gliimConstruct"> pf-out</span> <span class="Constant">&quot;Found </span><span class="Special">%ld</span><span class="Constant"> occurrences!</span><span class="Special">\n</span><span class="Constant">&quot;</span>, num_occ</pre>
+<span class="Statement"> count-substring</span> sub<span class="Identifier"> in</span> str<span class="Type"> to</span> num_occ<span class="Identifier"> case-insensitive</span>
+<span class="Statement"> pf-out</span> <span class="Constant">&quot;Found </span><span class="Special">%ld</span><span class="Constant"> occurrences!</span><span class="Special">\n</span><span class="Constant">&quot;</span>, num_occ</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

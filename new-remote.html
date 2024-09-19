@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,20 +225,20 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> new-remote</span> &lt;service&gt; \
-     (<span class="gliimClause"> local</span> &lt;app name&gt; ) | (<span class="gliimClause"> location</span> &lt;location&gt; ) \
-    <span class="gliimClause"> url-path</span> &lt;service URL&gt; |
+<span class="Statement"> new-remote</span> &lt;service&gt; \
+     (<span class="Identifier"> local</span> &lt;app name&gt; ) | (<span class="Identifier"> location</span> &lt;location&gt; ) \
+    <span class="Identifier"> url-path</span> &lt;service URL&gt; |
          ( \
-        <span class="gliimClause"> app-path</span> &lt;app path&gt; \
-        <span class="gliimClause"> request-path</span> &lt;request path&gt; \
-         [<span class="gliimClause"> url-params</span> &lt;url params&gt; ] \
+        <span class="Identifier"> app-path</span> &lt;app path&gt; \
+        <span class="Identifier"> request-path</span> &lt;request path&gt; \
+         [<span class="Identifier"> url-params</span> &lt;url params&gt; ] \
          ) \
-     [<span class="gliimClause"> request-body content</span> &lt;content&gt; \
-         [<span class="gliimClause"> content-length</span> &lt;content length&gt; ] \
-         [<span class="gliimClause"> content-type</span> &lt;content type&gt; ] ] \
-     [<span class="gliimClause"> method</span> &lt;request method&gt; ] \
-     [<span class="gliimClause"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="gliimConstruct"> ,</span> ... ] ] \
-     [<span class="gliimClause"> timeout</span> &lt;timeout&gt; ]</pre>
+     [<span class="Identifier"> request-body content</span> &lt;content&gt; \
+         [<span class="Identifier"> content-length</span> &lt;content length&gt; ] \
+         [<span class="Identifier"> content-type</span> &lt;content type&gt; ] ] \
+     [<span class="Identifier"> method</span> &lt;request method&gt; ] \
+     [<span class="Identifier"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="Statement"> ,</span> ... ] ] \
+     [<span class="Identifier"> timeout</span> &lt;timeout&gt; ]</pre>
 </div><br/>
 new-remote will create resources needed for a service call (see <a href='http://gliimly.github.io/call-remote.html'>call-remote</a>); these resources are contained in variable &lt;service&gt;.<br/>
 <div class="vsub"><a id="Local or location"></a>Local or location</div>
@@ -278,85 +273,82 @@ A full URL path of a service request (for "srv1" for example), would be "/app/ma
 Copy this to "manage_keys.gliim" source file:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> %%</span> /manage-keys
-<span class="gliimConstruct">    out-header</span><span class="gliimClause"> default</span>
-
-<span class="gliimConstruct">    do-once</span>
-<span class="gliimConstruct">    new-array</span> h<span class="gliimClause"> hash-size</span> 1024<span class="gliimClause"> process-scope</span>
-<span class="gliimConstruct">    end-do-once</span>
+<span class="Statement"> %%</span> /manage-keys
+<span class="Statement">    do-once</span>
+<span class="Statement">    new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">    end-do-once</span>
 
     <span class="Comment">// Get input parameters</span>
-<span class="gliimConstruct">    get-param</span> op
-<span class="gliimConstruct">    get-param</span> key
-<span class="gliimConstruct">    get-param</span> data
+<span class="Statement">    get-param</span> op
+<span class="Statement">    get-param</span> key
+<span class="Statement">    get-param</span> data
 
-<span class="gliimConstruct">    if-true</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash,</span>
-<span class="gliimConstruct">        write-array</span> h<span class="gliimClause"> key</span> (key)<span class="gliimClause"> value</span> data<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">        @</span>Added [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">    else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="gliimConstruct">        read-array</span> h<span class="gliimClauseOutput"> key</span> (key)<span class="gliimClauseOutput"> value</span> val \
-           <span class="gliimClause"> delete</span> \
-           <span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">        if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">            @</span>Not found [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">        else-if</span>
+<span class="Statement">    if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to hash,</span>
+<span class="Statement">        write-array</span> h<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+<span class="Statement">        @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
+<span class="Statement">        read-array</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val \
+           <span class="Identifier"> delete</span> \
+           <span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">            @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        else-if</span>
             <span class="Comment">// If found, then delete key and value</span>
-<span class="gliimConstruct">            @</span>Deleted [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">            delete-string</span> val
-<span class="gliimConstruct">        end-if</span>
-<span class="gliimConstruct">    else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
-<span class="gliimConstruct">        read-array</span> h<span class="gliimClauseOutput"> key</span> (key)<span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">        if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">            @</span>Not found, queried [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">        else-if</span>
-<span class="gliimConstruct">            @</span>Value [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">        end-if</span>
-<span class="gliimConstruct">    end-if</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">            @</span>Deleted [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">            delete-string</span> val
+<span class="Statement">        end-if</span>
+<span class="Statement">    else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query hash based on key value</span>
+<span class="Statement">        read-array</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">        if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">            @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        else-if</span>
+<span class="Statement">            @</span>Value [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">        end-if</span>
+<span class="Statement">    end-if</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 Then <a href='http://gliimly.github.io/call-remote.html'>call-remote</a> will make three service calls to the above request handler in parallel (i.e. as threads executing at the same time). You can examine if everything went okay, how many threads have started, and how many finished with a reply from the service (this means any kind of reply, even if an error). Finally, the output from each call is displayed (that's "data" clause in <a href='http://gliimly.github.io/read-remote.html'>read-remote</a> statement at the end).<br/>
 <br/>
 Create file "srv.gliim" and copy to it this code:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> begin-handler</span> /srv
-<span class="gliimConstruct">  out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> begin-handler</span> /srv
   <span class="Comment">// Create resources (prepare) for </span><span class="Constant">3</span><span class="Comment"> service calls</span>
   <span class="Comment">// We pass environment variable GG_SILENT_HEADER to these calls</span>
   <span class="Comment">// so they don't emit HTTP header</span>
-<span class="gliimConstruct">  new-remote</span> srv1<span class="gliimClause"> local</span> <span class="Constant">&quot;app&quot;</span> \
-     <span class="gliimClause"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key1/data=data1&quot;</span> \
-     <span class="gliimClause"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
-<span class="gliimConstruct">  new-remote</span> srv2<span class="gliimClause"> local</span> <span class="Constant">&quot;app&quot;</span> \
-     <span class="gliimClause"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key2/data=data2&quot;</span> \
-     <span class="gliimClause"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
-<span class="gliimConstruct">  new-remote</span> srv3<span class="gliimClause"> local</span> <span class="Constant">&quot;app&quot;</span> \
-     <span class="gliimClause"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key3/data=data3&quot;</span> \
-     <span class="gliimClause"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
+<span class="Statement">  new-remote</span> srv1<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
+     <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key1/data=data1&quot;</span> \
+     <span class="Identifier"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
+<span class="Statement">  new-remote</span> srv2<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
+     <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key2/data=data2&quot;</span> \
+     <span class="Identifier"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
+<span class="Statement">  new-remote</span> srv3<span class="Identifier"> local</span> <span class="Constant">&quot;app&quot;</span> \
+     <span class="Identifier"> url-path</span> <span class="Constant">&quot;/app/manage-keys/op=add/key=key3/data=data3&quot;</span> \
+     <span class="Identifier"> environment</span> <span class="Constant">&quot;GG_SILENT_HEADER&quot;</span>=<span class="Constant">&quot;yes&quot;</span>
   <span class="Comment">// Make </span><span class="Constant">3</span><span class="Comment"> service calls in parallel, each in it own thread</span>
-<span class="gliimConstruct">  call-remote</span> srv1, srv2, srv3<span class="gliimClauseOutput"> status</span> st \
-     <span class="gliimClauseOutput"> started</span> start \
-     <span class="gliimClauseOutput"> finished-okay</span> fok
+<span class="Statement">  call-remote</span> srv1, srv2, srv3<span class="Type"> status</span> st \
+     <span class="Type"> started</span> start \
+     <span class="Type"> finished-okay</span> fok
   <span class="Comment">// Check if all calls were completed</span>
-<span class="gliimConstruct">  if-true</span> st<span class="gliimClause"> equal</span> GG_OKAY
-<span class="gliimConstruct">      @</span>No errors from call-remote
-<span class="gliimConstruct">  end-if</span>
-<span class="gliimConstruct">  if-true</span> start<span class="gliimClause"> equal</span> 3
-<span class="gliimConstruct">      @</span>All three service calls started.
-<span class="gliimConstruct">  end-if</span>
-<span class="gliimConstruct">  if-true</span> fok<span class="gliimClause"> equal</span> 3
-<span class="gliimConstruct">      @</span>All three service calls finished.
-<span class="gliimConstruct">  end-if</span>
-<span class="gliimConstruct">  read-remote</span> srv1<span class="gliimClauseOutput"> data</span> rdata1
-<span class="gliimConstruct">  read-remote</span> srv2<span class="gliimClauseOutput"> data</span> rdata2
-<span class="gliimConstruct">  read-remote</span> srv3<span class="gliimClauseOutput"> data</span> rdata3
-<span class="gliimConstruct">  p-out</span> rdata1
-<span class="gliimConstruct">  @</span>
-<span class="gliimConstruct">  p-out</span> rdata2
-<span class="gliimConstruct">  @</span>
-<span class="gliimConstruct">  p-out</span> rdata3
-<span class="gliimConstruct">  @</span>
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement">  if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">      @</span>No errors from call-remote
+<span class="Statement">  end-if</span>
+<span class="Statement">  if-true</span> start<span class="Identifier"> equal</span> <span class="Constant">3</span>
+<span class="Statement">      @</span>All three service calls started.
+<span class="Statement">  end-if</span>
+<span class="Statement">  if-true</span> fok<span class="Identifier"> equal</span> <span class="Constant">3</span>
+<span class="Statement">      @</span>All three service calls finished.
+<span class="Statement">  end-if</span>
+<span class="Statement">  read-remote</span> srv1<span class="Type"> data</span> rdata1
+<span class="Statement">  read-remote</span> srv2<span class="Type"> data</span> rdata2
+<span class="Statement">  read-remote</span> srv3<span class="Type"> data</span> rdata3
+<span class="Statement">  p-out</span> rdata1
+<span class="Statement">  @</span>
+<span class="Statement">  p-out</span> rdata2
+<span class="Statement">  @</span>
+<span class="Statement">  p-out</span> rdata3
+<span class="Statement">  @</span>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 Create the application:<br/>
 <div class="shcode">

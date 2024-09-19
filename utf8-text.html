@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> utf8-text</span> &lt;utf8&gt; \
-     [<span class="gliimClauseOutput"> to</span> &lt;text&gt; ] \
-     [<span class="gliimClause"> length</span> &lt;length&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] \
-     [<span class="gliimClauseOutput"> error-text</span> &lt;error text&gt; ]</pre>
+<span class="Statement"> utf8-text</span> &lt;utf8&gt; \
+     [<span class="Type"> to</span> &lt;text&gt; ] \
+     [<span class="Identifier"> length</span> &lt;length&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ] \
+     [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
 </div><br/>
 utf8-text will convert &lt;utf8&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
 <br/>
@@ -250,20 +245,20 @@ Convert UTF8 string to text and verify the expected result:<br/>
 <div class='code'>
 <pre id='code_2'>
  <span class="Comment">// UTF8 string </span>
-<span class="gliimConstruct"> set-string</span> utf8_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
+<span class="Statement"> set-string</span> utf8_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
 
  <span class="Comment">// Convert UTF8 string to text</span>
-<span class="gliimConstruct"> utf8-text</span> utf8_str<span class="gliimClauseOutput"> status</span> encstatus<span class="gliimClauseOutput"> to</span> text_text
+<span class="Statement"> utf8-text</span> utf8_str<span class="Type"> status</span> encstatus<span class="Type"> to</span> text_text
 
  <span class="Comment">// This is the text expected</span>
-<span class="gliimConstruct"> ((</span> expected_result
-<span class="gliimConstruct"> @</span>\&quot;Doc\&quot;\n\t\b\f\r\t\u21d7\u21d8\t\u25b7\u25ee\ud834\udd1e\u13eb\u2ca0\u0448\n/\&quot;()\t
-<span class="gliimConstruct"> ))</span>
+<span class="Statement"> ((</span> expected_result
+<span class="Statement"> @</span>\&quot;Doc\&quot;\n\t\b\f\r\t\u21d7\u21d8\t\u25b7\u25ee\ud834\udd1e\u13eb\u2ca0\u0448\n/\&quot;()\t
+<span class="Statement"> ))</span>
 
  <span class="Comment">// Make sure conversion was okay, decs is the length of the result (encj string)</span>
-<span class="gliimConstruct"> if-true</span> text_text<span class="gliimClause"> equal</span> expected_result<span class="gliimClause"> and</span> encstatus<span class="gliimClause"> not-equal</span> -1
-<span class="gliimConstruct">     @</span>decode-text worked okay
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
+<span class="Statement">     @</span>decode-text worked okay
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">UTF8</span><br/>

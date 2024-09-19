@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> copy-string</span> &lt;source string&gt;<span class="gliimClauseOutput"> to</span> &lt;dest string&gt; \
-     [<span class="gliimClause"> start-with</span> &lt;start with&gt; ] \
-     [<span class="gliimClause"> length</span> &lt;length&gt; ]</pre>
+<span class="Statement"> copy-string</span> &lt;source string&gt;<span class="Type"> to</span> &lt;dest string&gt; \
+     [<span class="Identifier"> start-with</span> &lt;start with&gt; ] \
+     [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
 </div><br/>
 Use copy-string to copy &lt;source string&gt; to &lt;dest string&gt;.<br/>
 <br/>
@@ -243,13 +238,13 @@ Without "length" clause, the whole of &lt;source string&gt; is copied. With "len
 You can copy a string to itself. In this case, the original string remains and the new string references a copy:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> str = <span class="Constant">&quot;original string&quot;</span> <span class="Comment">// string to change</span>
+<span class="Statement"> set-string</span> str = <span class="Constant">&quot;original string&quot;</span> <span class="Comment">// string to change</span>
 
-<span class="gliimConstruct"> set-string</span> orig = str <span class="Comment">// references original copy of the string to change</span>
+<span class="Statement"> set-string</span> orig = str <span class="Comment">// references original copy of the string to change</span>
 
-<span class="gliimConstruct"> copy-string</span> str<span class="gliimClauseOutput"> to</span> str <span class="Comment">// make a copy of string to change and assign it to itself</span>
+<span class="Statement"> copy-string</span> str<span class="Type"> to</span> str <span class="Comment">// make a copy of string to change and assign it to itself</span>
 
-<span class="gliimConstruct"> upper-string</span> str <span class="Comment">// change the copy</span>
+<span class="Statement"> upper-string</span> str <span class="Comment">// change the copy</span>
 
  <span class="Comment">// Now </span><span class="Constant">&quot;str&quot;</span><span class="Comment"> references </span><span class="Constant">&quot;ORIGINAL STRING&quot;</span><span class="Comment"> </span>
  <span class="Comment">// and </span><span class="Constant">&quot;orig&quot;</span><span class="Comment"> references </span><span class="Constant">&quot;original string&quot;</span></pre>
@@ -258,14 +253,14 @@ You can copy a string to itself. In this case, the original string remains and t
 After copy-string below, "my_str" will be a copy of string "some value":<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-string</span> other_string=<span class="Constant">&quot;some value&quot;</span>
-<span class="gliimConstruct"> copy-string</span> other_string<span class="gliimClauseOutput"> to</span> my_str</pre>
+<span class="Statement"> set-string</span> other_string=<span class="Constant">&quot;some value&quot;</span>
+<span class="Statement"> copy-string</span> other_string<span class="Type"> to</span> my_str</pre>
 </div><br/>
 Copy certain number of bytes, the result in "my_str" will be "ome":<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> set-string</span> other_string=<span class="Constant">&quot;some value&quot;</span>
-<span class="gliimConstruct"> copy-string</span> other_string<span class="gliimClauseOutput"> to</span> my_str<span class="gliimClause"> length</span> 3<span class="gliimClause"> start-with</span> 1</pre>
+<span class="Statement"> set-string</span> other_string=<span class="Constant">&quot;some value&quot;</span>
+<span class="Statement"> copy-string</span> other_string<span class="Type"> to</span> my_str<span class="Identifier"> length</span> <span class="Constant">3</span><span class="Identifier"> start-with</span> <span class="Constant">1</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> set-param</span> &lt;name&gt; = &lt;value&gt;</pre>
+<span class="Statement"> set-param</span> &lt;name&gt; = &lt;value&gt;</pre>
 </div><br/>
 set-param sets or creates a parameter (see <a href='http://gliimly.github.io/get-param.html'>get-param</a>). <br/>
 <br/>
@@ -239,10 +234,10 @@ If parameter &lt;name&gt; does not exist, it's created with &lt;value&gt;. If it
 Set the value of parameter quantity" to "10", which is also the output:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-param</span> quantity = <span class="Constant">&quot;10&quot;</span>
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> get-param</span> quantity
-<span class="gliimConstruct"> p-out</span> quantity</pre>
+<span class="Statement"> set-param</span> quantity = <span class="Constant">&quot;10&quot;</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> get-param</span> quantity
+<span class="Statement"> p-out</span> quantity</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Request data</span><br/>

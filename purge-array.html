@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> purge-array</span> &lt;array&gt;</pre>
+<span class="Statement"> purge-array</span> &lt;array&gt;</pre>
 </div><br/>
 purge-array deletes all elements from &lt;array&gt; table that was created with <a href='http://gliimly.github.io/new-array.html'>new-array</a>. <br/>
 <br/>
@@ -239,9 +234,9 @@ After purge-array, you can use it without calling <a href='http://gliimly.github
 Create array, put some data in it and then delete the data:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> new-array</span> h
-<span class="gliimConstruct"> write-array</span> h<span class="gliimClause"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;myvalue&quot;</span>
-<span class="gliimConstruct"> purge-array</span> h</pre>
+<span class="Statement"> new-array</span> h
+<span class="Statement"> write-array</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span>
+<span class="Statement"> purge-array</span> h</pre>
 </div><br/>
 See <a href='http://gliimly.github.io/read-array.html'>read-array</a> for more examples.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> use-cursor</span> &lt;cursor&gt; (<span class="gliimClause"> current</span> |<span class="gliimClause"> get-lesser</span> |<span class="gliimClause"> get-greater</span> ) \
-     [<span class="gliimClauseOutput"> key</span> &lt;key&gt; ] \
-     [<span class="gliimClauseOutput"> value</span> &lt;value&gt; ] \
-     [<span class="gliimClause"> update-value</span> &lt;update value&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> use-cursor</span> &lt;cursor&gt; (<span class="Identifier"> current</span> |<span class="Identifier"> get-lesser</span> |<span class="Identifier"> get-greater</span> ) \
+     [<span class="Type"> key</span> &lt;key&gt; ] \
+     [<span class="Type"> value</span> &lt;value&gt; ] \
+     [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 use-cursor uses &lt;cursor&gt; previously created (see <a href='http://gliimly.github.io/read-index.html'>read-index</a>, <a href='http://gliimly.github.io/write-index.html'>write-index</a>) for iteration over index nodes with lesser or greater key values. It can also obtain keys and values for such nodes, as well as update their values.<br/>
 <div class="vsub"><a id="Current node"></a>Current node</div>
@@ -251,17 +246,17 @@ If the new current node can be found, then other use-cursor clauses are applied 
 The following will find a value with key "999", and then iterate in the index to find all lesser values (in descending order):<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
-<span class="gliimConstruct"> read-index</span> myindex<span class="gliimClause"> equal</span> k<span class="gliimClauseOutput"> status</span> st \
-    <span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> new-cursor</span> cur
-<span class="gliimConstruct"> start-loop</span>
-<span class="gliimConstruct">     if-true</span> st<span class="gliimClause"> equal</span> GG_OKAY
-<span class="gliimConstruct">         @</span>Value found is [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>] for key [<span class="gliimConstruct">&lt;&lt;p-out</span> k<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         use-cursor</span> cur<span class="gliimClause"> get-lesser</span><span class="gliimClauseOutput"> status</span> st<span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> key</span> k
-<span class="gliimConstruct">     else-if</span>
-<span class="gliimConstruct">         break-loop</span>
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
+<span class="Statement"> read-index</span> myindex<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \
+    <span class="Type"> value</span> val<span class="Type"> new-cursor</span> cur
+<span class="Statement"> start-loop</span>
+<span class="Statement">     if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">         @</span>Value found is [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>] for key [<span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         use-cursor</span> cur<span class="Identifier"> get-lesser</span><span class="Type"> status</span> st<span class="Type"> value</span> val<span class="Type"> key</span> k
+<span class="Statement">     else-if</span>
+<span class="Statement">         break-loop</span>
+<span class="Statement">     end-if</span>
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 For more examples, see <a href='http://gliimly.github.io/new-index.html'>new-index</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

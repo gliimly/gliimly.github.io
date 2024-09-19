@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> decode-url</span> &lt;string&gt; [<span class="gliimClause"> input-length</span> &lt;length&gt; ] [<span class="gliimClause"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> decode-url</span> &lt;string&gt; [<span class="Identifier"> input-length</span> &lt;length&gt; ] [<span class="Identifier"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 decode-url will decode &lt;string&gt; (created by <a href='http://gliimly.github.io/encode-url.html'>encode-url</a> or other URL-encoding software) and store the result back into &lt;string&gt;. If you need &lt;string&gt; unchanged, make a copy of it first with <a href='http://gliimly.github.io/copy-string.html'>copy-string</a>. &lt;length&gt; in "input-length" clause specifies the number of bytes to decode; if omitted or negative, it is the string length of &lt;string&gt;.<br/>
 <br/>
@@ -241,7 +236,7 @@ All encoded values (starting with %) are decoded, and "+" (plus sign) is convert
 Decode URL-encoded string "str", after which it will hold a decoded string. <br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> decode-url</span> str</pre>
+<span class="Statement"> decode-url</span> str</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">URL encoding</span><br/>

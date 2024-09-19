@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> delete-string</span> &lt;string&gt;</pre>
+<span class="Statement"> delete-string</span> &lt;string&gt;</pre>
 </div><br/>
 delete-string frees &lt;string&gt; variable previously allocated by a Gliimly statement. <br/>
 <br/>
@@ -241,20 +236,20 @@ Gliimly keeps count of &lt;string&gt; references. So if &lt;string&gt; is refere
 Allocate and free random string:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> random-string</span><span class="gliimClauseOutput"> to</span> ran_str
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> delete-string</span> ran_str</pre>
+<span class="Statement"> random-string</span><span class="Type"> to</span> ran_str
+<span class="Statement"> .</span>..
+<span class="Statement"> delete-string</span> ran_str</pre>
 </div><br/>
 Free string allocated by write-string (consisting of 100 "Hello World"s):<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> write-string</span> ws
-<span class="gliimConstruct">     start-loop</span><span class="gliimClause"> repeat</span> 100
-<span class="gliimConstruct">         @</span>Hello World
-<span class="gliimConstruct">     end-loop</span>
-<span class="gliimConstruct"> end-write-string</span>
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> delete-string</span> ws</pre>
+<span class="Statement"> write-string</span> ws
+<span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">100</span>
+<span class="Statement">         @</span>Hello World
+<span class="Statement">     end-loop</span>
+<span class="Statement"> end-write-string</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> delete-string</span> ws</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

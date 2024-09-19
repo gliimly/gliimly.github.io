@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> continue-loop</span></pre>
+<span class="Statement"> continue-loop</span></pre>
 </div><br/>
 continue-loop will continue execution at the top of the loop at <a href='http://gliimly.github.io/start-loop.html'>start-loop</a>, <a href='http://gliimly.github.io/run-query.html'>run-query</a>, or <a href='http://gliimly.github.io/read-line.html'>read-line</a> statements. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -238,12 +233,12 @@ Skip the processing if it's the loop #300:<br/>
 <div class='code'>
 <pre id='code_2'>
  define-number cont_loop = <span class="Constant">300</span>
-<span class="gliimConstruct"> start-loop</span><span class="gliimClause"> repeat</span> 1000<span class="gliimClauseOutput"> use</span> i<span class="gliimClause"> start-with</span> 1
-<span class="gliimConstruct">     if-true</span> i<span class="gliimClause"> equal</span> cont_loop
-<span class="gliimConstruct">         continue-loop</span>
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct">     @</span>Completed <span class="gliimConstruct">&lt;&lt;p-num</span> i<span class="gliimConstruct">&gt;&gt;</span> loops so far
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">1000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">1</span>
+<span class="Statement">     if-true</span> i<span class="Identifier"> equal</span> cont_loop
+<span class="Statement">         continue-loop</span>
+<span class="Statement">     end-if</span>
+<span class="Statement">     @</span>Completed <span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span> loops so far
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>

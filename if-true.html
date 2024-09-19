@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,50 +225,50 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> if-true</span> &lt;condition&gt;
+<span class="Statement"> if-true</span> &lt;condition&gt;
      &lt;any code&gt;
  [
-<span class="gliimConstruct"> else-if</span> &lt;condition&gt;
+<span class="Statement"> else-if</span> &lt;condition&gt;
      &lt;any code&gt;
  ] ...
  [
-<span class="gliimConstruct"> else-if</span>
+<span class="Statement"> else-if</span>
      &lt;any code&gt;
  ]
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 where &lt;condition&gt; is:<br/>
 <div class='code'>
 <pre id='code_2'>
- ( &lt;comparison&gt; [<span class="gliimClause"> and</span> &lt;comparison&gt; [<span class="gliimConstruct"> ,</span> ... ] ] )
+ ( &lt;comparison&gt; [<span class="Identifier"> and</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )
  |
- ( &lt;comparison&gt; [<span class="gliimClause"> or</span> &lt;comparison&gt; [<span class="gliimConstruct"> ,</span> ... ] ] )</pre>
+ ( &lt;comparison&gt; [<span class="Identifier"> or</span> &lt;comparison&gt; [<span class="Statement"> ,</span> ... ] ] )</pre>
 </div><br/>
 &lt;comparison&gt; is for strings:<br/>
 <div class='code'>
 <pre id='code_3'>
  &lt;string&gt; \
-    (<span class="gliimClause"> equal</span> |<span class="gliimClause"> not-equal</span> | \
-   <span class="gliimClause"> lesser-than</span> |<span class="gliimClause"> lesser-equal</span> | \
-   <span class="gliimClause"> greater-than</span> |<span class="gliimClause"> greater-equal</span> | \
-   <span class="gliimClause"> contain</span> |<span class="gliimClause"> not-contain</span> ) \
+    (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> | \
+   <span class="Identifier"> lesser-than</span> |<span class="Identifier"> lesser-equal</span> | \
+   <span class="Identifier"> greater-than</span> |<span class="Identifier"> greater-equal</span> | \
+   <span class="Identifier"> contain</span> |<span class="Identifier"> not-contain</span> ) \
  &lt;check string&gt; \
-  [<span class="gliimClause"> case-insensitive</span> ] [<span class="gliimConstruct"> length</span> &lt;length&gt; ]</pre>
+  [<span class="Identifier"> case-insensitive</span> ] [<span class="Statement"> length</span> &lt;length&gt; ]</pre>
 </div><br/>
 &lt;comparison&gt; is for numbers<br/>
 <div class='code'>
 <pre id='code_4'>
  &lt;number&gt; \
-    (<span class="gliimClause"> equal</span> |<span class="gliimClause"> not-equal</span> | \
-   <span class="gliimClause"> lesser-than</span> |<span class="gliimClause"> lesser-equal</span> | \
-   <span class="gliimClause"> greater-than</span> |<span class="gliimClause"> greater-equal</span> | \
-   <span class="gliimClause"> every</span> |<span class="gliimClause"> not-every</span> ) \
+    (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> | \
+   <span class="Identifier"> lesser-than</span> |<span class="Identifier"> lesser-equal</span> | \
+   <span class="Identifier"> greater-than</span> |<span class="Identifier"> greater-equal</span> | \
+   <span class="Identifier"> every</span> |<span class="Identifier"> not-every</span> ) \
  &lt;check number&gt;  ...</pre>
 </div><br/>
 &lt;comparison&gt; is for booleans:<br/>
 <div class='code'>
 <pre id='code_5'>
- &lt;boolean&gt; (<span class="gliimClause"> equal</span> |<span class="gliimClause"> not-equal</span> ) &lt;check boolean&gt;  ...</pre>
+ &lt;boolean&gt; (<span class="Identifier"> equal</span> |<span class="Identifier"> not-equal</span> ) &lt;check boolean&gt;  ...</pre>
 </div><br/>
 if-true will evaluate a &lt;condition&gt; and execute code associated with the match. If the &lt;condition&gt; in if-true or "else-if" succeeds, then &lt;any code&gt; below is executed. If it is not a match, then the next condition in "else-if" statement is evaluated, one by one until a match is found and code under that statement executes. If no match is found, then code under "else-if" statement without a &lt;condition&gt; executes (if specified), otherwise program control passes outside of "end-if".<br/>
 <br/>
@@ -295,29 +290,28 @@ if-true can be nested, which can be up to 30 levels deep.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_6'>
-<span class="gliimConstruct"> %%</span> i
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     get-param</span> inp
+<span class="Statement"> %%</span> i
+<span class="Statement">     get-param</span> inp
 
-<span class="gliimConstruct">     if-true</span> inp<span class="gliimClause"> equal</span> <span class="Constant">&quot;1&quot;</span>
-<span class="gliimConstruct">         @</span>Found &quot;1&quot; in input
-<span class="gliimConstruct">     else-if</span> inp<span class="gliimClause"> equal</span> <span class="Constant">&quot;2&quot;</span> <span class="gliimClause"> or</span> inp<span class="gliimClause"> equal</span> <span class="Constant">&quot;3&quot;</span>
-<span class="gliimConstruct">         @</span>Found &quot;2&quot; or &quot;3&quot; in input
+<span class="Statement">     if-true</span> inp<span class="Identifier"> equal</span> <span class="Constant">&quot;1&quot;</span>
+<span class="Statement">         @</span>Found &quot;<span class="Constant">1</span>&quot; in input
+<span class="Statement">     else-if</span> inp<span class="Identifier"> equal</span> <span class="Constant">&quot;2&quot;</span> <span class="Identifier"> or</span> inp<span class="Identifier"> equal</span> <span class="Constant">&quot;3&quot;</span>
+<span class="Statement">         @</span>Found &quot;<span class="Constant">2</span>&quot; or &quot;<span class="Constant">3</span>&quot; in input
 
-<span class="gliimConstruct">         get-param</span> inp_num
-<span class="gliimConstruct">         string-number</span> inp_num<span class="gliimClauseOutput"> to</span> num
-<span class="gliimConstruct">         if-true</span> num<span class="gliimClause"> equal</span> 4
-<span class="gliimConstruct">             @</span>Found 4 in more input
-<span class="gliimConstruct">         else-if</span> num<span class="gliimClause"> equal</span> 5 <span class="gliimClause"> and</span>  inp<span class="gliimClause"> equal</span> <span class="Constant">&quot;4&quot;</span>
-<span class="gliimConstruct">             @</span>Found 5 in more input and &quot;4&quot; in input
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Something else
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement">         get-param</span> inp_num
+<span class="Statement">         string-number</span> inp_num<span class="Type"> to</span> num
+<span class="Statement">         if-true</span> num<span class="Identifier"> equal</span> <span class="Constant">4</span>
+<span class="Statement">             @</span>Found <span class="Constant">4</span> in more input
+<span class="Statement">         else-if</span> num<span class="Identifier"> equal</span> <span class="Constant">5</span> <span class="Identifier"> and</span>  inp<span class="Identifier"> equal</span> <span class="Constant">&quot;4&quot;</span>
+<span class="Statement">             @</span>Found <span class="Constant">5</span> in more input and &quot;<span class="Constant">4</span>&quot; in input
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Something else
+<span class="Statement">         end-if</span>
 
-<span class="gliimConstruct">     else-if</span>
-<span class="gliimConstruct">         @</span>Found something else
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">     else-if</span>
+<span class="Statement">         @</span>Found something else
+<span class="Statement">     end-if</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>

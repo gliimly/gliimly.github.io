@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> write-array</span> &lt;array&gt; \
-    <span class="gliimClause"> key</span> &lt;key&gt; \
-    <span class="gliimClause"> value</span> &lt;value&gt; \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] \
-     [<span class="gliimClauseOutput"> old-value</span> &lt;old value&gt; ]</pre>
+<span class="Statement"> write-array</span> &lt;array&gt; \
+    <span class="Identifier"> key</span> &lt;key&gt; \
+    <span class="Identifier"> value</span> &lt;value&gt; \
+     [<span class="Type"> status</span> &lt;status&gt; ] \
+     [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
 </div><br/>
 write-array will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into array &lt;array&gt;, which must be created with <a href='http://gliimly.github.io/new-array.html'>new-array</a>. <br/>
 <br/>
@@ -249,56 +244,54 @@ If an &lt;array&gt; was created with "process-scope" clause (see <a href='http:/
 Writing data to array:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> new-array</span> h
-<span class="gliimConstruct"> write-array</span> h<span class="gliimClause"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
+<span class="Statement"> new-array</span> h
+<span class="Statement"> write-array</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
 </div><br/>
 Writing new value with the same key and obtaining the previous value (which is "some data"):<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> write-array</span> h<span class="gliimClause"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="gliimClauseOutput"> status</span> st<span class="gliimClauseOutput"> old-value</span> od
-<span class="gliimConstruct"> if-true</span> st<span class="gliimClause"> equal</span> GG_INFO_EXIST
-<span class="gliimConstruct">     @</span>Previous value for this key is <span class="gliimConstruct">&lt;&lt;p-out</span> od<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> write-array</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;new data&quot;</span><span class="Type"> status</span> st<span class="Type"> old-value</span> od
+<span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
+<span class="Statement">     @</span>Previous value for this key is <span class="Statement">&lt;&lt;p-out</span> od<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 The following is an array key/value service, where a process-scoped array is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> %%</span> /arraysrv
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-
-<span class="gliimConstruct">     do-once</span>
-<span class="gliimConstruct">     new-array</span> h<span class="gliimClause"> hash-size</span> 1024<span class="gliimClause"> process-scope</span>
-<span class="gliimConstruct">     end-do-once</span>
+<span class="Statement"> %%</span> /arraysrv
+<span class="Statement">     do-once</span>
+<span class="Statement">     new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">     end-do-once</span>
 
      <span class="Comment">// Get input parameters</span>
-<span class="gliimConstruct">     get-param</span> op
-<span class="gliimConstruct">     get-param</span> key
-<span class="gliimConstruct">     get-param</span> data
+<span class="Statement">     get-param</span> op
+<span class="Statement">     get-param</span> key
+<span class="Statement">     get-param</span> data
 
-<span class="gliimConstruct">     if-true</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to array, make a copy as input params are request-scoped</span>
-<span class="gliimConstruct">         write-array</span> h<span class="gliimClause"> key key value</span> data<span class="gliimClauseOutput"> old-value</span> old_data<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_INFO_EXIST
-<span class="gliimConstruct">             delete-string</span> old_data
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">         @</span>Added [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="gliimConstruct">         read-array</span> h<span class="gliimClauseOutput"> key</span> (key)<span class="gliimClauseOutput"> value</span> val<span class="gliimClause"> delete</span><span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">             @</span>Not found [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         else-if</span>
+<span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to array, make a copy as input params are request-scoped</span>
+<span class="Statement">         write-array</span> h<span class="Identifier"> key key value</span> data<span class="Type"> old-value</span> old_data<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
+<span class="Statement">             delete-string</span> old_data
+<span class="Statement">         end-if</span>
+<span class="Statement">         @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
+<span class="Statement">         read-array</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Identifier"> delete</span><span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         else-if</span>
              <span class="Comment">// If found, then delete key and value</span>
-<span class="gliimConstruct">             @</span>Deleted [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">             delete-string</span> val
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query array based on key value</span>
-<span class="gliimConstruct">         read-array</span> h<span class="gliimClauseOutput"> key</span> (key)<span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">             @</span>Not found, queried [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Value [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">             @</span>Deleted [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">             delete-string</span> val
+<span class="Statement">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query array based on key value</span>
+<span class="Statement">         read-array</span> h<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Value [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         end-if</span>
+<span class="Statement">     end-if</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 Create and make the application, then run it as service:<br/>
 <div class="shcode">

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> write-list</span> &lt;list&gt;<span class="gliimClause"> key</span> &lt;key&gt; \
-    <span class="gliimClause"> value</span> &lt;value&gt; \
-     [<span class="gliimClause"> append</span> [ &lt;append&gt; ] ]</pre>
+<span class="Statement"> write-list</span> &lt;list&gt;<span class="Identifier"> key</span> &lt;key&gt; \
+    <span class="Identifier"> value</span> &lt;value&gt; \
+     [<span class="Identifier"> append</span> [ &lt;append&gt; ] ]</pre>
 </div><br/>
 write-list adds a pair of key/value strings to the linked &lt;list&gt;, specified with &lt;key&gt; and &lt;value&gt; (in "key" and "value" clauses, collectively called an "element"). <br/>
 <br/>
@@ -243,85 +238,83 @@ If "append" clause is used without boolean expression &lt;append&gt;, or if &lt;
 Add a key/value pair to the end of the list:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> new-list</span> mylist
-<span class="gliimConstruct"> write-list</span> mylist<span class="gliimClause"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;myvalue&quot;</span><span class="gliimClause"> append</span></pre>
+<span class="Statement"> new-list</span> mylist
+<span class="Statement"> write-list</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;myvalue&quot;</span><span class="Identifier"> append</span></pre>
 </div><br/>
 The following is a list that is process-scoped, i.e. it is a linked-list server, which can add, delete, read and position to various elements:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> %%</span> /llsrv
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-
+<span class="Statement"> %%</span> /llsrv
      <span class="Comment">// Create linked list just once for the life of the process</span>
-<span class="gliimConstruct">     do-once</span>
-<span class="gliimConstruct">     new-list</span> t<span class="gliimClause"> process-scope</span>
-<span class="gliimConstruct">     end-do-once</span>
+<span class="Statement">     do-once</span>
+<span class="Statement">     new-list</span> t<span class="Identifier"> process-scope</span>
+<span class="Statement">     end-do-once</span>
 
      <span class="Comment">// Get input parameters</span>
-<span class="gliimConstruct">     get-param</span> op
-<span class="gliimConstruct">     get-param</span> key
-<span class="gliimConstruct">     get-param</span> data
+<span class="Statement">     get-param</span> op
+<span class="Statement">     get-param</span> key
+<span class="Statement">     get-param</span> data
 
-<span class="gliimConstruct">     if-true</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to list</span>
+<span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to list</span>
          <span class="Comment">// Make a copy of key,data so they are Gliimly-allocated</span>
-<span class="gliimConstruct">         write-list</span> t<span class="gliimClause"> key</span> (key)<span class="gliimClause"> value</span> data<span class="gliimClause"> append</span>
-<span class="gliimConstruct">         @</span>Added [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>] value [<span class="gliimConstruct">&lt;&lt;p-out</span> data<span class="gliimConstruct">&gt;&gt;</span>]
+<span class="Statement">         write-list</span> t<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Identifier"> append</span>
+<span class="Statement">         @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>] value [<span class="Statement">&lt;&lt;p-out</span> data<span class="Statement">&gt;&gt;</span>]
 
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete first data and obtain the value deleted</span>
-<span class="gliimConstruct">         position-list</span> t<span class="gliimClause"> first</span>
-<span class="gliimConstruct">         read-list</span> t<span class="gliimClauseOutput"> key</span> (key)<span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">             @</span>Not found
-<span class="gliimConstruct">         else-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete first data and obtain the value deleted</span>
+<span class="Statement">         position-list</span> t<span class="Identifier"> first</span>
+<span class="Statement">         read-list</span> t<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found
+<span class="Statement">         else-if</span>
              <span class="Comment">// If found, then delete key and value</span>
-<span class="gliimConstruct">             @</span>Deleted key [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>], [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">             delete-list</span> t
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement">             @</span>Deleted key [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>], [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">             delete-list</span> t
+<span class="Statement">         end-if</span>
 
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;next&quot;</span> <span class="Comment">// Position to next element</span>
-<span class="gliimConstruct">         position-list</span> t<span class="gliimClause"> next</span><span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_OKAY
-<span class="gliimConstruct">             @</span>Okay
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Not found
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;next&quot;</span> <span class="Comment">// Position to next element</span>
+<span class="Statement">         position-list</span> t<span class="Identifier"> next</span><span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">             @</span>Okay
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Not found
+<span class="Statement">         end-if</span>
 
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;last&quot;</span> <span class="Comment">// Position to last element</span>
-<span class="gliimConstruct">         position-list</span> t<span class="gliimClause"> last</span><span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_OKAY
-<span class="gliimConstruct">             @</span>Okay
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Not found
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;last&quot;</span> <span class="Comment">// Position to last element</span>
+<span class="Statement">         position-list</span> t<span class="Identifier"> last</span><span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">             @</span>Okay
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Not found
+<span class="Statement">         end-if</span>
 
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;previous&quot;</span> <span class="Comment">// Position to element</span>
-<span class="gliimConstruct">         position-list</span> t<span class="gliimClause"> previous</span><span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_OKAY
-<span class="gliimConstruct">             @</span>Okay
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Not found
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;previous&quot;</span> <span class="Comment">// Position to element</span>
+<span class="Statement">         position-list</span> t<span class="Identifier"> previous</span><span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">             @</span>Okay
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Not found
+<span class="Statement">         end-if</span>
 
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;first&quot;</span> <span class="Comment">// Get first element</span>
-<span class="gliimConstruct">         position-list</span> t<span class="gliimClause"> first</span><span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_OKAY
-<span class="gliimConstruct">             @</span>Okay
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Not found
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;first&quot;</span> <span class="Comment">// Get first element</span>
+<span class="Statement">         position-list</span> t<span class="Identifier"> first</span><span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">             @</span>Okay
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Not found
+<span class="Statement">         end-if</span>
 
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Get current element</span>
-<span class="gliimConstruct">         read-list</span> t<span class="gliimClauseOutput"> key</span> (key)<span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">             @</span>Not found
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Key [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>], value [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Get current element</span>
+<span class="Statement">         read-list</span> t<span class="Type"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Key [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>], value [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         end-if</span>
 
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;purge&quot;</span> <span class="Comment">// remove all, keep the list</span>
-<span class="gliimConstruct">         purge-list</span> t
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;purge&quot;</span> <span class="Comment">// remove all, keep the list</span>
+<span class="Statement">         purge-list</span> t
+<span class="Statement">     end-if</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 Create application:<br/>
 <div class="shcode">

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,13 +225,13 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> start-loop</span>  [<span class="gliimClause"> repeat</span> &lt;repeat&gt; ] \
-     [<span class="gliimClauseOutput"> use</span> &lt;loop counter&gt; \
-         [<span class="gliimClause"> start-with</span> &lt;start with&gt; ] [<span class="gliimClause"> add</span> &lt;add&gt; ] ]
+<span class="Statement"> start-loop</span>  [<span class="Identifier"> repeat</span> &lt;repeat&gt; ] \
+     [<span class="Type"> use</span> &lt;loop counter&gt; \
+         [<span class="Identifier"> start-with</span> &lt;start with&gt; ] [<span class="Identifier"> add</span> &lt;add&gt; ] ]
 
      &lt;any code&gt;
 
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 start-loop will execute code between start-loop and "end-loop" clauses certain number of times based on a condition specified and the usage of <a href='http://gliimly.github.io/continue-loop.html'>continue-loop</a> and <a href='http://gliimly.github.io/break-loop.html'>break-loop</a>, which can be used in-between the two.<br/>
 <br/>
@@ -251,26 +246,26 @@ If either of "start-with" or "add" clauses is used, then "use" must be specified
 Print numbers 0 through 19:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> start-loop</span><span class="gliimClause"> repeat</span> 20<span class="gliimClauseOutput"> use</span> p<span class="gliimClause"> start-with</span> 0
-<span class="gliimConstruct">     p-num</span> p
-<span class="gliimConstruct">     @</span>
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">20</span><span class="Type"> use</span> p<span class="Identifier"> start-with</span> <span class="Constant">0</span>
+<span class="Statement">     p-num</span> p
+<span class="Statement">     @</span>
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 A loop that is controlled via <a href='http://gliimly.github.io/continue-loop.html'>continue-loop</a> and <a href='http://gliimly.github.io/break-loop.html'>break-loop</a> statements, displaying numbers from 1 through 30 but omitting those divisible with 3:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-number</span> n
-<span class="gliimConstruct"> set-number</span> max = 30
-<span class="gliimConstruct"> start-loop</span>
-<span class="gliimConstruct">     set-number</span> n add 1
-<span class="gliimConstruct">     if-true</span> n mod 3
-<span class="gliimConstruct">         continue-loop</span>
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct">     if-true</span> n<span class="gliimClause"> greater-than</span> max
-<span class="gliimConstruct">         break-loop</span>
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct">     p-num</span> n
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> set-number</span> n
+<span class="Statement"> set-number</span> max = <span class="Constant">30</span>
+<span class="Statement"> start-loop</span>
+<span class="Statement">     set-number</span> n add <span class="Constant">1</span>
+<span class="Statement">     if-true</span> n mod <span class="Constant">3</span>
+<span class="Statement">         continue-loop</span>
+<span class="Statement">     end-if</span>
+<span class="Statement">     if-true</span> n<span class="Identifier"> greater-than</span> max
+<span class="Statement">         break-loop</span>
+<span class="Statement">     end-if</span>
+<span class="Statement">     p-num</span> n
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>

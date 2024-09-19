@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> silent-header</span></pre>
+<span class="Statement"> silent-header</span></pre>
 </div><br/>
 silent-header will suppress the output of HTTP headers, such as with <a href='http://gliimly.github.io/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='http://gliimly.github.io/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. If you want to suppres the headers across the entire <a href='http://gliimly.github.io/single-run.html'>single-run</a> application, set GG_SILENT_HEADER environment variable to value of "yes" prior to running it.<br/>
 <br/>
-Note that you still have to use <a href='http://gliimly.github.io/out-header.html'>out-header</a> regardless, as it is expected to be there if you output anything; however its actual output will be suppressed. silent-header must be used prior to outputting headers.<br/>
+silent-header must be used prior to outputting headers, meaning either prior to any output (if out-header is not used) or prior to first out-header.<br/>
 <br/>
 There are many uses for silent-header, among them:<br/>
 <ul><li>A single-run program (such as a command line program) may use it to produce generic output, without any headers,<br/>
@@ -243,8 +238,7 @@ There are many uses for silent-header, among them:<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> silent-header</span>
-<span class="gliimConstruct"> out-header</span>
+<span class="Statement"> silent-header</span>
 
  <span class="Comment">// No headers output </span></pre>
 </div><br/>

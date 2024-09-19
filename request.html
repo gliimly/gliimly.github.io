@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -235,10 +230,10 @@ For example, file "buy_item.gliim" handles request "buy-item" by implementing a 
 Here is an example of implementing a request "buy-item":<br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> begin-handler</span> /buy-item
-<span class="gliimConstruct">     get-param</span> some_param
-<span class="gliimConstruct">     @</span>Bought item: <span class="gliimConstruct">&lt;&lt;p-out</span> some_param<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /buy-item
+<span class="Statement">     get-param</span> some_param
+<span class="Statement">     @</span>Bought item: <span class="Statement">&lt;&lt;p-out</span> some_param<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 <div class="vsub"><a id="Make a request with URL"></a>Make a request with URL</div>
 A "request URL" is a URL that an outside caller (such as a web browser) uses to execute your Gliimly code. Aside from the scheme, domain and port, it's made up of:<br/>
@@ -288,9 +283,9 @@ A request name can be made up of alphanumeric characters, hyphen or underscore (
 A request path can reflect a hierarchy, such as for example a hierarchy of resources, methods etc. For instance, if your <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> is:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> begin-handler</span> /items/wine-collection/red-wine/buy-item
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="Statement">     .</span>..
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 then the URL to call it would be:<br/>
 <div class='ncode'>
@@ -327,27 +322,23 @@ A parameter name can be comprised of alphanumeric characters, hyphens and unders
 Structuring your parameters, i.e. the order in a query path or path segments, and which ones (if any) are in a query string, is determined by you. Regardless of your choices, the code that handles a request is the same. In the example used here, you can obtain the parameters in request handler source file "buy_item.gliim":<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> begin-handler</span> /buy-item
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> begin-handler</span> /buy-item
+<span class="Statement">     get-param</span> sku
+<span class="Statement">     get-param</span> price
 
-<span class="gliimConstruct">     get-param</span> sku
-<span class="gliimConstruct">     get-param</span> price
-
-<span class="gliimConstruct">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="gliimClause"> :</span> price, sku<span class="gliimClause"> no-loop</span>
-<span class="gliimConstruct">     @</span>OKAY
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> price, sku<span class="Identifier"> no-loop</span>
+<span class="Statement">     @</span>OKAY
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 For a hierarchical URL path, you would write the same:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> begin-handler</span> /items/wine-collection/red-wine/buy-item
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="Statement">     get-param</span> sku
+<span class="Statement">     get-param</span> price
 
-<span class="gliimConstruct">     get-param</span> sku
-<span class="gliimConstruct">     get-param</span> price
-
-<span class="gliimConstruct">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="gliimClause"> :</span> price, sku<span class="gliimClause"> no-loop</span>
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> price, sku<span class="Identifier"> no-loop</span>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 <div class="vsub"><a id="Maximum length"></a>Maximum length</div>
 Maximum length of a request URL is 2500 bytes.<br/>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> get-message</span> &lt;message&gt;<span class="gliimClauseOutput"> to</span> &lt;string&gt;</pre>
+<span class="Statement"> get-message</span> &lt;message&gt;<span class="Type"> to</span> &lt;string&gt;</pre>
 </div><br/>
 get-message will create a &lt;string&gt; from &lt;message&gt; which must have been created with <a href='http://gliimly.github.io/new-message.html'>new-message</a>. &lt;string&gt; can then be used elsewhere, for instance sent with a remote call (see <a href='http://gliimly.github.io/run-remote.html'>run-remote</a>), written to a file etc.<br/>
 <br/>
@@ -239,18 +234,18 @@ Once get-message is called, &lt;message&gt; is initialized as if it was just cre
 <div class='code'>
 <pre id='code_2'>
  <span class="Comment">// Create a message</span>
-<span class="gliimConstruct"> new-message</span> msg
+<span class="Statement"> new-message</span> msg
  <span class="Comment">// Write data</span>
-<span class="gliimConstruct"> write-message</span> msg<span class="gliimClause"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="gliimClause"> value</span> <span class="Constant">&quot;value1&quot;</span>
+<span class="Statement"> write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
  <span class="Comment">// Get string from message</span>
-<span class="gliimConstruct"> get-message</span> msg<span class="gliimClauseOutput"> to</span> str
-<span class="gliimConstruct"> .</span>..
+<span class="Statement"> get-message</span> msg<span class="Type"> to</span> str
+<span class="Statement"> .</span>..
  <span class="Comment">// Create a new message from string</span>
-<span class="gliimConstruct"> new-message</span> new<span class="gliimClause"> from</span> str
+<span class="Statement"> new-message</span> new<span class="Identifier"> from</span> str
  <span class="Comment">// Read data</span>
-<span class="gliimConstruct"> read-message</span> new<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v
+<span class="Statement"> read-message</span> new<span class="Type"> key</span> k<span class="Type"> value</span> v
  <span class="Comment">// Display  data</span>
-<span class="gliimConstruct"> pf-out</span> <span class="Constant">&quot;[</span><span class="Special">%s</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, k,v</pre>
+<span class="Statement"> pf-out</span> <span class="Constant">&quot;[</span><span class="Special">%s</span><span class="Constant">] [</span><span class="Special">%s</span><span class="Constant">]</span><span class="Special">\n</span><span class="Constant">&quot;</span>, k,v</pre>
 </div><br/>
 The result is:<br/>
 <div class='ncode'>

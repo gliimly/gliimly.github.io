@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,28 +225,28 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> run-remote</span> &lt;service&gt; \
-     (<span class="gliimClause"> local</span> &lt;app name&gt; ) | (<span class="gliimClause"> location</span> &lt;location&gt; ) \
-    <span class="gliimClause"> url-path</span> &lt;service URL&gt; |
+<span class="Statement"> run-remote</span> &lt;service&gt; \
+     (<span class="Identifier"> local</span> &lt;app name&gt; ) | (<span class="Identifier"> location</span> &lt;location&gt; ) \
+    <span class="Identifier"> url-path</span> &lt;service URL&gt; |
          ( \
-        <span class="gliimClause"> app-path</span> &lt;app path&gt; \
-        <span class="gliimClause"> request-path</span> &lt;request path&gt; \
-         [<span class="gliimClause"> url-params</span> &lt;url params&gt; ] \
+        <span class="Identifier"> app-path</span> &lt;app path&gt; \
+        <span class="Identifier"> request-path</span> &lt;request path&gt; \
+         [<span class="Identifier"> url-params</span> &lt;url params&gt; ] \
          ) \
-     [<span class="gliimClause"> request-body content</span> &lt;content&gt; \
-         [<span class="gliimClause"> content-length</span> &lt;content length&gt; ] \
-         [<span class="gliimClause"> content-type</span> &lt;content type&gt; ] ] \
-     [<span class="gliimClause"> method</span> &lt;request method&gt; ] \
-     [<span class="gliimClause"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="gliimConstruct"> ,</span> ... ] ] \
-     [<span class="gliimClause"> timeout</span> &lt;timeout&gt; ]\
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]  \
-     [<span class="gliimClauseOutput"> started</span> &lt;started&gt; ] \
-     [<span class="gliimClauseOutput"> finished-okay</span> &lt;finished okay&gt; ]\
-     [<span class="gliimClauseOutput"> data</span> &lt;data&gt; ] \
-     [<span class="gliimClauseOutput"> error</span> &lt;error&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] \
-     [<span class="gliimClause"> status-text</span> &lt;status text&gt; ] \
-     [<span class="gliimClauseOutput"> handler-status</span> &lt;service status&gt; ]</pre>
+     [<span class="Identifier"> request-body content</span> &lt;content&gt; \
+         [<span class="Identifier"> content-length</span> &lt;content length&gt; ] \
+         [<span class="Identifier"> content-type</span> &lt;content type&gt; ] ] \
+     [<span class="Identifier"> method</span> &lt;request method&gt; ] \
+     [<span class="Identifier"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="Statement"> ,</span> ... ] ] \
+     [<span class="Identifier"> timeout</span> &lt;timeout&gt; ]\
+     [<span class="Type"> status</span> &lt;status&gt; ]  \
+     [<span class="Type"> started</span> &lt;started&gt; ] \
+     [<span class="Type"> finished-okay</span> &lt;finished okay&gt; ]\
+     [<span class="Type"> data</span> &lt;data&gt; ] \
+     [<span class="Type"> error</span> &lt;error&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ] \
+     [<span class="Identifier"> status-text</span> &lt;status text&gt; ] \
+     [<span class="Type"> handler-status</span> &lt;service status&gt; ]</pre>
 </div><br/>
 <br/>
 run-remote is a combination of <a href='http://gliimly.github.io/new-remote.html'>new-remote</a>, <a href='http://gliimly.github.io/call-remote.html'>call-remote</a> and <a href='http://gliimly.github.io/read-remote.html'>read-remote</a> in one. Clauses for each of those can be specified in any order. Only a single &lt;service&gt; can be used. If a call to &lt;service&gt; succeeds, its results are read. Use either:<br/>
@@ -261,21 +256,19 @@ See details for each clause in <a href='http://gliimly.github.io/new-remote.html
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> begin-handler</span> /serv
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> begin-handler</span> /serv
+<span class="Statement">     run-remote</span> nf<span class="Identifier"> local</span> <span class="Constant">&quot;hash-server-yey&quot;</span> \
+        <span class="Identifier"> url-path</span> <span class="Constant">&quot;/hash-server-yey/server/op=add/key=sb_XYZ/data=sdb_123&quot;</span> \
+        <span class="Type"> finished-okay</span> sfok \
+        <span class="Type"> data</span> rdata<span class="Type"> error</span> edata  \
+        <span class="Type"> status</span> st<span class="Type"> handler-status</span> rstatus
+<span class="Statement">     if-true</span> sfok <span class="Identifier"> not-equal</span>  <span class="Constant">1</span><span class="Identifier"> or</span> st <span class="Identifier"> not-equal</span>  GG_OKAY
+<span class="Statement">         @</span>Call did not succeed
+<span class="Statement">     else-if</span>
+<span class="Statement">         @</span>Result is <span class="Statement">&lt;&lt;p-out</span> rdata&gt; and (any) error is <span class="Statement">&lt;&lt;p-out</span> edata<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     end-if</span>
 
-<span class="gliimConstruct">     run-remote</span> nf<span class="gliimClause"> local</span> <span class="Constant">&quot;hash-server-yey&quot;</span> \
-        <span class="gliimClause"> url-path</span> <span class="Constant">&quot;/hash-server-yey/server/op=add/key=sb_XYZ/data=sdb_123&quot;</span> \
-        <span class="gliimClauseOutput"> finished-okay</span> sfok \
-        <span class="gliimClauseOutput"> data</span> rdata<span class="gliimClauseOutput"> error</span> edata  \
-        <span class="gliimClauseOutput"> status</span> st<span class="gliimClauseOutput"> handler-status</span> rstatus
-<span class="gliimConstruct">     if-true</span> sfok <span class="gliimClause"> not-equal</span>  1<span class="gliimClause"> or</span> st <span class="gliimClause"> not-equal</span>  GG_OKAY
-<span class="gliimConstruct">         @</span>Call did not succeed
-<span class="gliimConstruct">     else-if</span>
-<span class="gliimConstruct">         @</span>Result is <span class="gliimConstruct">&lt;&lt;p-out</span> rdata&gt; and (any) error is <span class="gliimConstruct">&lt;&lt;p-out</span> edata<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     end-if</span>
-
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Distributed computing</span><br/>

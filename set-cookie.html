@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,14 +225,14 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> set-cookie</span> &lt;cookie name&gt;=&lt;cookie value&gt; \
-     [<span class="gliimClause"> expires</span> &lt;expiration&gt; ] \
-     [<span class="gliimClause"> path</span> &lt;path&gt; ] \
-     [<span class="gliimClause"> same-site</span> <span class="Constant">&quot;Lax&quot;</span>|<span class="Constant">&quot;Strict&quot;</span>|<span class="Constant">&quot;None&quot;</span> ] \
-     [<span class="gliimClause"> no-http-only</span> [ &lt;no-http-only&gt; ] ] \
-     [<span class="gliimClause"> secure</span> [ &lt;secure&gt; ] ]</pre>
+<span class="Statement"> set-cookie</span> &lt;cookie name&gt;=&lt;cookie value&gt; \
+     [<span class="Identifier"> expires</span> &lt;expiration&gt; ] \
+     [<span class="Identifier"> path</span> &lt;path&gt; ] \
+     [<span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span>|<span class="Constant">&quot;Strict&quot;</span>|<span class="Constant">&quot;None&quot;</span> ] \
+     [<span class="Identifier"> no-http-only</span> [ &lt;no-http-only&gt; ] ] \
+     [<span class="Identifier"> secure</span> [ &lt;secure&gt; ] ]</pre>
 </div><br/>
-To set a cookie named by string &lt;cookie name&gt; to string value &lt;cookie value&gt;, use set-cookie statement. A cookie can be set before or after sending out a header (see <a href='http://gliimly.github.io/out-header.html'>out-header</a>). However a cookie must be set prior to outputting any actual response (such as with <a href='http://gliimly.github.io/output-statement.html'>output-statement</a> or <a href='http://gliimly.github.io/p-out.html'>p-out</a> for example), or the program will error out and stop. <br/>
+To set a cookie named by string &lt;cookie name&gt; to string value &lt;cookie value&gt;, use set-cookie statement. A cookie must be set prior to outputting any actual response (such as with <a href='http://gliimly.github.io/output-statement.html'>output-statement</a> or <a href='http://gliimly.github.io/p-out.html'>p-out</a> for example), or the program will <a href='http://gliimly.github.io/error-handling.html'>error out</a> and stop. <br/>
 <br/>
 Cookie's &lt;expiration&gt; date (as a a string, see <a href='http://gliimly.github.io/get-time.html'>get-time</a>) is given with "expires" clause. The default is session cookie meaning the cookie expires when client session closes.<br/>
 <br/>
@@ -254,14 +249,14 @@ Cookies are commonly used for session maintenance, tracking and other purposes. 
 To set a cookie named "my_cookie_name" to value "XYZ", that will go with the reply and expire in 1 year and 2 months from now, use:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> get-time</span><span class="gliimClauseOutput"> to</span> mytime<span class="gliimClause"> year</span> 1<span class="gliimClause"> month</span> 2
-<span class="gliimConstruct"> set-string</span> my_cookie_value=<span class="Constant">&quot;XYZ&quot;</span>
-<span class="gliimConstruct"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="gliimClause"> expires</span> mytime<span class="gliimClause"> path</span> <span class="Constant">&quot;/&quot;</span><span class="gliimClause"> same-site</span> <span class="Constant">&quot;Lax&quot;</span></pre>
+<span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span>
+<span class="Statement"> set-string</span> my_cookie_value=<span class="Constant">&quot;XYZ&quot;</span>
+<span class="Statement"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> expires</span> mytime<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span></pre>
 </div><br/>
 A cookie that can be used by JavaScript (meaning we use no-http-only clause):<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="gliimClause"> no-http-only</span></pre>
+<span class="Statement"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> no-http-only</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Cookies</span><br/>

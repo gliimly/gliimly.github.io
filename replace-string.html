@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,10 +225,10 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> replace-string</span> &lt;string&gt; \
-     (<span class="gliimClause"> copy</span> &lt;replacement&gt; ) | (<span class="gliimClause"> copy-end</span> &lt;replacement&gt; ) \
-     [<span class="gliimClause"> start-with</span> &lt;start with&gt; ] \
-     [<span class="gliimClause"> length</span> &lt;length&gt; ]</pre>
+<span class="Statement"> replace-string</span> &lt;string&gt; \
+     (<span class="Identifier"> copy</span> &lt;replacement&gt; ) | (<span class="Identifier"> copy-end</span> &lt;replacement&gt; ) \
+     [<span class="Identifier"> start-with</span> &lt;start with&gt; ] \
+     [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
 </div><br/>
 replace-string will replace part of &lt;string&gt; with &lt;replacement&gt; string. "copy" clause will make a replacement in the leading part of &lt;string&gt;, while "copy-end" will make a replacement in the trailing part of &lt;string&gt;.<br/>
 <br/>
@@ -248,30 +243,30 @@ If either "start-with" or "length" is negative, it's the same as if not specifie
 After replace-string below, string "a" will be "none string is here":<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
-<span class="gliimConstruct"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
-<span class="gliimConstruct"> replace-string</span> a<span class="gliimClause"> copy</span> b</pre>
+<span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
+<span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
+<span class="Statement"> replace-string</span> a<span class="Identifier"> copy</span> b</pre>
 </div><br/>
 After replace-string below, string "a" will be "some string is none":<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
-<span class="gliimConstruct"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
-<span class="gliimConstruct"> replace-string</span> a<span class="gliimClause"> copy-end</span> b</pre>
+<span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
+<span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
+<span class="Statement"> replace-string</span> a<span class="Identifier"> copy-end</span> b</pre>
 </div><br/>
 In this example, "a" will be "somnontring is here":<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
-<span class="gliimConstruct"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
-<span class="gliimConstruct"> replace-string</span> a<span class="gliimClause"> copy</span> b<span class="gliimClause"> start-with</span> 3<span class="gliimClause"> length</span> 3</pre>
+<span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
+<span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
+<span class="Statement"> replace-string</span> a<span class="Identifier"> copy</span> b<span class="Identifier"> start-with</span> <span class="Constant">3</span><span class="Identifier"> length</span> <span class="Constant">3</span></pre>
 </div><br/>
 In the following example, "a" will be "some string inohere":<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
-<span class="gliimConstruct"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
-<span class="gliimConstruct"> replace-string</span> a<span class="gliimClause"> copy-end</span> b<span class="gliimClause"> start-with</span> 6<span class="gliimClause"> length</span> 2</pre>
+<span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
+<span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
+<span class="Statement"> replace-string</span> a<span class="Identifier"> copy-end</span> b<span class="Identifier"> start-with</span> <span class="Constant">6</span><span class="Identifier"> length</span> <span class="Constant">2</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

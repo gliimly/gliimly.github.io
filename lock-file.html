@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> lock-file</span> &lt;file path&gt;<span class="gliimClauseOutput"> id</span> &lt;lock id&gt;<span class="gliimClauseOutput"> status</span> &lt;status&gt;</pre>
+<span class="Statement"> lock-file</span> &lt;file path&gt;<span class="Type"> id</span> &lt;lock id&gt;<span class="Type"> status</span> &lt;status&gt;</pre>
 </div><br/>
 lock-file attempts to create file with the full path of &lt;file path&gt; (deleting it if existed), and exclusively lock it. If successful, no other process can do the same unless current process ends or calls <a href='http://gliimly.github.io/unlock-file.html'>unlock-file</a>. This statement is non-blocking, thus you can check in a sleepy loop for success (see <a href='http://gliimly.github.io/pause-program.html'>pause-program</a>). <br/>
 <br/>
@@ -248,41 +243,40 @@ You can use any file name (likely choose a name that signifies the purpose of a 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> %%</span> /locktest
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> %%</span> /locktest
      <span class="Comment">// Get application home directory</span>
-<span class="gliimConstruct">     get-app</span><span class="gliimClause"> directory</span><span class="gliimClauseOutput"> to</span> dir
+<span class="Statement">     get-app</span><span class="Identifier"> directory</span><span class="Type"> to</span> dir
      <span class="Comment">// Create lock file name</span>
-<span class="gliimConstruct">     write-string</span> fname
-<span class="gliimConstruct">     @</span><span class="gliimConstruct">&lt;&lt;p-out</span> dir<span class="gliimConstruct">&gt;&gt;</span>/.lock
-<span class="gliimConstruct">     end-write-string</span>
+<span class="Statement">     write-string</span> fname
+<span class="Statement">     @</span><span class="Statement">&lt;&lt;p-out</span> dir<span class="Statement">&gt;&gt;</span>/.lock
+<span class="Statement">     end-write-string</span>
      <span class="Comment">// Enter loop in which something is done, OR, program waits for others to complete their work before doing its own</span>
-<span class="gliimConstruct">     set-number</span> lockid
-<span class="gliimConstruct">     start-loop</span>
+<span class="Statement">     set-number</span> lockid
+<span class="Statement">     start-loop</span>
          <span class="Comment">// Attempt to lock file</span>
-<span class="gliimConstruct">         lock-file</span> fname<span class="gliimClauseOutput"> id</span> lockid<span class="gliimClauseOutput"> status</span> lockst
+<span class="Statement">         lock-file</span> fname<span class="Type"> id</span> lockid<span class="Type"> status</span> lockst
          <span class="Comment">// Check the status of locking</span>
-<span class="gliimConstruct">         if-true</span> lockst<span class="gliimClause"> equal</span> GG_OKAY
+<span class="Statement">         if-true</span> lockst<span class="Identifier"> equal</span> GG_OKAY
              <span class="Comment">// File successfully locked, simulate working for </span><span class="Constant">20</span><span class="Comment"> seconds</span>
-<span class="gliimConstruct">             @</span>WORKING
-<span class="gliimConstruct">             pause-program</span> 20000
-<span class="gliimConstruct">             @</span>DONE
+<span class="Statement">             @</span>WORKING
+<span class="Statement">             pause-program</span> <span class="Constant">20000</span>
+<span class="Statement">             @</span>DONE
              <span class="Comment">// Exit while loop</span>
-<span class="gliimConstruct">             break-loop</span>
-<span class="gliimConstruct">         else-if</span> lockst<span class="gliimClause"> equal</span> GG_ERR_FAILED
+<span class="Statement">             break-loop</span>
+<span class="Statement">         else-if</span> lockst<span class="Identifier"> equal</span> GG_ERR_FAILED
              <span class="Comment">// Another process holds the lock, wait, try again for </span><span class="Constant">1</span><span class="Comment"> second</span>
-<span class="gliimConstruct">             pause-program</span> 1000
-<span class="gliimConstruct">             @</span>WAITING
-<span class="gliimConstruct">             continue-loop</span>
-<span class="gliimConstruct">         else-if</span> lockst<span class="gliimClause"> equal</span> GG_ERR_OPEN<span class="gliimClause"> or</span> lockst<span class="gliimClause"> equal</span> GG_ERR_INVALID
+<span class="Statement">             pause-program</span> <span class="Constant">1000</span>
+<span class="Statement">             @</span>WAITING
+<span class="Statement">             continue-loop</span>
+<span class="Statement">         else-if</span> lockst<span class="Identifier"> equal</span> GG_ERR_OPEN<span class="Identifier"> or</span> lockst<span class="Identifier"> equal</span> GG_ERR_INVALID
              <span class="Comment">// Errors</span>
-<span class="gliimConstruct">             @</span>BAD LOCK
-<span class="gliimConstruct">             exit-handler</span>
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">     end-loop</span>
+<span class="Statement">             @</span>BAD LOCK
+<span class="Statement">             exit-handler</span>
+<span class="Statement">         end-if</span>
+<span class="Statement">     end-loop</span>
      <span class="Comment">// Once done, unlock file</span>
-<span class="gliimConstruct">     unlock-file</span><span class="gliimClause"> id</span> lockid
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">     unlock-file</span><span class="Identifier"> id</span> lockid
+<span class="Statement"> %%</span></pre>
 </div><br/>
 %%<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

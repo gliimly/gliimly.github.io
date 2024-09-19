@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> begin-handler</span> &lt;request path&gt; [<span class="gliimClause"> sub-handler</span> ]
+<span class="Statement"> begin-handler</span> &lt;request path&gt; [<span class="Identifier"> sub-handler</span> ]
      &lt;any code&gt;
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 begin-handler starts the implementation of a <a href='http://gliimly.github.io/request.html'>request</a> handler for &lt;request path&gt; (see <a href='http://gliimly.github.io/request.html'>request</a>), which is &lt;any code&gt; up to end-handler. &lt;request path&gt; is not quoted.<br/>
 <br/>
@@ -249,18 +244,16 @@ The source .gliim file name that implements a given begin-handler is a decorated
 The following begin-handler is implemented in file "items__wines__red_wine.gliim":<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> begin-handler</span>  /items/wines/red-wine
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     @</span>This is a request handler to display a list of red wines!
-<span class="gliimConstruct"> end-handler</span></pre>
+<span class="Statement"> begin-handler</span>  /items/wines/red-wine
+<span class="Statement">     @</span>This is a request handler to display a list of red wines!
+<span class="Statement"> end-handler</span></pre>
 </div><br/>
 Another way to write this is:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> %%</span>  /items/wines/red-wine
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     @</span>This is a request handler to display a list of red wines!
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement"> %%</span>  /items/wines/red-wine
+<span class="Statement">     @</span>This is a request handler to display a list of red wines!
+<span class="Statement"> %%</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Service processing</span><br/>

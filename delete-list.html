@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> delete-list</span> &lt;list&gt; [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> delete-list</span> &lt;list&gt; [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 delete-list will delete current element in linked &lt;list&gt; created with <a href='http://gliimly.github.io/new-list.html'>new-list</a>. A current list element is the one that will be subject to statements like <a href='http://gliimly.github.io/read-list.html'>read-list</a> and <a href='http://gliimly.github.io/write-list.html'>write-list</a>. See <a href='http://gliimly.github.io/position-list.html'>position-list</a> for more details on the current element.<br/>
 <br/>
@@ -240,7 +235,7 @@ Once an element is deleted, the current element becomes either the next one (if 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> delete-list</span> mylist<span class="gliimClauseOutput"> status</span> st</pre>
+<span class="Statement"> delete-list</span> mylist<span class="Type"> status</span> st</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Linked list</span><br/>

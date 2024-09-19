@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,28 +225,27 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> split-string</span>  &lt;string&gt;<span class="gliimClause"> with</span> &lt;delimiter&gt;<span class="gliimClauseOutput"> to</span> &lt;result&gt;
+<span class="Statement"> split-string</span>  &lt;string&gt;<span class="Identifier"> with</span> &lt;delimiter&gt;<span class="Type"> to</span> &lt;result&gt;
 
-<span class="gliimConstruct"> split-string</span><span class="gliimClause"> delete</span> &lt;result&gt;</pre>
+<span class="Statement"> split-string</span><span class="Identifier"> delete</span> &lt;result&gt;</pre>
 </div><br/>
 split-string will find all instances of string &lt;delimiter&gt; in &lt;string&gt; and then split it into pieces delimited by string &lt;delimiter&gt;. The &lt;result&gt; can be used with <a href='http://gliimly.github.io/read-split.html'>read-split</a> to obtain the pieces and with split-string to delete it (use "delete" clause with &lt;result&gt; to delete it).<br/>
 <br/>
 All pieces produced will be trimmed both on left and right. If a piece is double quoted, then double quotes are removed. For instance save this code in "ps.gliim" in a separate directory:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> %%</span> parse
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct">     set-string</span> clist = <span class="Constant">&quot;a , b, </span><span class="Special">\&quot;</span><span class="Constant">c , d</span><span class="Special">\&quot;</span><span class="Constant"> , e&quot;</span>
-<span class="gliimConstruct">     split-string</span> clist<span class="gliimClause"> with</span> <span class="Constant">&quot;,&quot;</span><span class="gliimClauseOutput"> to</span> res<span class="gliimClauseOutput"> count</span> tot
-<span class="gliimConstruct">     start-loop</span><span class="gliimClause"> repeat</span> tot<span class="gliimClauseOutput"> use</span> i
-<span class="gliimConstruct">         read-split</span> i<span class="gliimClause"> from</span> res<span class="gliimClauseOutput"> to</span> item<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> not-equal</span> GG_OKAY
-<span class="gliimConstruct">             break-loop</span>
-<span class="gliimConstruct">         end-if</span>
+<span class="Statement"> %%</span> parse
+<span class="Statement">     set-string</span> clist = <span class="Constant">&quot;a , b, </span><span class="Special">\&quot;</span><span class="Constant">c , d</span><span class="Special">\&quot;</span><span class="Constant"> , e&quot;</span>
+<span class="Statement">     split-string</span> clist<span class="Identifier"> with</span> <span class="Constant">&quot;,&quot;</span><span class="Type"> to</span> res<span class="Type"> count</span> tot
+<span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
+<span class="Statement">         read-split</span> i<span class="Identifier"> from</span> res<span class="Type"> to</span> item<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">             break-loop</span>
+<span class="Statement">         end-if</span>
          <span class="Comment">// Output each item</span>
-<span class="gliimConstruct">         pf-out</span> <span class="Constant">&quot; [</span><span class="Special">%s</span><span class="Constant">]&quot;</span>, item
-<span class="gliimConstruct">     end-loop</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">         pf-out</span> <span class="Constant">&quot; [</span><span class="Special">%s</span><span class="Constant">]&quot;</span>, item
+<span class="Statement">     end-loop</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 Create the application, build and run it:<br/>
 <div class="shcode">
@@ -270,26 +264,25 @@ split-string is useful for parsing CSV (Comma Separated Values) or any other kin
 The following will parse a string containing name/value pairs (such as "name=value") separated by string "&amp;amp;":<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> %%</span> /parse-url
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement"> %%</span> /parse-url
      <span class="Comment">// Data to parse - data/value pairs delimited by </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment"> string, and data and value delimited by equal sign:</span>
-<span class="gliimConstruct">     set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
+<span class="Statement">     set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
 
      <span class="Comment">// Split string first into pieces based on </span><span class="Constant">&quot;amp;&quot;</span>
-<span class="gliimConstruct">     split-string</span> url<span class="gliimClause"> with</span> <span class="Constant">&quot;&amp;amp;&quot;</span><span class="gliimClauseOutput"> to</span> url_var<span class="gliimClauseOutput"> count</span> tot
+<span class="Statement">     split-string</span> url<span class="Identifier"> with</span> <span class="Constant">&quot;&amp;amp;&quot;</span><span class="Type"> to</span> url_var<span class="Type"> count</span> tot
 
      <span class="Comment">// For each of name=value pairs, split it with equal sign</span>
-<span class="gliimConstruct">     start-loop</span><span class="gliimClause"> repeat</span> tot<span class="gliimClauseOutput"> use</span> i
+<span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
          <span class="Comment">// Get a url pair (each separated with </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment">)</span>
-<span class="gliimConstruct">         read-split</span> i<span class="gliimClause"> from</span> url_var<span class="gliimClauseOutput"> to</span> item
+<span class="Statement">         read-split</span> i<span class="Identifier"> from</span> url_var<span class="Type"> to</span> item
          <span class="Comment">// Then split that with </span><span class="Constant">&quot;=&quot;</span><span class="Comment"> </span>
-<span class="gliimConstruct">         split-string</span> item<span class="gliimClause"> with</span> <span class="Constant">&quot;=&quot;</span><span class="gliimClauseOutput"> to</span> item_var
+<span class="Statement">         split-string</span> item<span class="Identifier"> with</span> <span class="Constant">&quot;=&quot;</span><span class="Type"> to</span> item_var
          <span class="Comment">// Get name and value</span>
-<span class="gliimConstruct">         read-split</span> 1<span class="gliimClause"> from</span> item_var<span class="gliimClauseOutput"> to</span> name
-<span class="gliimConstruct">         read-split</span> 2<span class="gliimClause"> from</span> item_var<span class="gliimClauseOutput"> to</span> val
-<span class="gliimConstruct">         pf-out</span> <span class="Constant">&quot;Variable </span><span class="Special">%s</span><span class="Constant"> has value </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, val
-<span class="gliimConstruct">     end-loop</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">         read-split</span> <span class="Constant">1</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> name
+<span class="Statement">         read-split</span> <span class="Constant">2</span><span class="Identifier"> from</span> item_var<span class="Type"> to</span> val
+<span class="Statement">         pf-out</span> <span class="Constant">&quot;Variable </span><span class="Special">%s</span><span class="Constant"> has value </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, name, val
+<span class="Statement">     end-loop</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 The result is:<br/>
 <div class='ncode'>

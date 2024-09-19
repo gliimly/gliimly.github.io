@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,23 +225,23 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> run-query</span> \
+<span class="Statement"> run-query</span> \
      [ @&lt;database&gt; ] \
      = &lt;query text&gt; \
-     [<span class="gliimClause"> input</span> &lt;input parameter&gt; [ , ... ] ] \
-     [<span class="gliimClauseOutput"> output</span> ( &lt;column name&gt; [<span class="gliimClause"> noencode</span> |<span class="gliimClause"> urlencode</span> |<span class="gliimClause"> webencode</span> ] ) [ , ... ] ] \
-     [<span class="gliimClause"> no-loop</span> ] \
-     [<span class="gliimClauseOutput"> error</span> &lt;error&gt; ] \
-     [<span class="gliimClauseOutput"> error-text</span> &lt;error text&gt; ] \
-     [<span class="gliimClauseOutput"> affected-rows</span> &lt;affected rows&gt; ] \
-     [<span class="gliimClauseOutput"> row-count</span> &lt;row count&gt; ] \
-     [<span class="gliimClause"> on-error-continue</span> |<span class="gliimClause"> on-error-exit</span> ]
+     [<span class="Identifier"> input</span> &lt;input parameter&gt; [ , ... ] ] \
+     [<span class="Type"> output</span> ( &lt;column name&gt; [<span class="Identifier"> noencode</span> |<span class="Identifier"> urlencode</span> |<span class="Identifier"> webencode</span> ] ) [ , ... ] ] \
+     [<span class="Identifier"> no-loop</span> ] \
+     [<span class="Type"> error</span> &lt;error&gt; ] \
+     [<span class="Type"> error-text</span> &lt;error text&gt; ] \
+     [<span class="Type"> affected-rows</span> &lt;affected rows&gt; ] \
+     [<span class="Type"> row-count</span> &lt;row count&gt; ] \
+     [<span class="Identifier"> on-error-continue</span> |<span class="Identifier"> on-error-exit</span> ]
 
      &lt;any code&gt;
 
  [ end-query ]
 
-<span class="gliimConstruct"> run-prepared-query</span> \
+<span class="Statement"> run-prepared-query</span> \
      ... ( the same as run-query ) ...</pre>
 </div><br/>
 run-query executes a query specified with string &lt;query text&gt;.<br/>
@@ -257,18 +252,18 @@ run-query executes a query specified with string &lt;query text&gt;.<br/>
 "output" clause is a comma-delimited list of the query's output columns. The column names do not need to match the actual query column names, rather you can name them anyway you want, as long as they positionally correspond. String variables with the same name are created for each column name and query's output assigned to them. For example:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="gliimClauseOutput"> output</span> first_name, last_name
-<span class="gliimConstruct">     @</span>First name <span class="gliimConstruct">&lt;&lt;p-out</span> first_name<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     @</span>Last name <span class="gliimConstruct">&lt;&lt;p-out</span> last_name<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name, last_name
+<span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 Note that the output is by default web-encoded. You can set the encoding of column output by using either "noencode" (for no encoding), "urlencode" (for URL-encoding) or "webencode" (for web-encoding) clause right after column name (see <a href='http://gliimly.github.io/encode-web.html'>encode-web</a>, <a href='http://gliimly.github.io/encode-url.html'>encode-url</a> for description of encodings). For example, here the first output column will not be encoded, and the second will be URL-encoded:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="gliimClauseOutput"> output</span> first_name<span class="gliimClause"> noencode</span>, last_name<span class="gliimClause"> urlencode</span>
-<span class="gliimConstruct">     @</span>First name <span class="gliimConstruct">&lt;&lt;p-out</span> first_name<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">     @</span>Last name <span class="gliimConstruct">&lt;&lt;p-out</span> last_name<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name<span class="Identifier"> noencode</span>, last_name<span class="Identifier"> urlencode</span>
+<span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 <div class="vsub"><a id="Input"></a>Input</div>
 The query's input parameters (if any) are specified with '%s' in the &lt;query text&gt; (note that single quotes must be included). The actual input parameters are provided after "input" clause (you can instead use semicolon, i.e. ":"), in a comma-separated list. Each input variable is a string regardless of the actual column type, as the database engine will interpret the data according to its usage. Each input variable is trimmed (left and right) before used in a query. <br/>
@@ -289,10 +284,10 @@ Note that if database connection was lost, and could not be reestablished, the r
 <div class='code'>
 <pre id='code_4'>
  <span class="Comment">// No space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
-<span class="gliimConstruct"> run-query</span> @db =<span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="gliimClauseOutput"> output</span> firstName, lastName<span class="gliimClause"> input</span> empid
+<span class="Statement"> run-query</span> @db =<span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 
  <span class="Comment">// Space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
-<span class="gliimConstruct"> run-query</span><span class="gliimClause"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="gliimClauseOutput"> output</span> firstName, lastName<span class="gliimClause"> input</span> empid</pre>
+<span class="Statement"> run-query</span><span class="Identifier"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid</pre>
 </div><br/>
 <div class="vsub"><a id="run-prepared-query"></a>run-prepared-query</div>
 run-prepared-query is the same as run-query except that a &lt;query&gt; is prepared. That means it is pre-compiled and its execution plan is created once, instead of each time a query executes. The statement is cached going forward for the life of the process (with the rare exception of re-establishing a lost database connection). It means effectively an unlimited number of requests will be reusing the query statement, which generally implies higher performance. Note that databases do not allow prepared queries for DDL (Data Definition Language), as there is not much benefit in general, hence only DML queries (such as INSERT, DELETE etc.) and SELECT can be prepared.<br/>
@@ -315,16 +310,16 @@ Note that in Postgres, with prepared statements you may get an error like "could
 Select first and last name (output is firstName and lastName) based on employee ID (specified by input parameter empid):<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> get-param</span> empid
-<span class="gliimConstruct"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="gliimClauseOutput"> output</span> firstName, lastName<span class="gliimClause"> input</span> empid
-<span class="gliimConstruct">     @</span>Employee is <span class="gliimConstruct">&lt;&lt;p-out</span>  firstName<span class="gliimConstruct">&gt;&gt;</span> <span class="gliimConstruct">&lt;&lt;p-out</span> lastName<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct"> end-query</span></pre>
+<span class="Statement"> get-param</span> empid
+<span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
+<span class="Statement">     @</span>Employee is <span class="Statement">&lt;&lt;p-out</span>  firstName<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> lastName<span class="Statement">&gt;&gt;</span>
+<span class="Statement"> end-query</span></pre>
 </div><br/>
 Prepared query without a loop and obtain error code and affected rows:<br/>
 <div class='code'>
 <pre id='code_6'>
-<span class="gliimConstruct"> run-prepared-query</span> @db = qry<span class="gliimClause"> no-loop</span> \
-    <span class="gliimClauseOutput"> error</span> ecode<span class="gliimClauseOutput"> affected-rows</span> arows<span class="gliimClause"> input</span> stock_name, stock_price, stock_price</pre>
+<span class="Statement"> run-prepared-query</span> @db = qry<span class="Identifier"> no-loop</span> \
+    <span class="Type"> error</span> ecode<span class="Type"> affected-rows</span> arows<span class="Identifier"> input</span> stock_name, stock_price, stock_price</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Database</span><br/>

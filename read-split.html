@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> read-split</span> &lt;piece number&gt;<span class="gliimClause"> from</span> &lt;split string&gt;<span class="gliimClauseOutput"> to</span> &lt;piece&gt; [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> read-split</span> &lt;piece number&gt;<span class="Identifier"> from</span> &lt;split string&gt;<span class="Type"> to</span> &lt;piece&gt; [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 read-split will read split string pieces from &lt;split string&gt; which is produced by <a href='http://gliimly.github.io/split-string.html'>split-string</a>. &lt;piece number&gt; is the number (starting with 1) of the piece to retrieve in string &lt;piece&gt;. &lt;status&gt; number (in "status" clause) is GG_OKAY if successful, or GG_ERR_OVERFLOW if &lt;piece number&gt; is not valid (meaning it's outside of the range of pieces parsed by split-string).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> read-file</span> &lt;file&gt; | (<span class="gliimClause"> file-id</span> &lt;file id&gt; ) \
-    <span class="gliimClauseOutput"> to</span> &lt;content&gt; \
-     [<span class="gliimClause"> position</span> &lt;position&gt; ] \
-     [<span class="gliimClause"> length</span> &lt;length&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> read-file</span> &lt;file&gt; | (<span class="Identifier"> file-id</span> &lt;file id&gt; ) \
+    <span class="Type"> to</span> &lt;content&gt; \
+     [<span class="Identifier"> position</span> &lt;position&gt; ] \
+     [<span class="Identifier"> length</span> &lt;length&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 <div class="vsub"><a id="Without file-id"></a>Without file-id</div>
 This is a simple method of reading a file. File named &lt;file&gt; is opened, data read, and file is closed. <br/>
@@ -266,20 +261,20 @@ If "status" clause is used, then the number of bytes read is stored to &lt;statu
 To read the entire file and create both the variable that holds its content and the status variable:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> read-file</span> <span class="Constant">&quot;/home/user/some_file&quot;</span><span class="gliimClauseOutput"> to</span> file_content<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct"> if-true</span> st<span class="gliimClause"> greater-than</span> 0
-<span class="gliimConstruct">     @</span>Read:
-<span class="gliimConstruct">     @</span>&lt;hr/&gt;
-<span class="gliimConstruct">     p-web</span> file_content
-<span class="gliimConstruct">     @</span>&lt;hr/&gt;
-<span class="gliimConstruct"> else-if</span>
-<span class="gliimConstruct">     @</span>Could not read (<span class="gliimConstruct">&lt;&lt;pf-out</span> <span class="Constant">&quot;</span><span class="Special">%ld</span><span class="Constant">&quot;</span>, st<span class="gliimConstruct">&gt;&gt;</span>)
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> read-file</span> <span class="Constant">&quot;/home/user/some_file&quot;</span><span class="Type"> to</span> file_content<span class="Type"> status</span> st
+<span class="Statement"> if-true</span> st<span class="Identifier"> greater-than</span> <span class="Constant">0</span>
+<span class="Statement">     @</span>Read:
+<span class="Statement">     @</span>&lt;hr/&gt;
+<span class="Statement">     p-web</span> file_content
+<span class="Statement">     @</span>&lt;hr/&gt;
+<span class="Statement"> else-if</span>
+<span class="Statement">     @</span>Could not read (<span class="Statement">&lt;&lt;pf-out</span> <span class="Constant">&quot;</span><span class="Special">%ld</span><span class="Constant">&quot;</span>, st<span class="Statement">&gt;&gt;</span>)
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 To read 10 bytes starting at position 20 (with position 0 being the first byte):<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> read-file</span> <span class="Constant">&quot;/home/user/some_file&quot;</span><span class="gliimClauseOutput"> to</span> file_content<span class="gliimClause"> position</span> 20<span class="gliimClause"> length</span> 10</pre>
+<span class="Statement"> read-file</span> <span class="Constant">&quot;/home/user/some_file&quot;</span><span class="Type"> to</span> file_content<span class="Identifier"> position</span> <span class="Constant">20</span><span class="Identifier"> length</span> <span class="Constant">10</span></pre>
 </div><br/>
 See <a href='http://gliimly.github.io/open-file.html'>open-file</a> for an example with "file-id" clause.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

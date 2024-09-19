@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -277,7 +272,7 @@ If you wish to suppress the output of HTTP headers for all requests, set environ
 <pre id='code_6'>
 <span class="Statement">export</span> <span class="Identifier">GG_SILENT_HEADER</span>=yes</pre>
 </div><br/>
-This will suppress the effect of <a href='http://gliimly.github.io/out-header.html'>out-header</a>, or for any other case where headers are output. This has the same effect as <a href='http://gliimly.github.io/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
+This will suppress the output of HTTP headers (either the default or with <a href='http://gliimly.github.io/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='http://gliimly.github.io/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
 <div class="vsub"><a id="URL-encoding the input"></a>URL-encoding the input</div>
 Any data in "--req" option (and consequently in PATH_INFO or QUERY_STRING environment vairables if calling directly from shell) must be formatted to be a valid URL; for example, data that contains special characters (like "&amp;" or "?") must be URL-encoded, for instance:<br/>
 <div class="shcode">

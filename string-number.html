@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> string-number</span> &lt;string&gt; [<span class="gliimClauseOutput"> to</span> &lt;number&gt; ] \
-     [<span class="gliimClause"> base</span> &lt;base&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> string-number</span> &lt;string&gt; [<span class="Type"> to</span> &lt;number&gt; ] \
+     [<span class="Identifier"> base</span> &lt;base&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 &lt;string&gt; is converted to &lt;number&gt; in "to" clause, using &lt;base&gt; in "base" clause, where &lt;base&gt; is by default either 10, or 16 (if number is prefixed with "0x" or "0X", excluding any leading minus or plus sign) or 8 (if number is prefixed with "0", excluding any leading minus or plus sign). <br/>
 <br/>
@@ -245,7 +240,7 @@ If there are trailing invalid characters (for instance "182xy" for base 10), &lt
 In this example, number "n" would be 49 and status "st" would be GG_OKAY:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> string-number</span> <span class="Constant">&quot;49&quot;</span><span class="gliimClauseOutput"> to</span> n<span class="gliimClause"> base</span> 10<span class="gliimClauseOutput"> status</span> st</pre>
+<span class="Statement"> string-number</span> <span class="Constant">&quot;49&quot;</span><span class="Type"> to</span> n<span class="Identifier"> base</span> <span class="Constant">10</span><span class="Type"> status</span> st</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Numbers</span><br/>

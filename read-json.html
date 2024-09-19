@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> read-json</span> &lt;json&gt; \
-     [<span class="gliimClauseOutput"> key</span> &lt;key&gt; ] \
-     [<span class="gliimClauseOutput"> value</span> &lt;value&gt; ] \
-     [<span class="gliimClauseOutput"> type</span> &lt;type&gt; ] \
-     [<span class="gliimClause"> next</span> ]</pre>
+<span class="Statement"> read-json</span> &lt;json&gt; \
+     [<span class="Type"> key</span> &lt;key&gt; ] \
+     [<span class="Type"> value</span> &lt;value&gt; ] \
+     [<span class="Type"> type</span> &lt;type&gt; ] \
+     [<span class="Identifier"> next</span> ]</pre>
 </div><br/>
 read-json reads data elements from &lt;json&gt; variable, which is created with <a href='http://gliimly.github.io/json-doc.html'>json-doc</a>. A data element is a string &lt;key&gt;/&lt;value&gt; pair of a leaf node, where key (in "key" clause) is a normalized key name, which is the value's name preceded with the names of all objects and array members leading up to it, separated by a dot ("."). <br/>
 <br/>
@@ -249,7 +244,7 @@ If there are no more data elements to read, &lt;type&gt; is GG_JSON_TYPE_NONE.<b
 &lt;key&gt; in "key" clause is a normalized name of any given leaf node in JSON text. This means every non-leaf node is included (such as arrays and objects), separated by a dot ("."), and arrays are indexed with "[]". An example would be:<br/>
 <div class='code'>
 <pre id='code_2'>
- <span class="Constant">&quot;menu&quot;</span>.<span class="Constant">&quot;popup&quot;</span>.<span class="Constant">&quot;menuitem&quot;</span>[1].<span class="Constant">&quot;onclick&quot;</span></pre>
+ <span class="Constant">&quot;menu&quot;</span>.<span class="Constant">&quot;popup&quot;</span>.<span class="Constant">&quot;menuitem&quot;</span>[<span class="Constant">1</span>].<span class="Constant">&quot;onclick&quot;</span></pre>
 </div><br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 See <a href='http://gliimly.github.io/json-doc.html'>json-doc</a>.<br/>

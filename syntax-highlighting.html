@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -237,6 +232,8 @@ The above will create a syntax file in your local Vim syntax directory:<br/>
 $HOME/.vim/syntax/gliim.vim</pre>
 </div><br/>
 and also update your local $HOME/.vimrc file to use this syntax for files with .gliim extension. All files updated are local, i.e. they affect only the current user. Each user who wants this feature must issue the above command.<br/>
+<br/>
+You can then change the colorscheme to anything you like by using ":colorscheme" directly in editor, or by specifying "colorscheme" in your ".vimrc" file for a persistent change.<br/>
 <br/>
 The Gliimly highlighting syntax is tested with Vim 8.1.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

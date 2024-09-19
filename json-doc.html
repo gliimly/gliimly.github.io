@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> json-doc</span> &lt;text&gt;<span class="gliimClauseOutput"> to</span> &lt;json&gt; \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] [<span class="gliimClause"> length</span> &lt;length&gt; ] [<span class="gliimClause"> noencode</span> ] \
-     [<span class="gliimClauseOutput"> error-text</span> &lt;status&gt; ] [<span class="gliimClauseOutput"> error-position</span> &lt;status&gt; ] \
+<span class="Statement"> json-doc</span> &lt;text&gt;<span class="Type"> to</span> &lt;json&gt; \
+     [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> noencode</span> ] \
+     [<span class="Type"> error-text</span> &lt;status&gt; ] [<span class="Type"> error-position</span> &lt;status&gt; ] \
 
-<span class="gliimConstruct"> json-doc</span> <span class="gliimClause"> delete</span> &lt;json&gt;</pre>
+<span class="Statement"> json-doc</span> <span class="Identifier"> delete</span> &lt;json&gt;</pre>
 </div><br/>
 json-doc will parse JSON &lt;text&gt; into &lt;json&gt; variable, which can be used with <a href='http://gliimly.github.io/read-json.html'>read-json</a> to get the data.<br/>
 <br/>
@@ -251,12 +246,11 @@ The maximum depth of nested structures in JSON document (i.e. objects and arrays
 Parse the following JSON document and display all keys and values from it. You can use them as they come along, or store them into <a href='http://gliimly.github.io/new-array.html'>new-array</a> or <a href='http://gliimly.github.io/new-index.html'>new-index</a> for instance for searching of large documents. This also demonstrates usage of UTF8 characters:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> out-header</span><span class="gliimClause"> default</span>
 
  <span class="Comment">// JSON to parse</span>
-<span class="gliimConstruct"> set-string</span> jd<span class="gliimClause"> unquoted</span> = {<span class="Constant">&quot;menu&quot;</span>:\
+<span class="Statement"> set-string</span> jd<span class="Identifier"> unquoted</span> = {<span class="Constant">&quot;menu&quot;</span>:\
      {<span class="Constant">&quot;id&quot;</span>: <span class="Constant">&quot;file&quot;</span>,\
-     <span class="Constant">&quot;value&quot;</span>: 23091,\
+     <span class="Constant">&quot;value&quot;</span>: <span class="Constant">23091</span>,\
      <span class="Constant">&quot;active&quot;</span>: <span class="Constant">false</span>,\
      <span class="Constant">&quot;popup&quot;</span>:\
          {<span class="Constant">&quot;menuitem&quot;</span>:\
@@ -269,29 +263,29 @@ Parse the following JSON document and display all keys and values from it. You c
  }
 
  <span class="Comment">// Parse JSON</span>
-<span class="gliimConstruct"> json-doc</span> jd<span class="gliimClauseOutput"> status</span> st<span class="gliimClauseOutput"> error-text</span> et<span class="gliimClauseOutput"> error-position</span> ep<span class="gliimClauseOutput"> to</span> nj
+<span class="Statement"> json-doc</span> jd<span class="Type"> status</span> st<span class="Type"> error-text</span> et<span class="Type"> error-position</span> ep<span class="Type"> to</span> nj
 
  <span class="Comment">// Check parsing okay, if not display error details</span>
-<span class="gliimConstruct"> if-true</span> st<span class="gliimClause"> not-equal</span> GG_OKAY
-<span class="gliimConstruct">     @</span>Error [<span class="gliimConstruct">&lt;&lt;p-out</span> et<span class="gliimConstruct">&gt;&gt;</span>] at [<span class="gliimConstruct">&lt;&lt;p-num</span> ep<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">     exit-handler</span> -1
-<span class="gliimConstruct"> end-if</span>
+<span class="Statement"> if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">     @</span>Error [<span class="Statement">&lt;&lt;p-out</span> et<span class="Statement">&gt;&gt;</span>] at [<span class="Statement">&lt;&lt;p-num</span> ep<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">     exit-handler</span> -<span class="Constant">1</span>
+<span class="Statement"> end-if</span>
 
  <span class="Comment">// Display all data elements in order from top to bottom</span>
-<span class="gliimConstruct"> start-loop</span>
-<span class="gliimConstruct">     read-json</span> nj<span class="gliimClauseOutput"> key</span> k<span class="gliimClauseOutput"> value</span> v<span class="gliimClauseOutput"> type</span> t<span class="gliimClause"> next</span>
-<span class="gliimConstruct">     if-true</span> t<span class="gliimClause"> equal</span> GG_JSON_TYPE_NONE
-<span class="gliimConstruct">         break-loop</span>
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct">     @</span>Key [<span class="gliimConstruct">&lt;&lt;p-out</span> k<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">     @</span>Value [<span class="gliimConstruct">&lt;&lt;p-out</span> v<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">     @</span>Type [<span class="gliimConstruct">&lt;&lt;p-num</span> t<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">     @</span>--------
-<span class="gliimConstruct"> end-loop</span>
-<span class="gliimConstruct"> @</span>
+<span class="Statement"> start-loop</span>
+<span class="Statement">     read-json</span> nj<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> type</span> t<span class="Identifier"> next</span>
+<span class="Statement">     if-true</span> t<span class="Identifier"> equal</span> GG_JSON_TYPE_NONE
+<span class="Statement">         break-loop</span>
+<span class="Statement">     end-if</span>
+<span class="Statement">     @</span>Key [<span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">     @</span>Value [<span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">     @</span>Type [<span class="Statement">&lt;&lt;p-num</span> t<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">     @</span>--------
+<span class="Statement"> end-loop</span>
+<span class="Statement"> @</span>
 
  <span class="Comment">// Delete JSON document</span>
-<span class="gliimConstruct"> json-doc</span><span class="gliimClause"> delete</span> nj</pre>
+<span class="Statement"> json-doc</span><span class="Identifier"> delete</span> nj</pre>
 </div><br/>
 The output would be:<br/>
 <div class='ncode'>

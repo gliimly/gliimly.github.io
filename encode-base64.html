@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,8 +225,8 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> encode-base64</span> &lt;data&gt;<span class="gliimClauseOutput"> to</span> &lt;output data&gt; \
-     [<span class="gliimClause"> input-length</span> &lt;input length&gt; ]</pre>
+<span class="Statement"> encode-base64</span> &lt;data&gt;<span class="Type"> to</span> &lt;output data&gt; \
+     [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
 </div><br/>
 encode-base64 will encode string &lt;data&gt; into base64 string &lt;output data&gt;.<br/>
 <br/>
@@ -245,44 +240,44 @@ An example that encodes a string, decodes, and finally checks if they match:<br/
 <div class='code'>
 <pre id='code_2'>
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
-<span class="gliimConstruct"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
+<span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
  <span class="Comment">// Encode in base64</span>
-<span class="gliimConstruct"> encode-base64</span> dt<span class="gliimClauseOutput"> to</span> out_dt
+<span class="Statement"> encode-base64</span> dt<span class="Type"> to</span> out_dt
 
-<span class="gliimConstruct"> decode-base64</span> out_dt<span class="gliimClauseOutput"> to</span> new_dt
+<span class="Statement"> decode-base64</span> out_dt<span class="Type"> to</span> new_dt
 
-<span class="gliimConstruct"> if-true</span> dt<span class="gliimClause"> equal</span> new_dt
-<span class="gliimConstruct">     @</span>Success!
-<span class="gliimConstruct"> else-if</span>
-<span class="gliimConstruct">     @</span>Failure!
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> if-true</span> dt<span class="Identifier"> equal</span> new_dt
+<span class="Statement">     @</span>Success!
+<span class="Statement"> else-if</span>
+<span class="Statement">     @</span>Failure!
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 In the next example, "input-length" clause is used, and only a partial of the input string is encoded, then later compared to the original:<br/>
 <div class='code'>
 <pre id='code_3'>
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
-<span class="gliimConstruct"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
+<span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
  <span class="Comment">// Encode in base64, encode only </span><span class="Constant">6</span><span class="Comment"> bytes</span>
-<span class="gliimConstruct"> encode-base64</span> dt<span class="gliimClause"> input-length</span> 6<span class="gliimClauseOutput"> to</span> out_dt
+<span class="Statement"> encode-base64</span> dt<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Type"> to</span> out_dt
 
-<span class="gliimConstruct"> decode-base64</span> out_dt<span class="gliimClauseOutput"> to</span> new_dt
+<span class="Statement"> decode-base64</span> out_dt<span class="Type"> to</span> new_dt
 
  <span class="Comment">// Get length of decoded string</span>
-<span class="gliimConstruct"> string-length</span> new_dt<span class="gliimClauseOutput"> to</span> new_len
+<span class="Statement"> string-length</span> new_dt<span class="Type"> to</span> new_len
 
-<span class="gliimConstruct"> if-true</span> new_len<span class="gliimClause"> not-equal</span> 6
-<span class="gliimConstruct">     @</span>Failure!
-<span class="gliimConstruct"> else-if</span>
-<span class="gliimConstruct">     @</span>Success!
-<span class="gliimConstruct"> end-if</span>
+<span class="Statement"> if-true</span> new_len<span class="Identifier"> not-equal</span> <span class="Constant">6</span>
+<span class="Statement">     @</span>Failure!
+<span class="Statement"> else-if</span>
+<span class="Statement">     @</span>Success!
+<span class="Statement"> end-if</span>
 
-<span class="gliimConstruct"> if-true</span> dt<span class="gliimClause"> equal</span> new_dt<span class="gliimClause"> length</span> new_len
-<span class="gliimConstruct">     @</span>Success!
-<span class="gliimConstruct"> else-if</span>
-<span class="gliimConstruct">     @</span>Failure! [<span class="gliimConstruct">&lt;&lt;p-out</span> dt<span class="gliimConstruct">&gt;&gt;</span>] [<span class="gliimConstruct">&lt;&lt;p-out</span> new_dt<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> if-true</span> dt<span class="Identifier"> equal</span> new_dt<span class="Identifier"> length</span> new_len
+<span class="Statement">     @</span>Success!
+<span class="Statement"> else-if</span>
+<span class="Statement">     @</span>Failure! [<span class="Statement">&lt;&lt;p-out</span> dt<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> new_dt<span class="Statement">&gt;&gt;</span>]
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Base64</span><br/>

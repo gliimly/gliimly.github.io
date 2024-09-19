@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,7 +225,7 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> handler-status</span> &lt;request status&gt;</pre>
+<span class="Statement"> handler-status</span> &lt;request status&gt;</pre>
 </div><br/>
 handler-status specifies &lt;request status&gt;, which must be a number.<br/>
 <br/>
@@ -247,9 +242,9 @@ If you want to specify request status and exit request processing at the same ti
 When the program exits, its exit code will be 12:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> handler-status</span> 12
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct"> exit-handler</span></pre>
+<span class="Statement"> handler-status</span> <span class="Constant">12</span>
+<span class="Statement"> .</span>..
+<span class="Statement"> exit-handler</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program execution</span><br/>

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,17 +225,17 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> decrypt-data</span> &lt;data&gt;<span class="gliimClauseOutput"> to</span> &lt;result&gt; \
-     [<span class="gliimClause"> input-length</span> &lt;input length&gt; ] \
-     [<span class="gliimClause"> binary</span> [ &lt;binary&gt; ] ] \
-     (<span class="gliimClause"> password</span> &lt;password&gt; \
-         [<span class="gliimClause"> salt</span> &lt;salt&gt; [<span class="gliimClause"> salt-length</span> &lt;salt length&gt; ] ] \
-         [<span class="gliimClause"> iterations</span> &lt;iterations&gt; ] \
-         [<span class="gliimClause"> cipher</span> &lt;cipher algorithm&gt; ] \
-         [<span class="gliimClause"> digest</span> &lt;digest algorithm&gt; ]
-         [<span class="gliimClause"> cache</span> ]
-         [<span class="gliimClause"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
-     [<span class="gliimClause"> init-vector</span> &lt;init vector&gt; ]</pre>
+<span class="Statement"> decrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
+     [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
+     [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
+     (<span class="Identifier"> password</span> &lt;password&gt; \
+         [<span class="Identifier"> salt</span> &lt;salt&gt; [<span class="Identifier"> salt-length</span> &lt;salt length&gt; ] ] \
+         [<span class="Identifier"> iterations</span> &lt;iterations&gt; ] \
+         [<span class="Identifier"> cipher</span> &lt;cipher algorithm&gt; ] \
+         [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]
+         [<span class="Identifier"> cache</span> ]
+         [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; <span class="Error">)</span> \
+     [<span class="Identifier"> init-vector</span> &lt;init vector&gt; ]</pre>
 </div><br/>
 decrypt-data will decrypt &lt;data&gt; which must have been encrypted with <a href='http://gliimly.github.io/encrypt-data.html'>encrypt-data</a>, or other software using the same algorithms and clauses as specified. <br/>
 <br/>

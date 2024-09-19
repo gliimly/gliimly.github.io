@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,15 +225,15 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> read-index</span> &lt;index&gt; \
-     (<span class="gliimClause"> equal</span> &lt;search key&gt; |<span class="gliimClause"> lesser</span> &lt;search key&gt; |<span class="gliimClause"> greater</span> &lt;search key&gt; | \
-        <span class="gliimClause"> lesser-equal</span> &lt;search key&gt; |<span class="gliimClause"> greater-equal</span> &lt;search key&gt; | \
-        <span class="gliimClause"> min-key</span> |<span class="gliimClause"> max-key</span> ) \
-     [<span class="gliimClauseOutput"> value</span> &lt;value&gt; ] \
-     [<span class="gliimClause"> update-value</span> &lt;update value&gt; ] \
-     [<span class="gliimClauseOutput"> key</span> &lt;key&gt; ] \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] \
-     [<span class="gliimClauseOutput"> new-cursor</span> &lt;cursor&gt; ]</pre>
+<span class="Statement"> read-index</span> &lt;index&gt; \
+     (<span class="Identifier"> equal</span> &lt;search key&gt; |<span class="Identifier"> lesser</span> &lt;search key&gt; |<span class="Identifier"> greater</span> &lt;search key&gt; | \
+        <span class="Identifier"> lesser-equal</span> &lt;search key&gt; |<span class="Identifier"> greater-equal</span> &lt;search key&gt; | \
+        <span class="Identifier"> min-key</span> |<span class="Identifier"> max-key</span> ) \
+     [<span class="Type"> value</span> &lt;value&gt; ] \
+     [<span class="Identifier"> update-value</span> &lt;update value&gt; ] \
+     [<span class="Type"> key</span> &lt;key&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ] \
+     [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
 </div><br/>
 read-index will search &lt;index&gt; (created with <a href='http://gliimly.github.io/new-index.html'>new-index</a>) for a node with the string key that is:<br/>
 <ul><li>equal to &lt;search key&gt; ("equal" clause)<br/>
@@ -259,31 +254,29 @@ If you'd like to iterate the ordered list of keys in an index, create a &lt;curs
 In this example, a million key/value pairs are inserted into an index, and then each of them is searched for and then displayed back (see <a href='http://gliimly.github.io/write-index.html'>write-index</a> for more on inserting into a index). Both the key and the data are a numerical value of a key:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> %%</span> /index-example
+<span class="Statement"> %%</span> /index-example
 
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
+<span class="Statement">     new-index</span> myindex<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new index</span>
 
-<span class="gliimConstruct">     new-index</span> myindex<span class="gliimClause"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new index</span>
+<span class="Statement">     set-number</span> i
+<span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
+<span class="Statement">         number-string</span> i<span class="Type"> to</span> key
+<span class="Statement">         set-string</span> data=key
+<span class="Statement">         write-index</span> myindex<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data <span class="Comment">// insert key/data to the index</span>
+<span class="Statement">     end-loop</span>
 
-<span class="gliimConstruct">     set-number</span> i
-<span class="gliimConstruct">     start-loop</span><span class="gliimClauseOutput"> use</span> i<span class="gliimClause"> start-with</span> 0<span class="gliimClause"> repeat</span> 1000000
-<span class="gliimConstruct">         number-string</span> i<span class="gliimClauseOutput"> to</span> key
-<span class="gliimConstruct">         set-string</span> data=key
-<span class="gliimConstruct">         write-index</span> myindex<span class="gliimClause"> key</span> (key)<span class="gliimClause"> value</span> data <span class="Comment">// insert key/data to the index</span>
-<span class="gliimConstruct">     end-loop</span>
-
-<span class="gliimConstruct">     start-loop</span><span class="gliimClauseOutput"> use</span> i<span class="gliimClause"> start-with</span> 0<span class="gliimClause"> repeat</span> 1000000
-<span class="gliimConstruct">         number-string</span> i<span class="gliimClauseOutput"> to</span> key
+<span class="Statement">     start-loop</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">0</span><span class="Identifier"> repeat</span> <span class="Constant">1000000</span>
+<span class="Statement">         number-string</span> i<span class="Type"> to</span> key
          <span class="Comment">// search index for each key previously inserted</span>
-<span class="gliimConstruct">         read-index</span> myindex<span class="gliimClause"> equal</span> (key)<span class="gliimClauseOutput"> status</span> st<span class="gliimClauseOutput"> value</span> data
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> not-equal</span> GG_OKAY
-<span class="gliimConstruct">             @</span>Could not find key <span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Found data <span class="gliimConstruct">&lt;&lt;p-out</span> data<span class="gliimConstruct">&gt;&gt;</span> associated with key <span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">         delete-string</span> key
-<span class="gliimConstruct">     end-loop</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">         read-index</span> myindex<span class="Identifier"> equal</span> (key)<span class="Type"> status</span> st<span class="Type"> value</span> data
+<span class="Statement">         if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
+<span class="Statement">             @</span>Could not find key <span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Found data <span class="Statement">&lt;&lt;p-out</span> data<span class="Statement">&gt;&gt;</span> associated with key <span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>
+<span class="Statement">         end-if</span>
+<span class="Statement">         delete-string</span> key
+<span class="Statement">     end-loop</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Index</span><br/>

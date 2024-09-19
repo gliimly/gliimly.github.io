@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,19 +225,19 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> match-regex</span> &lt;pattern&gt;<span class="gliimClause"> in</span> &lt;target&gt; \
+<span class="Statement"> match-regex</span> &lt;pattern&gt;<span class="Identifier"> in</span> &lt;target&gt; \
      [ \
-         (<span class="gliimClause"> replace-with</span> &lt;replace pattern&gt; \
-            <span class="gliimClauseOutput"> result</span> &lt;result&gt; \
-             [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] )  \
+         (<span class="Identifier"> replace-with</span> &lt;replace pattern&gt; \
+            <span class="Type"> result</span> &lt;result&gt; \
+             [<span class="Type"> status</span> &lt;status&gt; ] )  \
      | \
-         (<span class="gliimClauseOutput"> status</span> &lt;status&gt; \
-             [<span class="gliimClause"> case-insensitive</span> [ &lt;case-insensitive&gt; ] ] \
-             [<span class="gliimClause"> single-match</span> [ &lt;single-match&gt; ] ] \
-             [<span class="gliimClause"> utf8</span> [ &lt;utf8&gt; ] ] ) \
+         (<span class="Type"> status</span> &lt;status&gt; \
+             [<span class="Identifier"> case-insensitive</span> [ &lt;case-insensitive&gt; ] ] \
+             [<span class="Identifier"> single-match</span> [ &lt;single-match&gt; ] ] \
+             [<span class="Identifier"> utf8</span> [ &lt;utf8&gt; ] ] ) \
      ] \
-     [<span class="gliimClause"> cache</span> ] \
-     [<span class="gliimClause"> clear-cache</span> &lt;clear cache&gt; )</pre>
+     [<span class="Identifier"> cache</span> ] \
+     [<span class="Identifier"> clear-cache</span> &lt;clear cache&gt; )</pre>
 </div><br/>
 match-regex searches &lt;target&gt; string for regex &lt;pattern&gt;. If "replace-with" is specified, then instance(s) of &lt;pattern&gt; in &lt;target&gt; are replaced with &lt;replace pattern&gt; string, and the result is stored in &lt;result&gt; string.<br/>
 <br/>
@@ -265,8 +260,11 @@ By default, <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PC
 If "cache" clause is used, then regex compilation of &lt;pattern&gt; will be done only once and saved for future use. There is a significant performance benefit when match-regex executes repeatedly with "cache" (such as in case of web applications or in any kind of loop). If &lt;pattern&gt; changes and you need to recompile it once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the regex cache is cleared if it is true, and stays if it is false. For example:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> set-bool</span> cl_c = <span class="Constant">true</span> if-<span class="Constant">true</span> q equal 0
-<span class="gliimConstruct"> match-regex</span> ps<span class="gliimClause"> in</span> look_in<span class="gliimClause"> replace-with</span> <span class="Constant">&quot;Yes it is </span><span class="Special">\\</span><span class="Constant">1!&quot;</span><span class="gliimClauseOutput"> result</span> res<span class="gliimClause"> cache clear-cache</span> cl_c</pre>
+<span class="Statement"> set-bool</span> cl_c
+<span class="Statement"> if-true</span> q<span class="Identifier"> equal</span> <span class="Constant">0</span>
+<span class="Statement">     set-bool</span> cl_c = <span class="Constant">true</span>
+<span class="Statement"> end-if</span>
+<span class="Statement"> match-regex</span> ps<span class="Identifier"> in</span> look_in<span class="Identifier"> replace-with</span> <span class="Constant">&quot;Yes it is </span><span class="Special">\\</span><span class="Constant">1!&quot;</span><span class="Type"> result</span> res<span class="Identifier"> cache clear-cache</span> cl_c</pre>
 </div><br/>
 In this case, when "q" is 0, cache will be cleared, and the pattern in variable "ps" will be recompiled. In all other cases, the last computed regex stays the same. <br/>
 <br/>
@@ -275,10 +273,10 @@ While every pattern is different, when using cache, even a relatively small patt
 Subexpressions are referenced via a backslash followed by a number. Because in strings a backslash followed by a number is an octal number, you must use double backslash (\\). For example:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> match-regex</span> <span class="Constant">&quot;(good).*(day)&quot;</span> \
-    <span class="gliimClause"> in</span> <span class="Constant">&quot;Hello, good day!&quot;</span> \
-    <span class="gliimClause"> replace-with</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">2 </span><span class="Special">\\</span><span class="Constant">1&quot;</span> \
-    <span class="gliimClauseOutput"> result</span> res</pre>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;(good).*(day)&quot;</span> \
+    <span class="Identifier"> in</span> <span class="Constant">&quot;Hello, good day!&quot;</span> \
+    <span class="Identifier"> replace-with</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">2 </span><span class="Special">\\</span><span class="Constant">1&quot;</span> \
+    <span class="Type"> result</span> res</pre>
 </div><br/>
 will produce string "Hello, day good!" as a result in "res" variable. Each subexpression is within () parenthesis, so for instance "day" in the above pattern is the 2nd subexpression, and is back-referenced as \\2 in replacement.<br/>
 <br/>
@@ -289,12 +287,12 @@ Note that backreferences to non-existing subexpressions are ignored - for exampl
 match-regex supports syntax for lookaheads (i.e. "(?=...)" and "(?!...)") and lookbehinds (i.e. "(?&lt;=...)" and "(?&lt;!...)"). See <a href='https://www.pcre.org/current/doc/html/pcre2pattern.html'>PCRE2 pattern matching</a> for more details. For instance, the following matches "bar" only if preceded by "foo":<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*(?&lt;=foo)bar&quot;</span><span class="gliimClause"> in</span> <span class="Constant">&quot;foobar&quot;</span><span class="gliimClauseOutput"> status</span> st<span class="gliimClause"> single-match</span></pre>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*(?&lt;=foo)bar&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;foobar&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
 </div><br/>
 and the following matches "foo" if followed by "bar":<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*foo(?=bar)&quot;</span><span class="gliimClause"> in</span> <span class="Constant">&quot;foofoo&quot;</span><span class="gliimClauseOutput"> status</span> st<span class="gliimClause"> single-match</span></pre>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;</span><span class="Special">\\</span><span class="Constant">w*foo(?=bar)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;foofoo&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
 </div><br/>
 <div class="vsub"><a id="Limitations"></a>Limitations</div>
 If you are using older versions of PCRE2 (10.36 or earlier) such as by default in Debian 10 or Ubuntu 18, then instead of PCRE2, an <a href='https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions'>Extended Regex Expressions</a> (ERE) from the &nbsp;built-in Linux regex library is used, due to older PCRE2 versions having name conflicts with other libraries. In this case, "utf8" clause will have no effect, and lookaheads/lookbehinds functionality will not work; possibly a few others as well, however for the most part the two are compatible. If your system uses an older PCRE2 library, you can upgrade to 10.37 or later to use PCRE2.<br/>
@@ -304,14 +302,14 @@ In any case, if you need to use Posix ERE instead of PCRE2 (for compatibility, t
 Use match-regex statement to find out if a string matches a pattern, for example:<br/>
 <div class='code'>
 <pre id='code_6'>
-<span class="gliimConstruct"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="gliimClause"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE&quot;</span><span class="gliimClauseOutput"> status</span> st</pre>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE&quot;</span><span class="Type"> status</span> st</pre>
 </div><br/>
 In this case, the first parameter ("SOME (.*) IS (.*)") is a pattern and you're matching it with string ("WOW SOME THING IS GOOD HERE"). Since there is a match, status variable (defined on the fly as integer) "st" will be "1" (meaning one match was found) - in general it will contain the number of patterns matched. <br/>
 <br/>
 Search for patterns and replace them by using replace-with clause, for example:<br/>
 <div class='code'>
 <pre id='code_7'>
-<span class="gliimConstruct"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS ([^ ]+)&quot;</span><span class="gliimClause"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE FOR SURE&quot;</span><span class="gliimClause"> replace-with</span> <span class="Constant">&quot;THINGS ARE </span><span class="Special">\\</span><span class="Constant">2 YES!&quot;</span><span class="gliimClauseOutput"> result</span> res<span class="gliimClauseOutput"> status</span> st</pre>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS ([^ ]+)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE FOR SURE&quot;</span><span class="Identifier"> replace-with</span> <span class="Constant">&quot;THINGS ARE </span><span class="Special">\\</span><span class="Constant">2 YES!&quot;</span><span class="Type"> result</span> res<span class="Type"> status</span> st</pre>
 </div><br/>
 In this case, the result from replacement will be in a new string variable "res" specified with the result clause, and it will be <br/>
 <div class='code'>
@@ -323,14 +321,14 @@ The above demonstrates a typical use of subexpressions in regex (meaning "()" st
 Matching is by default case sensitive. Use "case-insensitive" clause to change it to case insensitive, for instance:<br/>
 <div class='code'>
 <pre id='code_9'>
-<span class="gliimConstruct"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="gliimClause"> in</span> <span class="Constant">&quot;WOW some THING IS GOOD HERE&quot;</span><span class="gliimClauseOutput"> status</span> st<span class="gliimClause"> case-insensitive</span></pre>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME (.*) IS (.*)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW some THING IS GOOD HERE&quot;</span><span class="Type"> status</span> st<span class="Identifier"> case-insensitive</span></pre>
 </div><br/>
 In the above case, the pattern would not be found without "case-insensitive" clause because "SOME" and "some" would not match. This clause works the same in matching-only as well as replacing strings.<br/>
 <br/>
 If you want to match only the first occurrence of a pattern, use "single-match" option:<br/>
 <div class='code'>
 <pre id='code_10'>
-<span class="gliimConstruct"> match-regex</span> <span class="Constant">&quot;SOME ([^ ]+) IS ([^ ]+)&quot;</span><span class="gliimClause"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE AND SOME STUFF IS GOOD TOO&quot;</span><span class="gliimClauseOutput"> status</span> st<span class="gliimClause"> single-match</span></pre>
+<span class="Statement"> match-regex</span> <span class="Constant">&quot;SOME ([^ ]+) IS ([^ ]+)&quot;</span><span class="Identifier"> in</span> <span class="Constant">&quot;WOW SOME THING IS GOOD HERE AND SOME STUFF IS GOOD TOO&quot;</span><span class="Type"> status</span> st<span class="Identifier"> single-match</span></pre>
 </div><br/>
 In this case there would be two matches by default ("SOME THING IS GOOD" and "SOME STUFF IS GOOD") but only the first would be found. This clause works the same for replacing as well - only the first occurrence would be replaced.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

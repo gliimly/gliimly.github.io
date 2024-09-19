@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,10 +225,10 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> call-remote</span> &lt;service&gt; [ ,... ]   \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]  \
-     [<span class="gliimClauseOutput"> started</span> &lt;started&gt; ] \
-     [<span class="gliimClauseOutput"> finished-okay</span> &lt;finished okay&gt; ]</pre>
+<span class="Statement"> call-remote</span> &lt;service&gt; [ ,... ]   \
+     [<span class="Type"> status</span> &lt;status&gt; ]  \
+     [<span class="Type"> started</span> &lt;started&gt; ] \
+     [<span class="Type"> finished-okay</span> &lt;finished okay&gt; ]</pre>
 </div><br/>
 call-remote will make service call(s) as described in a single &lt;service&gt; or a list of &lt;service&gt;s. Unless only a single &lt;service&gt; is specified, each call will execute in parallel with others (as multiple threads). call-remote finishes when all &lt;service&gt; calls do. Each &lt;service&gt; must have beed created with <a href='http://gliimly.github.io/new-remote.html'>new-remote</a>.<br/>
 <br/>
@@ -264,24 +259,23 @@ call-remote is faster than <a href='http://gliimly.github.io/call-web.html'>call
 This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/sock" (a Gliimly application named "app_name"), and make a request named "server" (i.e. it will be processed by source code file "server.gliim") with URL path of "/op=add/key=2" (meaning with input parameters "op=add" and "key=2"). Then, service reply is read and displayed.<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> out-header</span><span class="gliimClause"> default</span>
  <span class="Comment">// Create single call</span>
-<span class="gliimConstruct"> new-remote</span> srv<span class="gliimClause"> location</span> <span class="Constant">&quot;/var/lib/gg/app_name/sock/sock&quot;</span> \
-    <span class="gliimClause"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="gliimClause"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="gliimClause"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
-    <span class="gliimClause"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span>
+<span class="Statement"> new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;/var/lib/gg/app_name/sock/sock&quot;</span> \
+    <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
+    <span class="Identifier"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span>
  <span class="Comment">// Call single service call</span>
-<span class="gliimConstruct"> call-remote</span> srv<span class="gliimClauseOutput"> finished-okay</span> sfok
+<span class="Statement"> call-remote</span> srv<span class="Type"> finished-okay</span> sfok
  <span class="Comment">// Get results of a remote service call</span>
-<span class="gliimConstruct"> read-remote</span> srv<span class="gliimClauseOutput"> data</span> rdata
+<span class="Statement"> read-remote</span> srv<span class="Type"> data</span> rdata
  <span class="Comment">// Display results</span>
-<span class="gliimConstruct"> @</span>Data from service is <span class="gliimConstruct">&lt;&lt;p-out</span> rdata<span class="gliimConstruct">&gt;&gt;</span></pre>
+<span class="Statement"> @</span>Data from service is <span class="Statement">&lt;&lt;p-out</span> rdata<span class="Statement">&gt;&gt;</span></pre>
 </div><br/>
 If you are connecting to a service via TCP (and not with a Unix socket like in the example above), the "location" clause in <a href='http://gliimly.github.io/new-remote.html'>new-remote</a> might be:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> new-remote</span> srv<span class="gliimClause"> location</span> <span class="Constant">&quot;192.168.0.28:2400&quot;</span> \
-    <span class="gliimClause"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="gliimClause"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="gliimClause"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
-    <span class="gliimClause"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span></pre>
+<span class="Statement"> new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;192.168.0.28:2400&quot;</span> \
+    <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \
+    <span class="Identifier"> url-params</span> <span class="Constant">&quot;/op=add/key=2&quot;</span></pre>
 </div><br/>
 In this case, you are connecting to another service (running on IP "192.168.0.28") on port 2400. See <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> on how to start a service that listens on a TCP port. You would likely use TCP connectivity only if a service you're connecting to is on a different computer.<br/>
 <br/>

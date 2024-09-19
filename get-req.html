@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,13 +225,13 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> get-req</span> \
-        <span class="gliimClause"> errno</span> |<span class="gliimClause"> error</span> |<span class="gliimClause"> cookie-count</span> |<span class="gliimClause"> cookie</span> &lt;cookie index&gt; \
-         |<span class="gliimClause"> arg-count</span> |<span class="gliimClause"> arg-value</span> &lt;arg index&gt; |<span class="gliimClause"> input-count</span> | \
-         |<span class="gliimClause"> input-value</span> &lt;input index&gt; |<span class="gliimClause"> input-name</span> &lt;input index&gt; \
-         |<span class="gliimClause"> header</span> &lt;header&gt; |<span class="gliimClause"> referring-url</span> |<span class="gliimClause"> method</span> \
-         |<span class="gliimClause"> content-type</span> |<span class="gliimClause"> trace-file</span> |<span class="gliimClause"> process-id</span> |<span class="gliimClause"> name</span> \
-    <span class="gliimClauseOutput"> to</span> &lt;variable&gt;</pre>
+<span class="Statement"> get-req</span> \
+        <span class="Identifier"> errno</span> |<span class="Identifier"> error</span> |<span class="Identifier"> cookie-count</span> |<span class="Identifier"> cookie</span> &lt;cookie index&gt; \
+         |<span class="Identifier"> arg-count</span> |<span class="Identifier"> arg-value</span> &lt;arg index&gt; |<span class="Identifier"> input-count</span> | \
+         |<span class="Identifier"> input-value</span> &lt;input index&gt; |<span class="Identifier"> input-name</span> &lt;input index&gt; \
+         |<span class="Identifier"> header</span> &lt;header&gt; |<span class="Identifier"> referring-url</span> |<span class="Identifier"> method</span> \
+         |<span class="Identifier"> content-type</span> |<span class="Identifier"> trace-file</span> |<span class="Identifier"> process-id</span> |<span class="Identifier"> name</span> \
+    <span class="Type"> to</span> &lt;variable&gt;</pre>
 </div><br/>
 Information related to an input request can be obtained with get-req statement and the result stored into &lt;variable&gt; (in "to" clause). The following can be obtained (all are strings except where stated otherwise):<br/>
 <ul><li>"errno" obtains the integer value of operating system "errno" tied to a last Gliimly statement that can return a status code. The "errno" value is saved internally; and restored here. It means that if "errno" changed for whatever reason since such Gliimly statement (such as with <a href='http://gliimly.github.io/call-extended.html'>call-extended</a>), you will still obtain the correct value. See <a href='http://gliimly.github.io/error-code.html'>error-code</a> for an example. Note that errno value is undefined if there is no error, and can be 0 if the error is reported by Gliimly and not by operating system.<br/>
@@ -248,12 +243,12 @@ Information related to an input request can be obtained with get-req statement a
 </li><li>"cookie" returns the cookie value specified by &lt;cookie index&gt; (a sequential number starting with 1 up to the number of cookies), for instance:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> get-req</span><span class="gliimClause"> cookie-count</span><span class="gliimClauseOutput"> to</span> cookie_c
-<span class="gliimConstruct"> start-loop</span><span class="gliimClause"> repeat</span> cookie_c<span class="gliimClauseOutput"> use</span> i
-<span class="gliimConstruct">     get-req</span><span class="gliimClause"> cookie</span> i<span class="gliimClauseOutput"> to</span> cookie_val
-<span class="gliimConstruct">     pf-web</span> <span class="Constant">&quot;cookie </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, cookie_val
-<span class="gliimConstruct">     @</span>&lt;br/&gt;
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> get-req</span><span class="Identifier"> cookie-count</span><span class="Type"> to</span> cookie_c
+<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> cookie_c<span class="Type"> use</span> i
+<span class="Statement">     get-req</span><span class="Identifier"> cookie</span> i<span class="Type"> to</span> cookie_val
+<span class="Statement">     pf-web</span> <span class="Constant">&quot;cookie </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, cookie_val
+<span class="Statement">     @</span>&lt;br/&gt;
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 In this example, we get the number of cookies, and then print out each cookie value.<br/>
 <br/>
@@ -262,12 +257,12 @@ In this example, we get the number of cookies, and then print out each cookie va
 </li><li>"arg-value" is the string value of a single element from the array of input arguments, specified by &lt;arg_index&gt;. This array is indexed from 1 to the value obtained by "arg-count". Here is an example of using arg-count and arg-value:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> get-req</span><span class="gliimClause"> arg-count</span><span class="gliimClauseOutput"> to</span> ac
-<span class="gliimConstruct"> pf-out</span> <span class="Constant">&quot;Total args [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, ac
-<span class="gliimConstruct"> start-loop</span><span class="gliimClause"> repeat</span> ac<span class="gliimClauseOutput"> use</span> i
-<span class="gliimConstruct">     get-req</span><span class="gliimClause"> arg-value</span> i<span class="gliimClauseOutput"> to</span> av
-<span class="gliimConstruct">     pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, av
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> get-req</span><span class="Identifier"> arg-count</span><span class="Type"> to</span> ac
+<span class="Statement"> pf-out</span> <span class="Constant">&quot;Total args [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, ac
+<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> ac<span class="Type"> use</span> i
+<span class="Statement">     get-req</span><span class="Identifier"> arg-value</span> i<span class="Type"> to</span> av
+<span class="Statement">     pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, av
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 This code will display the number of input arguments (as passed to main() function of your program, excluding the first argument which is the name of the program), and then all the arguments. If there are no arguments, then variable 'ac' would be 0. <br/>
 <br/>
@@ -278,20 +273,20 @@ This code will display the number of input arguments (as passed to main() functi
 </li><li>"input-value" is the string value of a single element from the array of input parameter values (from a <a href='http://gliimly.github.io/request.html'>request</a>), specified by &lt;input_index&gt;. This array is indexed from 1 to "input-count". For example:<br/>
 <div class='code'>
 <pre id='code_4'>
-<span class="gliimConstruct"> get-req</span><span class="gliimClause"> input-count</span><span class="gliimClauseOutput"> to</span> input_c
-<span class="gliimConstruct"> start-loop</span><span class="gliimClause"> repeat</span> input_c<span class="gliimClauseOutput"> use</span> i
-<span class="gliimConstruct">     get-req</span><span class="gliimClause"> input-name</span> i<span class="gliimClauseOutput"> to</span> input_n
-<span class="gliimConstruct">     get-req</span><span class="gliimClause"> input-value</span> i<span class="gliimClauseOutput"> to</span> input_v
-<span class="gliimConstruct">     pf-web</span> <span class="Constant">&quot;Input parameter #</span><span class="Special">%ld</span><span class="Constant">, name is </span><span class="Special">%s</span><span class="Constant">, value is </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, i, input_n, input_v
-<span class="gliimConstruct">     @</span>&lt;br/&gt;
-<span class="gliimConstruct"> end-loop</span></pre>
+<span class="Statement"> get-req</span><span class="Identifier"> input-count</span><span class="Type"> to</span> input_c
+<span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> input_c<span class="Type"> use</span> i
+<span class="Statement">     get-req</span><span class="Identifier"> input-name</span> i<span class="Type"> to</span> input_n
+<span class="Statement">     get-req</span><span class="Identifier"> input-value</span> i<span class="Type"> to</span> input_v
+<span class="Statement">     pf-web</span> <span class="Constant">&quot;Input parameter #</span><span class="Special">%ld</span><span class="Constant">, name is </span><span class="Special">%s</span><span class="Constant">, value is </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, i, input_n, input_v
+<span class="Statement">     @</span>&lt;br/&gt;
+<span class="Statement"> end-loop</span></pre>
 </div><br/>
 In this example, we get the number of input parameters, and then print out each. <br/>
 <br/>
 </li><li>"header" is the value of HTTP request header &lt;header&gt; that is set by the client. For example, if the HTTP request contains header "My-Header:30", then hval would be "30":<br/>
 <div class='code'>
 <pre id='code_5'>
-<span class="gliimConstruct"> get-req</span><span class="gliimClause"> header</span> <span class="Constant">&quot;My-Header&quot;</span><span class="gliimClauseOutput"> to</span> hval</pre>
+<span class="Statement"> get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;My-Header&quot;</span><span class="Type"> to</span> hval</pre>
 </div><br/>
 Note that not all HTTP request headers are set by the caller. For example, SERVER_NAME or QUERY_STRING are set by the web server, and to get such headers, use <a href='http://gliimly.github.io/get-sys.html'>get-sys</a>.<br/>
 <br/>
@@ -310,7 +305,7 @@ Note that not all HTTP request headers are set by the caller. For example, SERVE
 Get the name of current trace file:<br/>
 <div class='code'>
 <pre id='code_6'>
-<span class="gliimConstruct"> get-req</span><span class="gliimClause"> trace-file</span><span class="gliimClauseOutput"> to</span> trace_file</pre>
+<span class="Statement"> get-req</span><span class="Identifier"> trace-file</span><span class="Type"> to</span> trace_file</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Request information</span><br/>

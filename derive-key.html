@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,12 +225,12 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> derive-key</span> &lt;key&gt;<span class="gliimClause"> from</span> &lt;source&gt;<span class="gliimClause"> length</span> &lt;length&gt; \
-     [<span class="gliimClause"> binary</span> [ &lt;binary&gt; ] ] \
-     [<span class="gliimClause"> from-length</span> &lt;source length&gt; ] \
-     [<span class="gliimClause"> digest</span> &lt;digest algorithm&gt; ] \
-     [<span class="gliimClause"> salt</span> &lt;salt&gt; [<span class="gliimClause"> salt-length</span> &lt;salt length&gt; ] ] \
-     [<span class="gliimClause"> iterations</span> &lt;iterations&gt; ]</pre>
+<span class="Statement"> derive-key</span> &lt;key&gt;<span class="Identifier"> from</span> &lt;source&gt;<span class="Identifier"> length</span> &lt;length&gt; \
+     [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
+     [<span class="Identifier"> from-length</span> &lt;source length&gt; ] \
+     [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ] \
+     [<span class="Identifier"> salt</span> &lt;salt&gt; [<span class="Identifier"> salt-length</span> &lt;salt length&gt; ] ] \
+     [<span class="Identifier"> iterations</span> &lt;iterations&gt; ]</pre>
 </div><br/>
 derive-key derives &lt;key&gt; from string &lt;source&gt; in "from" clause. If &lt;source length&gt; in "from-length" clause is specified, exactly &lt;source length&gt; bytes of &lt;source&gt; are used. Otherwise, the length of &lt;source&gt; string is used as the number of bytes (see <a href='http://gliimly.github.io/string-length.html'>string-length</a>). <br/>
 <br/>
@@ -256,8 +251,8 @@ Key derivation is often used when storing password-derivatives in the database (
 Derived key is in variable "mk":<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> random-string</span><span class="gliimClauseOutput"> to</span> rs9<span class="gliimClause"> length</span> 16
-<span class="gliimConstruct"> derive-key</span> mk<span class="gliimClause"> from</span> <span class="Constant">&quot;clave secreta&quot;</span><span class="gliimClause"> digest</span> <span class="Constant">&quot;sha-256&quot;</span><span class="gliimClause"> salt</span> rs9<span class="gliimClause"> salt-length</span> 10<span class="gliimClause"> iterations</span> 2000<span class="gliimClause"> length</span> 16</pre>
+<span class="Statement"> random-string</span><span class="Type"> to</span> rs9<span class="Identifier"> length</span> <span class="Constant">16</span>
+<span class="Statement"> derive-key</span> mk<span class="Identifier"> from</span> <span class="Constant">&quot;clave secreta&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha-256&quot;</span><span class="Identifier"> salt</span> rs9<span class="Identifier"> salt-length</span> <span class="Constant">10</span><span class="Identifier"> iterations</span> <span class="Constant">2000</span><span class="Identifier"> length</span> <span class="Constant">16</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>

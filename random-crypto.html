@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,8 +225,8 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> random-crypto</span><span class="gliimClauseOutput"> to</span> &lt;random string&gt; \
-     [<span class="gliimClause"> length</span> &lt;string length&gt; ]</pre>
+<span class="Statement"> random-crypto</span><span class="Type"> to</span> &lt;random string&gt; \
+     [<span class="Identifier"> length</span> &lt;string length&gt; ]</pre>
 </div><br/>
 random-crypto obtains a random string of length &lt;string length&gt;. This statement uses a cryptographically secure pseudo random generator (CSPRNG) from OpenSSL library. &nbsp;If "length" clause is omitted, the length is 20 by default. <br/>
 <br/>
@@ -242,7 +237,7 @@ Use this statement only when needed for specific cryptographic uses. In all othe
 Get a 20-digit long random binary value:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> random-crypto</span><span class="gliimClauseOutput"> to</span> str<span class="gliimClause"> length</span> 20</pre>
+<span class="Statement"> random-crypto</span><span class="Type"> to</span> str<span class="Identifier"> length</span> <span class="Constant">20</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>

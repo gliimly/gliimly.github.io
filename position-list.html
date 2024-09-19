@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> position-list</span> &lt;list&gt; \
-     [<span class="gliimClause"> first</span> |<span class="gliimClause"> last</span> |<span class="gliimClause"> end</span> |<span class="gliimClause"> previous</span> |<span class="gliimClause"> next</span> | \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ]</pre>
+<span class="Statement"> position-list</span> &lt;list&gt; \
+     [<span class="Identifier"> first</span> |<span class="Identifier"> last</span> |<span class="Identifier"> end</span> |<span class="Identifier"> previous</span> |<span class="Identifier"> next</span> | \
+     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
 </div><br/>
 position-list changes the current element of linked &lt;list&gt;. A current element is the one that is read with <a href='http://gliimly.github.io/read-list.html'>read-list</a>. A newly added element is written with <a href='http://gliimly.github.io/write-list.html'>write-list</a> by inserting it just before the current element, thus becoming a new current element. Reading from &lt;list&gt; does not change its current element; use position-list to explicitly change it.<br/>
 <br/>
@@ -247,15 +242,15 @@ If you attempt to position prior to the first element, after the end of &lt;list
 Position to the next element in list:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> position-list</span> mylist<span class="gliimClause"> next</span><span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct"> if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">     @</span>Beyond the end of list
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> position-list</span> mylist<span class="Identifier"> next</span><span class="Type"> status</span> st
+<span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">     @</span>Beyond the end of list
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 Position to the first element in list:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> position-list</span> mylist<span class="gliimClause"> first</span></pre>
+<span class="Statement"> position-list</span> mylist<span class="Identifier"> first</span></pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Linked list</span><br/>

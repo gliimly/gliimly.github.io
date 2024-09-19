@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,10 +225,10 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct">  do-once</span>
+<span class="Statement">  do-once</span>
      &lt;any statements&gt;
-<span class="gliimConstruct">     .</span>..
-<span class="gliimConstruct">  end-do-once</span></pre>
+<span class="Statement">     .</span>..
+<span class="Statement">  end-do-once</span></pre>
 </div><br/>
 do-once will execute &lt;any statements&gt; only once in a single process regardless of how many requests that process serves. &lt;any statements&gt; end with end-do-once. The first time a process reaches do-once, &lt;any statements&gt; will execute; in all subsequent cases the program control will skip to immediately after end-do-once.<br/>
 <br/>
@@ -246,12 +241,12 @@ Typical use of do-once may be making any calls that need to be performed only on
 In this example, a process-scoped array (that is available to multiple requests of a single process) is created in the very first request a process serves and data is written to it; the subsequent requests do not create a new array but rather just write to it.<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> .</span>..
-<span class="gliimConstruct">  do-once</span>
-<span class="gliimConstruct">     new-array</span> my_array<span class="gliimClause"> hash-size</span> 1024<span class="gliimClause"> process-scope</span>
-<span class="gliimConstruct">  end-do-once</span>
-<span class="gliimConstruct">  write-array</span> my_array<span class="gliimClause"> key</span> my_key<span class="gliimClause"> value</span> my_data
-<span class="gliimConstruct">  .</span>..</pre>
+<span class="Statement"> .</span>..
+<span class="Statement">  do-once</span>
+<span class="Statement">     new-array</span> my_array<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
+<span class="Statement">  end-do-once</span>
+<span class="Statement">  write-array</span> my_array<span class="Identifier"> key</span> my_key<span class="Identifier"> value</span> my_data
+<span class="Statement">  .</span>..</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>

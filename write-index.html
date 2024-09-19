@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,9 +225,9 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> write-index</span> &lt;index&gt;<span class="gliimClause"> key</span> &lt;key&gt;<span class="gliimClause"> value</span> &lt;value&gt; \
-     [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] \
-     [<span class="gliimClauseOutput"> new-cursor</span> &lt;cursor&gt; ]</pre>
+<span class="Statement"> write-index</span> &lt;index&gt;<span class="Identifier"> key</span> &lt;key&gt;<span class="Identifier"> value</span> &lt;value&gt; \
+     [<span class="Type"> status</span> &lt;status&gt; ] \
+     [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
 </div><br/>
 write-index inserts string &lt;key&gt; and associated string &lt;value&gt; into &lt;index&gt; created by <a href='http://gliimly.github.io/new-index.html'>new-index</a>.<br/>
 <br/>
@@ -243,50 +238,48 @@ If "new-cursor" clause is used, then a &lt;cursor&gt; will be positioned on a ne
 Insert key "k" with value "d" into "myindex", and obtain status in "st":<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> write-index</span> myindex<span class="gliimClause"> key</span> k<span class="gliimClause"> value</span> d<span class="gliimClauseOutput"> status</span> st</pre>
+<span class="Statement"> write-index</span> myindex<span class="Identifier"> key</span> k<span class="Identifier"> value</span> d<span class="Type"> status</span> st</pre>
 </div><br/>
 The following is an example of a process-scoped index. Such a index keeps its data across the requests, for as long as the process is alive.<br/>
 <br/>
 In a new directory, create file indexsrv.gliim and copy to it:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> %%</span> /indexsrv
-<span class="gliimConstruct">     out-header</span><span class="gliimClause"> default</span>
-
-<span class="gliimConstruct">     do-once</span>
-<span class="gliimConstruct">     new-index</span> t<span class="gliimClause"> process-scope</span>
-<span class="gliimConstruct">     end-do-once</span>
+<span class="Statement"> %%</span> /indexsrv
+<span class="Statement">     do-once</span>
+<span class="Statement">     new-index</span> t<span class="Identifier"> process-scope</span>
+<span class="Statement">     end-do-once</span>
 
      <span class="Comment">// Get input parameters</span>
-<span class="gliimConstruct">     get-param</span> op
-<span class="gliimConstruct">     get-param</span> key
-<span class="gliimConstruct">     get-param</span> data
+<span class="Statement">     get-param</span> op
+<span class="Statement">     get-param</span> key
+<span class="Statement">     get-param</span> data
 
-<span class="gliimConstruct">     if-true</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to index</span>
-<span class="gliimConstruct">         write-index</span> t<span class="gliimClause"> key key value</span> data<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_OKAY
-<span class="gliimConstruct">             @</span>Added [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Key exists
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
-<span class="gliimConstruct">         delete-index</span> t<span class="gliimClause"> key</span> (key)<span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">             @</span>Not found [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         else-if</span>
+<span class="Statement">     if-true</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;add&quot;</span> <span class="Comment">// Add data to index</span>
+<span class="Statement">         write-index</span> t<span class="Identifier"> key</span> (key)<span class="Identifier"> value</span> data<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">             @</span>Added [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Key exists
+<span class="Statement">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;delete&quot;</span> <span class="Comment">// Delete data and obtain the value deleted</span>
+<span class="Statement">         delete-index</span> t<span class="Identifier"> key</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         else-if</span>
              <span class="Comment">// If found, then delete key and value</span>
-<span class="gliimConstruct">             @</span>Deleted [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">             delete-string</span> val
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">     else-if</span> op<span class="gliimClause"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query index based on key value</span>
-<span class="gliimConstruct">         read-index</span> t<span class="gliimClause"> equal</span> (key)<span class="gliimClauseOutput"> value</span> val<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">         if-true</span> st<span class="gliimClause"> equal</span> GG_ERR_EXIST
-<span class="gliimConstruct">             @</span>Not found, queried [<span class="gliimConstruct">&lt;&lt;p-out</span> key<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         else-if</span>
-<span class="gliimConstruct">             @</span>Value [<span class="gliimConstruct">&lt;&lt;p-out</span> val<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct">         end-if</span>
-<span class="gliimConstruct">     end-if</span>
-<span class="gliimConstruct"> %%</span></pre>
+<span class="Statement">             @</span>Deleted [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">             delete-string</span> val
+<span class="Statement">         end-if</span>
+<span class="Statement">     else-if</span> op<span class="Identifier"> equal</span> <span class="Constant">&quot;query&quot;</span> <span class="Comment">// Query index based on key value</span>
+<span class="Statement">         read-index</span> t<span class="Identifier"> equal</span> (key)<span class="Type"> value</span> val<span class="Type"> status</span> st
+<span class="Statement">         if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
+<span class="Statement">             @</span>Not found, queried [<span class="Statement">&lt;&lt;p-out</span> key<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         else-if</span>
+<span class="Statement">             @</span>Value [<span class="Statement">&lt;&lt;p-out</span> val<span class="Statement">&gt;&gt;</span>]
+<span class="Statement">         end-if</span>
+<span class="Statement">     end-if</span>
+<span class="Statement"> %%</span></pre>
 </div><br/>
 Create new application ("pi" for "process index"):<br/>
 <div class="shcode">

@@ -173,17 +173,12 @@ body {
 
 /*The following is for code snippets that are highlighted by 2html vim*/
 pre { overflow-x: scroll; margin:0; padding:0; font-family:monospace; }
-.gliimConstruct { color: #d7875f; }
-.Comment { color: #0000c0; }
-.Constant { color: #c00000; }
-.Special { color: #c000c0; }
+.Identifier { color: #008b8b; }
 .Statement { color: #af5f00; }
-.PreProc { color: #c000c0; }
-.Type { color: #008000; }
-.Todo { color: #000000; background-color: #ffff00; padding-bottom: 1px; }
-.Identifier { color: #008080; }
-.gliimClauseOutput { color: #008700; }
-.gliimClause { color: #005fd7; }
+.PreProc { color: #5fd7ff; }
+.Type { color: #005f00; }
+.Comment { color: blue ; }
+.Constant { color: #ff00ff; }
 /*end of highlighted snippets*/
 
 a {
@@ -230,11 +225,11 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="gliimConstruct"> read-line</span> &lt;file&gt;<span class="gliimClauseOutput"> to</span> &lt;line content&gt; [<span class="gliimClauseOutput"> status</span> &lt;status&gt; ] [<span class="gliimClause"> delimiter</span> &lt;delimiter&gt; ]
+<span class="Statement"> read-line</span> &lt;file&gt;<span class="Type"> to</span> &lt;line content&gt; [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> delimiter</span> &lt;delimiter&gt; ]
 
  &lt;any code&gt;
 
-<span class="gliimConstruct"> end-read-line</span></pre>
+<span class="Statement"> end-read-line</span></pre>
 </div><br/>
 read-line starts the loop in which a text &lt;file&gt; is read line by line into string &lt;line content&gt;, with end-read-line ending this loop. Once the end of &lt;file&gt; has been reached, or an error occurs, the loop exits. <br/>
 <br/>
@@ -254,21 +249,20 @@ Use <a href='http://gliimly.github.io/break-loop.html'>break-loop</a> and <a hre
 To read a text file line by line, and display as a web page with line breaks:<br/>
 <div class='code'>
 <pre id='code_2'>
-<span class="gliimConstruct"> out-header</span><span class="gliimClause"> default</span>
-<span class="gliimConstruct"> read-line</span> <span class="Constant">&quot;/home/bear/tmp/ll/filexx&quot;</span><span class="gliimClauseOutput"> to</span> one_line<span class="gliimClauseOutput"> status</span> st
-<span class="gliimConstruct">     string-length</span> one_line<span class="gliimClauseOutput"> to</span> line_len
-<span class="gliimConstruct">     @</span>Line length is <span class="gliimConstruct">&lt;&lt;p-num</span> line_len<span class="gliimConstruct">&gt;&gt;</span>, line is <span class="gliimConstruct">&lt;&lt;p-web</span> one_line<span class="gliimConstruct">&gt;&gt;</span> status <span class="gliimConstruct">&lt;&lt;p-num</span> st<span class="gliimConstruct">&gt;&gt;</span>&lt;br/&gt;
-<span class="gliimConstruct"> end-read-line</span>
-<span class="gliimConstruct"> if-true</span> st<span class="gliimClause"> lesser-than</span> 0
-<span class="gliimConstruct">     get-req</span><span class="gliimClause"> error</span><span class="gliimClauseOutput"> to</span> err
-<span class="gliimConstruct">     @</span>Error in reading, error [<span class="gliimConstruct">&lt;&lt;p-out</span> err<span class="gliimConstruct">&gt;&gt;</span>]
-<span class="gliimConstruct"> end-if</span></pre>
+<span class="Statement"> read-line</span> <span class="Constant">&quot;/home/bear/tmp/ll/filexx&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> st
+<span class="Statement">     string-length</span> one_line<span class="Type"> to</span> line_len
+<span class="Statement">     @</span>Line length is <span class="Statement">&lt;&lt;p-num</span> line_len<span class="Statement">&gt;&gt;</span>, line is <span class="Statement">&lt;&lt;p-web</span> one_line<span class="Statement">&gt;&gt;</span> status <span class="Statement">&lt;&lt;p-num</span> st<span class="Statement">&gt;&gt;</span>&lt;br/&gt;
+<span class="Statement"> end-read-line</span>
+<span class="Statement"> if-true</span> st<span class="Identifier"> lesser-than</span> <span class="Constant">0</span>
+<span class="Statement">     get-req</span><span class="Identifier"> error</span><span class="Type"> to</span> err
+<span class="Statement">     @</span>Error in reading, error [<span class="Statement">&lt;&lt;p-out</span> err<span class="Statement">&gt;&gt;</span>]
+<span class="Statement"> end-if</span></pre>
 </div><br/>
 To read a text file delimited by "|" character:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="gliimConstruct"> read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="gliimClauseOutput"> to</span> one_line<span class="gliimClauseOutput"> status</span> len<span class="gliimClause"> delimiter</span> '|'
-<span class="gliimConstruct"> .</span>..</pre>
+<span class="Statement"> read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> len<span class="Identifier"> delimiter</span> '|'
+<span class="Statement"> .</span>..</pre>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Files</span><br/>
