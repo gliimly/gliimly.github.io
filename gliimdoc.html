@@ -228,6 +228,7 @@ This page contains all of Gliimly documentation topics combined into one. It may
 <a href='#application-setup.html'>application-setup</a><br/>
 <a href='#article-hello-world.html'>article-hello-world</a><br/>
 <a href='#article-hello-world-service.html'>article-hello-world-service</a><br/>
+<a href='#article-hello-world-service-web.html'>article-hello-world-service-web</a><br/>
 <a href='#article-vim-coloring.html'>article-vim-coloring</a><br/>
 <a href='#article-what-is-gliiml.html'>article-what-is-gliiml</a><br/>
 <a href='#article-what-is-gliiml-long.html'>article-what-is-gliiml-long</a><br/>
@@ -657,11 +658,11 @@ This is Hello World from Mike</pre>
 Gliimly is at <a href='https://gliimly.github.io/'>https://gliimly.github.io/</a>.<br/>
 <a id='article-hello-world-service.html'></a>
 <br/>
-Writing a web <a href='/service.html'>service</a> is the same as writing a <a href='/command-line.html'>command-line</a> program in Gliim. A command-line program can be run from command-line, a bash script, as a CGI etc. <br/>
+Writing a <a href='/service.html'>service</a> is the same as writing a <a href='/command-line.html'>command-line</a> program in Gliim. Both take the same input and produce the same output, so you can test with either one to begin with.<br/>
 <br/>
-For that reason, create <a href='https://gliimly.blogspot.com/2024/09/hello-world-in-gliimly.html'>Hello World</a> as a command-line program first.<br/>
+For that reason, create first <a href='https://gliimly.blogspot.com/2024/09/hello-world-in-gliimly.html'>Hello World</a> as a command-line program.<br/>
 <br/>
-The rest to do is just starting up Hello World as application server:<br/>
+The only thing to do afterwards is to start up Hello World as application server:<br/>
 <div class="shcode">
 <pre id='code_1'>
 mgrg hello</pre>
@@ -677,9 +678,9 @@ bear       <span class="Constant">25775</span>   <span class="Constant">25772</s
 bear       <span class="Constant">25776</span>   <span class="Constant">25772</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> /var/lib/gg/bld/hello/hello.srvc
 bear       <span class="Constant">25777</span>   <span class="Constant">25772</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> /var/lib/gg/bld/hello/hello.srvc</pre>
 </div><br/>
-"mgrg hello" is the Gliim process manager for application "hello". A number of ".../hello.srvc" processes are server processes that will handle service request sent to application "hello".<br/>
+"mgrg hello" runs the Gliim process manager for application "hello". A number of ".../hello.srvc" processes are server processes that will handle service request sent to application "hello".<br/>
 <br/>
-You can send a request to the server from command line (by using "--service" option):<br/>
+Now, to test your service, you can send a request to the server from command line (by using "--service" option):<br/>
 <div class="shcode">
 <pre id='code_3'>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello-world/name=Mike</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span> <span class="Special">--service</span></pre>
@@ -689,6 +690,38 @@ The above will make a request to one of the processes above, which will then rep
 <pre id='code_1'>
 This is Hello World from Mike</pre>
 </div><br/>
+<a id='article-hello-world-service-web.html'></a>
+<br/>
+To access a Gliim service on the web, you need to have a web server or load balancer (think Apache, Nginx, HAProxy etc.).<br/>
+<br/>
+This assumes you have completed the <a href='https://gliimly.blogspot.com/2024/09/hello-world-as-service.html'>Hello World as a Service</a>, with a service built and tested via command line.<br/>
+<br/>
+In this example, Nginx web server is used; edit its configuration file. For Ubuntu and similar:<br/>
+<div class="shcode">
+<pre id='code_1'>
+sudo vi /etc/nginx/sites-enabled/default</pre>
+</div><br/>
+while on Fedora and other systems it might be:<br/>
+<div class="shcode">
+<pre id='code_2'>
+sudo vi /etc/nginx/nginx.conf</pre>
+</div><br/>
+Add the following in the "server {}" section:<br/>
+<div class="shcode">
+<pre id='code_3'>
+location /hello/ <span class="Special">{</span> include /etc/nginx/fastcgi_params<span class="Statement">;</span> fastcgi_pass  unix:///var/lib/gg/hello/sock/sock<span class="Statement">;</span> <span class="Special">}</span></pre>
+</div><br/>
+"hello" refers to your Hello World application. Finally, restart Nginx:<br/>
+<div class="shcode">
+<pre id='code_4'>
+sudo systemctl restart nginx</pre>
+</div><br/>
+Now you can call your web service, from the web. In this case it's probably a local server (127.0.0.1) if you're doing this on your own computer. The URL would be:<br/>
+<div class='ncode'>
+<pre id='code_1'>
+http://127.0.0.1/hello/hello-world/name=Mike</pre>
+</div><br/>
+Note the URL <a href='/request.html'>request</a> structure: first comes the application path ("/hello") followed by request path ("/hello-world") followed by URL parameters ("/name=Mike"). The result:<br/>
 <a id='article-vim-coloring.html'></a>
 <br/>
 Gliimly installation comes with a Vim module for highlighting Gliimly code. After installing Gliimly, run this to install the Vim module:<br/>
