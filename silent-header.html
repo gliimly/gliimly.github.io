@@ -227,12 +227,12 @@ ul {
 <pre id='code_1'>
 <span class="Statement"> silent-header</span></pre>
 </div><br/>
-silent-header will suppress the output of HTTP headers, such as with <a href='http://gliimly.github.io/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='http://gliimly.github.io/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. If you want to suppres the headers across the entire <a href='http://gliimly.github.io/single-run.html'>single-run</a> application, set GG_SILENT_HEADER environment variable to value of "yes" prior to running it.<br/>
+silent-header will suppress the output of HTTP headers, such as with <a href='http://gliimly.github.io/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='http://gliimly.github.io/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. If you want to suppres the headers across the entire <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, set GG_SILENT_HEADER environment variable to value of "yes" prior to running it.<br/>
 <br/>
 silent-header must be used prior to outputting headers, meaning either prior to any output (if out-header is not used) or prior to first out-header.<br/>
 <br/>
 There are many uses for silent-header, among them:<br/>
-<ul><li>A single-run program (such as a command line program) may use it to produce generic output, without any headers,<br/>
+<ul><li>A command-line program (such as a command line program) may use it to produce generic output, without any headers,<br/>
 </li><li>the output from a program may be redirected to a web file (such as html), in case of dynamic content that rarely changes,<br/>
 </li><li>a web program may output a completely different (non-HTTP) set of headers, etc.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>

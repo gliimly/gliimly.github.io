@@ -235,7 +235,7 @@ A &lt;request path&gt; can be a request name (i.e. without any forward slashes) 
 <br/>
 For example, a &lt;request path&gt; can be "wine_items" or "/wine-items" "/items/wine" etc. In general, it represents the nature of a request, such as an action on an object, a resource path handled by it etc. There is no specific way to interpret a request path, and you can construct it in a way that works for you.<br/>
 <br/>
-If "sub-handler" clause is used, then this handler can only be called from another handler by using <a href='http://gliimly.github.io/sub-handler.html'>sub-handler</a> statement; it cannot be called from an outside caller, be it a <a href='http://gliimly.github.io/service.html'>service</a> call or <a href='http://gliimly.github.io/single-run.html'>single-run</a> program. This mechanism automatically guards direct execution by outside callers of such handlers for safety, for instance by checking user credentials first. <br/>
+If "sub-handler" clause is used, then this handler can only be called from another handler by using <a href='http://gliimly.github.io/sub-handler.html'>sub-handler</a> statement; it cannot be called from an outside caller, be it a <a href='http://gliimly.github.io/service.html'>service</a> call or <a href='http://gliimly.github.io/command-line.html'>command-line</a> program. This mechanism automatically guards direct execution by outside callers of such handlers for safety, for instance by checking user credentials first. <br/>
 <br/>
 Note that you can also use "%%" instead of either begin-handler or end-handler or both. <br/>
 <br/>

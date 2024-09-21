@@ -221,7 +221,7 @@ ul {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Request</div><hr/>Gliimly applications run by processing requests. A request always takes form of an HTTP request, meaning a URL, an optional HTTP request body, and any environment variables. This is regardless of whether it's a <a href='http://gliimly.github.io/service.html'>service</a> or a <a href='http://gliimly.github.io/single-run.html'>single-run</a> application. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Request</div><hr/>Gliimly applications run by processing requests. A request always takes form of an HTTP request, meaning a URL, an optional HTTP request body, and any environment variables. This is regardless of whether it's a <a href='http://gliimly.github.io/service.html'>service</a> or a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program. <br/>
 <div class="vsub"><a id="Handling of requests"></a>Handling of requests</div>
 Each requests is handled with <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> statement, which implements its functionality. This handling of requests is based on the names of .gliim source files. The request name must match the file name that implements it. <br/>
 <br/>
@@ -344,7 +344,7 @@ For a hierarchical URL path, you would write the same:<br/>
 Maximum length of a request URL is 2500 bytes.<br/>
 <div class="vsub"><a id="How Gliimly handles requests"></a>How Gliimly handles requests</div>
 An incoming request is handled by a first available process:<br/>
-<ul><li>For a <a href='http://gliimly.github.io/single-run.html'>single-run</a> application, there is only a single process, and it handles a single requests before it exits. <br/>
+<ul><li>For a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, there is only a single process, and it handles a single requests before it exits. <br/>
 </li><li>For a <a href='http://gliimly.github.io/service.html'>service</a> application, there can be any number of processes running. A process is chosen to service a request if it is currently not serving other requests; this way there are no processes waiting idle unnecessarily. Each process is identical and can serve any request, i.e. it has all request handlers available to it. Thus, when a process is chosen to serve a request, then this process will simply execute its begin-handler.</li></ul>
 <span style="font-weight:bold;">- Processing a request</span><br/>
 To handle a request, a process first calls a Gliimly dispatcher, which is automatically generated. It uses a request name to call the appropriate request handler, as explained above. <br/>

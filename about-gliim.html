@@ -224,7 +224,7 @@ ul {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;About gliim</div><hr/><div class="vsub"><a id="Modeling language"></a>Modeling language</div>
 Gliimly is a very high-level modeling language. It's about solving problems by modeling the solution and connecting the components to create high-performance, low-footprint executables; and not about managing memory, manipulating bits and bytes or writing complex code.<br/>
 <div class="vsub"><a id="Service oriented"></a>Service oriented</div>
-A Gliimly program works as a service provider, meaning it handles service <a href='http://gliimly.github.io/request.html'>request</a>s by providing a reply. It can be either a <a href='http://gliimly.github.io/service.html'>service</a> or a <a href='http://gliimly.github.io/single-run.html'>single-run</a> program that processes GET, POST, PUT, PATCH, DELETE or any other HTTP requests. <br/>
+A Gliimly program works as a service provider, meaning it handles service <a href='http://gliimly.github.io/request.html'>request</a>s by providing a reply. It can be either a <a href='http://gliimly.github.io/service.html'>service</a> or a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program that processes GET, POST, PUT, PATCH, DELETE or any other HTTP requests. <br/>
 <br/>
 The URL for a request must state the application name, and a also request name which is the source file handling it. So, "/app-name/my-request" means that application name is "app-name" and that "request_name.gliim" file will implement a request handler. A request executes in this order:<br/>
 <ul><li>An optional before-handler handler executes (see <a href='http://gliimly.github.io/before-handler.html'>before-handler</a>). <br/>
@@ -242,12 +242,12 @@ A service can be requested by:<br/>
 </li><li>another Gliimly service by means of <a href='http://gliimly.github.io/call-remote.html'>call-remote</a> (on secure networks) and <a href='http://gliimly.github.io/call-web.html'>call-web</a> (on the web via SSL/TSL secure connections).</li></ul>
 With <a href='http://gliimly.github.io/call-remote.html'>call-remote</a>, you can execute remote requests in parallel, and get results, error messages and exit status in a single statement. This makes it easy to distribute and parallelize your application logic and/or build application tiers on a local or any number of remote machines, without having to write any multi-threaded code.<br/>
 <div class="vsub"><a id="Usage"></a>Usage</div>
-Gliimly services and single-run programs can implement most back-end application layers, including <br/>
+Gliimly services and command-line programs can implement most back-end application layers, including <br/>
 <ul><li>presentation (eg. building a web page), <br/>
 </li><li>application logic,<br/>
 </li><li>data (eg. database) layers, and any others.</li></ul>
 <div class="vsub"><a id="Single-run program"></a>Single-run program</div>
-When your Gliimly service is <a href='http://gliimly.github.io/single-run.html'>single-run</a>, a request is handled by a single execution - for instance from command-line. This may be suitable for batch jobs, for use in shell scripts, for testing/mocking, as well as any other situation where it is more useful or convenient to execute a single-run program. Note that a single-run program can double as <a href='http://gliimly.github.io/CGI.html'>CGI</a> (Common Gateway Interface) as well.<br/>
+When your Gliimly runs as <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, a request is handled by a single execution. This may be suitable for batch jobs, for use in shell scripts, for testing/mocking, as well as any other situation where it is more useful or convenient to execute a command-line program. Note that a command-line program can double as <a href='http://gliimly.github.io/CGI.html'>CGI</a> (Common Gateway Interface) as well.<br/>
 <div class="vsub"><a id="Language"></a>Language</div>
 Gliimly programming language is memory-safe, meaning it will prevent you from accidentally overwriting memory or freeing it when it shouldn't be. Gliimly's <a href='http://gliimly.github.io/memory-handling.html'>memory-handling</a> is not limited to just memory safety; it also includes automatic freeing of memory at the end of a request, preventing memory leaks which can be fatal to long running processes. Similarly, files open with file-handling statements are automatically closed at the end of each request, serving the same purpose. <br/>
 <div class="vsub"><a id="Types"></a>Types</div>

@@ -227,6 +227,8 @@ This page contains all of Gliimly documentation topics combined into one. It may
 <a href='#after-handler.html'>after-handler</a><br/>
 <a href='#application-setup.html'>application-setup</a><br/>
 <a href='#article-hello-world.html'>article-hello-world</a><br/>
+<a href='#article-hello-world-service.html'>article-hello-world-service</a><br/>
+<a href='#article-vim-coloring.html'>article-vim-coloring</a><br/>
 <a href='#article-what-is-gliiml.html'>article-what-is-gliiml</a><br/>
 <a href='#article-what-is-gliiml-long.html'>article-what-is-gliiml-long</a><br/>
 <a href='#before-handler.html'>before-handler</a><br/>
@@ -240,6 +242,7 @@ This page contains all of Gliimly documentation topics combined into one. It may
 <a href='#Client-API.html'>Client-API</a><br/>
 <a href='#close-file.html'>close-file</a><br/>
 <a href='#code-blocks.html'>code-blocks</a><br/>
+<a href='#command-line.html'>command-line</a><br/>
 <a href='#commit-transaction.html'>commit-transaction</a><br/>
 <a href='#connect-apache-tcp-socket.html'>connect-apache-tcp-socket</a><br/>
 <a href='#connect-apache-unix-socket.html'>connect-apache-unix-socket</a><br/>
@@ -375,7 +378,6 @@ This page contains all of Gliimly documentation topics combined into one. It may
 <a href='#set-param.html'>set-param</a><br/>
 <a href='#set-string.html'>set-string</a><br/>
 <a href='#silent-header.html'>silent-header</a><br/>
-<a href='#single-run.html'>single-run</a><br/>
 <a href='#split-string.html'>split-string</a><br/>
 <a href='#start-loop.html'>start-loop</a><br/>
 <a href='#statements.html'>statements</a><br/>
@@ -437,7 +439,7 @@ then connect to the <a href='/service.html'>service</a>:<br/>
 <pre id='code_5'>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--service</span> <span class="Special">--exec</span></pre>
 </div><br/>
-</li><li>Execute as <a href='/single-run.html'>single-run</a> from command line:<br/>
+</li><li>Execute as <a href='/command-line.html'>command-line</a> program:<br/>
 <div class="shcode">
 <pre id='code_6'>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello</span><span class="Statement">&quot;</span> <span class="Special">--silent-header</span> <span class="Special">--exec</span></pre>
@@ -457,7 +459,7 @@ Hello World!</pre>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;About gliim</div><hr/><div class="vsub"><a id="Modeling language"></a>Modeling language</div>
 Gliimly is a very high-level modeling language. It's about solving problems by modeling the solution and connecting the components to create high-performance, low-footprint executables; and not about managing memory, manipulating bits and bytes or writing complex code.<br/>
 <div class="vsub"><a id="Service oriented"></a>Service oriented</div>
-A Gliimly program works as a service provider, meaning it handles service <a href='/request.html'>request</a>s by providing a reply. It can be either a <a href='/service.html'>service</a> or a <a href='/single-run.html'>single-run</a> program that processes GET, POST, PUT, PATCH, DELETE or any other HTTP requests. <br/>
+A Gliimly program works as a service provider, meaning it handles service <a href='/request.html'>request</a>s by providing a reply. It can be either a <a href='/service.html'>service</a> or a <a href='/command-line.html'>command-line</a> program that processes GET, POST, PUT, PATCH, DELETE or any other HTTP requests. <br/>
 <br/>
 The URL for a request must state the application name, and a also request name which is the source file handling it. So, "/app-name/my-request" means that application name is "app-name" and that "request_name.gliim" file will implement a request handler. A request executes in this order:<br/>
 <ul><li>An optional before-handler handler executes (see <a href='/before-handler.html'>before-handler</a>). <br/>
@@ -475,12 +477,12 @@ A service can be requested by:<br/>
 </li><li>another Gliimly service by means of <a href='/call-remote.html'>call-remote</a> (on secure networks) and <a href='/call-web.html'>call-web</a> (on the web via SSL/TSL secure connections).</li></ul>
 With <a href='/call-remote.html'>call-remote</a>, you can execute remote requests in parallel, and get results, error messages and exit status in a single statement. This makes it easy to distribute and parallelize your application logic and/or build application tiers on a local or any number of remote machines, without having to write any multi-threaded code.<br/>
 <div class="vsub"><a id="Usage"></a>Usage</div>
-Gliimly services and single-run programs can implement most back-end application layers, including <br/>
+Gliimly services and command-line programs can implement most back-end application layers, including <br/>
 <ul><li>presentation (eg. building a web page), <br/>
 </li><li>application logic,<br/>
 </li><li>data (eg. database) layers, and any others.</li></ul>
 <div class="vsub"><a id="Single-run program"></a>Single-run program</div>
-When your Gliimly service is <a href='/single-run.html'>single-run</a>, a request is handled by a single execution - for instance from command-line. This may be suitable for batch jobs, for use in shell scripts, for testing/mocking, as well as any other situation where it is more useful or convenient to execute a single-run program. Note that a single-run program can double as <a href='/CGI.html'>CGI</a> (Common Gateway Interface) as well.<br/>
+When your Gliimly runs as <a href='/command-line.html'>command-line</a> program, a request is handled by a single execution. This may be suitable for batch jobs, for use in shell scripts, for testing/mocking, as well as any other situation where it is more useful or convenient to execute a command-line program. Note that a command-line program can double as <a href='/CGI.html'>CGI</a> (Common Gateway Interface) as well.<br/>
 <div class="vsub"><a id="Language"></a>Language</div>
 Gliimly programming language is memory-safe, meaning it will prevent you from accidentally overwriting memory or freeing it when it shouldn't be. Gliimly's <a href='/memory-handling.html'>memory-handling</a> is not limited to just memory safety; it also includes automatic freeing of memory at the end of a request, preventing memory leaks which can be fatal to long running processes. Similarly, files open with file-handling statements are automatically closed at the end of each request, serving the same purpose. <br/>
 <div class="vsub"><a id="Types"></a>Types</div>
@@ -600,13 +602,13 @@ mgrg <span class="Special">-w</span> <span class="Constant">3</span> <span class
 </div><br/>
 See <a href='/mgrg.html'>mgrg</a> for more details.<br/>
 <div class="vsub"><a id="Running application"></a>Running application</div>
-You can run your application as <a href='/service.html'>service</a>, <a href='/CGI.html'>CGI</a> or <a href='/single-run.html'>single-run</a>.<br/>
+You can run your application as <a href='/service.html'>service</a>, <a href='/CGI.html'>CGI</a> or <a href='/command-line.html'>command-line</a>.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Running application</span><br/>
 <a href='/application-setup.html'>application-setup</a> &nbsp;<br/>
 <a href='/CGI.html'>CGI</a> &nbsp;<br/>
-<a href='/service.html'>service</a> &nbsp;<br/>
-<a href='/single-run.html'>single-run</a> &nbsp; <br/>
+<a href='/command-line.html'>command-line</a> &nbsp;<br/>
+<a href='/service.html'>service</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='article-hello-world.html'></a>
@@ -653,6 +655,59 @@ The output is:<br/>
 This is Hello World from Mike</pre>
 </div><br/>
 Gliimly is at <a href='https://gliimly.github.io/'>https://gliimly.github.io/</a>.<br/>
+<a id='article-hello-world-service.html'></a>
+<br/>
+Writing a web <a href='/service.html'>service</a> is the same as writing a <a href='/command-line.html'>command-line</a> program in Gliim. A command-line program can be run from command-line, a bash script, as a CGI etc. <br/>
+<br/>
+For that reason, create <a href='https://gliimly.blogspot.com/2024/09/hello-world-in-gliimly.html'>Hello World</a> as a command-line program first.<br/>
+<br/>
+The rest to do is just starting up Hello World as application server:<br/>
+<div class="shcode">
+<pre id='code_1'>
+mgrg hello</pre>
+</div><br/>
+Now there's a number of resident processes running, expecting clients requests. You can see those processes:<br/>
+<div class="shcode">
+<pre id='code_2'>
+ps <span class="Special">-ef</span>|<span class="Statement">grep</span> hello
+bear       <span class="Constant">25772</span>    <span class="Constant">2311</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> mgrg hello
+bear       <span class="Constant">25773</span>   <span class="Constant">25772</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> /var/lib/gg/bld/hello/hello.srvc
+bear       <span class="Constant">25774</span>   <span class="Constant">25772</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> /var/lib/gg/bld/hello/hello.srvc
+bear       <span class="Constant">25775</span>   <span class="Constant">25772</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> /var/lib/gg/bld/hello/hello.srvc
+bear       <span class="Constant">25776</span>   <span class="Constant">25772</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> /var/lib/gg/bld/hello/hello.srvc
+bear       <span class="Constant">25777</span>   <span class="Constant">25772</span>  <span class="Constant">0</span> <span class="Constant">13</span>:<span class="Constant">04</span> ?        <span class="Constant">00</span>:<span class="Constant">00</span>:<span class="Constant">00</span> /var/lib/gg/bld/hello/hello.srvc</pre>
+</div><br/>
+"mgrg hello" is the Gliim process manager for application "hello". A number of ".../hello.srvc" processes are server processes that will handle service request sent to application "hello".<br/>
+<br/>
+You can send a request to the server from command line (by using "--service" option):<br/>
+<div class="shcode">
+<pre id='code_3'>
+gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/hello-world/name=Mike</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span> <span class="Special">--service</span></pre>
+</div><br/>
+The above will make a request to one of the processes above, which will then reply:<br/>
+<div class='ncode'>
+<pre id='code_1'>
+This is Hello World from Mike</pre>
+</div><br/>
+<a id='article-vim-coloring.html'></a>
+<br/>
+Gliimly installation comes with a Vim module for highlighting Gliimly code. After installing Gliimly, run this to install the Vim module:<br/>
+<div class="shcode">
+<pre id='code_1'>
+gg <span class="Special">-m</span></pre>
+</div><br/>
+The default color scheme looks like this:<br/>
+To change color scheme, type ":colorscheme " in command mode, then press Tab to see available color schemes. Press Enter to choose one. For instance, in 'darkblue' color scheme, it may look like:<br/>
+To make the change permanent, edit file ".vimrc" in home directory:<br/>
+<div class="shcode">
+<pre id='code_2'>
+vi ~/.vimrc</pre>
+</div><br/>
+and append line:<br/>
+<div class="shcode">
+<pre id='code_3'>
+colorscheme darkblue</pre>
+</div><br/>
 <a id='article-what-is-gliiml.html'></a>
 <br/>
 Gliimly is a new programming language and framework for developing web services and web applications. It is: <br/>
@@ -728,7 +783,7 @@ A &lt;request path&gt; can be a request name (i.e. without any forward slashes) 
 <br/>
 For example, a &lt;request path&gt; can be "wine_items" or "/wine-items" "/items/wine" etc. In general, it represents the nature of a request, such as an action on an object, a resource path handled by it etc. There is no specific way to interpret a request path, and you can construct it in a way that works for you.<br/>
 <br/>
-If "sub-handler" clause is used, then this handler can only be called from another handler by using <a href='/sub-handler.html'>sub-handler</a> statement; it cannot be called from an outside caller, be it a <a href='/service.html'>service</a> call or <a href='/single-run.html'>single-run</a> program. This mechanism automatically guards direct execution by outside callers of such handlers for safety, for instance by checking user credentials first. <br/>
+If "sub-handler" clause is used, then this handler can only be called from another handler by using <a href='/sub-handler.html'>sub-handler</a> statement; it cannot be called from an outside caller, be it a <a href='/service.html'>service</a> call or <a href='/command-line.html'>command-line</a> program. This mechanism automatically guards direct execution by outside callers of such handlers for safety, for instance by checking user credentials first. <br/>
 <br/>
 Note that you can also use "%%" instead of either begin-handler or end-handler or both. <br/>
 <br/>
@@ -1124,7 +1179,7 @@ Get the "JPG" image from the web and save it to a file "pic.jpg":<br/>
 <a id='CGI.html'></a>
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;CGI</div><hr/>You can run Gliimly application as a CGI (Common Gateway Interface) program, if your web server supports CGI. This is not recommended in general, as CGI programs do not exhibit great performance. However in some cases you may need to use CGI, such as when performance is not of critical importance, or when other methods of execution are not feasible.<br/>
 <br/>
-To run your application with CGI, use Gliimly <a href='/single-run.html'>single-run</a> program. Since Gliimly applications require running in the security context of the user who owns the application, you must use "suexec" (or similar feature) of your web server.<br/>
+To run your application with CGI, use <a href='/command-line.html'>command-line</a> program. Since Gliimly applications require running in the security context of the user who owns the application, you must use "suexec" (or similar feature) of your web server.<br/>
 <br/>
 The following script sets up an application named "func_test" (any kind of application will do) to run as CGI (after it's been compiled with <a href='/gg.html'>gg</a>) on Apache web server running on Ubuntu 18 and up. For other web servers/distros, consult their documentation on how to setup CGI for a program.<br/>
 <div class="shcode">
@@ -1163,8 +1218,8 @@ The following script sets up an application named "func_test" (any kind of appli
  <span style="font-weight:bold;">Running application</span><br/>
 <a href='/application-setup.html'>application-setup</a> &nbsp;<br/>
 <a href='/CGI.html'>CGI</a> &nbsp;<br/>
-<a href='/service.html'>service</a> &nbsp;<br/>
-<a href='/single-run.html'>single-run</a> &nbsp; <br/>
+<a href='/command-line.html'>command-line</a> &nbsp;<br/>
+<a href='/service.html'>service</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='Client-API.html'></a>
@@ -1705,6 +1760,88 @@ The following code will first print out "outside" and then "inside" twice, illus
 <a href='/if-true.html'>if-true</a> &nbsp;<br/>
 <a href='/set-bool.html'>set-bool</a> &nbsp;<br/>
 <a href='/start-loop.html'>start-loop</a> &nbsp; <br/>
+<span style="font-weight:bold;">See all</span> <br/>
+<a href='/documentation.html'>documentation</a><br/>
+<a id='command-line.html'></a>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Command line</div><hr/>A Gliimly application can run as a web application or a command-line program, or both - such as when some requests can be either fulfilled through web interface or executed otherwise (such as on the command line). Note that Gliimly produces two separate executables: a <a href='/service.html'>service</a> one and a command-line one - they are different because command-line program does not need the service library and thus is smaller. <br/>
+<br/>
+The name of the command-line executable is the same as the application name, and its path is (assuming &lt;app name&gt; is the application name):<br/>
+<div class='ncode'>
+<pre id='code_1'>
+/var/lib/gg/bld/&lt;app name&gt;/&lt;app name&gt;</pre>
+</div><br/>
+<div class="vsub"><a id="Output"></a>Output</div>
+A command-line program works the same way as a service executable, and the output is the same, except that it is directed to stdout (standard output) and stderr (standard error). <br/>
+<div class="vsub"><a id="Exit code"></a>Exit code</div>
+To specify the exit code of a command-line program, use <a href='/handler-status.html'>handler-status</a>. To exit the program, use <a href='/exit-handler.html'>exit-handler</a>, or otherwise the program will exit when it reaches the end of a <a href='/request.html'>request</a>.<br/>
+<div class="vsub"><a id="Executing a request"></a>Executing a request</div>
+Here is how to execute a request "add-stock" in application "stock" with parameters "name" having a value of "ABC" and "price" a value of "300":<br/>
+<div class="shcode">
+<pre id='code_1'>
+gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock?name=ABC&amp;price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+</div><br/>
+Note that you if specify parameters as part of the path, you could write the above the same way as in a URL:<br/>
+<div class="shcode">
+<pre id='code_2'>
+gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
+</div><br/>
+You can generate the shell code to execute the above without using <a href='/gg.html'>gg</a> by omitting "--exec" option, for instance:<br/>
+<div class="shcode">
+<pre id='code_3'>
+gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span></pre>
+</div><br/>
+<div class="vsub"><a id="Including a request body"></a>Including a request body</div>
+You can include a request body when executing a singe-run program. It is always included as the standard input (stdin) to the program. <br/>
+<br/>
+You must provide the length of this input and the type of input, as well as a request method (such as POST, PUT, PATCH, GET, DELETE or any other).<br/>
+<br/>
+Here is an example of using a request body to make a POST request on the command line - the application name is "json" and request name is "process". File "prices.json" is sent as request body:<br/>
+<div class="shcode">
+<pre id='code_4'>
+gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span>/json <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">'</span><span class="Constant">/process?act=get_total&amp;period=YTD</span><span class="Statement">'</span> <span class="Special">--method</span><span class="Statement">=</span>POST <span class="Special">--content</span><span class="Statement">=</span>prices.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
+</div><br/>
+You can generate the shell code for the above by omitting "--exec" option of <a href='/gg.html'>gg</a> utility.<br/>
+<br/>
+Note that you can also include any other headers as environment variables by using the "HTTP_" convention, where custom headers are capitalized with use of underscore for dashes and prefixed with "HTTP_", for example header "Gliimly-Header" would be set as:<br/>
+<div class="shcode">
+<pre id='code_5'>
+<span class="Statement">export</span> <span class="Identifier">HTTP_GG_HEADER</span>=<span class="Statement">&quot;</span><span class="Constant">some value</span><span class="Statement">&quot;</span></pre>
+</div><br/>
+You would set the "HTTP_" variable(s) prior to executing the program.<br/>
+<div class="vsub"><a id="Suppressing HTTP header output for the entire application"></a>Suppressing HTTP header output for the entire application</div>
+If you wish to suppress the output of HTTP headers for all requests, set environment variable GG_SILENT_HEADER to "yes" before executing the program:<br/>
+<div class="shcode">
+<pre id='code_6'>
+<span class="Statement">export</span> <span class="Identifier">GG_SILENT_HEADER</span>=yes</pre>
+</div><br/>
+This will suppress the output of HTTP headers (either the default or with <a href='/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
+<div class="vsub"><a id="URL-encoding the input"></a>URL-encoding the input</div>
+Any data in "--req" option (and consequently in PATH_INFO or QUERY_STRING environment vairables if calling directly from shell) must be formatted to be a valid URL; for example, data that contains special characters (like "&amp;" or "?") must be URL-encoded, for instance:<br/>
+<div class="shcode">
+<pre id='code_7'>
+gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC%3F/price=300</span><span class="Statement">&quot;</span></pre>
+</div><br/>
+In this case, parameter "name" has value of "ABC?", where special character "?" is encoded as "%3F". <br/>
+<br/>
+To make sure all your input parameters are properly URL-encoded, you can use Gliimly's v1 code processor:<br/>
+<div class="shcode">
+<pre id='code_8'>
+<span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">&lt;your data&gt;</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
+</div><br/>
+For instance, to encode "a?=b" as a parameter:<br/>
+<div class="shcode">
+<pre id='code_9'>
+gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=</span><span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">AB?</span><span class="Statement">'</span><span class="PreProc">)</span><span class="Constant">/price=300</span><span class="Statement">&quot;</span></pre>
+</div><br/>
+If your parameters do not contain characters that need URL encoding, then you can skip this.<br/>
+<div class="vsub"><a id="CGI"></a>CGI</div>
+You can also use a command-line program with <a href='/CGI.html'>CGI</a> (Common Gateway Interface). <br/>
+<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
+ <span style="font-weight:bold;">Running application</span><br/>
+<a href='/application-setup.html'>application-setup</a> &nbsp;<br/>
+<a href='/CGI.html'>CGI</a> &nbsp;<br/>
+<a href='/command-line.html'>command-line</a> &nbsp;<br/>
+<a href='/service.html'>service</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='commit-transaction.html'></a>
@@ -2935,7 +3072,7 @@ Derived key is in variable "mk":<br/>
 <br/>
 A Gliimly application is always owned by a single Operating System user (see "-u" option in mgrg), while different applications can be owned by different users. This is the directory structure:<br/>
 <ul><li>/var/lib/gg/bld/&lt;app name&gt;<br/>
-Build directory is where your application executables are built, with name &lt;app name&gt;.srvc for a <a href='/service.html'>service</a> and &lt;app name&gt; for a <a href='/single-run.html'>single-run</a>. This is a scratch-pad directory, so do not alter files in it, or use for anything else.<br/>
+Build directory is where your application executables are built, with name &lt;app name&gt;.srvc for a <a href='/service.html'>service</a> and &lt;app name&gt; for a <a href='/command-line.html'>command-line</a> program. This is a scratch-pad directory, so do not alter files in it, or use for anything else.<br/>
 <br/>
 </li><li>/var/lib/gg/&lt;app name&gt;<br/>
 Application directory. All application data, including internals such as sockets, are kept here. Each such directory is owned by its owner with 700 privileges, preventing other users from accessing its files.<br/>
@@ -3178,8 +3315,8 @@ ln <span class="Special">-s</span> /home/disk0/file /var/lib/gg/<span class="Sta
 <li><span style="font-weight:bold;">Running application</span><br/>
 <a href='/application-setup.html'>application-setup</a> &nbsp;<br/>
 <a href='/CGI.html'>CGI</a> &nbsp;<br/>
-<a href='/service.html'>service</a> &nbsp;<br/>
-<a href='/single-run.html'>single-run</a> &nbsp; </li>
+<a href='/command-line.html'>command-line</a> &nbsp;<br/>
+<a href='/service.html'>service</a> &nbsp; </li>
 <br/>
 <li><span style="font-weight:bold;">Safety</span><br/>
 <a href='/call-extended.html'>call-extended</a> &nbsp;<br/>
@@ -3591,7 +3728,7 @@ Note that with some GG_ERR_... codes, the "errno" clause in get-req may return 0
 "Erroring out" means a process handling a request has encountered a difficulty that cannot be handled and it will either:<br/>
 <ul><li>Skip the rest of the request, and move on quickly to handle the next request without exiting. Most errors are like this, for example your program has attempted to access memory outside of what's allocated, or you have called <a href='/report-error.html'>report-error</a> statement.<br/>
 </li><li>Stop and exit, and it may be automatically restarted if it's a <a href='/service.html'>service</a>. For instance, the process could be out of memory, or the database is permanently down and connection cannot be re-established.</li></ul>. <br/>
-Note that if your program is <a href='/single-run.html'>single-run</a> (for instance if it's a command-line program), it will exit in any case since it handles a single request anyway.</li></ul>
+Note that if your program is <a href='/command-line.html'>command-line</a>, it will exit in any case since it handles a single request anyway.</li></ul>
 <div class="vsub"><a id="When there is a problem in Gliimly"></a>When there is a problem in Gliimly</div>
 If there is a fatal internal error (i.e. error in Gliimly code itself that cannot be handled), it will be caught by Gliimly, and the process will end. If your process is started with <a href='/mgrg.html'>mgrg</a>, it may be automatically restarted.<br/>
 <div class="vsub"><a id="Logging the error"></a>Logging the error</div>
@@ -3965,7 +4102,7 @@ Application-related variables can be obtained with get-app statement. The follow
 <ul><li>"name" returns the name of your application, as specified when created (see <a href='/mgrg.html'>mgrg</a>). <br/>
 </li><li>"directory" is the directory where your application resides, i.e. the application home directory (see <a href='/directories.html'>directories</a>).<br/>
 </li><li>"trace-directory" is the directory where your application trace files are written, if enabled (see <a href='/directories.html'>directories</a>).<br/>
-</li><li>"is-service" is a boolean variable that is true if your code is running as a <a href='/service.html'>service</a>, or false if it is running as a <a href='/single-run.html'>single-run</a> program.<br/>
+</li><li>"is-service" is a boolean variable that is true if your code is running as a <a href='/service.html'>service</a>, or false if it is running as a <a href='/command-line.html'>command-line</a> program.<br/>
 </li><li>"file-directory" is the directory where Gliimly file storage system is, i.e. <a href='/file-storage.html'>file-storage</a>.<br/>
 </li><li>"db-vendor" is the database vendor name of database given by &lt;database configuration&gt; (as used for example in <a href='/run-query.html'>run-query</a>). You can use it to create database specific conditions. The database vendor name can be compared against predefined string constants GG_MARIADB (for MariaDB database), GG_POSTGRES (for Postgres database) and GG_SQLITE (for SQLite database).<br/>
 </li><li>"path" is the leading path of the URL request that can be used to build web forms and links leading back to your application. It returns the same value as <a href='/p-path.html'>p-path</a>.<br/>
@@ -4160,7 +4297,7 @@ By default, &lt;name&gt; is a string variable, unless &lt;type&gt; (in "type" cl
 <br/>
 The value obtained with get-param is checked to be of the proper &lt;type&gt;, and if it isn't, your request will <a href='/error-handling.html'>error out</a>. The exception to this is that a string parameter can be converted into a number or a boolean, assuming the string value represents a valid number or is "true"/"false". &nbsp;Parameters of "number" and "bool" types are obtained by value, and others by reference. It means for instance, that you can pass an index to sub-handler and read and write nodes there, and such changes will be visible in the caller request.<br/>
 <div class="vsub"><a id="Input parameters from a caller"></a>Input parameters from a caller</div>
-Input parameters from an outside caller are specified as name/value pairs (see <a href='/service.html'>service</a> or <a href='/single-run.html'>single-run</a>). Input parameter name can be made up of alphanumeric characters, hyphen or underscore only and cannot start with a digit. Note that a hyphen is automatically converted to underscore, so for instance an input parameter "some-parameter" in HTTP request will be "some_parameter" in get-param. <br/>
+Input parameters from an outside caller are specified as name/value pairs (see <a href='/service.html'>service</a> or <a href='/command-line.html'>command-line</a>). Input parameter name can be made up of alphanumeric characters, hyphen or underscore only and cannot start with a digit. Note that a hyphen is automatically converted to underscore, so for instance an input parameter "some-parameter" in HTTP request will be "some_parameter" in get-param. <br/>
 <span style="font-weight:bold;">- File uploads</span><br/>
 File uploads are handled as input parameters as well, see <a href='/file-uploading.html'>file-uploading</a>.<br/>
 <span style="font-weight:bold;">- Web input parameters</span><br/>
@@ -4313,13 +4450,13 @@ Get the name of current trace file:<br/>
     <span class="Type"> to</span> &lt;variable&gt;</pre>
 </div><br/>
 System-describing variables can be obtained with get-sys statement and the result stored into &lt;variable&gt;. The following system variables can be obtained:<br/>
-<ul><li>"environment" returns the name of a given environment variable &lt;var name&gt;. If this is a server program, then the environment passed from a remote caller (such as web proxy) is queried. If this is a <a href='/single-run.html'>single-run</a> program, then the environment from the Operating System is queried. In the following example,the QUERY_STRING variable (i.e. the actual query string from URL) is obtained:<br/>
+<ul><li>"environment" returns the name of a given environment variable &lt;var name&gt;. If this is a server program, then the environment passed from a remote caller (such as web proxy) is queried. If this is a <a href='/command-line.html'>command-line</a> program, then the environment from the Operating System is queried. In the following example,the QUERY_STRING variable (i.e. the actual query string from URL) is obtained:<br/>
 <div class='code'>
 <pre id='code_2'>
 <span class="Statement"> get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;QUERY_STRING&quot;</span><span class="Type"> to</span> qstr</pre>
 </div><br/>
 <br/>
-</li><li>"directory" is the execution directory of the <a href='/single-run.html'>single-run</a> program, i.e. the current working directory when the program was executed. Note that Gliimly will change the current working directory immediately afterwards to the application home directory (see <a href='/directories.html'>directories</a>). You can use this clause to work with files in the directory where the program was started. If your program runs as a <a href='/service.html'>service</a>, then "directory" clause always returns application home directory, regardless of which directory <a href='/mgrg.html'>mgrg</a> program manager started your application from.<br/>
+</li><li>"directory" is the execution directory of the <a href='/command-line.html'>command-line</a> program, i.e. the current working directory when the program was executed. Note that Gliimly will change the current working directory immediately afterwards to the application home directory (see <a href='/directories.html'>directories</a>). You can use this clause to work with files in the directory where the program was started. If your program runs as a <a href='/service.html'>service</a>, then "directory" clause always returns application home directory, regardless of which directory <a href='/mgrg.html'>mgrg</a> program manager started your application from.<br/>
 <br/>
 </li><li>"os-name" is the name of Operating System.<br/>
 <br/>
@@ -4476,7 +4613,7 @@ Show library directory - Gliimly's libraries and v1 code processor are located t
  &nbsp; &nbsp;[ --silent-header ] <br/>
  &nbsp; &nbsp;[ --arg="&lt;arguments&gt;" ] <br/>
  &nbsp; &nbsp;[ --exec ] <br/>
-Run a <a href='/single-run.html'>single-run</a> program, or make a <a href='/service.html'>service</a> request, or display bash code to do the same for use in scripts. <br/>
+Run a <a href='/command-line.html'>command-line</a> program, or make a <a href='/service.html'>service</a> request, or display bash code to do the same for use in scripts. <br/>
 <br/>
 If you are not in application's source code directory, then you must specify "--app" option to supply the application path (typically "/&lt;application name&gt;", see <a href='/request.html'>request</a>). You can use "--req" option to specify the request name and optional URL parameters (see <a href='/request.html'>request</a>), for example it may be:<br/>
 <div class='ncode'>
@@ -4497,13 +4634,13 @@ gg -r --req=&quot;/encrypt/data=somedata?method=aes256&quot; --method=POST --exe
 </div><br/>
 If not specified, the default method is "GET". <br/>
 <br/>
-If "--service" is not used, then <a href='/single-run.html'>single-run</a> program will execute and you can specify program arguments with "--arg" option, in which case "&lt;arguments&gt;" is a string (double or single quoted) that contains any number of program arguments. To specify arguments for a service see "-a" option in <a href='/mgrg.html'>mgrg</a>.<br/>
+If "--service" is not used, then <a href='/command-line.html'>command-line</a> program will execute and you can specify program arguments with "--arg" option, in which case "&lt;arguments&gt;" is a string (double or single quoted) that contains any number of program arguments. To specify arguments for a service see "-a" option in <a href='/mgrg.html'>mgrg</a>.<br/>
 <br/>
 If "--service" is used, then application server will be contacted to execute a service; in this case if "--remote" is not specified, a local Unix socket is used to contact the server; otherwise "server:port" specified in "--remote" is the IP/name and port of the server to call, separated by a colon (":"). In case of a local Unix socket, the socket path is by default "/var/lib/gg/&lt;app name&gt;/sock/sock", where "/&lt;app name&gt;" is given by the last path segment in "--app" option, or if not specified it is derived from the name of a Gliimly application built in the current directory; otherwise the socket path is given by "--socket" option.<br/>
 <br/>
 By default, the output in any case will have the HTTP headers. If you don't want those to appear, use "--silent-header" option.<br/>
 <br/>
-If "--content" is used, then file &lt;input file&gt; is either piped to the standard input of a single-run program (if "--service" is not used), or sent as a content to the application server (if "--service" is used). You can also specify content type with "--content-type". For example:<br/>
+If "--content" is used, then file &lt;input file&gt; is either piped to the standard input of a command-line program (if "--service" is not used), or sent as a content to the application server (if "--service" is used). You can also specify content type with "--content-type". For example:<br/>
 <div class="shcode">
 <pre id='code_2'>
 gg <span class="Special">-r</span> <span class="Special">-app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/my_app</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/some_request?par1=val1&amp;par2=20&amp;par3=4</span><span class="Statement">&quot;</span> <span class="Special">--method</span><span class="Statement">=</span>PATCH <span class="Special">--content</span><span class="Statement">=</span>something.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
@@ -4522,10 +4659,10 @@ When "--exec" is not used, the output may look like this:<br/>
 </div><br/>
 If you copy the above and paste into bash shell, it will execute the command line program which handles the request specified (which gg would do when "--exec" is specified). Note that SCRIPT_NAME will be set to whatever application path you use (i.e. the default or if set with "--path" option when making the application; or with "--app" option here), see <a href='/request.html'>request</a>. <br/>
 <br/>
-Examples of using "-r" option to execute <a href='/single-run.html'>single-run</a> program or to call a <a href='/service.html'>service</a>:<br/>
+Examples of using "-r" option to execute <a href='/command-line.html'>command-line</a> program or to call a <a href='/service.html'>service</a>:<br/>
 <div class="shcode">
 <pre id='code_4'>
-<span class="Comment">#Execute current application as a single-run program, request &quot;json&quot;</span>
+<span class="Comment">#Execute current application as a command-line program, request &quot;json&quot;</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/json</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 
 <span class="Comment">#Execute application &quot;app_name&quot;, service &quot;json&quot; by calling the application server running with a Unix socket</span>
@@ -4581,7 +4718,7 @@ handler-status specifies &lt;request status&gt;, which must be a number.<br/>
 <br/>
 &lt;request status&gt; can be obtained with "handler-status" clause in <a href='/read-remote.html'>read-remote</a> in the service caller.<br/>
 <br/>
-When the program is <a href='/single-run.html'>single-run</a>, &lt;request status&gt; is program's exit code.<br/>
+When the program runs as <a href='/command-line.html'>command-line</a>, &lt;request status&gt; is program's exit code.<br/>
 <br/>
 handler-status can be specified anywhere in the code, and does not mean exiting the <a href='/request.html'>request</a>'s processing; to do that, either use <a href='/exit-handler.html'>exit-handler</a> or simply allow the handler to reach its end.<br/>
 <br/>
@@ -7589,7 +7726,7 @@ String variable "reqb" will hold request body of a request:<br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='request.html'></a>
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Request</div><hr/>Gliimly applications run by processing requests. A request always takes form of an HTTP request, meaning a URL, an optional HTTP request body, and any environment variables. This is regardless of whether it's a <a href='/service.html'>service</a> or a <a href='/single-run.html'>single-run</a> application. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Request</div><hr/>Gliimly applications run by processing requests. A request always takes form of an HTTP request, meaning a URL, an optional HTTP request body, and any environment variables. This is regardless of whether it's a <a href='/service.html'>service</a> or a <a href='/command-line.html'>command-line</a> program. <br/>
 <div class="vsub"><a id="Handling of requests"></a>Handling of requests</div>
 Each requests is handled with <a href='/begin-handler.html'>begin-handler</a> statement, which implements its functionality. This handling of requests is based on the names of .gliim source files. The request name must match the file name that implements it. <br/>
 <br/>
@@ -7712,7 +7849,7 @@ For a hierarchical URL path, you would write the same:<br/>
 Maximum length of a request URL is 2500 bytes.<br/>
 <div class="vsub"><a id="How Gliimly handles requests"></a>How Gliimly handles requests</div>
 An incoming request is handled by a first available process:<br/>
-<ul><li>For a <a href='/single-run.html'>single-run</a> application, there is only a single process, and it handles a single requests before it exits. <br/>
+<ul><li>For a <a href='/command-line.html'>command-line</a> program, there is only a single process, and it handles a single requests before it exits. <br/>
 </li><li>For a <a href='/service.html'>service</a> application, there can be any number of processes running. A process is chosen to service a request if it is currently not serving other requests; this way there are no processes waiting idle unnecessarily. Each process is identical and can serve any request, i.e. it has all request handlers available to it. Thus, when a process is chosen to serve a request, then this process will simply execute its begin-handler.</li></ul>
 <span style="font-weight:bold;">- Processing a request</span><br/>
 To handle a request, a process first calls a Gliimly dispatcher, which is automatically generated. It uses a request name to call the appropriate request handler, as explained above. <br/>
@@ -8307,8 +8444,8 @@ In this case, the timeout is set to 8 seconds.<br/>
  <span style="font-weight:bold;">Running application</span><br/>
 <a href='/application-setup.html'>application-setup</a> &nbsp;<br/>
 <a href='/CGI.html'>CGI</a> &nbsp;<br/>
-<a href='/service.html'>service</a> &nbsp;<br/>
-<a href='/single-run.html'>single-run</a> &nbsp; <br/>
+<a href='/command-line.html'>command-line</a> &nbsp;<br/>
+<a href='/service.html'>service</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='set-bool.html'></a>
@@ -8506,12 +8643,12 @@ Initialize "my_string" variable to "abc":<br/>
 <pre id='code_1'>
 <span class="Statement"> silent-header</span></pre>
 </div><br/>
-silent-header will suppress the output of HTTP headers, such as with <a href='/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. If you want to suppres the headers across the entire <a href='/single-run.html'>single-run</a> application, set GG_SILENT_HEADER environment variable to value of "yes" prior to running it.<br/>
+silent-header will suppress the output of HTTP headers, such as with <a href='/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. If you want to suppres the headers across the entire <a href='/command-line.html'>command-line</a> program, set GG_SILENT_HEADER environment variable to value of "yes" prior to running it.<br/>
 <br/>
 silent-header must be used prior to outputting headers, meaning either prior to any output (if out-header is not used) or prior to first out-header.<br/>
 <br/>
 There are many uses for silent-header, among them:<br/>
-<ul><li>A single-run program (such as a command line program) may use it to produce generic output, without any headers,<br/>
+<ul><li>A command-line program (such as a command line program) may use it to produce generic output, without any headers,<br/>
 </li><li>the output from a program may be redirected to a web file (such as html), in case of dynamic content that rarely changes,<br/>
 </li><li>a web program may output a completely different (non-HTTP) set of headers, etc.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -8527,88 +8664,6 @@ There are many uses for silent-header, among them:<br/>
 <a href='/out-header.html'>out-header</a> &nbsp;<br/>
 <a href='/send-file.html'>send-file</a> &nbsp;<br/>
 <a href='/silent-header.html'>silent-header</a> &nbsp; <br/>
-<span style="font-weight:bold;">See all</span> <br/>
-<a href='/documentation.html'>documentation</a><br/>
-<a id='single-run.html'></a>
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Single run</div><hr/>A Gliimly application can run as a web application or a single-run program, or both - such as when some requests can be either fulfilled through web interface or executed otherwise (such as on the command line). Note that Gliimly produces two separate executables: a <a href='/service.html'>service</a> one and a single-run one - they are different because single-run program does not need the service library and thus is smaller. <br/>
-<br/>
-The name of the single-run executable is the same as the application name, and its path is (assuming &lt;app name&gt; is the application name):<br/>
-<div class='ncode'>
-<pre id='code_1'>
-/var/lib/gg/bld/&lt;app name&gt;/&lt;app name&gt;</pre>
-</div><br/>
-<div class="vsub"><a id="Output"></a>Output</div>
-A single-run program works the same way as a service executable, and the output is the same, except that it is directed to stdout (standard output) and stderr (standard error). <br/>
-<div class="vsub"><a id="Exit code"></a>Exit code</div>
-To specify the exit code of a single-run program, use <a href='/handler-status.html'>handler-status</a>. To exit the program, use <a href='/exit-handler.html'>exit-handler</a>, or otherwise the program will exit when it reaches the end of a <a href='/request.html'>request</a>.<br/>
-<div class="vsub"><a id="Executing a request"></a>Executing a request</div>
-Here is how to execute a request "add-stock" in application "stock" with parameters "name" having a value of "ABC" and "price" a value of "300":<br/>
-<div class="shcode">
-<pre id='code_1'>
-gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock?name=ABC&amp;price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-</div><br/>
-Note that you if specify parameters as part of the path, you could write the above the same way as in a URL:<br/>
-<div class="shcode">
-<pre id='code_2'>
-gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-</div><br/>
-You can generate the shell code to execute the above without using <a href='/gg.html'>gg</a> by omitting "--exec" option, for instance:<br/>
-<div class="shcode">
-<pre id='code_3'>
-gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span></pre>
-</div><br/>
-<div class="vsub"><a id="Including a request body"></a>Including a request body</div>
-You can include a request body when executing a singe-run program. It is always included as the standard input (stdin) to the program. <br/>
-<br/>
-You must provide the length of this input and the type of input, as well as a request method (such as POST, PUT, PATCH, GET, DELETE or any other).<br/>
-<br/>
-Here is an example of using a request body to make a POST request on the command line - the application name is "json" and request name is "process". File "prices.json" is sent as request body:<br/>
-<div class="shcode">
-<pre id='code_4'>
-gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span>/json <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">'</span><span class="Constant">/process?act=get_total&amp;period=YTD</span><span class="Statement">'</span> <span class="Special">--method</span><span class="Statement">=</span>POST <span class="Special">--content</span><span class="Statement">=</span>prices.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
-</div><br/>
-You can generate the shell code for the above by omitting "--exec" option of <a href='/gg.html'>gg</a> utility.<br/>
-<br/>
-Note that you can also include any other headers as environment variables by using the "HTTP_" convention, where custom headers are capitalized with use of underscore for dashes and prefixed with "HTTP_", for example header "Gliimly-Header" would be set as:<br/>
-<div class="shcode">
-<pre id='code_5'>
-<span class="Statement">export</span> <span class="Identifier">HTTP_GG_HEADER</span>=<span class="Statement">&quot;</span><span class="Constant">some value</span><span class="Statement">&quot;</span></pre>
-</div><br/>
-You would set the "HTTP_" variable(s) prior to executing the program.<br/>
-<div class="vsub"><a id="Suppressing HTTP header output for the entire application"></a>Suppressing HTTP header output for the entire application</div>
-If you wish to suppress the output of HTTP headers for all requests, set environment variable GG_SILENT_HEADER to "yes" before executing the program:<br/>
-<div class="shcode">
-<pre id='code_6'>
-<span class="Statement">export</span> <span class="Identifier">GG_SILENT_HEADER</span>=yes</pre>
-</div><br/>
-This will suppress the output of HTTP headers (either the default or with <a href='/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
-<div class="vsub"><a id="URL-encoding the input"></a>URL-encoding the input</div>
-Any data in "--req" option (and consequently in PATH_INFO or QUERY_STRING environment vairables if calling directly from shell) must be formatted to be a valid URL; for example, data that contains special characters (like "&amp;" or "?") must be URL-encoded, for instance:<br/>
-<div class="shcode">
-<pre id='code_7'>
-gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC%3F/price=300</span><span class="Statement">&quot;</span></pre>
-</div><br/>
-In this case, parameter "name" has value of "ABC?", where special character "?" is encoded as "%3F". <br/>
-<br/>
-To make sure all your input parameters are properly URL-encoded, you can use Gliimly's v1 code processor:<br/>
-<div class="shcode">
-<pre id='code_8'>
-<span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">&lt;your data&gt;</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
-</div><br/>
-For instance, to encode "a?=b" as a parameter:<br/>
-<div class="shcode">
-<pre id='code_9'>
-gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=</span><span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">AB?</span><span class="Statement">'</span><span class="PreProc">)</span><span class="Constant">/price=300</span><span class="Statement">&quot;</span></pre>
-</div><br/>
-If your parameters do not contain characters that need URL encoding, then you can skip this.<br/>
-<div class="vsub"><a id="CGI"></a>CGI</div>
-You can also use a single-run program with <a href='/CGI.html'>CGI</a> (Common Gateway Interface). <br/>
-<!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">Running application</span><br/>
-<a href='/application-setup.html'>application-setup</a> &nbsp;<br/>
-<a href='/CGI.html'>CGI</a> &nbsp;<br/>
-<a href='/service.html'>service</a> &nbsp;<br/>
-<a href='/single-run.html'>single-run</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='split-string.html'></a>
@@ -9083,7 +9138,7 @@ $HOME/.vim/syntax/gliim.vim</pre>
 </div><br/>
 and also update your local $HOME/.vimrc file to use this syntax for files with .gliim extension. All files updated are local, i.e. they affect only the current user. Each user who wants this feature must issue the above command.<br/>
 <br/>
-You can then change the colorscheme to anything you like by using ":colorscheme" directly in editor, or by specifying "colorscheme" in your ".vimrc" file for a persistent change.<br/>
+You can then change the color scheme to anything you like by using ":colorscheme" directly in editor, or by specifying "colorscheme" in your ".vimrc" file for a persistent change.<br/>
 <br/>
 The Gliimly highlighting syntax is tested with Vim 8.1.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

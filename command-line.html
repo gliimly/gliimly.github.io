@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title>Single run</title>
+<title>Command line</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -221,17 +221,17 @@ ul {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Single run</div><hr/>A Gliimly application can run as a web application or a single-run program, or both - such as when some requests can be either fulfilled through web interface or executed otherwise (such as on the command line). Note that Gliimly produces two separate executables: a <a href='http://gliimly.github.io/service.html'>service</a> one and a single-run one - they are different because single-run program does not need the service library and thus is smaller. <br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Command line</div><hr/>A Gliimly application can run as a web application or a command-line program, or both - such as when some requests can be either fulfilled through web interface or executed otherwise (such as on the command line). Note that Gliimly produces two separate executables: a <a href='http://gliimly.github.io/service.html'>service</a> one and a command-line one - they are different because command-line program does not need the service library and thus is smaller. <br/>
 <br/>
-The name of the single-run executable is the same as the application name, and its path is (assuming &lt;app name&gt; is the application name):<br/>
+The name of the command-line executable is the same as the application name, and its path is (assuming &lt;app name&gt; is the application name):<br/>
 <div class='ncode'>
 <pre id='code_1'>
 /var/lib/gg/bld/&lt;app name&gt;/&lt;app name&gt;</pre>
 </div><br/>
 <div class="vsub"><a id="Output"></a>Output</div>
-A single-run program works the same way as a service executable, and the output is the same, except that it is directed to stdout (standard output) and stderr (standard error). <br/>
+A command-line program works the same way as a service executable, and the output is the same, except that it is directed to stdout (standard output) and stderr (standard error). <br/>
 <div class="vsub"><a id="Exit code"></a>Exit code</div>
-To specify the exit code of a single-run program, use <a href='http://gliimly.github.io/handler-status.html'>handler-status</a>. To exit the program, use <a href='http://gliimly.github.io/exit-handler.html'>exit-handler</a>, or otherwise the program will exit when it reaches the end of a <a href='http://gliimly.github.io/request.html'>request</a>.<br/>
+To specify the exit code of a command-line program, use <a href='http://gliimly.github.io/handler-status.html'>handler-status</a>. To exit the program, use <a href='http://gliimly.github.io/exit-handler.html'>exit-handler</a>, or otherwise the program will exit when it reaches the end of a <a href='http://gliimly.github.io/request.html'>request</a>.<br/>
 <div class="vsub"><a id="Executing a request"></a>Executing a request</div>
 Here is how to execute a request "add-stock" in application "stock" with parameters "name" having a value of "ABC" and "price" a value of "300":<br/>
 <div class="shcode">
@@ -293,13 +293,13 @@ gg <span class="Special">-r</span> <span class="Special">--app</span><span class
 </div><br/>
 If your parameters do not contain characters that need URL encoding, then you can skip this.<br/>
 <div class="vsub"><a id="CGI"></a>CGI</div>
-You can also use a single-run program with <a href='http://gliimly.github.io/CGI.html'>CGI</a> (Common Gateway Interface). <br/>
+You can also use a command-line program with <a href='http://gliimly.github.io/CGI.html'>CGI</a> (Common Gateway Interface). <br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Running application</span><br/>
 <a href='http://gliimly.github.io/application-setup.html'>application-setup</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/CGI.html'>CGI</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/service.html'>service</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/single-run.html'>single-run</a> &nbsp; <br/>
+<a href='http://gliimly.github.io/command-line.html'>command-line</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/service.html'>service</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->

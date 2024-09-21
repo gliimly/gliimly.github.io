@@ -225,7 +225,7 @@ ul {
 "Erroring out" means a process handling a request has encountered a difficulty that cannot be handled and it will either:<br/>
 <ul><li>Skip the rest of the request, and move on quickly to handle the next request without exiting. Most errors are like this, for example your program has attempted to access memory outside of what's allocated, or you have called <a href='http://gliimly.github.io/report-error.html'>report-error</a> statement.<br/>
 </li><li>Stop and exit, and it may be automatically restarted if it's a <a href='http://gliimly.github.io/service.html'>service</a>. For instance, the process could be out of memory, or the database is permanently down and connection cannot be re-established.</li></ul>. <br/>
-Note that if your program is <a href='http://gliimly.github.io/single-run.html'>single-run</a> (for instance if it's a command-line program), it will exit in any case since it handles a single request anyway.</li></ul>
+Note that if your program is <a href='http://gliimly.github.io/command-line.html'>command-line</a>, it will exit in any case since it handles a single request anyway.</li></ul>
 <div class="vsub"><a id="When there is a problem in Gliimly"></a>When there is a problem in Gliimly</div>
 If there is a fatal internal error (i.e. error in Gliimly code itself that cannot be handled), it will be caught by Gliimly, and the process will end. If your process is started with <a href='http://gliimly.github.io/mgrg.html'>mgrg</a>, it may be automatically restarted.<br/>
 <div class="vsub"><a id="Logging the error"></a>Logging the error</div>
