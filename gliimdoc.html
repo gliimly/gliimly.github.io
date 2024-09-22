@@ -483,7 +483,7 @@ Gliimly services and command-line programs can implement most back-end applicati
 </li><li>application logic,<br/>
 </li><li>data (eg. database) layers, and any others.</li></ul>
 <div class="vsub"><a id="Command-line program"></a>Command-line program</div>
-When your Gliimly runs as a <a href='/command-line.html'>command-line</a> program, a request is handled by a single execution. This may be suitable for batch jobs, for use in shell scripts, for testing/mocking, as well as any other situation where it is more useful or convenient to execute a command-line program. Note that a command-line program can double as <a href='/CGI.html'>CGI</a> (Common Gateway Interface) as well.<br/>
+A <a href='/command-line.html'>command-line</a> program handles a single request before it exits. This may be suitable for batch jobs, for use in shell scripts, for testing/mocking, as well as any other situation where it is more useful or convenient to execute a command-line program. Note that a command-line program can double as <a href='/CGI.html'>CGI</a> (Common Gateway Interface) as well.<br/>
 <div class="vsub"><a id="Language"></a>Language</div>
 Gliimly programming language is memory-safe, meaning it will prevent you from accidentally overwriting memory or freeing it when it shouldn't be. Gliimly's <a href='/memory-handling.html'>memory-handling</a> is not limited to just memory safety; it also includes automatic freeing of memory at the end of a request, preventing memory leaks which can be fatal to long running processes. Similarly, files open with file-handling statements are automatically closed at the end of each request, serving the same purpose. <br/>
 <div class="vsub"><a id="Types"></a>Types</div>
