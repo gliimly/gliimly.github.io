@@ -242,7 +242,7 @@ ul {
 </div><br/>
 new-remote will create resources needed for a service call (see <a href='http://gliimly.github.io/call-remote.html'>call-remote</a>); these resources are contained in variable &lt;service&gt;.<br/>
 <div class="vsub"><a id="Local or location"></a>Local or location</div>
-If "local" clause is used, then service is a Gliimly application running on the same computer, and the name of this application is &lt;app name&gt;. <br/>
+If "local" clause is used, then service is a Gliimly application running on the same computer, and the name of this application is string &lt;app name&gt;. <br/>
 <br/>
 If "local" is not used, then you must use "location" clause. &lt;location&gt; (in "location" clause) is a string representing either a Unix socket or a TCP socket of a remote service, and is:<br/>
 <ul><li>for a Unix socket, a fully qualified name to a Unix socket file used to communicate with the service (for a Gliimly server, it's "/var/lib/gg/&lt;app name&gt;/sock/sock", where &lt;app name&gt; is the application name), or<br/>

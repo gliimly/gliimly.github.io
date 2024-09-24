@@ -225,11 +225,15 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="Statement"> p-out</span> &lt;string&gt; [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
+<span class="Statement"> p-out</span> &lt;string&gt; [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> new-line</span> ]</pre>
 </div><br/>
 p-out outputs a string expression given by &lt;string&gt;, without any encoding (meaning a string is output exactly as it appears). <br/>
 <br/>
 If "length" clause is used, then only &lt;length&gt; leading bytes of &lt;string&gt; are output. <br/>
+<br/>
+If "new-line" clause is used, then a new line ("\n") is output after &lt;string&gt;.<br/>
+<br/>
+Note that all bytes of &lt;string&gt; are output, even if &lt;string&gt; contains null-bytes.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To output data verbatim to a client:<br/>
 <div class='code'>
@@ -240,7 +244,7 @@ To output data verbatim to a client:<br/>
 Writing to client, outputting text followed by a horizontal rule - the text is output to a client (such as browser) as it is, and the browser will interpret tags "&lt;br/&gt;" and "&lt;hr/&gt;" as a line break and a horizonal line and display them as such:<br/>
 <div class='code'>
 <pre id='code_3'>
-<span class="Statement"> p-out</span> <span class="Constant">&quot;This is a non-encoded output&lt;br/&gt;&quot;</span>
+<span class="Statement"> p-out</span> <span class="Constant">&quot;This is a non-encoded output&lt;br/&gt;&quot;</span><span class="Identifier"> new-line</span>
 <span class="Statement"> p-out</span> <span class="Constant">&quot;&lt;hr/&gt;&quot;</span></pre>
 </div><br/>
 Create a query text string by means of <a href='http://gliimly.github.io/write-string.html'>write-string</a> statement:<br/>
