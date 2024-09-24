@@ -225,11 +225,13 @@ ul {
 <br/>
 <div class='code'>
 <pre id='code_1'>
-<span class="Statement"> p-web</span> &lt;string&gt; [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
+<span class="Statement"> p-web</span> &lt;string&gt; [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> new-line</span> ]</pre>
 </div><br/>
 p-web is the same as <a href='http://gliimly.github.io/p-out.html'>p-out</a>, except that the output is web-encoded (or HTML-encoded). This means such output is suited for use in web pages - the text will be displayed verbatim without HTML-markup being interpreted.<br/>
 <br/>
 If "length" clause is used, then only &lt;length&gt; leading bytes of &lt;string&gt; are web-encoded and then output. <br/>
+<br/>
+If "new-line" clause is used, then a new line ("\n") is output after encoded &lt;string&gt;.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Display "We use &lt;hr/&gt; markup" text, without "&lt;hr/&gt;" being displayed as a horizontal line:<br/>
 <div class='code'>
