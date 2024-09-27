@@ -227,7 +227,9 @@ ul {
 <pre id='code_1'>
 <span class="Statement"> silent-header</span></pre>
 </div><br/>
-silent-header will suppress the output of HTTP headers, such as with <a href='http://gliimly.github.io/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='http://gliimly.github.io/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. If you want to suppres the headers across the entire <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, set GG_SILENT_HEADER environment variable to value of "yes" prior to running it.<br/>
+silent-header will suppress the output of HTTP headers, such as with <a href='http://gliimly.github.io/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='http://gliimly.github.io/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. <br/>
+<br/>
+If you want to suppress the headers for all <span style="font-weight:bold;">wrl/begin-handler.html|service handlers<span style="font-weight:bold;">eurl (as if silent-header were implied at the beginning of each), then for a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, use "--silent-header" option in "gg -r" when runnign it; to suppress the headers in <a href='http://gliimly.github.io/service.html'>service</a>s, use "-z" option in <a href='http://gliimly.github.io/mgrg.html'>mgrg</a>.<br/>
 <br/>
 silent-header must be used prior to outputting headers, meaning either prior to any output (if out-header is not used) or prior to first out-header.<br/>
 <br/>

@@ -263,14 +263,14 @@ You can generate the shell code for the above by omitting "--exec" option of <a 
 Note that you can also include any other headers as environment variables by using the "HTTP_" convention, where custom headers are capitalized with use of underscore for dashes and prefixed with "HTTP_", for example header "Gliimly-Header" would be set as:<br/>
 <div class="shcode">
 <pre id='code_5'>
-<span class="Statement">export</span> <span class="Identifier">HTTP_GG_HEADER</span>=<span class="Statement">&quot;</span><span class="Constant">some value</span><span class="Statement">&quot;</span></pre>
+<span class="Statement">export</span> <span class="Identifier">HTTP_GLIIMLY_HEADER</span>=<span class="Statement">&quot;</span><span class="Constant">some value</span><span class="Statement">&quot;</span></pre>
 </div><br/>
 You would set the "HTTP_" variable(s) prior to executing the program.<br/>
 <div class="vsub"><a id="Suppressing HTTP header output for the entire application"></a>Suppressing HTTP header output for the entire application</div>
-If you wish to suppress the output of HTTP headers for all requests, set environment variable GG_SILENT_HEADER to "yes" before executing the program:<br/>
+If you wish to suppress the output of HTTP headers for all requests, use "--silent-header" option in "gg -r":<br/>
 <div class="shcode">
 <pre id='code_6'>
-<span class="Statement">export</span> <span class="Identifier">GG_SILENT_HEADER</span>=yes</pre>
+gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
 </div><br/>
 This will suppress the output of HTTP headers (either the default or with <a href='http://gliimly.github.io/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='http://gliimly.github.io/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
 <div class="vsub"><a id="URL-encoding the input"></a>URL-encoding the input</div>

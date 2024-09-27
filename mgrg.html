@@ -270,6 +270,8 @@ Do not restart service processes if they exit or die. However, in adaptive mode 
 Do not restart service processes when their executable changes. By default, they will be automatically restarted, which is useful when in development, or upgrading the server executable.<br/>
 </li><li>-a &lt;args&gt;<br/>
 Specify any command-line arguments for your application (see "arg-count" and "arg-value" clauses in <a href='http://gliimly.github.io/get-req.html'>get-req</a>). The &lt;args&gt; should be double-quoted as a whole, while use of single quotes to quote arguments that contain whitespaces is permitted. <br/>
+</li><li>-z<br/>
+Suppress HTTP headers in all <a href='http://gliimly.github.io/service.html'>service</a> handlers in the application. This is equivalent to having <a href='http://gliimly.github.io/silent-header.html'>silent-header</a> implied at the beginning of each <span style="font-weight:bold;">wrl/begin-handler.html|service handler<span style="font-weight:bold;">eurl.<br/>
 </li><li>-s &lt;sleep millisecs&gt;<br/>
 The basis time period (in milliseconds) that mgrg will sleep before checking for commands (specified by -m option), or check for dead service processes that need restarting. It can be between 100 and 5000 milliseconds. Smaller value will mean higher responsiveness but also higher CPU usage. The default value usually suffices, and should not be changed without due consideration.<br/>
 </li><li>-e<br/>
