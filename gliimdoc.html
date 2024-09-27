@@ -5678,7 +5678,7 @@ Do not restart service processes when their executable changes. By default, they
 </li><li>-a &lt;args&gt;<br/>
 Specify any command-line arguments for your application (see "arg-count" and "arg-value" clauses in <a href='/get-req.html'>get-req</a>). The &lt;args&gt; should be double-quoted as a whole, while use of single quotes to quote arguments that contain whitespaces is permitted. <br/>
 </li><li>-z<br/>
-Suppress HTTP headers in all <a href='/service.html'>service</a> handlers in the application. This is equivalent to having <a href='/silent-header.html'>silent-header</a> implied at the beginning of each <span style="font-weight:bold;">wrl/begin-handler.html|service handler<span style="font-weight:bold;">eurl.<br/>
+Suppress HTTP headers in all <a href='/service.html'>service</a> handlers in the application. This is equivalent to having <a href='/silent-header.html'>silent-header</a> implied at the beginning of each <a href='/begin-handler.html'>service handler</a>.<br/>
 </li><li>-s &lt;sleep millisecs&gt;<br/>
 The basis time period (in milliseconds) that mgrg will sleep before checking for commands (specified by -m option), or check for dead service processes that need restarting. It can be between 100 and 5000 milliseconds. Smaller value will mean higher responsiveness but also higher CPU usage. The default value usually suffices, and should not be changed without due consideration.<br/>
 </li><li>-e<br/>
@@ -8702,7 +8702,7 @@ Initialize "my_string" variable to "abc":<br/>
 </div><br/>
 silent-header will suppress the output of HTTP headers, such as with <a href='/out-header.html'>out-header</a>, or in any other case where headers are output. The effect applies to current <a href='/request.html'>request</a> only; if you use it conditionally, then you can have it on or off dynamically. <br/>
 <br/>
-If you want to suppress the headers for all <span style="font-weight:bold;">wrl/begin-handler.html|service handlers<span style="font-weight:bold;">eurl (as if silent-header were implied at the beginning of each), then for a <a href='/command-line.html'>command-line</a> program, use "--silent-header" option in "gg -r" when runnign it; to suppress the headers in <a href='/service.html'>service</a>s, use "-z" option in <a href='/mgrg.html'>mgrg</a>.<br/>
+If you want to suppress the headers for all <a href='/begin-handler.html'>service handlers</a> (as if silent-header were implied at the beginning of each), then for a <a href='/command-line.html'>command-line</a> program, use "--silent-header" option in "gg -r" when runnign it; to suppress the headers in <a href='/service.html'>service</a>s, use "-z" option in <a href='/mgrg.html'>mgrg</a>.<br/>
 <br/>
 silent-header must be used prior to outputting headers, meaning either prior to any output (if out-header is not used) or prior to first out-header.<br/>
 <br/>
