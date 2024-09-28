@@ -292,7 +292,7 @@ Note that if database connection was lost, and could not be reestablished, the r
 <div class="vsub"><a id="run-prepared-query"></a>run-prepared-query</div>
 run-prepared-query is the same as run-query except that a &lt;query&gt; is prepared. That means it is pre-compiled and its execution plan is created once, instead of each time a query executes. The statement is cached going forward for the life of the process (with the rare exception of re-establishing a lost database connection). It means effectively an unlimited number of requests will be reusing the query statement, which generally implies higher performance. Note that databases do not allow prepared queries for DDL (Data Definition Language), as there is not much benefit in general, hence only DML queries (such as INSERT, DELETE etc.) and SELECT can be prepared.<br/>
 <br/>
-In order for database to cache a query statement, Gliimly will save query text that actually executes the very first time it runs. Then, regardless of what query text you supply in the following executions, it will not mutate anymore. It means from that moment onward, the query will always execute that very same query text, just with different input parameters. In practicallity it means that &lt;query&gt; should be a string constant if you are using a prepared query (fortunately that is usually the case).<br/>
+In order for database to cache a query statement, Gliimly will save query text that actually executes the very first time it runs. Then, regardless of what query text you supply in the following executions, it will not mutate anymore. It means from that moment onward, the query will always execute that very same query text, just with different input parameters. In practicallity it means that &lt;query&gt; should be a string constant if you are using a prepared query (which is usually the case).<br/>
 <br/>
 In some cases, you might not want to use prepared statements. Some reasons may be: <br/>
 <ul><li>your statements are often changing and dynamically constructed to the point where managing a great many equivalent prepared statements may be impractical - for example there may be a part of your query text that comes from outside your code,<br/>
@@ -306,6 +306,7 @@ Note that in Postgres, with prepared statements you may get an error like "could
 <pre id='code_1'>
 <span class="Statement">select</span> col1 <span class="Special">from</span> test <span class="Special">where</span> someId&gt;=<span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span> <span class="Statement">and</span> col1 <span class="Statement">like</span> <span class="Identifier">concat</span>( <span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span>::text ,<span class="Special">'</span><span class="Constant">%</span><span class="Special">'</span>)</pre>
 </div><br/>
+Note that SQL statements in SQLite are always prepared regardless of whether you use "run-query" or "run-prepared-query" due to how SQLite native interface works.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Select first and last name (output is firstName and lastName) based on employee ID (specified by input parameter empid):<br/>
 <div class='code'>
