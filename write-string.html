@@ -244,7 +244,7 @@ function gg_copy(eid, gc) {
 
 <span class="Statement"> end-write-string</span> [<span class="Identifier"> notrim</span> ]</pre>
 <span id=gliim_copied_649 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_649, gliim_copied_649)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_649, gliim_copied_649)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Output of any Gliimly code can be written into &lt;string&gt; with write-string. In between write-string and end-write-string you can write &lt;any Gliimly code&gt;. For instance you can use database queries, conditional statements etc., just as you would for any other Gliimly code. <br/>
 <div class="vsub"><a id="Shortcut code"></a>Shortcut code</div>
@@ -256,7 +256,7 @@ Note that instead of write-string you can also use a shortcut "((" &nbsp;(and in
 <span class="Statement"> @</span><span class="Statement">&lt;&lt;p-out</span> home_dir<span class="Statement">&gt;&gt;</span>/config-install.gliim
 <span class="Statement"> ))</span></pre>
 <span id=gliim_copied_651 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_651, gliim_copied_651)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_651, gliim_copied_651)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Trimming"></a>Trimming</div>
 Just like with all other Gliimly code, every line is trimmed both on left and write, so this:<br/>
@@ -266,7 +266,7 @@ Just like with all other Gliimly code, every line is trimmed both on left and wr
 <span class="Statement"> @</span>Some string
 <span class="Statement"> ))</span></pre>
 <span id=gliim_copied_653 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_653, gliim_copied_653)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_653, gliim_copied_653)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 is the same as:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
@@ -275,7 +275,7 @@ is the same as:<br/>
 <span class="Statement">         @</span>Some string &lt;whitespaces&gt;
 <span class="Statement"> ))</span></pre>
 <span id=gliim_copied_655 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_655, gliim_copied_655)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_655, gliim_copied_655)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-string (or "((") statement must always be on a line by itself (and so does end-write-string, or "))" statement). The string being built starts with the line following write-string, and ends with the line immediately prior to end-write-string. <br/>
 <br/>
@@ -288,7 +288,7 @@ All trailing empty lines are removed, for example:<br/>
 <span class="Statement">         @</span>
 <span class="Statement"> ))</span></pre>
 <span id=gliim_copied_657 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_657, gliim_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_657, gliim_copied_657)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the above string would have two trailing empty lines, however they will be removed. If you want to skip trimming the trailing whitespaces, use "notrim" clause in end-write-string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -305,14 +305,14 @@ A simple example:<br/>
 
 <span class="Statement"> p-out</span> result_str</pre>
 <span id=gliim_copied_659 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_659, gliim_copied_659)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_659, gliim_copied_659)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is <br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_650'>
 Hello world (and have a nice day too!)</pre>
 <span id=gliim_copied_650 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_650, gliim_copied_650)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_650, gliim_copied_650)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Using code inside</span><br/>
@@ -338,28 +338,28 @@ Here is using Gliimly code inside write-string, including database query and con
 
 <span class="Statement"> p-out</span> result_str</pre>
 <span id=gliim_copied_661 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_661, gliim_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_661, gliim_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If selector variable is "simple", as in URL <br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_652'>
 https://mysite.com/&lt;app name&gt;/some-service?selector=simple</pre>
 <span id=gliim_copied_652 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_652, gliim_copied_652)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_652, gliim_copied_652)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the result is <br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_654'>
 Hello world (and have a nice day too!)</pre>
 <span id=gliim_copied_654 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_654, gliim_copied_654)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_654, gliim_copied_654)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If selector variable is "database", as in URL <br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_656'>
 https://mysite.com/&lt;app name&gt;/some-service?selector=database</pre>
 <span id=gliim_copied_656 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_656, gliim_copied_656)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_656, gliim_copied_656)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the result may be (assuming "Linda" and "John" are the two employees selected):<br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
@@ -369,21 +369,21 @@ Hello Linda
 Hello John
 &lt;br/&gt;</pre>
 <span id=gliim_copied_658 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_658, gliim_copied_658)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_658, gliim_copied_658)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If selector variable is anything else, as in URL <br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_660'>
 https://mysite.com/&lt;app name&gt;/some-service?selector=something_else</pre>
 <span id=gliim_copied_660 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_660, gliim_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_660, gliim_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the result is <br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_662'>
 No message</pre>
 <span id=gliim_copied_662 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_662, gliim_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_662, gliim_copied_662)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Using sub-handlers calls inside</span><br/>
 The following uses a sub-handler inside write-string:<br/>
@@ -395,7 +395,7 @@ The following uses a sub-handler inside write-string:<br/>
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> p-out</span> result_str</pre>
 <span id=gliim_copied_663 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_663, gliim_copied_663)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_663, gliim_copied_663)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The "other-service" may be:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
@@ -404,14 +404,14 @@ The "other-service" may be:<br/>
 <span class="Statement">     @</span>&quot;Hello from other service&quot;
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_665 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_665, gliim_copied_665)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_665, gliim_copied_665)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_664'>
 Result from other-service is Hello from other service</pre>
 <span id=gliim_copied_664 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_664, gliim_copied_664)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_664, gliim_copied_664)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <span style="font-weight:bold;">- Nesting</span><br/>
@@ -427,7 +427,7 @@ An example to nest write-strings:<br/>
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> p-out</span> str1</pre>
 <span id=gliim_copied_648 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_648, gliim_copied_648)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_648, gliim_copied_648)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The result is <br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
@@ -435,7 +435,7 @@ The result is <br/>
 Hi!
 Hi Again!</pre>
 <span id=gliim_copied_666 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_666, gliim_copied_666)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_666, gliim_copied_666)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

@@ -240,7 +240,7 @@ function gg_copy(eid, gc) {
 <pre id='code_367'>
 mgrg <span class="Statement">&lt;</span>options<span class="Statement">&gt;</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
 <span id=gliim_copied_367 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_367, gliim_copied_367)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_367, gliim_copied_367)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 mgrg (pronounced "em-greg") is a service manager. A service is started as a number of concurrent processes serving application requests, typically from reverse-proxy servers such as Apache, Nginx, HAProxy or others. Use mgrg to create Gliimly applications, including both service and command-line.<br/>
 <br/>
@@ -311,42 +311,42 @@ If mgrg is terminated without "-m stop", (for example with SIGKILL signal), then
 <pre id='code_368'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> myapp</pre>
 <span id=gliim_copied_368 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_368, gliim_copied_368)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_368, gliim_copied_368)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>The initialization needs to be done only once. Following the above, you can start your service application with 3 server processes:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_369'>
 mgrg <span class="Special">-w</span> <span class="Constant">3</span> myapp</pre>
 <span id=gliim_copied_369 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_369, gliim_copied_369)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_369, gliim_copied_369)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To stop your service processes:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_370'>
 mgrg <span class="Special">-m</span> <span class="Statement">stop</span> <span class="Special">--</span> myapp</pre>
 <span id=gliim_copied_370 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_370, gliim_copied_370)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_370, gliim_copied_370)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To restart them:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_371'>
 mgrg <span class="Special">-m</span> restart <span class="Special">--</span> myapp</pre>
 <span id=gliim_copied_371 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_371, gliim_copied_371)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_371, gliim_copied_371)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To stop the server entirely (meaning to stop the resident mgrg daemon serving your particular application):<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_372'>
 mgrg <span class="Special">-m</span> quit <span class="Special">--</span> myapp</pre>
 <span id=gliim_copied_372 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_372, gliim_copied_372)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_372, gliim_copied_372)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>To view status of mgrg daemon for your application:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_373'>
 mgrg <span class="Special">-m</span> status <span class="Special">--</span> myapp</pre>
 <span id=gliim_copied_373 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_373, gliim_copied_373)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_373, gliim_copied_373)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="Running your application server on system startup"></a>Running your application server on system startup</div>
@@ -368,14 +368,14 @@ User=&lt;app owner&gt;
 [Install]
 WantedBy=multi-user.target</pre>
 <span id=gliim_copied_366 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_366, gliim_copied_366)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_366, gliim_copied_366)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above should be saved in the directory given by the output of the following system command:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_374'>
 pkg-config systemd <span class="Special">--variable</span><span class="Statement">=</span>systemdsystemunitdir</pre>
 <span id=gliim_copied_374 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_374, gliim_copied_374)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_374, gliim_copied_374)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The file should be saved as &lt;app name&gt;.service (or similar). Once saved, you can use standard systemctl commands to start, stop and restart your service.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

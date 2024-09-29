@@ -248,7 +248,7 @@ Here is an example of implementing a request "buy-item":<br/>
 <span class="Statement">     @</span>Bought item: <span class="Statement">&lt;&lt;p-out</span> some_param<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_488 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_488, gliim_copied_488)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_488, gliim_copied_488)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Make a request with URL"></a>Make a request with URL</div>
 A "request URL" is a URL that an outside caller (such as a web browser) uses to execute your Gliimly code. Aside from the scheme, domain and port, it's made up of:<br/>
@@ -260,14 +260,14 @@ Here's a breakdown of URL structure:<br/>
 <pre id='code_489'>
 &lt;scheme&gt;://&lt;domain&gt;[:&lt;port&gt;]&lt;application path&gt;&lt;request path&gt;&lt;parameters&gt;</pre>
 <span id=gliim_copied_489 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_489, gliim_copied_489)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_489, gliim_copied_489)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For example, in the following URL, "/my_app" is application path, "/my-request" is request path and "/par1=val1/par2=val2" are parameters "par1" and "par2" with values "val1" and "val2":<br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_492'>
 https://your.website.com/my_app/my-request/par1=val1/par2=val2</pre>
 <span id=gliim_copied_492 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_492, gliim_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_492, gliim_copied_492)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Together, application path, request path are called URL path.<br/>
 <br/>
@@ -277,7 +277,7 @@ The leading part of URL's path is called "application path". By default, applica
 <pre id='code_494'>
 /shopping</pre>
 <span id=gliim_copied_494 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_494, gliim_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_494, gliim_copied_494)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Application name can contain alphanumerical characters, underscores and hyphens.<br/>
 <span style="font-weight:bold;">- Customizing application path</span><br/>
@@ -286,14 +286,14 @@ You can change the application path by specifying it with "--path" parameter in 
 <pre id='code_496'>
 /api/v2/shopping</pre>
 <span id=gliim_copied_496 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_496, gliim_copied_496)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_496, gliim_copied_496)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of specifying the custom application path:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_490'>
 gg <span class="Special">-q</span> <span class="Special">--path</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/api/v2/shopping</span><span class="Statement">&quot;</span></pre>
 <span id=gliim_copied_490 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_490, gliim_copied_490)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_490, gliim_copied_490)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Request path"></a>Request path</div>
 Request path follows the application path, and by default it's the request name preceded with a forward slash, for instance:<br/>
@@ -301,7 +301,7 @@ Request path follows the application path, and by default it's the request name 
 <pre id='code_497'>
 https://some.web.site/shopping/buy-item</pre>
 <span id=gliim_copied_497 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_497, gliim_copied_497)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_497, gliim_copied_497)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the application path is "/shopping" and the request path is "/buy-item" (which means the request name is "buy-item"). The source file name must match the request name (with a hyphen converted to underscore ("_")), thus the .gliim file that implements this request would be "buy_item.gliim".<br/>
 <br/>
@@ -314,14 +314,14 @@ A request path can reflect a hierarchy, such as for example a hierarchy of resou
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_491 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_491, gliim_copied_491)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_491, gliim_copied_491)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 then the URL to call it would be:<br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_498'>
 https://some.web.site/shopping/items/wine-collection/red-wine/buy-item</pre>
 <span id=gliim_copied_498 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_498, gliim_copied_498)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_498, gliim_copied_498)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and would be implemented in file "items__wine_collection__red_wine__buy_item.gliim". Note that, while hyphens are converted to an underscore, forward slashes are converted to two underscores for a .gliim source code file name.<br/>
 <div class="vsub"><a id="URL parameters"></a>URL parameters</div>
@@ -332,7 +332,7 @@ A common way is to specify name and value separated by an equal sign within a si
 <pre id='code_499'>
 https://some.web.site/shopping/buy-item/sku=4811/price=600/</pre>
 <span id=gliim_copied_499 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_499, gliim_copied_499)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_499, gliim_copied_499)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This way, you have a readable representation of parameter names and values, while still maintaining the hierarchical form which conveys how are the parameters structured.<br/>
 <br/>
@@ -343,7 +343,7 @@ Parameters can be specified after a question mark in a "name=value" form. For ex
 <pre id='code_500'>
 https://some.web.site/shopping/buy-items?sku=4811&amp;price=600</pre>
 <span id=gliim_copied_500 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_500, gliim_copied_500)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_500, gliim_copied_500)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Mixed</span><br/>
 You can specify some or a mix of the above ways to write parameters, for instance the above URL can be written as:<br/>
@@ -351,7 +351,7 @@ You can specify some or a mix of the above ways to write parameters, for instanc
 <pre id='code_501'>
 https://some.web.site/shopping/buy-item/sku=4811?price=600</pre>
 <span id=gliim_copied_501 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_501, gliim_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_501, gliim_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Parameters</span><br/>
 A parameter name can be comprised of alphanumeric characters, hyphens and underscores, and it must start with an alphabet character. Any hyphens are converted to underscores for the purpose of obtaining parameter value, see <a href='http://gliimly.github.io/get-param.html'>get-param</a>.<br/>
@@ -367,7 +367,7 @@ Structuring your parameters, i.e. the order in a query path or path segments, an
 <span class="Statement">     @</span>OKAY
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_493 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_493, gliim_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_493, gliim_copied_493)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For a hierarchical URL path, you would write the same:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
@@ -379,7 +379,7 @@ For a hierarchical URL path, you would write the same:<br/>
 <span class="Statement">     run-query</span> @mydb = <span class="Constant">&quot;update wine_items set price='</span><span class="Special">%s</span><span class="Constant">' where sku='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Identifier"> :</span> price, sku<span class="Identifier"> no-loop</span>
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_495 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_495, gliim_copied_495)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_495, gliim_copied_495)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Maximum length"></a>Maximum length</div>
 Maximum length of a request URL is 2500 bytes.<br/>

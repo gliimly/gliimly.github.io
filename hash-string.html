@@ -242,7 +242,7 @@ function gg_copy(eid, gc) {
      [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] \
      [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]</pre>
 <span id=gliim_copied_307 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_307, gliim_copied_307)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_307, gliim_copied_307)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 hash-string produces by default a SHA256 hash of &lt;string&gt; (if "digest" clause is not used), and stores the result into &lt;result&gt;. You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
@@ -250,7 +250,7 @@ hash-string produces by default a SHA256 hash of &lt;string&gt; (if "digest" cla
 <span class="Comment">#get digests</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
 <span id=gliim_copied_308 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_308, gliim_copied_308)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_308, gliim_copied_308)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If "binary" clause is used without boolean expression &lt;binary&gt;, or if &lt;binary&gt; evaluates to true, then the &lt;result&gt; is a binary string that may contain null-characters. With the default SHA256, it is 32 bytes in length, while for instance with SHA3-384 it is 48 bytes in length, etc. <br/>
 <br/>
@@ -261,21 +261,21 @@ String "hash" will have a hashed value of the given string, an example of which 
 <pre id='code_309'>
 <span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash</pre>
 <span id=gliim_copied_309 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_309, gliim_copied_309)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_309, gliim_copied_309)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Using a different digest:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_310'>
 <span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span></pre>
 <span id=gliim_copied_310 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_310, gliim_copied_310)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_310, gliim_copied_310)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Producing a binary value instead of a null-terminated hexadecimal string:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_311'>
 <span class="Statement"> hash-string</span> <span class="Constant">&quot;hello world&quot;</span><span class="Type"> to</span> hash<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span><span class="Identifier"> binary</span></pre>
 <span id=gliim_copied_311 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_311, gliim_copied_311)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_311, gliim_copied_311)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>
