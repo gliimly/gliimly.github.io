@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get req</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the input request.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_279'>
 <span class="Statement"> get-req</span> \
         <span class="Identifier"> errno</span> |<span class="Identifier"> error</span> |<span class="Identifier"> cookie-count</span> |<span class="Identifier"> cookie</span> &lt;cookie index&gt; \
@@ -256,7 +256,7 @@ Information related to an input request can be obtained with get-req statement a
 </li><li>"cookie-count" returns the number of cookies. This means any cookies received from the client plus any cookies added (with <a href='http://gliimly.github.io/set-cookie.html'>set-cookie</a>) in the application minus any cookies deleted (with <a href='http://gliimly.github.io/delete-cookie.html'>delete-cookie</a>). <br/>
 <br/>
 </li><li>"cookie" returns the cookie value specified by &lt;cookie index&gt; (a sequential number starting with 1 up to the number of cookies), for instance:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_280'>
 <span class="Statement"> get-req</span><span class="Identifier"> cookie-count</span><span class="Type"> to</span> cookie_c
 <span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> cookie_c<span class="Type"> use</span> i
@@ -272,7 +272,7 @@ In this example, we get the number of cookies, and then print out each cookie va
 </li><li>"arg-count" is the number of input arguments to your application (passed from a program caller, see "-a" option in <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> and "--arg" in <a href='http://gliimly.github.io/gg.html'>gg</a>).<br/>
 <br/>
 </li><li>"arg-value" is the string value of a single element from the array of input arguments, specified by &lt;arg_index&gt;. This array is indexed from 1 to the value obtained by "arg-count". Here is an example of using arg-count and arg-value:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_281'>
 <span class="Statement"> get-req</span><span class="Identifier"> arg-count</span><span class="Type"> to</span> ac
 <span class="Statement"> pf-out</span> <span class="Constant">&quot;Total args [</span><span class="Special">%ld</span><span class="Constant">]&quot;</span>, ac
@@ -290,7 +290,7 @@ This code will display the number of input arguments (as passed to main() functi
 </li><li>"input-name" is the value of a single element from the array of input parameter names (from a <a href='http://gliimly.github.io/request.html'>request</a>), specified by &lt;input_index&gt;. This array is indexed from 1 to "input-count". See "input-value" for an example.<br/>
 <br/>
 </li><li>"input-value" is the string value of a single element from the array of input parameter values (from a <a href='http://gliimly.github.io/request.html'>request</a>), specified by &lt;input_index&gt;. This array is indexed from 1 to "input-count". For example:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_282'>
 <span class="Statement"> get-req</span><span class="Identifier"> input-count</span><span class="Type"> to</span> input_c
 <span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> input_c<span class="Type"> use</span> i
@@ -305,7 +305,7 @@ This code will display the number of input arguments (as passed to main() functi
 In this example, we get the number of input parameters, and then print out each. <br/>
 <br/>
 </li><li>"header" is the value of HTTP request header &lt;header&gt; that is set by the client. For example, if the HTTP request contains header "My-Header:30", then hval would be "30":<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_283'>
 <span class="Statement"> get-req</span><span class="Identifier"> header</span> <span class="Constant">&quot;My-Header&quot;</span><span class="Type"> to</span> hval</pre>
 <span id=gliim_copied_283 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -326,7 +326,7 @@ Note that not all HTTP request headers are set by the caller. For example, SERVE
 </li><li>"name" is the request name as specified in the <a href='http://gliimly.github.io/request.html'>request</a> URL.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the name of current trace file:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_284'>
 <span class="Statement"> get-req</span><span class="Identifier"> trace-file</span><span class="Type"> to</span> trace_file</pre>
 <span id=gliim_copied_284 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

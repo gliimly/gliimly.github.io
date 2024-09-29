@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Decode url</div><hr/><span style="font-weight:bold;">Purpose</span>: Decode URL-encoded string.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_190'>
 <span class="Statement"> decode-url</span> &lt;string&gt; [<span class="Identifier"> input-length</span> &lt;length&gt; ] [<span class="Identifier"> status</span> &lt;status&gt; ]</pre>
 <span id=gliim_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -249,7 +249,7 @@ All encoded values (starting with %) are decoded, and "+" (plus sign) is convert
 &lt;status&gt; number (in "status" clause) is GG_OKAY if all bytes decoded successfully, or in case of an error it is the index of the byte that could not be decoded (first byte is indexed "0"). If there is an error (for example hexadecimal value following % is invalid), the decoding stops and whatever was decoded up to that point is the result.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Decode URL-encoded string "str", after which it will hold a decoded string. <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_191'>
 <span class="Statement"> decode-url</span> str</pre>
 <span id=gliim_copied_191 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

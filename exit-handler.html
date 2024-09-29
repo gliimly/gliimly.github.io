@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Exit handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Exit current request processing.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_242'>
 <span class="Statement"> exit-handler</span> [ &lt;request status&gt; ]</pre>
 <span id=gliim_copied_242 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -247,7 +247,7 @@ Exits current request by transferring control directly after the top-level <a hr
 &lt;request status&gt; number is a request status returned to the caller (see <a href='http://gliimly.github.io/handler-status.html'>handler-status</a>); if not specified, then it's the value specified in the last executed handler-status statement; if none executed, then it's 0.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Returning status of 20:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_243'>
 <span class="Statement"> begin-handler</span> /req-handler
 <span class="Statement">     .</span>..
@@ -260,7 +260,7 @@ Returning status of 20:<br/>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_243, gliim_copied_243)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Returning status of 0:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_244'>
 <span class="Statement"> begin-handler</span> /req-handler
 <span class="Statement">     .</span>..
@@ -271,7 +271,7 @@ Returning status of 0:<br/>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_244, gliim_copied_244)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Returning status of 10:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_245'>
 <span class="Statement"> begin-handler</span> /req-handler
 <span class="Statement">     .</span>..

@@ -239,7 +239,7 @@ function gg_copy(eid, gc) {
 HAProxy can balance the load between different web servers, which in turn are connected to your applications. Since in this case HAProxy does not directly communicate with a Gliimly application (which is behind a web server), you may lookup examples of this online.<br/>
 <br/>
 When you want HAProxy to directly communicate with a Gliimly application server, you may use configuration similar to this (shown is just a bare-bone setup needed to accomplish the goal):<br/>
-<div class='ncode' style='position:relative;padding-right:14px;'>
+<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_136'>
 global
     user haproxy
@@ -279,7 +279,7 @@ backend backend_servers
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_136, gliim_copied_136)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Restart HAProxy:<br/>
-<div class="shcode" style='position:relative;padding-right:14px;'>
+<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_137'>
 sudo systemctl restart haproxy</pre>
 <span id=gliim_copied_137 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -290,7 +290,7 @@ Note that Gliimly application path is "/func_test" (and the application name may
 HAProxy itself is bound to port 90, and "path_reg" specifies which URLs will be passed to your Gliimly application (i.e. they must have "/func_test/" in the URL). "path-info" specifies SCRIPT_NAME and PATH_INFO (as "()" regular sub-expressions), which are as such passed to your Gliimly application. "docroot" is set to the application home directory (see <a href='http://gliimly.github.io/directories.html'>directories</a>).<br/>
 <br/>
 A Gliimly aplication (named "func_test") would have been started with (using the same application name "func_test" and TCP port "2301"):<br/>
-<div class="shcode" style='position:relative;padding-right:14px;'>
+<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_138'>
 mgrg <span class="Special">-p</span> <span class="Constant">2301</span> func_test</pre>
 <span id=gliim_copied_138 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

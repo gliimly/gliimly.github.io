@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Current row</div><hr/><span style="font-weight:bold;">Purpose</span>: Get or print out the row number of a current row in the result-set of a query.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_157'>
 <span class="Statement"> current-row</span> [<span class="Identifier"> to</span> &lt;current row&gt; ]</pre>
 <span id=gliim_copied_157 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -245,7 +245,7 @@ function gg_copy(eid, gc) {
 Without "to" clause, current-row will print out the current row number. First row is numbered 1. With "to" clause, the row number is stored into variable &lt;current row&gt;. current-row must be within a <a href='http://gliimly.github.io/run-query.html'>run-query</a> loop, and it always refers to the most inner one.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Display row number before a line with first and last name for each employee:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_158'>
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;select firstName, lastName from employee&quot;</span><span class="Type"> output</span> firstName, lastName
 <span class="Statement">     @</span>Row #<span class="Statement">&lt;&lt;current-row&gt;&gt;</span>&lt;br/&gt;

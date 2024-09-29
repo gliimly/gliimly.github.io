@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Use cursor</div><hr/><span style="font-weight:bold;">Purpose</span>: Iterate to a lesser or greater key in an index.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_614'>
 <span class="Statement"> use-cursor</span> &lt;cursor&gt; (<span class="Identifier"> current</span> |<span class="Identifier"> get-lesser</span> |<span class="Identifier"> get-greater</span> ) \
      [<span class="Type"> key</span> &lt;key&gt; ] \
@@ -259,7 +259,7 @@ If the new current node can be found, then other use-cursor clauses are applied 
 "status" clause can be used to obtain &lt;status&gt; number, which is GG_ERR_EXIST if the new current node cannot be found, in which case the current node, &lt;key&gt; and &lt;value&gt; are unchanged. Otherwise, &lt;status&gt; is GG_OKAY.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will find a value with key "999", and then iterate in the index to find all lesser values (in descending order):<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_615'>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;999&quot;</span>
 <span class="Statement"> read-index</span> myindex<span class="Identifier"> equal</span> k<span class="Type"> status</span> st \

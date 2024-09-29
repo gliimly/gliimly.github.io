@@ -238,14 +238,14 @@ function gg_copy(eid, gc) {
 <br/>
 <span style="font-weight:bold;">- Step 1</span>:<br/>
 You will need to edit the Nginx configuration file. For Ubuntu and similar:<br/>
-<div class="shcode" style='position:relative;padding-right:14px;'>
+<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_144'>
 sudo vi /etc/nginx/sites-enabled/default</pre>
 <span id=gliim_copied_144 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_144, gliim_copied_144)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 while on Fedora and other systems it might be at:<br/>
-<div class="shcode" style='position:relative;padding-right:14px;'>
+<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_145'>
 sudo vi /etc/nginx/nginx.conf</pre>
 <span id=gliim_copied_145 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -253,7 +253,7 @@ sudo vi /etc/nginx/nginx.conf</pre>
 </div><br/>
 <br/>
 Add the following in the "server {}" section ("/&lt;app path&gt;" is the application path (see <a href='http://gliimly.github.io/request.html'>request</a>) and "&lt;app name&gt;" is your application name):<br/>
-<div class='ncode' style='position:relative;padding-right:14px;'>
+<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_143'>
 location /&lt;app path&gt;/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///var/lib/gg/&lt;app name&gt;/sock/sock; }</pre>
 <span id=gliim_copied_143 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -261,7 +261,7 @@ location /&lt;app path&gt;/ { include /etc/nginx/fastcgi_params; fastcgi_pass  u
 </div><br/>
 <span style="font-weight:bold;">- Step 2</span>:<br/>
 Finally, restart Nginx:<br/>
-<div class="shcode" style='position:relative;padding-right:14px;'>
+<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_146'>
 sudo systemctl restart nginx</pre>
 <span id=gliim_copied_146 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

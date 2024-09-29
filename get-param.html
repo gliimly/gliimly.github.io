@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get param</div><hr/><span style="font-weight:bold;">Purpose</span>: Get a parameter value.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_272'>
 <span class="Statement"> get-param</span> &lt;name&gt; [<span class="Identifier"> type</span> &lt;type&gt; ]</pre>
 <span id=gliim_copied_272 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -256,7 +256,7 @@ Input parameters from an outside caller are specified as name/value pairs (see <
 File uploads are handled as input parameters as well, see <a href='http://gliimly.github.io/file-uploading.html'>file-uploading</a>.<br/>
 <span style="font-weight:bold;">- Web input parameters</span><br/>
 As an example, for HTML form input parameters named "param1" with value "value1" and "param2" with value "value2":<br/>
-<div class='htmlcode' style='position:relative;padding-right:14px;'>
+<div class='htmlcode' style='position:relative;padding-right:16px;'>
 <pre id='code_273'>
 <span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">'hidden'</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">'param1'</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">'value1'</span><span class="Identifier">&gt;</span>
 <span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">'hidden'</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">'param2'</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">'value2'</span><span class="Identifier">&gt;</span></pre>
@@ -264,7 +264,7 @@ As an example, for HTML form input parameters named "param1" with value "value1"
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_273, gliim_copied_273)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 you can get these parameters and print out their values by using:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_275'>
 <span class="Statement"> get-param</span> param1
 <span class="Statement"> get-param</span> param2</pre>
@@ -272,7 +272,7 @@ you can get these parameters and print out their values by using:<br/>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_275, gliim_copied_275)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A request may be in the form of a web link URL, and getting the parameter values is the same:<br/>
-<div class='ncode' style='position:relative;padding-right:14px;'>
+<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_274'>
 http://&lt;your web server&gt;/&lt;app name&gt;/&lt;request name&gt;&amp;param1=value1&amp;param2=value2</pre>
 <span id=gliim_copied_274 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -280,7 +280,7 @@ http://&lt;your web server&gt;/&lt;app name&gt;/&lt;request name&gt;&amp;param1=
 </div><br/>
 <div class="vsub"><a id="Setting parameters during request's execution"></a>Setting parameters during request's execution</div>
 Use <a href='http://gliimly.github.io/set-param.html'>set-param</a> to replace the value of an existing parameter, or create a new one. For instance:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_277'>
 <span class="Statement"> get-param</span> par1
 <span class="Statement"> .</span>..
@@ -289,7 +289,7 @@ Use <a href='http://gliimly.github.io/set-param.html'>set-param</a> to replace t
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_277, gliim_copied_277)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the value of an existing parameter "par1" is replaced with "new value". In the following code a new parameter is created, which can be retrieved later with get-param:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_278'>
 <span class="Statement"> set-param</span> par1=<span class="Constant">&quot;new value&quot;</span>
 <span class="Statement"> get-param</span> par1</pre>
@@ -299,7 +299,7 @@ In this case the value of an existing parameter "par1" is replaced with "new val
 See <a href='http://gliimly.github.io/sub-handler.html'>sub-handler</a> for more examples.<br/>
 <div class="vsub"><a id="Duplicate input parameter names"></a>Duplicate input parameter names</div>
 If there are multiple input parameters with the same name set by the request caller, such as <br/>
-<div class='ncode' style='position:relative;padding-right:14px;'>
+<div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_276'>
 http://&lt;web address&gt;/&lt;app name&gt;/&lt;request name&gt;?par=val1&amp;par=val2</pre>
 <span id=gliim_copied_276 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

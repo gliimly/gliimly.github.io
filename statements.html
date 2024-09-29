@@ -248,7 +248,7 @@ Each clause that follows consist of a clause name followed either with no argume
 An object must immediately follow the statement's name, while clauses may be specified in any order.<br/>
 <br/>
 For example, in the following Gliimly code:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_569'>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Type"> to</span> res<span class="Identifier"> binary</span></pre>
 <span id=gliim_copied_569 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -261,14 +261,14 @@ encrypt-data is the statement's name, and "orig_data" is its object. The clauses
 </li><li>to res <br/>
 </li><li>binary</li></ul>
 The clauses can be in any order, so the above can be restated as:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_570'>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Type"> to</span> res<span class="Identifier"> password</span> <span class="Constant">&quot;mypass&quot;</span><span class="Identifier"> salt</span> newsalt<span class="Identifier"> binary input-length</span> <span class="Constant">6</span></pre>
 <span id=gliim_copied_570 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_570, gliim_copied_570)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Gliimly documentation provides a concise BNF-like notation of how each statement works, which in case of <a href='http://gliimly.github.io/encrypt-data.html'>encrypt-data</a> is (backslash simply allows continuing to multiple lines, while two backslashes add a new line in between):<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_571'>
 <span class="Statement"> encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
@@ -295,7 +295,7 @@ If only one of a number of clauses may appear, such clauses are separated by "|"
 A group of clauses that cannot be separated, or to remove ambiguity, are enclosed with "(" and ")". <br/>
 <br/>
 Keywords (other than statement names such as encrypt-data above) are generally specific to each statement. So, keyword "salt", for example, has meaning only within encrypt-data and a few other related statements. In order to have the freedom to choose your variable names, you can simply surround them in parenthesis (i.e. "(" and ")") and use any names you want, even keywords, for example:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_572'>
 <span class="Statement"> set-string</span> password = <span class="Constant">&quot;some password&quot;</span>
 <span class="Statement"> set-string</span> salt = <span class="Constant">&quot;0123456789012345&quot;</span>
@@ -309,7 +309,7 @@ In this example, keywords "password" and "salt" are used as variable names as we
 Note that while you can use tab characters at the beginning of the line (such as for indentation), as well as in string literals, do not use tabs in Gliimly statements otherwise as they are not supported for lack of readability - use plain spaces.<br/>
 <div class="vsub"><a id="Splitting statement into multiple lines, space trimming"></a>Splitting statement into multiple lines, space trimming</div>
 To split a statement into multiple lines (including string continuations), use a backslash (\), for instance:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_573'>
 <span class="Statement"> encrypt-data</span> orig_data<span class="Identifier"> input-length</span> <span class="Constant">6</span> \
     <span class="Identifier"> password</span> <span class="Constant">&quot;my</span><span class="Special">\</span>
@@ -321,7 +321,7 @@ To split a statement into multiple lines (including string continuations), use a
 Note that all statements are always left-trimmed for whitespace. Thus the resulting string literal in the above example is "mypass", and not "my &nbsp; pass", as the whitespaces prior to line starting with "pass" are trimmed first. Also, all statements are right-trimmed for white space, except if backslash is used at the end, in which case any spaces prior to backslash are conserved. For that reason, in the above example there is a space prior to a backslash where clauses need to be separated.<br/>
 <div class="vsub"><a id="Comments"></a>Comments</div>
 You can use both C style (i.e. /* ... */) and C++ style (i.e. //) comments with Gliimly statements, including within statements, for example:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_574'>
 <span class="Statement"> run-query</span> @db = \
      <span class="Constant">&quot;select firstName, lastName from employee where yearOfHire&gt;='</span><span class="Special">%s</span><span class="Constant">'&quot;</span> \

@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Encode web</div><hr/><span style="font-weight:bold;">Purpose</span>: Web(HTML)-encode string.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_226'>
 <span class="Statement"> encode-web</span> &lt;string&gt;<span class="Type"> to</span> &lt;encoded string&gt; \
      [<span class="Identifier"> input-length</span> &lt;length&gt; ]</pre>
@@ -248,7 +248,7 @@ encode-web encodes &lt;string&gt; so it can be used in a HTML-like markup text (
 You can encode only the first &lt;length&gt; bytes, given by "input-length" clause.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In this example, a string "str" will be web-encoded and the result is in "result" variable:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_227'>
 <span class="Statement"> set-string</span> str=<span class="Constant">&quot;  x&lt;y&gt;z&amp;</span><span class="Special">\&quot;</span><span class="Constant">'  &quot;</span>
 <span class="Statement"> encode-web</span> str<span class="Type"> to</span> result</pre>

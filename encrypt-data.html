@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Encrypt data</div><hr/><span style="font-weight:bold;">Purpose</span>: Encrypt data.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_228'>
 <span class="Statement"> encrypt-data</span> &lt;data&gt;<span class="Type"> to</span> &lt;result&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ] \
@@ -255,7 +255,7 @@ function gg_copy(eid, gc) {
 encrypt-data encrypts &lt;data&gt; and stores the ciphertext to &lt;result&gt; specified by "to" clause.<br/>
 <div class="vsub"><a id="Cipher and digest"></a>Cipher and digest</div>
 By default, AES-256-CBC encryption and SHA256 hashing is used. You can however specify different cipher and digest algorithms with &lt;cipher algorithm&gt; (in "cipher" clause) and &lt;digest algorithm&gt; (in "digest" clause) as long as <a href='https://www.openssl.org/'>OpenSSL</a> supports them, or you have added them to OpenSSL. You can see the available ones by using:<br/>
-<div class="shcode" style='position:relative;padding-right:14px;'>
+<div class="shcode" style='position:relative;padding-right:16px;'>
 <pre id='code_229'>
 <span class="Comment">#get list of cipher providers</span>
 openssl list <span class="Special">-cipher-algorithms</span>
@@ -280,7 +280,7 @@ Different encrypted messages should have a different IV value, which is specifie
 The encrypted data is stored in &lt;result&gt; (in "to" clause). The encrypted data can be a binary data (if "binary" clause is present without boolean expression &lt;binary&gt;, or if &lt;binary&gt; evaluates to true), which is binary-mode encryption; or if not, it will be a null-terminated string, which is character-mode encryption, consisting of hexadecimal characters (i.e. ranging from "0" to "9" and "a" to "f"). Character mode of encryption is convenient if the result of encryption should be a human readable string, or for the purposes of non-binary storage in the database.<br/>
 <div class="vsub"><a id="Caching key"></a>Caching key</div>
 A key used to actually encrypt/decrypt data is produced by using password, salt, cipher, digest and the number of iterations. Depending on these parameters (especially the number of iterations), computing the key can be a resource intensive and lengthy operation. You can cache the key value and compute it only once (or once in a while) by using "cache" clause. If you need to recompute the key once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the key cache is cleared if it is true, and stays if it is false. For example with encrypt-data (the same applies to decrypt-data):<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_230'>
 <span class="Statement"> set-bool</span> clear = <span class="Constant">true</span> if-<span class="Constant">true</span> q equal <span class="Constant">0</span>
 <span class="Statement"> encrypt-data</span> dt<span class="Identifier"> init-vector</span> non<span class="Identifier"> password</span> pwd \
@@ -300,7 +300,7 @@ If you use salt, a random IV is created with each different salt value. However,
 Each cipher/digest combination carries separate recommendations about the usage of salt, IV and the number of iterations. Please consult their documentation for more details.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 In the following example, the data is encrypted, and then decrypted, producing the very same data:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_231'>
  <span class="Comment">// Original string to encrypt</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
@@ -321,7 +321,7 @@ In the following example, the data is encrypted, and then decrypted, producing t
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_231, gliim_copied_231)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A more involved example below encrypts specific number of bytes (6 in this case). <a href='http://gliimly.github.io/random-string.html'>random-string</a> is used to produce salt. The length of data to encrypt is given with "input-length" clause. The encrypted data is specified to be "binary" (meaning not as a human-readable string), so the "output-length" of such binary output is specified. The decryption thus uses "input-length" clause to specify the length of data to decrypt, and also "output-length" to get the length of decrypted data. Finally, the original data is compared with the decrypted data, and the length of such data must be the same as the original (meaning 6):<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_232'>
  <span class="Comment">// Original data (only the first </span><span class="Constant">6</span><span class="Comment"> bytes are encrypted)</span>
 <span class="Statement"> set-string</span> orig_data=<span class="Constant">&quot;something to encrypt!&quot;</span>
@@ -347,7 +347,7 @@ A more involved example below encrypts specific number of bytes (6 in this case)
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_232, gliim_copied_232)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 An example of using different algorithms:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_233'>
 <span class="Statement"> encrypt-data</span> <span class="Constant">&quot;some data!&quot;</span><span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> encd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span>
 <span class="Statement"> decrypt-data</span> encd1<span class="Identifier"> password</span> <span class="Constant">&quot;mypwd&quot;</span><span class="Identifier"> salt</span> rs1<span class="Type"> to</span> decd1<span class="Identifier"> cipher</span> <span class="Constant">&quot;camellia-256-cfb1&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-256&quot;</span></pre>

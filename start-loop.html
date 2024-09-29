@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Start loop</div><hr/><span style="font-weight:bold;">Purpose</span>: Loop execution based on a condition.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_566'>
 <span class="Statement"> start-loop</span>  [<span class="Identifier"> repeat</span> &lt;repeat&gt; ] \
      [<span class="Type"> use</span> &lt;loop counter&gt; \
@@ -259,7 +259,7 @@ If &lt;start with&gt; (in "start-with" clause) is used, that's the initial value
 If either of "start-with" or "add" clauses is used, then "use" must be specified.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Print numbers 0 through 19:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_567'>
 <span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">20</span><span class="Type"> use</span> p<span class="Identifier"> start-with</span> <span class="Constant">0</span>
 <span class="Statement">     p-num</span> p
@@ -269,7 +269,7 @@ Print numbers 0 through 19:<br/>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_567, gliim_copied_567)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A loop that is controlled via <a href='http://gliimly.github.io/continue-loop.html'>continue-loop</a> and <a href='http://gliimly.github.io/break-loop.html'>break-loop</a> statements, displaying numbers from 1 through 30 but omitting those divisible with 3:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_568'>
 <span class="Statement"> set-number</span> n
 <span class="Statement"> set-number</span> max = <span class="Constant">30</span>

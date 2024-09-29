@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_396'>
 <span class="Statement"> number-string</span> &lt;number&gt; [<span class="Type"> to</span> &lt;string&gt; ] \
      [<span class="Identifier"> base</span> &lt;base&gt; ] \
@@ -253,7 +253,7 @@ If there is an error, such as if &lt;base&gt; is incorrect, then &lt;status&gt; 
 Use of number-string (and <a href='http://gliimly.github.io/p-num.html'>p-num</a> which is based on it) for converting and outputting numbers is high-performance and recommended if your application needs to do that often. If number-string prints out a number (i.e. "to" clause is omitted), and this is within <a href='http://gliimly.github.io/write-string.html'>write-string</a>, then &lt;number&gt; is output into the buffer that builds a new string.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will allocate memory for string "x" to be "801":<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_397'>
 <span class="Statement"> set-number</span> x = <span class="Constant">801</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res</pre>
@@ -261,7 +261,7 @@ The following will allocate memory for string "x" to be "801":<br/>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_397, gliim_copied_397)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following will store "-238f" to string "res":<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_398'>
 <span class="Statement"> set-number</span> x = -<span class="Constant">9103</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res<span class="Identifier"> base</span> <span class="Constant">16</span></pre>
@@ -269,7 +269,7 @@ The following will store "-238f" to string "res":<br/>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_398, gliim_copied_398)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To print out a number -131:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_399'>
 <span class="Statement"> set-number</span> x = -<span class="Constant">131</span>
 <span class="Statement"> number-string</span> x</pre>

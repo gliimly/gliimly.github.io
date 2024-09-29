@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write file</div><hr/><span style="font-weight:bold;">Purpose</span>: Write to a file.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_626'>
 <span class="Statement"> write-file</span> &lt;file&gt; | (<span class="Identifier"> file-id</span> &lt;file id&gt; ) \
     <span class="Identifier"> from</span> &lt;content&gt; \
@@ -269,14 +269,14 @@ If "append" clause is used without boolean expression &lt;append&gt;, or if &lt;
 If "status" clause is used, then the number of bytes written is stored to &lt;status&gt;, unless error occurred, in which case &lt;status&gt; has the error code. The error code can be GG_ERR_POSITION (if &lt;position&gt; is negative or file does not support it), GG_ERR_WRITE (if there is an error writing file) or GG_ERR_OPEN if file is not open. Note that no partial data will be written; if all of data cannot be written to the file, then none will be written, and in that case an error of GG_ERR_WRITE will be reported in &lt;status&gt;.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To overwrite file "/path/to/file" with "Hello World":<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_627'>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;/path/to/file&quot;</span><span class="Identifier"> from</span> <span class="Constant">&quot;Hello World&quot;</span></pre>
 <span id=gliim_copied_627 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_627, gliim_copied_627)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To append "Hello World" to file:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_628'>
 <span class="Statement"> set-string</span> path=<span class="Constant">&quot;/path/to/file&quot;</span>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
@@ -285,7 +285,7 @@ To append "Hello World" to file:<br/>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_628, gliim_copied_628)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write only 5 bytes (i.e. "Hello") and get status (if successful, number "st" would be "5"):<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_629'>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> length</span> <span class="Constant">5</span><span class="Type"> status</span> st</pre>
@@ -293,7 +293,7 @@ To write only 5 bytes (i.e. "Hello") and get status (if successful, number "st" 
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_629, gliim_copied_629)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write a string "Hello" at byte position 3 in the existing "file":<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_630'>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello&quot;</span>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> position</span> <span class="Constant">3</span><span class="Type"> status</span> st</pre>

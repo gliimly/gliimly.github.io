@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;After handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute your code after a request is handled.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_8'>
 <span class="Statement"> after-handler</span>
 <span class="Statement"> .</span>..
@@ -249,7 +249,7 @@ Every Gliimly request goes through a request dispatcher (see <a href='http://gli
 If no request executes (for example if your application does not handle a given <a href='http://gliimly.github.io/request.html'>request</a>), after-handler handler does not execute either. If you use <a href='http://gliimly.github.io/exit-handler.html'>exit-handler</a> to exit current request handling, after-handler handler still executes.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Here is a simple implementation of after-handler handler that just outputs "Hi there!!":<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_9'>
 <span class="Statement"> after-handler</span>
 <span class="Statement">      @</span>Hi there!!

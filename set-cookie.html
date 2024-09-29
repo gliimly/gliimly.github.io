@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Set cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Set cookie.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_543'>
 <span class="Statement"> set-cookie</span> &lt;cookie name&gt;=&lt;cookie value&gt; \
      [<span class="Identifier"> expires</span> &lt;expiration&gt; ] \
@@ -262,7 +262,7 @@ Use "secure" if a secure connection (https) is used, in order to specify this co
 Cookies are commonly used for session maintenance, tracking and other purposes. Use <a href='http://gliimly.github.io/get-cookie.html'>get-cookie</a> and <a href='http://gliimly.github.io/delete-cookie.html'>delete-cookie</a> together with set-cookie to manage cookies.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To set a cookie named "my_cookie_name" to value "XYZ", that will go with the reply and expire in 1 year and 2 months from now, use:<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_544'>
 <span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span>
 <span class="Statement"> set-string</span> my_cookie_value=<span class="Constant">&quot;XYZ&quot;</span>
@@ -271,7 +271,7 @@ To set a cookie named "my_cookie_name" to value "XYZ", that will go with the rep
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_544, gliim_copied_544)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A cookie that can be used by JavaScript (meaning we use no-http-only clause):<br/>
-<div class='code'  style='position:relative;padding-right:14px;'>
+<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_545'>
 <span class="Statement"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> no-http-only</span></pre>
 <span id=gliim_copied_545 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
