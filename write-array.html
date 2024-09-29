@@ -243,7 +243,7 @@ function gg_copy(eid, gc) {
     <span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> old-value</span> &lt;old value&gt; ]</pre>
-<span id=gliim_copied_618 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_618 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_618, gliim_copied_618)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-array will store string &lt;key&gt; (in "key" clause) and &lt;value&gt; (in "value" clause) into array &lt;array&gt;, which must be created with <a href='http://gliimly.github.io/new-array.html'>new-array</a>. <br/>
@@ -261,7 +261,7 @@ Writing data to array:<br/>
 <pre id='code_620'>
 <span class="Statement"> new-array</span> h
 <span class="Statement"> write-array</span> h<span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;some data&quot;</span></pre>
-<span id=gliim_copied_620 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_620 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_620, gliim_copied_620)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing new value with the same key and obtaining the previous value (which is "some data"):<br/>
@@ -271,7 +271,7 @@ Writing new value with the same key and obtaining the previous value (which is "
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_INFO_EXIST
 <span class="Statement">     @</span>Previous value for this key is <span class="Statement">&lt;&lt;p-out</span> od<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_622 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_622 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_622, gliim_copied_622)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is an array key/value service, where a process-scoped array is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely:<br/>
@@ -311,7 +311,7 @@ The following is an array key/value service, where a process-scoped array is cre
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=gliim_copied_623 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_623 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_623, gliim_copied_623)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the application, then run it as service:<br/>
@@ -323,7 +323,7 @@ sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span 
 gg <span class="Special">-q</span>
 // Start application <span class="PreProc">(</span><span class="Special">single process key service</span><span class="PreProc">)</span>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> arr</pre>
-<span id=gliim_copied_619 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_619 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_619, gliim_copied_619)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it from a command line client (see <a href='http://gliimly.github.io/gg.html'>gg</a>):<br/>
@@ -335,7 +335,7 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arraysrv/op=query/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 // Delete data
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arraysrv/op=delete/key=15</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/arr</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=gliim_copied_621 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_621 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_621, gliim_copied_621)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='http://gliimly.github.io/read-array.html'>read-array</a> for more examples.<br/>

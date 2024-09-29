@@ -239,7 +239,7 @@ A Gliimly application must be initialized first. This means creating a directory
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_12'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=gliim_copied_12 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_12 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_12, gliim_copied_12)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Setup database(s)"></a>Setup database(s)</div>
@@ -253,7 +253,7 @@ You can setup your database(s) in any way you see fit, and this includes creatin
  <span class="Comment">//or</span>
 
 <span class="Statement"> begin-transaction</span> @sales_db</pre>
-<span id=gliim_copied_10 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_10 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_10, gliim_copied_10)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 then you must have files "mydb" and "sales_db" present. For example, MariaDB config file might look like:<br/>
@@ -266,14 +266,14 @@ database=gliimdb
 protocol=TCP
 host=127.0.0.1
 port=3306</pre>
-<span id=gliim_copied_11 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_11 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_11, gliim_copied_11)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 or for PostgreSQL:<br/>
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_13'>
 user=myuser password=mypwd dbname=mydb</pre>
-<span id=gliim_copied_13 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_13 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_13, gliim_copied_13)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Make application"></a>Make application</div>
@@ -281,14 +281,14 @@ To compile and link the application that doesn't use database(s):<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_14'>
 gg <span class="Special">-q</span></pre>
-<span id=gliim_copied_14 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_14 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_14, gliim_copied_14)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 When you have database(s) in use, for instance assuming in above example that "mydb" is MariaDB database, "sales_db" is PostgreSQL, and "contacts" is SQLite database:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_15'>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:mydb postgres:sales_db sqlite:contacts</span><span class="Statement">&quot;</span></pre>
-<span id=gliim_copied_15 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_15 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_15, gliim_copied_15)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='http://gliimly.github.io/gg.html'>gg</a> for more options.<br/>
@@ -298,7 +298,7 @@ Stop the application first in case it was running, then start the application - 
 <pre id='code_16'>
 mgrg <span class="Special">-m</span> quit <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span>
 mgrg <span class="Special">-w</span> <span class="Constant">3</span> <span class="Statement">&lt;</span>app name<span class="Statement">&gt;</span></pre>
-<span id=gliim_copied_16 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_16 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_16, gliim_copied_16)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> for more details.<br/>

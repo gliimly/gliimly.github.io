@@ -249,7 +249,7 @@ function gg_copy(eid, gc) {
      [<span class="Identifier"> status-id</span> &lt;status id&gt; ] \
      [<span class="Identifier"> status-text</span> &lt;status text&gt; ] \
      [<span class="Identifier"> custom</span> &lt;header name&gt;=&lt;header value&gt; [ , ... ] ]</pre>
-<span id=gliim_copied_402 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_402 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_402, gliim_copied_402)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 out-header outputs HTTP header and also sends any cookies produced by <a href='http://gliimly.github.io/set-cookie.html'>set-cookie</a> and <a href='http://gliimly.github.io/delete-cookie.html'>delete-cookie</a>. A web page must have an HTTP header output before any other response. <br/>
@@ -266,14 +266,14 @@ If no out-header is used, or if "default" clause is in place, a default header i
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_403'>
  text/html;charset=utf-<span class="Constant">8</span></pre>
-<span id=gliim_copied_403 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_403 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_403, gliim_copied_403)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and cache control of<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_404'>
  Cache-Control:max-age=<span class="Constant">0</span>, no-cache; <span class="Statement">Pragma</span>: no-cache</pre>
-<span id=gliim_copied_404 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_404 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_404, gliim_copied_404)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The default header is typical for dynamically generated web pages, and most of the time you would use the default header - meaning you don't need to specify out-header statement.<br/>
@@ -286,7 +286,7 @@ The following are subclauses that allow setting any custom header:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_405'>
 <span class="Statement"> send-file</span> <span class="Constant">&quot;somepic.jpg&quot;</span><span class="Identifier"> headers cache-control</span> <span class="Constant">&quot;max-age: 3600&quot;</span></pre>
-<span id=gliim_copied_405 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_405 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_405, gliim_copied_405)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>If "etag" is used without boolean expression &lt;etag&gt;, or if &lt;etag&gt; evaluates to true, then "ETAG" header will be generated (a timestamp) and included, otherwise it is not. The time stamp is of last modification date of the file (and typically used to cache a file on client if it hasn't changed on the server). "etag" is useful to let the client know to download the file only once if it hasn't changed, thus saving network and computing resources. ETAG header is used only for <a href='http://gliimly.github.io/send-file.html'>send-file</a>.<br/>
@@ -295,7 +295,7 @@ The following are subclauses that allow setting any custom header:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_406'>
 <span class="Statement"> out-header</span><span class="Identifier"> use custom</span> <span class="Constant">&quot;CustomOption3&quot;</span>=<span class="Constant">&quot;CustomValue3&quot;</span>, <span class="Constant">&quot;Status&quot;</span>=<span class="Constant">&quot;418 I'm a teapot&quot;</span></pre>
-<span id=gliim_copied_406 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_406 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_406, gliim_copied_406)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 "custom" subclause lets you use any custom headers that exist today or may be added in the future, as well as any headers of your own design.</li></ul>
@@ -305,14 +305,14 @@ Sometimes you may want to output the default header immediately, for instance if
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_407'>
 <span class="Statement"> out-header</span><span class="Identifier"> default</span></pre>
-<span id=gliim_copied_407 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_407 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_407, gliim_copied_407)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To set a custom header for a web page that changes cache control and adds two new headers:<br/>
 <div class='code'  style='position:relative;padding-right:20px;'>
 <pre id='code_408'>
 <span class="Statement"> out-header</span><span class="Identifier"> use content-type</span> <span class="Constant">&quot;text/html&quot;</span><span class="Identifier"> cache-control</span> <span class="Constant">&quot;max-age:3600&quot;</span><span class="Identifier"> custom</span> <span class="Constant">&quot;some_HTTP_option&quot;</span>=<span class="Constant">&quot;value_for_some_HTTP_option&quot;</span>, <span class="Constant">&quot;some_HTTP_option_1&quot;</span>=<span class="Constant">&quot;value_for_some_HTTP_option_1&quot;</span></pre>
-<span id=gliim_copied_408 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_408 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_408, gliim_copied_408)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

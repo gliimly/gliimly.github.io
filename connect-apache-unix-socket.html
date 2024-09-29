@@ -243,7 +243,7 @@ To setup Apache as a reverse proxy and connect your application to it, you need 
 <pre id='code_127'>
 sudo a2enmod proxy
 sudo a2enmod proxy_fcgi</pre>
-<span id=gliim_copied_127 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_127 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_127, gliim_copied_127)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
@@ -251,14 +251,14 @@ sudo a2enmod proxy_fcgi</pre>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_129'>
 sudo vi /etc/httpd/conf/httpd.conf</pre>
-<span id=gliim_copied_129 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_129 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_129, gliim_copied_129)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_130'>
 sudo vi /etc/apache2/httpd.conf</pre>
-<span id=gliim_copied_130 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_130 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_130, gliim_copied_130)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Add this to the end of the file:<br/>
@@ -266,7 +266,7 @@ Add this to the end of the file:<br/>
 <pre id='code_126'>
 LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so</pre>
-<span id=gliim_copied_126 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_126 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_126, gliim_copied_126)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
@@ -276,7 +276,7 @@ Edit the Apache configuration file:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_131'>
 sudo vi /etc/apache2/apache2.conf</pre>
-<span id=gliim_copied_131 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_131 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_131, gliim_copied_131)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
@@ -284,7 +284,7 @@ sudo vi /etc/apache2/apache2.conf</pre>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_132'>
 sudo vi /etc/httpd/conf/httpd.conf</pre>
-<span id=gliim_copied_132 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_132 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_132, gliim_copied_132)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li>
@@ -292,7 +292,7 @@ sudo vi /etc/httpd/conf/httpd.conf</pre>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_133'>
 sudo vi /etc/apache2/httpd.conf</pre>
-<span id=gliim_copied_133 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_133 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_133, gliim_copied_133)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
@@ -300,7 +300,7 @@ Add this to the end of file ("/&lt;app path&gt;" is the application path (see <a
 <div class='ncode' style='position:relative;padding-right:20px;'>
 <pre id='code_128'>
 ProxyPass &quot;/&lt;app path&gt;/&quot; unix:///var/lib/gg/&lt;app name&gt;/sock/sock|fcgi://localhost/&lt;app path&gt;</pre>
-<span id=gliim_copied_128 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_128 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_128, gliim_copied_128)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Step 3</span>:<br/>
@@ -308,14 +308,14 @@ Finally, restart Apache. On Debian systems (like Ubuntu) or OpenSUSE:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_134'>
 sudo systemctl restart apache2</pre>
-<span id=gliim_copied_134 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_134 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_134, gliim_copied_134)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 On Fedora systems (like RedHat) and Arch Linux:<br/>
 <div class="shcode" style='position:relative;padding-right:20px;'>
 <pre id='code_135'>
 sudo systemctl restart httpd</pre>
-<span id=gliim_copied_135 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<span id=gliim_copied_135 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_135, gliim_copied_135)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note: you must not have any other URL resource that starts with "/&lt;app path&gt;/" (such as for example "/&lt;app path&gt;/something") as the web server will attempt to pass them as a reverse proxy request, and they will likely not work. If you need to, you can change the application path to be different from "/&lt;app path&gt;", see <a href='http://gliimly.github.io/request.html'>request</a>.<br/>
