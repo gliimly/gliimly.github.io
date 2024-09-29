@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -237,16 +237,16 @@ function gg_copy(eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Error code</div><hr/>Many Gliimly statements return status with GG_ERR_... error codes, which are generally descriptive to a point. Such status may not as detailed as the operating system "errno" variable, however you can use "errno" clause in <a href='http://gliimly.github.io/get-req.html'>get-req</a> statement to obtain the last known errno value from aforementioned statements. You should obtain this value as soon as possible after the statement because another statement may set it afterwards.<br/>
 <br/>
 In the following example, a directory is attempted to be deleted via <a href='http://gliimly.github.io/delete-file.html'>delete-file</a>, which will fail with GG_ERR_DELETE - however you can get a more specific code via "errno" (which in this case is "21", or "EISDIR", which means that it cannot delete a directory with this statement):<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_234' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_234'>
 <span class="Statement"> delete-file</span> <span class="Constant">&quot;some_directory&quot;</span><span class="Type"> status</span> stc
 <span class="Statement"> if-true</span> stc<span class="Identifier"> equal</span> GG_ERR_DELETE
 <span class="Statement">     get-req</span><span class="Identifier"> errno</span><span class="Type"> to</span> e
 <span class="Statement">     @</span>Cannot delete file
 <span class="Statement">     pf-out</span> <span class="Constant">&quot;Error </span><span class="Special">%ld</span><span class="Special">\n</span><span class="Constant">&quot;</span>, e
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_234 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_234, gliim_copied_234)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_234 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_234, gliim_copied_234)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that with some GG_ERR_... codes, the "errno" clause in get-req may return 0. This means the error was detected by Gliimly and not reported by the operating system.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

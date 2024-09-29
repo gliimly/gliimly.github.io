@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -236,13 +236,13 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Open file</div><hr/><span style="font-weight:bold;">Purpose</span>: Open file for reading and writing.<br/>
 <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_400' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_400'>
 <span class="Statement"> open-file</span> &lt;file name&gt;<span class="Type"> file-id</span> &lt;file id&gt; \
      [<span class="Identifier"> new-truncate</span> ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=gliim_copied_400 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_400, gliim_copied_400)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_400 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_400, gliim_copied_400)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Opens file given by &lt;file name&gt; for reading and writing and creates an open file variable identified by &lt;file id&gt;.<br/>
 <br/>
@@ -253,8 +253,8 @@ You can obtain the status of file opening via &lt;status&gt; number (in "status"
 If "new-truncate" clause is used, a new file is created if it doesn't exist, or it is truncated if it does.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a file (or truncate an existing one), write 25,000 rows and the read back those rows and display them, then close file:<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_401' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_401'>
 <span class="Statement"> %%</span> /ofile
      <span class="Comment">// Create new file, or truncate an old file if it exists</span>
 <span class="Statement">     open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf<span class="Identifier"> new-truncate</span>
@@ -280,8 +280,8 @@ Create a file (or truncate an existing one), write 25,000 rows and the read back
      <span class="Comment">// Close the file</span>
 <span class="Statement">     close-file</span><span class="Identifier"> file-id</span> nf
 <span class="Statement"> %%</span></pre>
-<span id=gliim_copied_401 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_401, gliim_copied_401)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_401 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_401, gliim_copied_401)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Files</span><br/>

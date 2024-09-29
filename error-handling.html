@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -245,11 +245,11 @@ If there is a fatal internal error (i.e. error in Gliimly code itself that canno
 Regardless of the type of error and regardless of whether the process exits or not, the error is logged and the program stack with full source code lines (see <a href='http://gliimly.github.io/gg.html'>gg</a> for including debug information) will be written to backtrace file (use -e option of <a href='http://gliimly.github.io/gg.html'>gg</a> to obtain its location). Note that the program stack is logged only if Gliimly is built in debugging mode (see "DI=1" option when building Gliimly); otherwise, production code may be slowed down by stack dumping.<br/>
 <br/>
 You can see the list of last N errors (and the location of file containing backtrace for them) by using <a href='http://gliimly.github.io/gg.html'>gg</a>, for instance to see the last 3 errors:<br/>
-<div class="shcode" style='position:relative'>
-<pre id='code_235' >
+<div class="shcode" style='position:relative;padding-right:20px;'>
+<pre id='code_235'>
 gg <span class="Special">-e</span> <span class="Constant">3</span></pre>
-<span id=gliim_copied_235 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_235, gliim_copied_235)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_235 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_235, gliim_copied_235)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Error handling</span><br/>

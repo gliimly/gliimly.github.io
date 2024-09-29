@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -236,12 +236,12 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Encode base64</div><hr/><span style="font-weight:bold;">Purpose</span>: Base64 encode.<br/>
 <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_218' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_218'>
 <span class="Statement"> encode-base64</span> &lt;data&gt;<span class="Type"> to</span> &lt;output data&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
-<span id=gliim_copied_218 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_218, gliim_copied_218)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_218 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_218, gliim_copied_218)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 encode-base64 will encode string &lt;data&gt; into base64 string &lt;output data&gt;.<br/>
 <br/>
@@ -252,8 +252,8 @@ The result is stored in &lt;output data&gt; (in "to" clause).<br/>
 Base64-encoded strings are often used where binary data needs to be in a format that complies with certain text-based protocols, such as in attaching documents in email, or embedding binary documents (such as "JPG" images for example) in web pages with "data:image/jpg;base64..." specified, etc.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 An example that encodes a string, decodes, and finally checks if they match:<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_219' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_219'>
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
@@ -267,12 +267,12 @@ An example that encodes a string, decodes, and finally checks if they match:<br/
 <span class="Statement"> else-if</span>
 <span class="Statement">     @</span>Failure!
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_219 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_219, gliim_copied_219)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_219 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_219, gliim_copied_219)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the next example, "input-length" clause is used, and only a partial of the input string is encoded, then later compared to the original:<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_220' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_220'>
  <span class="Comment">// Original string, generally this would be binary data in most cases</span>
 <span class="Statement"> set-string</span> dt =<span class="Constant">&quot;  oh well  &quot;</span>
 
@@ -295,8 +295,8 @@ In the next example, "input-length" clause is used, and only a partial of the in
 <span class="Statement"> else-if</span>
 <span class="Statement">     @</span>Failure! [<span class="Statement">&lt;&lt;p-out</span> dt<span class="Statement">&gt;&gt;</span>] [<span class="Statement">&lt;&lt;p-out</span> new_dt<span class="Statement">&gt;&gt;</span>]
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_220 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_220, gliim_copied_220)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_220 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_220, gliim_copied_220)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Base64</span><br/>

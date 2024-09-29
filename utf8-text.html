@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -236,15 +236,15 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Utf8 text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF8 string to text.<br/>
 <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_616' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_616'>
 <span class="Statement"> utf8-text</span> &lt;utf8&gt; \
      [<span class="Type"> to</span> &lt;text&gt; ] \
      [<span class="Identifier"> length</span> &lt;length&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=gliim_copied_616 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_616, gliim_copied_616)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_616 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_616, gliim_copied_616)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 utf8-text will convert &lt;utf8&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
 <br/>
@@ -257,8 +257,8 @@ The number of bytes in &lt;utf8&gt; to be converted can be specified with &lt;le
 The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; is the string length of the result in &lt;text&gt; (or the number of bytes output if &lt;text&gt; is omitted), or -1 if error occurred (meaning &lt;utf8&gt; is an invalid UTF8) in which case &lt;text&gt; (if specified) is an empty string and the error text can be obtained in &lt;error text&gt; in "error-text" clause.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Convert UTF8 string to text and verify the expected result:<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_617' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_617'>
  <span class="Comment">// UTF8 string </span>
 <span class="Statement"> set-string</span> utf8_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
 
@@ -274,8 +274,8 @@ Convert UTF8 string to text and verify the expected result:<br/>
 <span class="Statement"> if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
 <span class="Statement">     @</span>decode-text worked okay
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_617 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_617, gliim_copied_617)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_617 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_617, gliim_copied_617)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">UTF8</span><br/>

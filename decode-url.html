@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -236,11 +236,11 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Decode url</div><hr/><span style="font-weight:bold;">Purpose</span>: Decode URL-encoded string.<br/>
 <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_190' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_190'>
 <span class="Statement"> decode-url</span> &lt;string&gt; [<span class="Identifier"> input-length</span> &lt;length&gt; ] [<span class="Identifier"> status</span> &lt;status&gt; ]</pre>
-<span id=gliim_copied_190 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_190, gliim_copied_190)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_190 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_190, gliim_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 decode-url will decode &lt;string&gt; (created by <a href='http://gliimly.github.io/encode-url.html'>encode-url</a> or other URL-encoding software) and store the result back into &lt;string&gt;. If you need &lt;string&gt; unchanged, make a copy of it first with <a href='http://gliimly.github.io/copy-string.html'>copy-string</a>. &lt;length&gt; in "input-length" clause specifies the number of bytes to decode; if omitted or negative, it is the string length of &lt;string&gt;.<br/>
 <br/>
@@ -249,11 +249,11 @@ All encoded values (starting with %) are decoded, and "+" (plus sign) is convert
 &lt;status&gt; number (in "status" clause) is GG_OKAY if all bytes decoded successfully, or in case of an error it is the index of the byte that could not be decoded (first byte is indexed "0"). If there is an error (for example hexadecimal value following % is invalid), the decoding stops and whatever was decoded up to that point is the result.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Decode URL-encoded string "str", after which it will hold a decoded string. <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_191' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_191'>
 <span class="Statement"> decode-url</span> str</pre>
-<span id=gliim_copied_191 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_191, gliim_copied_191)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_191 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_191, gliim_copied_191)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">URL encoding</span><br/>

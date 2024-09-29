@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -236,14 +236,14 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New index</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new index structure for fast key searching.<br/>
 <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_379' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_379'>
 <span class="Statement"> new-index</span> &lt;index&gt; \
      [<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> ] \
      [<span class="Identifier"> unsorted</span> ]
      [<span class="Identifier"> process-scope</span> ]</pre>
-<span id=gliim_copied_379 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_379, gliim_copied_379)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_379 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_379, gliim_copied_379)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-index initializes a new &lt;index&gt;. <br/>
 <br/>
@@ -270,11 +270,11 @@ If you need faster range searches or the extra memory is not an issue (it would 
 An index is accessible to the current process only, unless "process-scope" clause is used, in which case all requests served by the process can use it (see <a href='http://gliimly.github.io/do-once.html'>do-once</a> for a typical way to create an object with a process scope). If "process-scope" is used, then &lt;index&gt; that will keep its nodes between all requests served by the same process; otherwise &lt;index&gt; is purged at the end of request. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a new index:<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_380' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_380'>
 <span class="Statement"> new-index</span> my_index</pre>
-<span id=gliim_copied_380 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_380, gliim_copied_380)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_380 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_380, gliim_copied_380)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Index</span><br/>

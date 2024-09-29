@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -236,11 +236,11 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P web</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs a web-encoded string.<br/>
 <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_448' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_448'>
 <span class="Statement"> p-web</span> &lt;string&gt; [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> new-line</span> ]</pre>
-<span id=gliim_copied_448 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_448, gliim_copied_448)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_448 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_448, gliim_copied_448)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 p-web is the same as <a href='http://gliimly.github.io/p-out.html'>p-out</a>, except that the output is web-encoded (or HTML-encoded). This means such output is suited for use in web pages - the text will be displayed verbatim without HTML-markup being interpreted.<br/>
 <br/>
@@ -249,11 +249,11 @@ If "length" clause is used, then only &lt;length&gt; leading bytes of &lt;string
 If "new-line" clause is used, then a new line ("\n") is output after encoded &lt;string&gt;.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Display "We use &lt;hr/&gt; markup" text, without "&lt;hr/&gt;" being displayed as a horizontal line:<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_449' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_449'>
 <span class="Statement"> p-web</span> <span class="Constant">&quot;We use &lt;hr/&gt; markup&quot;</span></pre>
-<span id=gliim_copied_449 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_449, gliim_copied_449)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_449 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_449, gliim_copied_449)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='http://gliimly.github.io/p-out.html'>p-out</a> for more examples.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

@@ -214,7 +214,7 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
 function gg_copy(eid, gc) {
@@ -236,11 +236,11 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Sub handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Call another handler within the same process.<br/>
 <br/>
-<div class='code'  style='position:relative'>
-<pre id='code_584' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_584'>
 <span class="Statement"> sub-handler</span> &lt;request path&gt;</pre>
-<span id=gliim_copied_584 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_584, gliim_copied_584)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_584 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_584, gliim_copied_584)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Calls another handler within the same request in the same process. You can call any handler within the same application.<br/>
 <br/>
@@ -253,8 +253,8 @@ sub-handler uses the same high-performance hash table used by a <a href='http://
 The following example demonstrate calling a sub-handler twice, and also using its output inline in the caller. An input parameter is passed to it, and an output obtained:<br/>
 <br/>
 Copy to file "callsub.gliim":<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_587' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_587'>
 <span class="Statement"> %%</span> /callsub
      <span class="Comment">//</span>
      <span class="Comment">// First call to sub-handler</span>
@@ -280,12 +280,12 @@ Copy to file "callsub.gliim":<br/>
 <span class="Statement">     get-param</span> out<span class="Identifier"> type string</span>
 <span class="Statement">     @</span><span class="Statement">&lt;&lt;p-out</span> s<span class="Statement">&gt;&gt;</span> with output [<span class="Statement">&lt;&lt;p-out</span> out<span class="Statement">&gt;&gt;</span>]
 <span class="Statement"> %%</span></pre>
-<span id=gliim_copied_587 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_587, gliim_copied_587)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_587 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_587, gliim_copied_587)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And in "sub__service.gliim" file:<br/>
-<div class='code'  style='position:relative'>
-<pre id='code_589' >
+<div class='code'  style='position:relative;padding-right:20px;'>
+<pre id='code_589'>
 <span class="Statement"> %%</span> /sub/service
 <span class="Statement">     @</span>This is sub!
 <span class="Statement">     get-param</span> inp
@@ -294,31 +294,31 @@ And in "sub__service.gliim" file:<br/>
 <span class="Statement">     ))</span>
 <span class="Statement">     set-param</span> out = out
 <span class="Statement"> %%</span></pre>
-<span id=gliim_copied_589 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_589, gliim_copied_589)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_589 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_589, gliim_copied_589)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and build an application:<br/>
-<div class="shcode" style='position:relative'>
-<pre id='code_586' >
+<div class="shcode" style='position:relative;padding-right:20px;'>
+<pre id='code_586'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> subhandler
 gg <span class="Special">-q</span></pre>
-<span id=gliim_copied_586 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_586, gliim_copied_586)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_586 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_586, gliim_copied_586)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
-<div class="shcode" style='position:relative'>
-<pre id='code_588' >
+<div class="shcode" style='position:relative;padding-right:20px;'>
+<pre id='code_588'>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/callsub</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=gliim_copied_588 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_588, gliim_copied_588)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_588 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_588, gliim_copied_588)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
-<div class='ncode' style='position:relative'>
-<pre id='code_585' >
+<div class='ncode' style='position:relative;padding-right:20px;'>
+<pre id='code_585'>
 This is sub! with output [got input: some string]
 Output: This is sub! with output [got input: new string]</pre>
-<span id=gliim_copied_585 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
-<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_585, gliim_copied_585)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_585 style='position:absolute;right:-20px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy-small.png' id='gliimb' onclick='gg_copy(code_585, gliim_copied_585)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Service processing</span><br/>
