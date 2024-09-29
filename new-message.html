@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,9 +236,11 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New message</div><hr/><span style="font-weight:bold;">Purpose</span>: Create new message.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_385' >
 <span class="Statement"> new-message</span> &lt;message&gt; [<span class="Identifier"> from</span> &lt;string&gt; ]</pre>
+<span id=gliim_copied_385 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_385, gliim_copied_385)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-message will create a new &lt;message&gt; object.<br/>
 <br/>
@@ -233,8 +248,8 @@ If &lt;string&gt; is specified (in "from" clause), then it is used to create a &
 <br/>
 If new-message is used without "from" clause, data can be added to &lt;message&gt; with <a href='http://gliimly.github.io/write-message.html'>write-message</a>. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_386' >
 <span class="Statement"> begin-handler</span> /msg
 <span class="Statement">     new-message</span> msg
 <span class="Statement">     write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;weather&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;nice&quot;</span>
@@ -247,6 +262,8 @@ If new-message is used without "from" clause, data can be added to &lt;message&g
 <span class="Statement">         @</span>Key is <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> and value is <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     end-loop</span>
 <span class="Statement"> end-handler</span></pre>
+<span id=gliim_copied_386 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_386, gliim_copied_386)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Messages</span><br/>

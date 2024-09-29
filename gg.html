@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,9 +236,11 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Gg</div><hr/><span style="font-weight:bold;">Purpose</span>: Gliimly general purpose utility: build, test, run, miscellaneous (pronounced "gigi").<br/>
 <br/>
-<div class="shcode">
-<pre id='code_1'>
+<div class="shcode" style='position:relative'>
+<pre id='code_295' >
 gg <span class="Statement">&lt;</span>options<span class="Statement">&gt;</span></pre>
+<span id=gliim_copied_295 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_295, gliim_copied_295)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Command-line options"></a>Command-line options</div>
 <ul><li>-q Build Gliimly application from source code in the current directory. <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> must run first in this directory with "-i" option to create the application. You must have at least one Gliimly source file (.gliim file), with each such file implementing a single <a href='http://gliimly.github.io/request.html'>request</a> handler. All application source files must be contained in a flat directory; however, each request handler can handle any hierarchical path, so your API can be fully hierarchical.<br/>
@@ -248,9 +263,11 @@ If specified, tracing information code will be generated (without it, tracing is
 <br/>
 </li><li>--path=&lt;application path&gt;<br/>
 This option lets you specify the <a href='http://gliimly.github.io/request.html'>application path</a> for your request URLs. It is a leading path of a URL prior to request name and any parameters. If empty, the default is the application name preceded by a forward slash:<br/>
-<div class='ncode'>
-<pre id='code_1'>
+<div class='ncode' style='position:relative'>
+<pre id='code_294' >
 /&lt;app name&gt;</pre>
+<span id=gliim_copied_294 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_294, gliim_copied_294)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>--maxupload=&lt;max upload size&gt;<br/>
 Specify maximum upload size for a file (in bytes). The default is approximately 25MB. <br/>
@@ -310,21 +327,27 @@ Show library directory - Gliimly's libraries and v1 code processor are located t
 Run a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, or make a <a href='http://gliimly.github.io/service.html'>service</a> request, or display bash code to do the same for use in scripts. <br/>
 <br/>
 If you are not in application's source code directory, then you must specify "--app" option to supply the application path (typically "/&lt;application name&gt;", see <a href='http://gliimly.github.io/request.html'>request</a>). You can use "--req" option to specify the request name and optional URL parameters (see <a href='http://gliimly.github.io/request.html'>request</a>), for example it may be:<br/>
-<div class='ncode'>
-<pre id='code_2'>
+<div class='ncode' style='position:relative'>
+<pre id='code_296' >
 gg -r --req=&quot;/encrypt&quot; --exec</pre>
+<span id=gliim_copied_296 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_296, gliim_copied_296)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 to execute request "encrypt", or<br/>
-<div class='ncode'>
-<pre id='code_3'>
+<div class='ncode' style='position:relative'>
+<pre id='code_298' >
 gg -r --req=&quot;/encrypt/data=somedata?method=aes256&quot; --exec</pre>
+<span id=gliim_copied_298 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_298, gliim_copied_298)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 where "/encrypt" is the request name, and "/data=somedata?method=aes256" represents the URL parameters. <br/>
 <br/>
 Use --method to specify the HTTP request method, for instance:<br/>
-<div class='ncode'>
-<pre id='code_4'>
+<div class='ncode' style='position:relative'>
+<pre id='code_300' >
 gg -r --req=&quot;/encrypt/data=somedata?method=aes256&quot; --method=POST --exec</pre>
+<span id=gliim_copied_300 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_300, gliim_copied_300)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If not specified, the default method is "GET". <br/>
 <br/>
@@ -335,13 +358,15 @@ If "--service" is used, then application server will be contacted to execute a s
 By default, the output in any case will have the HTTP headers. If you don't want those to appear, use "--silent-header" option.<br/>
 <br/>
 If "--content" is used, then file &lt;input file&gt; is either piped to the standard input of a command-line program (if "--service" is not used), or sent as a content to the application server (if "--service" is used). You can also specify content type with "--content-type". For example:<br/>
-<div class="shcode">
-<pre id='code_2'>
+<div class="shcode" style='position:relative'>
+<pre id='code_297' >
 gg <span class="Special">-r</span> <span class="Special">-app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/my_app</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/some_request?par1=val1&amp;par2=20&amp;par3=4</span><span class="Statement">&quot;</span> <span class="Special">--method</span><span class="Statement">=</span>PATCH <span class="Special">--content</span><span class="Statement">=</span>something.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
+<span id=gliim_copied_297 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_297, gliim_copied_297)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 When "--exec" is not used, the output may look like this:<br/>
-<div class="shcode">
-<pre id='code_3'>
+<div class="shcode" style='position:relative'>
+<pre id='code_299' >
 <span class="Statement">export</span> <span class="Identifier">CONTENT_TYPE</span>=
 <span class="Statement">export</span> <span class="Identifier">CONTENT_LENGTH</span>=
 <span class="Statement">export</span> <span class="Identifier">GG_SILENT_HEADER</span>=no
@@ -350,12 +375,14 @@ When "--exec" is not used, the output may look like this:<br/>
 <span class="Statement">export</span> <span class="Identifier">PATH_INFO</span>=<span class="Statement">&quot;</span><span class="Constant">/encrypt/data/somedata</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">QUERY_STRING</span>=<span class="Statement">&quot;</span><span class="Constant">method=aes256</span><span class="Statement">&quot;</span>
 /var/lib/gg/bld/enc/enc</pre>
+<span id=gliim_copied_299 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_299, gliim_copied_299)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you copy the above and paste into bash shell, it will execute the command line program which handles the request specified (which gg would do when "--exec" is specified). Note that SCRIPT_NAME will be set to whatever application path you use (i.e. the default or if set with "--path" option when making the application; or with "--app" option here), see <a href='http://gliimly.github.io/request.html'>request</a>. <br/>
 <br/>
 Examples of using "-r" option to execute <a href='http://gliimly.github.io/command-line.html'>command-line</a> program or to call a <a href='http://gliimly.github.io/service.html'>service</a>:<br/>
-<div class="shcode">
-<pre id='code_4'>
+<div class="shcode" style='position:relative'>
+<pre id='code_301' >
 <span class="Comment">#Execute current application as a command-line program, request &quot;json&quot;</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/json</span><span class="Statement">&quot;</span> <span class="Special">--exec</span>
 
@@ -369,6 +396,8 @@ gg <span class="Special">-r</span> <span class="Special">--req</span><span class
 <span class="Comment">#Execute application &quot;app_name&quot;, service &quot;json&quot; by calling the application server running with a TCP socket on port 2301</span>
 <span class="Comment">#Request has input parameter &quot;act&quot; with value &quot;perf&quot;</span>
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/json/act=perf</span><span class="Statement">&quot;</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/app_name</span><span class="Statement">&quot;</span> <span class="Special">--service</span> <span class="Special">--remote</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">192.168.0.21:2301</span><span class="Statement">&quot;</span>  <span class="Special">--exec</span></pre>
+<span id=gliim_copied_301 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_301, gliim_copied_301)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 </li><li>-u <br/>
@@ -381,19 +410,25 @@ Add Gliimly syntax and keyword highlighting rules for files with .gliim extensio
 Display help. </li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <ul><li>Make application (-q), use three databases (--db) named mdb (MariaDB database), pdb (PostgreSQL) and sdb (SQLite), produce debugging information (--debug), produce tracing information (--trace):<br/>
-<div class="shcode">
-<pre id='code_5'>
+<div class="shcode" style='position:relative'>
+<pre id='code_302' >
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:mdb postgres:pdb sqlite:sdb</span><span class="Statement">&quot;</span> <span class="Special">--debug</span> <span class="Special">--trace</span></pre>
+<span id=gliim_copied_302 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_302, gliim_copied_302)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>make application, use MariaDB database db (--db), specify linker and C compilation flags, specify maximum upload size of about 18M:<br/>
-<div class="shcode">
-<pre id='code_6'>
+<div class="shcode" style='position:relative'>
+<pre id='code_303' >
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">mariadb:db</span><span class="Statement">&quot;</span> <span class="Special">--lflag</span> <span class="Statement">&quot;</span><span class="Constant">-Wl,-z,defs</span><span class="Statement">&quot;</span> <span class="Special">--cflag</span> <span class="Statement">&quot;</span><span class="Constant">-DXYZ123</span><span class="Statement">&quot;</span> <span class="Special">--maxupload</span> <span class="Constant">18000000</span></pre>
+<span id=gliim_copied_303 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_303, gliim_copied_303)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>Make application that doesn't use any databases:<br/>
-<div class="shcode">
-<pre id='code_7'>
+<div class="shcode" style='position:relative'>
+<pre id='code_304' >
 gg <span class="Special">-q</span></pre>
+<span id=gliim_copied_304 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_304, gliim_copied_304)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

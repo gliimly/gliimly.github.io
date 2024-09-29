@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,12 +236,14 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Commit transaction</div><hr/><span style="font-weight:bold;">Purpose</span>: Commits a database transaction.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_114' >
 <span class="Statement"> commit-transaction</span> [ @&lt;database&gt; ] \
      [<span class="Identifier"> on-error-continue</span> |<span class="Identifier"> on-error-exit</span> ] \
      [<span class="Type"> error</span> &lt;error&gt; ] [<span class="Type"> error-text</span> &lt;error text&gt; ] \
      [<span class="Identifier"> options</span> &lt;options&gt; ]</pre>
+<span id=gliim_copied_114 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_114, gliim_copied_114)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Database transaction started with <a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a> is committed with commit-transaction. <br/>
 <br/>
@@ -246,12 +261,14 @@ The error code is available in &lt;error&gt; variable in "error" clause - this c
 <br/>
 Note that if database connection was lost, and could not be reestablished, the request will error out (see <a href='http://gliimly.github.io/error-handling.html'>error-handling</a>).<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_115' >
 <span class="Statement"> begin-transaction</span> @mydb
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;insert into employee (name, dateOfHire) values ('Terry', now())&quot;</span>
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;insert into payroll (name, salary) values ('Terry', 100000)&quot;</span>
 <span class="Statement"> commit-transaction</span> @mydb</pre>
+<span id=gliim_copied_115 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_115, gliim_copied_115)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Database</span><br/>

@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,9 +236,11 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New list</div><hr/><span style="font-weight:bold;">Purpose</span>: Create linked list.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_383' >
 <span class="Statement"> new-list</span> &lt;list&gt; [<span class="Identifier"> process-scope</span> ]</pre>
+<span id=gliim_copied_383 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_383, gliim_copied_383)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-list initializes new linked &lt;list&gt;, where each element is connected to the previous and next ones. <br/>
 <br/>
@@ -239,9 +254,11 @@ A linked list is accessible to the current process only, unless "process-scope" 
 <br/>
 See <a href='http://gliimly.github.io/write-list.html'>write-list</a> for an example of a process-scoped list.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_384' >
 <span class="Statement"> new-list</span> mylist</pre>
+<span id=gliim_copied_384 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_384, gliim_copied_384)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Linked list</span><br/>

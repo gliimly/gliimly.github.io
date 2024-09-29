@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,9 +236,11 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Delete string</div><hr/><span style="font-weight:bold;">Purpose</span>: Free string memory.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_207' >
 <span class="Statement"> delete-string</span> &lt;string&gt;</pre>
+<span id=gliim_copied_207 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_207, gliim_copied_207)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 delete-string frees &lt;string&gt; variable previously allocated by a Gliimly statement. <br/>
 <br/>
@@ -234,15 +249,17 @@ Note that freeing memory is in most cases unnecessary as Gliimly will automatica
 Gliimly keeps count of &lt;string&gt; references. So if &lt;string&gt; is referenced by other Gliimly statements (for instance it was assigned to another string variable in <a href='http://gliimly.github.io/set-string.html'>set-string</a>, or was used in statements like <a href='http://gliimly.github.io/write-index.html'>write-index</a> or <a href='http://gliimly.github.io/write-array.html'>write-array</a>), then &lt;string&gt; may not be deleted; in such a case, unless string was declared to be of process-scope and still used in such statements, it will be deleted when the <a href='http://gliimly.github.io/request.html'>request</a> ends. Otherwise, &lt;string&gt; becomes an empty string ("") after it was deleted.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Allocate and free random string:<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_208' >
 <span class="Statement"> random-string</span><span class="Type"> to</span> ran_str
 <span class="Statement"> .</span>..
 <span class="Statement"> delete-string</span> ran_str</pre>
+<span id=gliim_copied_208 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_208, gliim_copied_208)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Free string allocated by write-string (consisting of 100 "Hello World"s):<br/>
-<div class='code'>
-<pre id='code_3'>
+<div class='code'  style='position:relative'>
+<pre id='code_209' >
 <span class="Statement"> write-string</span> ws
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">100</span>
 <span class="Statement">         @</span>Hello World
@@ -250,6 +267,8 @@ Free string allocated by write-string (consisting of 100 "Hello World"s):<br/>
 <span class="Statement"> end-write-string</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> delete-string</span> ws</pre>
+<span id=gliim_copied_209 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_209, gliim_copied_209)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

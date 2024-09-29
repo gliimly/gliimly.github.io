@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,15 +236,17 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Current row</div><hr/><span style="font-weight:bold;">Purpose</span>: Get or print out the row number of a current row in the result-set of a query.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_157' >
 <span class="Statement"> current-row</span> [<span class="Identifier"> to</span> &lt;current row&gt; ]</pre>
+<span id=gliim_copied_157 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_157, gliim_copied_157)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Without "to" clause, current-row will print out the current row number. First row is numbered 1. With "to" clause, the row number is stored into variable &lt;current row&gt;. current-row must be within a <a href='http://gliimly.github.io/run-query.html'>run-query</a> loop, and it always refers to the most inner one.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Display row number before a line with first and last name for each employee:<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_158' >
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;select firstName, lastName from employee&quot;</span><span class="Type"> output</span> firstName, lastName
 <span class="Statement">     @</span>Row #<span class="Statement">&lt;&lt;current-row&gt;&gt;</span>&lt;br/&gt;
 <span class="Statement">     p-out</span> firstName
@@ -239,6 +254,8 @@ Display row number before a line with first and last name for each employee:<br/
 <span class="Statement">     p-out</span> lastName
 <span class="Statement">     @</span>&lt;br/&gt;
 <span class="Statement"> end-query</span></pre>
+<span id=gliim_copied_158 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_158, gliim_copied_158)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Database</span><br/>

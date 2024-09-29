@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,8 +236,8 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Run query</div><hr/><span style="font-weight:bold;">Purpose</span>: Execute a query and loop through result set.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_510' >
 <span class="Statement"> run-query</span> \
      [ @&lt;database&gt; ] \
      = &lt;query text&gt; \
@@ -243,6 +256,8 @@ ul {
 
 <span class="Statement"> run-prepared-query</span> \
      ... ( the same as run-query ) ...</pre>
+<span id=gliim_copied_510 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_510, gliim_copied_510)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 run-query executes a query specified with string &lt;query text&gt;.<br/>
 <div class="vsub"><a id="Database"></a>Database</div>
@@ -250,20 +265,24 @@ run-query executes a query specified with string &lt;query text&gt;.<br/>
 <div class="vsub"><a id="Output"></a>Output</div>
 <span style="font-weight:bold;">- output clause</span><br/>
 "output" clause is a comma-delimited list of the query's output columns. The column names do not need to match the actual query column names, rather you can name them anyway you want, as long as they positionally correspond. String variables with the same name are created for each column name and query's output assigned to them. For example:<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_512' >
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name, last_name
 <span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-loop</span></pre>
+<span id=gliim_copied_512 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_512, gliim_copied_512)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that the output is by default web-encoded. You can set the encoding of column output by using either "noencode" (for no encoding), "urlencode" (for URL-encoding) or "webencode" (for web-encoding) clause right after column name (see <a href='http://gliimly.github.io/encode-web.html'>encode-web</a>, <a href='http://gliimly.github.io/encode-url.html'>encode-url</a> for description of encodings). For example, here the first output column will not be encoded, and the second will be URL-encoded:<br/>
-<div class='code'>
-<pre id='code_3'>
+<div class='code'  style='position:relative'>
+<pre id='code_513' >
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employees&quot;</span><span class="Type"> output</span> first_name<span class="Identifier"> noencode</span>, last_name<span class="Identifier"> urlencode</span>
 <span class="Statement">     @</span>First name <span class="Statement">&lt;&lt;p-out</span> first_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     @</span>Last name <span class="Statement">&lt;&lt;p-out</span> last_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-loop</span></pre>
+<span id=gliim_copied_513 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_513, gliim_copied_513)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Input"></a>Input</div>
 The query's input parameters (if any) are specified with '%s' in the &lt;query text&gt; (note that single quotes must be included). The actual input parameters are provided after "input" clause (you can instead use semicolon, i.e. ":"), in a comma-separated list. Each input variable is a string regardless of the actual column type, as the database engine will interpret the data according to its usage. Each input variable is trimmed (left and right) before used in a query. <br/>
@@ -281,13 +300,15 @@ The error code is available in &lt;error&gt; variable in "error" clause - this c
 Note that if database connection was lost, and could not be reestablished, the request will error out (see <a href='http://gliimly.github.io/error-handling.html'>error-handling</a>).<br/>
 <div class="vsub"><a id="Space before = and @"></a>Space before = and @</div>
 "=" and "@" clauses may or may not have a space before the data that follows. So for example, these are both valid:<br/>
-<div class='code'>
-<pre id='code_4'>
+<div class='code'  style='position:relative'>
+<pre id='code_514' >
  <span class="Comment">// No space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
 <span class="Statement"> run-query</span> @db =<span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 
  <span class="Comment">// Space after </span><span class="Constant">&quot;@&quot;</span><span class="Comment"> and </span><span class="Constant">&quot;=&quot;</span>
 <span class="Statement"> run-query</span><span class="Identifier"> @</span> db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid</pre>
+<span id=gliim_copied_514 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_514, gliim_copied_514)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="run-prepared-query"></a>run-prepared-query</div>
 run-prepared-query is the same as run-query except that a &lt;query&gt; is prepared. That means it is pre-compiled and its execution plan is created once, instead of each time a query executes. The statement is cached going forward for the life of the process (with the rare exception of re-establishing a lost database connection). It means effectively an unlimited number of requests will be reusing the query statement, which generally implies higher performance. Note that databases do not allow prepared queries for DDL (Data Definition Language), as there is not much benefit in general, hence only DML queries (such as INSERT, DELETE etc.) and SELECT can be prepared.<br/>
@@ -302,25 +323,31 @@ In some cases, you might not want to use prepared statements. Some reasons may b
 </li><li>in some cases the database support for prepared statements may still have issues compared to non-prepared,<br/>
 </li><li>typically prepared statements do not use database query cache, so repeating identical queries with identical input data may be faster without them.</li></ul>
 Note that in Postgres, with prepared statements you may get an error like "could not determine data type of parameter $N". This is an issue with Postgres server. In this case you can use "::&lt;type&gt;" qualifier, such as for instance to tell Postgres the input parameter is text:<br/>
-<div class='sqlcode'>
-<pre id='code_1'>
+<div class='sqlcode' style='position:relative'>
+<pre id='code_511' >
 <span class="Statement">select</span> col1 <span class="Special">from</span> test <span class="Special">where</span> someId&gt;=<span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span> <span class="Statement">and</span> col1 <span class="Statement">like</span> <span class="Identifier">concat</span>( <span class="Special">'</span><span class="Constant">%s</span><span class="Special">'</span>::text ,<span class="Special">'</span><span class="Constant">%</span><span class="Special">'</span>)</pre>
+<span id=gliim_copied_511 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_511, gliim_copied_511)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that SQL statements in SQLite are always prepared regardless of whether you use "run-query" or "run-prepared-query" due to how SQLite native interface works.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Select first and last name (output is firstName and lastName) based on employee ID (specified by input parameter empid):<br/>
-<div class='code'>
-<pre id='code_5'>
+<div class='code'  style='position:relative'>
+<pre id='code_515' >
 <span class="Statement"> get-param</span> empid
 <span class="Statement"> run-query</span> @db = <span class="Constant">&quot;select firstName, lastName from employee where employeeId='</span><span class="Special">%s</span><span class="Constant">'&quot;</span><span class="Type"> output</span> firstName, lastName<span class="Identifier"> input</span> empid
 <span class="Statement">     @</span>Employee is <span class="Statement">&lt;&lt;p-out</span>  firstName<span class="Statement">&gt;&gt;</span> <span class="Statement">&lt;&lt;p-out</span> lastName<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-query</span></pre>
+<span id=gliim_copied_515 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_515, gliim_copied_515)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Prepared query without a loop and obtain error code and affected rows:<br/>
-<div class='code'>
-<pre id='code_6'>
+<div class='code'  style='position:relative'>
+<pre id='code_516' >
 <span class="Statement"> run-prepared-query</span> @db = qry<span class="Identifier"> no-loop</span> \
     <span class="Type"> error</span> ecode<span class="Type"> affected-rows</span> arows<span class="Identifier"> input</span> stock_name, stock_price, stock_price</pre>
+<span id=gliim_copied_516 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_516, gliim_copied_516)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Database</span><br/>

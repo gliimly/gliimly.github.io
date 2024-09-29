@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,25 +236,31 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Decode hex</div><hr/><span style="font-weight:bold;">Purpose</span>: Decode hexadecimal string into data.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_187' >
 <span class="Statement"> decode-hex</span> &lt;data&gt;<span class="Type"> to</span> &lt;output&gt; \
      [<span class="Identifier"> input-length</span> &lt;input length&gt; ]</pre>
+<span id=gliim_copied_187 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_187, gliim_copied_187)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 decode-hex will decode hexadecimal string &lt;data&gt; to string &lt;output&gt; given in "to" clause. <br/>
 <br/>
 &lt;data&gt; must consist of an even number of digits 0-9 and letters A-F or a-f. The length of &lt;data&gt; may be given by &lt;input length&gt; number in "input-length" clause, otherwise it is assumed to be the string length of &lt;data&gt;. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the original binary data from a hexadecimal string "hexdata". The output string "binout" is created:<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_188' >
 <span class="Statement"> set-string</span> hexdata = <span class="Constant">&quot;0041000F414200&quot;</span>
 <span class="Statement"> decode-hex</span> hexdata<span class="Type"> to</span> binout</pre>
+<span id=gliim_copied_188 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_188, gliim_copied_188)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The value of "binout" will be binary data equal to this C literal:<br/>
-<div class='code'>
-<pre id='code_3'>
+<div class='code'  style='position:relative'>
+<pre id='code_189' >
  <span class="Constant">&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;A&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\xF</span><span class="Constant">&quot;&quot;AB&quot;&quot;</span><span class="Special">\x00</span><span class="Constant">&quot;&quot;</span><span class="Special">\x04</span><span class="Constant">&quot;</span></pre>
+<span id=gliim_copied_189 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_189, gliim_copied_189)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Hex encoding</span><br/>

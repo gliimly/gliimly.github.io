@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,12 +236,14 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get array</div><hr/><span style="font-weight:bold;">Purpose</span>: Get usage specifics for an array.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_261' >
 <span class="Statement"> get-array</span>  &lt;array &gt; \
      (<span class="Type"> length</span> &lt;length&gt; ) \
      | (<span class="Type"> hash-size</span> &lt;hash size&gt; ) \
      | (<span class="Type"> average-reads</span> &lt;reads&gt; )</pre>
+<span id=gliim_copied_261 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_261, gliim_copied_261)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 get-array provides usage specifics of an &lt;array&gt; (created by <a href='http://gliimly.github.io/new-array.html'>new-array</a>). <br/>
 <br/>
@@ -238,9 +253,11 @@ Use "length" clause to obtain its &lt;length&gt; (i.e. the number of elements st
 <br/>
 This information may be useful in determining the performance of a array, and whether <a href='http://gliimly.github.io/resize-array.html'>resize-array</a> is indicated.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_262' >
 <span class="Statement"> get-array</span> h<span class="Type"> length</span> l<span class="Type"> hash-size</span> s<span class="Type"> average-reads</span> r</pre>
+<span id=gliim_copied_262 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_262, gliim_copied_262)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Array</span><br/>

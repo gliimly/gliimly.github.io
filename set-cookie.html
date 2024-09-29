@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,14 +236,16 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Set cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Set cookie.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_543' >
 <span class="Statement"> set-cookie</span> &lt;cookie name&gt;=&lt;cookie value&gt; \
      [<span class="Identifier"> expires</span> &lt;expiration&gt; ] \
      [<span class="Identifier"> path</span> &lt;path&gt; ] \
      [<span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span>|<span class="Constant">&quot;Strict&quot;</span>|<span class="Constant">&quot;None&quot;</span> ] \
      [<span class="Identifier"> no-http-only</span> [ &lt;no-http-only&gt; ] ] \
      [<span class="Identifier"> secure</span> [ &lt;secure&gt; ] ]</pre>
+<span id=gliim_copied_543 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_543, gliim_copied_543)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To set a cookie named by string &lt;cookie name&gt; to string value &lt;cookie value&gt;, use set-cookie statement. A cookie must be set prior to outputting any actual response (such as with <a href='http://gliimly.github.io/output-statement.html'>output-statement</a> or <a href='http://gliimly.github.io/p-out.html'>p-out</a> for example), or the program will <a href='http://gliimly.github.io/error-handling.html'>error out</a> and stop. <br/>
 <br/>
@@ -247,16 +262,20 @@ Use "secure" if a secure connection (https) is used, in order to specify this co
 Cookies are commonly used for session maintenance, tracking and other purposes. Use <a href='http://gliimly.github.io/get-cookie.html'>get-cookie</a> and <a href='http://gliimly.github.io/delete-cookie.html'>delete-cookie</a> together with set-cookie to manage cookies.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To set a cookie named "my_cookie_name" to value "XYZ", that will go with the reply and expire in 1 year and 2 months from now, use:<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_544' >
 <span class="Statement"> get-time</span><span class="Type"> to</span> mytime<span class="Identifier"> year</span> <span class="Constant">1</span><span class="Identifier"> month</span> <span class="Constant">2</span>
 <span class="Statement"> set-string</span> my_cookie_value=<span class="Constant">&quot;XYZ&quot;</span>
 <span class="Statement"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> expires</span> mytime<span class="Identifier"> path</span> <span class="Constant">&quot;/&quot;</span><span class="Identifier"> same-site</span> <span class="Constant">&quot;Lax&quot;</span></pre>
+<span id=gliim_copied_544 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_544, gliim_copied_544)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 A cookie that can be used by JavaScript (meaning we use no-http-only clause):<br/>
-<div class='code'>
-<pre id='code_3'>
+<div class='code'  style='position:relative'>
+<pre id='code_545' >
 <span class="Statement"> set-cookie</span> <span class="Constant">&quot;my_cookie_name&quot;</span>=my_cookie_value<span class="Identifier"> no-http-only</span></pre>
+<span id=gliim_copied_545 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_545, gliim_copied_545)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Cookies</span><br/>

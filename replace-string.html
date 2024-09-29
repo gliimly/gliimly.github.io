@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,12 +236,14 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Replace string</div><hr/><span style="font-weight:bold;">Purpose</span>: Replaces part of string.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_481' >
 <span class="Statement"> replace-string</span> &lt;string&gt; \
      (<span class="Identifier"> copy</span> &lt;replacement&gt; ) | (<span class="Identifier"> copy-end</span> &lt;replacement&gt; ) \
      [<span class="Identifier"> start-with</span> &lt;start with&gt; ] \
      [<span class="Identifier"> length</span> &lt;length&gt; ]</pre>
+<span id=gliim_copied_481 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_481, gliim_copied_481)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 replace-string will replace part of &lt;string&gt; with &lt;replacement&gt; string. "copy" clause will make a replacement in the leading part of &lt;string&gt;, while "copy-end" will make a replacement in the trailing part of &lt;string&gt;.<br/>
 <br/>
@@ -241,32 +256,40 @@ If "start-with" clause is not used, then &lt;replacement&gt; will replace the le
 If either "start-with" or "length" is negative, it's the same as if not specified. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 After replace-string below, string "a" will be "none string is here":<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_482' >
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy</span> b</pre>
+<span id=gliim_copied_482 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_482, gliim_copied_482)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 After replace-string below, string "a" will be "some string is none":<br/>
-<div class='code'>
-<pre id='code_3'>
+<div class='code'  style='position:relative'>
+<pre id='code_483' >
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy-end</span> b</pre>
+<span id=gliim_copied_483 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_483, gliim_copied_483)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this example, "a" will be "somnontring is here":<br/>
-<div class='code'>
-<pre id='code_4'>
+<div class='code'  style='position:relative'>
+<pre id='code_484' >
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy</span> b<span class="Identifier"> start-with</span> <span class="Constant">3</span><span class="Identifier"> length</span> <span class="Constant">3</span></pre>
+<span id=gliim_copied_484 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_484, gliim_copied_484)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In the following example, "a" will be "some string inohere":<br/>
-<div class='code'>
-<pre id='code_5'>
+<div class='code'  style='position:relative'>
+<pre id='code_485' >
 <span class="Statement"> set-string</span> b=<span class="Constant">&quot;none&quot;</span>
 <span class="Statement"> set-string</span> a=<span class="Constant">&quot;some string is here&quot;</span>
 <span class="Statement"> replace-string</span> a<span class="Identifier"> copy-end</span> b<span class="Identifier"> start-with</span> <span class="Constant">6</span><span class="Identifier"> length</span> <span class="Constant">2</span></pre>
+<span id=gliim_copied_485 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_485, gliim_copied_485)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Strings</span><br/>

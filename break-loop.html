@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,15 +236,17 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Break loop</div><hr/><span style="font-weight:bold;">Purpose</span>: Exit a loop.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_53' >
 <span class="Statement"> break-loop</span></pre>
+<span id=gliim_copied_53 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_53, gliim_copied_53)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 break-loop will exit a loop between <a href='http://gliimly.github.io/start-loop.html'>start-loop</a> and end-loop, <a href='http://gliimly.github.io/run-query.html'>run-query</a> and end-query, or <a href='http://gliimly.github.io/read-line.html'>read-line</a> and end-read-line statements. Execution continues right after the end of the loop.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Exit the loop after 300 loops:<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_54' >
 <span class="Statement"> set-number</span> max_loop = <span class="Constant">300</span>
 <span class="Statement"> start-loop</span><span class="Identifier"> repeat</span> <span class="Constant">1000</span><span class="Type"> use</span> i<span class="Identifier"> start-with</span> <span class="Constant">1</span>
 <span class="Statement">     @</span>Completed <span class="Statement">&lt;&lt;p-num</span> i<span class="Statement">&gt;&gt;</span> loops so far
@@ -239,6 +254,8 @@ Exit the loop after 300 loops:<br/>
 <span class="Statement">         break-loop</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> end-loop</span></pre>
+<span id=gliim_copied_54 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_54, gliim_copied_54)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Program flow</span><br/>

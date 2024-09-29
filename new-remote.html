@@ -214,6 +214,19 @@ ul {
 
 </head>
 <body>
+    <textarea id='gliimt' style='position: absolute;left: -100%;'></textarea>
+
+<script>
+function gg_copy(eid, gc) {
+  gliimt.textContent = eid.textContent;
+  gliimt.select();
+  document.execCommand("copy");
+  gc.style.visibility="visible"
+  setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
+}
+
+</script>
+
 <!--GLIIMMENU13-->
 
 <!--GLIIMENDMENU13-->
@@ -223,8 +236,8 @@ ul {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;New remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Create resources for a service call.<br/>
 <br/>
-<div class='code'>
-<pre id='code_1'>
+<div class='code'  style='position:relative'>
+<pre id='code_387' >
 <span class="Statement"> new-remote</span> &lt;service&gt; \
      (<span class="Identifier"> local</span> &lt;app name&gt; ) | (<span class="Identifier"> location</span> &lt;location&gt; ) \
     <span class="Identifier"> url-path</span> &lt;service URL&gt; |
@@ -239,6 +252,8 @@ ul {
      [<span class="Identifier"> method</span> &lt;request method&gt; ] \
      [<span class="Identifier"> environment</span> &lt;name&gt;=&lt;value&gt; [<span class="Statement"> ,</span> ... ] ] \
      [<span class="Identifier"> timeout</span> &lt;timeout&gt; ]</pre>
+<span id=gliim_copied_387 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_387, gliim_copied_387)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 new-remote will create resources needed for a service call (see <a href='http://gliimly.github.io/call-remote.html'>call-remote</a>); these resources are contained in variable &lt;service&gt;.<br/>
 <div class="vsub"><a id="Local or location"></a>Local or location</div>
@@ -271,8 +286,8 @@ All three service calls connect via Unix socket. <br/>
 A full URL path of a service request (for "srv1" for example), would be "/app/manage-keys/op=add/key=key_1/data=data_1" (note that "app" is the application name and "manage-keys" is the request handler that provides the service).<br/>
 <br/>
 Copy this to "manage_keys.gliim" source file:<br/>
-<div class='code'>
-<pre id='code_2'>
+<div class='code'  style='position:relative'>
+<pre id='code_390' >
 <span class="Statement"> %%</span> /manage-keys
 <span class="Statement">    do-once</span>
 <span class="Statement">    new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
@@ -306,12 +321,14 @@ Copy this to "manage_keys.gliim" source file:<br/>
 <span class="Statement">        end-if</span>
 <span class="Statement">    end-if</span>
 <span class="Statement"> %%</span></pre>
+<span id=gliim_copied_390 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_390, gliim_copied_390)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Then <a href='http://gliimly.github.io/call-remote.html'>call-remote</a> will make three service calls to the above request handler in parallel (i.e. as threads executing at the same time). You can examine if everything went okay, how many threads have started, and how many finished with a reply from the service (this means any kind of reply, even if an error). Finally, the output from each call is displayed (that's "data" clause in <a href='http://gliimly.github.io/read-remote.html'>read-remote</a> statement at the end).<br/>
 <br/>
 Create file "srv.gliim" and copy to it this code:<br/>
-<div class='code'>
-<pre id='code_3'>
+<div class='code'  style='position:relative'>
+<pre id='code_392' >
 <span class="Statement"> begin-handler</span> /srv
   <span class="Comment">// Create resources (prepare) for </span><span class="Constant">3</span><span class="Comment"> service calls</span>
   <span class="Comment">// We pass environment variable GG_SILENT_HEADER to these calls</span>
@@ -349,29 +366,39 @@ Create file "srv.gliim" and copy to it this code:<br/>
 <span class="Statement">  p-out</span> rdata3
 <span class="Statement">  @</span>
 <span class="Statement"> end-handler</span></pre>
+<span id=gliim_copied_392 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_392, gliim_copied_392)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create the application:<br/>
-<div class="shcode">
-<pre id='code_1'>
+<div class="shcode" style='position:relative'>
+<pre id='code_389' >
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> app</pre>
+<span id=gliim_copied_389 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_389, gliim_copied_389)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Make it:<br/>
-<div class="shcode">
-<pre id='code_2'>
+<div class="shcode" style='position:relative'>
+<pre id='code_391' >
 gg <span class="Special">-q</span></pre>
+<span id=gliim_copied_391 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_391, gliim_copied_391)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run it:<br/>
-<div class="shcode">
-<pre id='code_3'>
+<div class="shcode" style='position:relative'>
+<pre id='code_393' >
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> app</pre>
+<span id=gliim_copied_393 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_393, gliim_copied_393)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-<div class="shcode">
-<pre id='code_4'>
+<div class="shcode" style='position:relative'>
+<pre id='code_394' >
 gg <span class="Special">-r</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/srv</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent</span></pre>
+<span id=gliim_copied_394 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_394, gliim_copied_394)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 And the result is (assuming you have started hash example above):<br/>
-<div class='ncode'>
-<pre id='code_1'>
+<div class='ncode' style='position:relative'>
+<pre id='code_388' >
 No errors from call-remote
 All three service calls started.
 All three service calls finished.
@@ -380,6 +407,8 @@ Added [key1]
 Added [key2]
 
 Added [key3]</pre>
+<span id=gliim_copied_388 style='position:absolute;right:0;top:-30px; cursor: pointer;opacity:0.5;visibility:hidden;'>Copied!</span>
+<img src='http://gliimly.github.io/gliim-copy.png' id='gliimb' onclick='gg_copy(code_388, gliim_copied_388)' style='position:absolute;right:0;top:0px; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Distributed computing</span><br/>
