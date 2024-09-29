@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Text utf8</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert text to UTF8 string.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_593'>
 <span class="Statement"> text-utf8</span> &lt;text&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
@@ -248,7 +248,7 @@ text-utf8 will convert string value &lt;text&gt; to UTF8. &lt;text&gt; itself wi
 <br/>
 You can obtain &lt;status&gt; in "status" clause. &lt;status&gt; number is GG_OKAY if successful, or GG_ERR_UTF8 if there was an error, in which case &lt;error text&gt; string in "error-text" clause will contain the error message.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_594'>
  <span class="Comment">// Unicode value to encode to UTF8</span>
 <span class="Statement"> set-string</span> txt = <span class="Constant">&quot;</span><span class="Special">\u0459\\\&quot;</span><span class="Constant">Doc</span><span class="Special">\\\&quot;\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">b</span><span class="Special">\\</span><span class="Constant">f</span><span class="Special">\\</span><span class="Constant">r</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u21d7</span><span class="Special">\\</span><span class="Constant">u21d8</span><span class="Special">\\</span><span class="Constant">t</span><span class="Special">\\</span><span class="Constant">u25b7</span><span class="Special">\\</span><span class="Constant">u25ee</span><span class="Special">\\</span><span class="Constant">uD834</span><span class="Special">\\</span><span class="Constant">uDD1E</span><span class="Special">\\</span><span class="Constant">u13eb</span><span class="Special">\\</span><span class="Constant">u2ca0</span><span class="Special">\\</span><span class="Constant">u0448</span><span class="Special">\\</span><span class="Constant">n</span><span class="Special">\\</span><span class="Constant">/</span><span class="Special">\\\&quot;</span><span class="Constant">()</span><span class="Special">\\</span><span class="Constant">t&quot;</span>

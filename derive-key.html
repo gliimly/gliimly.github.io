@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Derive key</div><hr/><span style="font-weight:bold;">Purpose</span>: Derive a key.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_210'>
 <span class="Statement"> derive-key</span> &lt;key&gt;<span class="Identifier"> from</span> &lt;source&gt;<span class="Identifier"> length</span> &lt;length&gt; \
      [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] ] \
@@ -250,7 +250,7 @@ function gg_copy(eid, gc) {
 derive-key derives &lt;key&gt; from string &lt;source&gt; in "from" clause. If &lt;source length&gt; in "from-length" clause is specified, exactly &lt;source length&gt; bytes of &lt;source&gt; are used. Otherwise, the length of &lt;source&gt; string is used as the number of bytes (see <a href='http://gliimly.github.io/string-length.html'>string-length</a>). <br/>
 <br/>
 The desired length of derived key is given by &lt;length&gt; in "length" clause. The method for key generation is PBKDF2. By default the digest used is "SHA256". You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_211'>
 <span class="Comment">#get digests</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
@@ -266,7 +266,7 @@ By default, the derived key is produced in a hexadecimal form, where each byte i
 Key derivation is often used when storing password-derivatives in the database (with salt), and also for symmetrical key generation.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Derived key is in variable "mk":<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_212'>
 <span class="Statement"> random-string</span><span class="Type"> to</span> rs9<span class="Identifier"> length</span> <span class="Constant">16</span>
 <span class="Statement"> derive-key</span> mk<span class="Identifier"> from</span> <span class="Constant">&quot;clave secreta&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;sha-256&quot;</span><span class="Identifier"> salt</span> rs9<span class="Identifier"> salt-length</span> <span class="Constant">10</span><span class="Identifier"> iterations</span> <span class="Constant">2000</span><span class="Identifier"> length</span> <span class="Constant">16</span></pre>

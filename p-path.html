@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P path</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs URL application path.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_435'>
 <span class="Statement"> p-path</span> [<span class="Identifier"> new-line</span> ]</pre>
 <span id=gliim_copied_435 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -245,7 +245,7 @@ function gg_copy(eid, gc) {
 p-path outputs a URL application path (see <a href='http://gliimly.github.io/request.html'>request</a>), i.e. the leading path segment(s) prior to request name.<br/>
 <br/>
 If no "--path" option in <a href='http://gliimly.github.io/gg.html'>gg</a> is used to specify URL application path, then it is the same as application name prepended with a forward slash:<br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_437'>
 /&lt;app name&gt;</pre>
 <span id=gliim_copied_437 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -256,14 +256,14 @@ p-path provides the leading part of a URL path after which request name and its 
 Use <a href='http://gliimly.github.io/p-path.html'>p-path</a> to create the absolute URL path to refer back to your service so you can issue <a href='http://gliimly.github.io/request.html'>request</a>s to it. <br/>
 <br/>
 For example, this is a link that specifies request to service "show-notes":<br/>
-<div class='htmlcode' style='position:relative;padding-right:20px;'>
+<div class='htmlcode' style='position:relative;padding-right:14px;'>
 <pre id='code_436'>
 @<span class="Identifier">&lt;</span><span class="Statement">a</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path&gt;&gt;/show-notes?date=yesterday&quot;</span><span class="Identifier">&gt;</span><span class="Underlined">Show Notes</span><span class="Identifier">&lt;/</span><span class="Statement">a</span><span class="Identifier">&gt;</span></pre>
 <span id=gliim_copied_436 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_436, gliim_copied_436)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you are building HTML forms, you can add a note with:<br/>
-<div class='htmlcode' style='position:relative;padding-right:20px;'>
+<div class='htmlcode' style='position:relative;padding-right:14px;'>
 <pre id='code_438'>
 @<span class="Identifier">&lt;</span><span class="Statement">form</span><span class="Identifier"> </span><span class="Type">action</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path&gt;&gt;/add-note&quot;</span><span class="Identifier"> </span><span class="Type">method</span><span class="Identifier">=</span><span class="Constant">&quot;POST&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text&quot;</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">&quot;note&quot;</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">&quot;&quot;</span><span class="Identifier">&gt;</span>

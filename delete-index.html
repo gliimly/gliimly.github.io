@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Delete index</div><hr/><span style="font-weight:bold;">Purpose</span>: Delete a node from an index.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_201'>
 <span class="Statement"> delete-index</span> &lt;index&gt;<span class="Identifier"> key</span> &lt;key&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
@@ -247,7 +247,7 @@ function gg_copy(eid, gc) {
 delete-index will search &lt;index&gt; for string &lt;key&gt; and if found, delete its node (including the key in it), set &lt;value&gt; (in "value" clause) to node's value, and set &lt;status&gt; number (in "status" clause) to GG_OKAY. If &lt;key&gt; is not found, &lt;status&gt; will be GG_ERR_EXIST. If &lt;status&gt; is not GG_OKAY, &lt;value&gt; is unchanged.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Delete node with key "123", and obtain its value:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_202'>
 <span class="Statement"> set-string</span> k = <span class="Constant">&quot;123&quot;</span>
 <span class="Statement"> delete-index</span> myindex<span class="Identifier"> key</span> k<span class="Type"> value</span> val<span class="Type"> status</span> st

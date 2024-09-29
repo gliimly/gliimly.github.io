@@ -237,7 +237,7 @@ function gg_copy(eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Database config file</div><hr/>Gliimly application can use any number of databases, with each specified by a database configuration file. This file provides database name, login and connection settings and preferences.<br/>
 <br/>
 When making a Gliimly application, you specify a database vendor and the database configuration file for each database your application uses (see <a href='http://gliimly.github.io/gg.html'>gg</a>), for instance:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_159'>
  gg ... --db=<span class="Constant">&quot;mariadb:db1 postgres:db2 sqlite:db3&quot;</span>  ...</pre>
 <span id=gliim_copied_159 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -250,7 +250,7 @@ You must create a database configuration file for each database your application
 Each such file contains connection information and authentication to a database, which Gliimly uses to login. The names of these configuration files are used in queries. There is no limit on how many databases can be used in your application and those from different vendors can be used in the same application.<br/>
 <br/>
 An example of database configuration file (in this case MariaDB):<br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_160'>
 [client]
 user=mydbuser
@@ -264,7 +264,7 @@ port=3306</pre>
 </div><br/>
 <div class="vsub"><a id="Using in your queries"></a>Using in your queries</div>
 Database statements that perform queries (such as <a href='http://gliimly.github.io/run-query.html'>run-query</a>) must specify the database configuration file used, unless your application uses only a single database. Such configuration is given by "@&lt;database config file&gt;" (for instance in <a href='http://gliimly.github.io/run-query.html'>run-query</a> or <a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a>). For example, in:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_162'>
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;select name from employees&quot;</span>
 <span class="Statement"> .</span>..
@@ -273,7 +273,7 @@ Database statements that perform queries (such as <a href='http://gliimly.github
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_162, gliim_copied_162)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the query is performed on a database specified by the configuration file "mydb", as in (assuming it's PostgreSQL database):<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_165'>
  gg ... --db=<span class="Constant">&quot;postgres:mydb&quot;</span>  ...</pre>
 <span id=gliim_copied_165 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -282,7 +282,7 @@ the query is performed on a database specified by the configuration file "mydb",
 You do not need to manually connect to the database; when your application uses it for the first time, a connection is automatically established, and lost connection is automatically re-established when needed. <br/>
 <br/>
 If a database is the only one used by your application, you can omit it, as in:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_167'>
 <span class="Statement"> run-query</span> =<span class="Constant">&quot;select name from employees&quot;</span>
 <span class="Statement"> .</span>..
@@ -293,14 +293,14 @@ If a database is the only one used by your application, you can omit it, as in:<
 <div class="vsub"><a id="Connection settings"></a>Connection settings</div>
 The contents of a configuration file depends on the database used:<br/>
 <ul><li>MariaDB: configuration file is written as a MariaDB client options file. You can see the parameters available at <br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_163'>
 https://mariadb.com/kb/en/configuring-mariadb-connectorc-with-option-files/#options</pre>
 <span id=gliim_copied_163 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_163, gliim_copied_163)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Most of the time, though, you would likely use only a few of those options, as in (for local connection):<br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_166'>
 [client]
 user=myuser
@@ -315,21 +315,21 @@ The above file has fields "user" (MariaDB user), "password" (the password for Ma
 If you use passwordless MariaDB login (such as when the MariaDB user name is the same as your Operating System user name and where unix socket plugin is used for authentication), the password would be empty.<br/>
 <br/>
 To get the location of the socket, you might use:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_169'>
  sudo mysql -u root -e <span class="Constant">&quot;show variables like 'socket'&quot;</span></pre>
 <span id=gliim_copied_169 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_169, gliim_copied_169)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>Postgres: configuration file has a Postgres connection string. You can see the parameters available at <br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_168'>
 https://www.postgresql.org/docs/14/libpq-connect.html#LIBPQ-CONNSTRING</pre>
 <span id=gliim_copied_168 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_168, gliim_copied_168)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Most of the time, though, you may be using only a few of those options, as in:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_171'>
  user=myuser password=mypwd dbname=mydb</pre>
 <span id=gliim_copied_171 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -337,7 +337,7 @@ Most of the time, though, you may be using only a few of those options, as in:<b
 </div><br/>
 The above file has parameters "user" (Postgres user), "password" (the password for Postgres user), "dbname" (the Postgres database name). If you use peer-authenticated (i.e. passwordless) login, then omit "password" - this is when the Postgres user name is the same as your Operating System user name and where local unix domain socket is used for authentication.<br/>
 </li><li>SQLite: configuration file should contain a single line of text, and it must be the full path to the SQLite database file used, for example (if you keep it in Gliimly's application directory):<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_173'>
  /var/lib/gg/&lt;app name&gt;/app/&lt;db name&gt;.db</pre>
 <span id=gliim_copied_173 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -346,7 +346,7 @@ The above file has parameters "user" (Postgres user), "password" (the password f
 </li></ul>
 <div class="vsub"><a id="Substituting environment variables"></a>Substituting environment variables</div>
 You can use environment variables in database configuration files by means of substitution, in the form of "${VAR_NAME}". For example in file "mydb":<br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_170'>
 [client]
 user=${DB_USER}
@@ -359,7 +359,7 @@ port=${DB_PORT}</pre>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_170, gliim_copied_170)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here, environment variables DB_USER, DB_PWD, DB_NAME and DB_PORT are used. They must be defined in the shell environment prior to calling <a href='http://gliimly.github.io/gg.html'>gg</a> to make your application (if not defined the value will be empty):<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_161'>
 <span class="Comment">#Define environment variables for a configuration file</span>
 <span class="Statement">export</span> <span class="Identifier">DB_USER</span>=<span class="Statement">&quot;</span><span class="Constant">my_user</span><span class="Statement">&quot;</span>
@@ -373,7 +373,7 @@ gg <span class="Special">-q</span> <span class="Special">--db</span><span class=
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_161, gliim_copied_161)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which results in file /var/lib/gg/&lt;app name&gt;/app/db/mydb:<br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_172'>
 [client]
 user=my_user
@@ -390,14 +390,14 @@ Besides making application deployment easier, this also adds to its security as 
 Your environment variables can have any names, except that they cannot start with an underscore ("_") or be prefixed by "GG_" or "GG_", because those variable names are reserved by Gliimly.<br/>
 <br/>
 Note that if your data actually has a dollar sign and is a part of the configuration file, then you can create a variable for it:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_164'>
 <span class="Statement">export</span> <span class="Identifier">DOLLAR_SIGN</span>=<span class="Statement">'</span><span class="Constant">$</span><span class="Statement">'</span></pre>
 <span id=gliim_copied_164 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_164, gliim_copied_164)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and in the configuration file:<br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_174'>
 ..
 database=my${DOLLAR_SIGN}database

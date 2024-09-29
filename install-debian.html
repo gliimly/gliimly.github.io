@@ -237,7 +237,7 @@ function gg_copy(eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install debian</div><hr/><div class="vsub"><a id="Install Gliimly on Debian"></a>Install Gliimly on Debian</div>
 For Debian-like distributions (like Ubuntu or LinuxMint):<br/>
 <span style="font-weight:bold;">- Install git</span><br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_334'>
 sudo apt update
 sudo apt <span class="Special">-y</span> install git</pre>
@@ -245,7 +245,7 @@ sudo apt <span class="Special">-y</span> install git</pre>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_334, gliim_copied_334)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Download Gliimly</span><br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_335'>
 git clone <a href="https://github.com/gliimly/gliimly.git">https://github.com/gliimly/gliimly.git</a>
 <span class="Statement">cd</span> gliimly
@@ -254,7 +254,7 @@ git checkout <span class="Constant">44</span></pre>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_335, gliim_copied_335)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Install dependencies</span><br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_336'>
 sudo apt <span class="Special">-y</span> install make gcc libssl-dev curl libcurl4 libcurl4-openssl-dev libmariadb-dev zlib1g-dev libfcgi-bin libfcgi-dev libpq-dev libsqlite3-dev libpcre2-dev</pre>
 <span id=gliim_copied_336 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -262,7 +262,7 @@ sudo apt <span class="Special">-y</span> install make gcc libssl-dev curl libcur
 </div><br/>
 <span style="font-weight:bold;">- Build Gliimly</span><br/>
 Use DI=1 to build debug version, leave it as is for production:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_337'>
 make clean
 make <span class="Identifier">DI</span>=<span class="Constant">0</span>
@@ -272,7 +272,7 @@ sudo make install</pre>
 </div><br/>
 <span style="font-weight:bold;">- Tools and utilities</span><br/>
 Install useful tools and utilities, also used in examples (so if you're running examples, you must install these as well):<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_338'>
 sudo apt <span class="Special">-y</span> install tar curl libfcgi-bin</pre>
 <span id=gliim_copied_338 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

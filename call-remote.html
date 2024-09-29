@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Call remote</div><hr/><span style="font-weight:bold;">Purpose</span>: Make a remote service call.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_61'>
 <span class="Statement"> call-remote</span> &lt;service&gt; [ ,... ]   \
      [<span class="Type"> status</span> &lt;status&gt; ]  \
@@ -272,7 +272,7 @@ call-remote will wait for all &lt;service&gt; requests to finish. For that reaso
 call-remote is faster than <a href='http://gliimly.github.io/call-web.html'>call-web</a> because it does not use HTTP protocol; rather it only uses small and binary protocol, which is extremenly fast, especially when using Unix sockets on the same machine (see <a href='http://gliimly.github.io/new-remote.html'>new-remote</a>). Note that the binary protocol does not have any inherent security built-in; that is part of the reason why it is fast. As such, it is very well suited for remote service calls on the same machine or between networked machines on a secure network. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/sock" (a Gliimly application named "app_name"), and make a request named "server" (i.e. it will be processed by source code file "server.gliim") with URL path of "/op=add/key=2" (meaning with input parameters "op=add" and "key=2"). Then, service reply is read and displayed.<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_62'>
  <span class="Comment">// Create single call</span>
 <span class="Statement"> new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;/var/lib/gg/app_name/sock/sock&quot;</span> \
@@ -288,7 +288,7 @@ This example will connect to local Unix socket file "/var/lib/gg/app_name/sock/s
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_62, gliim_copied_62)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you are connecting to a service via TCP (and not with a Unix socket like in the example above), the "location" clause in <a href='http://gliimly.github.io/new-remote.html'>new-remote</a> might be:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_63'>
 <span class="Statement"> new-remote</span> srv<span class="Identifier"> location</span> <span class="Constant">&quot;192.168.0.28:2400&quot;</span> \
     <span class="Identifier"> method</span> <span class="Constant">&quot;GET&quot;</span><span class="Identifier"> app-path</span> <span class="Constant">&quot;/app_name&quot;</span><span class="Identifier"> request-path</span> <span class="Constant">&quot;/server&quot;</span> \

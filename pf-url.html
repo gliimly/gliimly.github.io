@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Pf url</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs a URL-encoded formatted string.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_422'>
 <span class="Statement"> pf-url</span> &lt;format&gt;<span class="Identifier"> ,</span> &lt;variable&gt; [<span class="Identifier"> ,</span> &lt;variable&gt; ]... \
      [<span class="Identifier"> to-error</span> ] \
@@ -247,7 +247,7 @@ function gg_copy(eid, gc) {
 pf-url is the same as <a href='http://gliimly.github.io/pf-out.html'>pf-out</a>, except that the output is URL-encoded. This means such output is suited for use in URL parameters.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Create a URL based on arbitrary strings used as URL parameters - for instance space would be encoded as "%20" in the final output:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_423'>
 <span class="Statement"> @</span>&lt;a href='<span class="Statement">&lt;&lt;p-path&gt;&gt;</span>/update?val=<span class="Statement">&lt;&lt;pf-url</span> <span class="Constant">&quot;Purchased </span><span class="Special">%s</span><span class="Constant"> for </span><span class="Special">%ld</span><span class="Constant"> dollars&quot;</span>, piece_desc, price<span class="Statement">&gt;&gt;</span>'&gt;Log transaction&lt;/a&gt;</pre>
 <span id=gliim_copied_423 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

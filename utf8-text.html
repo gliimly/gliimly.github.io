@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Utf8 text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF8 string to text.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_616'>
 <span class="Statement"> utf8-text</span> &lt;utf8&gt; \
      [<span class="Type"> to</span> &lt;text&gt; ] \
@@ -257,7 +257,7 @@ The number of bytes in &lt;utf8&gt; to be converted can be specified with &lt;le
 The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; is the string length of the result in &lt;text&gt; (or the number of bytes output if &lt;text&gt; is omitted), or -1 if error occurred (meaning &lt;utf8&gt; is an invalid UTF8) in which case &lt;text&gt; (if specified) is an empty string and the error text can be obtained in &lt;error text&gt; in "error-text" clause.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Convert UTF8 string to text and verify the expected result:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_617'>
  <span class="Comment">// UTF8 string </span>
 <span class="Statement"> set-string</span> utf8_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>

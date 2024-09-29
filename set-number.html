@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Set number</div><hr/><span style="font-weight:bold;">Purpose</span>: Set value of a number variable.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_546'>
 <span class="Statement"> set-number</span> &lt;var&gt; [ = &lt;number&gt; ]  [<span class="Identifier"> process-scope</span> ]</pre>
 <span id=gliim_copied_546 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -247,28 +247,28 @@ Number variable &lt;var&gt; is either assigned value &lt;number&gt; with "=" cla
 If "process-scope" clause is used, then number is of process scope, meaning its value will persist from one request to another for the life of the process. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Initialize number "my_num" to 0 and the value of this variable, however it changes, will persist through any number of requests in the same process:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_547'>
 <span class="Statement"> set-number</span> my_num<span class="Identifier"> process-scope</span></pre>
 <span id=gliim_copied_547 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_547, gliim_copied_547)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Initialize number "my_num" to 10:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_548'>
 <span class="Statement"> set-number</span> my_num = <span class="Constant">10</span></pre>
 <span id=gliim_copied_548 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_548, gliim_copied_548)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Subtract 5:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_549'>
 <span class="Statement"> set-number</span> my_num = my_num-<span class="Constant">5</span></pre>
 <span id=gliim_copied_549 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_549, gliim_copied_549)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Assign an expression:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_550'>
 <span class="Statement"> set-number</span> my_num = (some_num*<span class="Constant">3</span>+<span class="Constant">1</span>)%<span class="Constant">5</span></pre>
 <span id=gliim_copied_550 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

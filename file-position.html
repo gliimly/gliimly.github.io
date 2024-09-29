@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;File position</div><hr/><span style="font-weight:bold;">Purpose</span>: Set a position or get a current position for an open file.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_248'>
 <span class="Statement"> file-position</span><span class="Identifier"> file-id</span> &lt;file id&gt; \
      (<span class="Identifier"> set</span> &lt;position&gt; ) | (<span class="Type"> get</span> &lt;position&gt; ) \
@@ -255,7 +255,7 @@ If "get" clause is used, file position is obtained in &lt;position&gt; (with 0 b
 Note that setting position past the last byte of file is okay for writing - in this case the bytes between the end of file and the &lt;position&gt; are filled with null-bytes when the write operation occurs.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Open file "testwrite" and set file byte position to 100, then obtain it later:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_249'>
 <span class="Statement"> open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf
 <span class="Statement"> file-position</span><span class="Identifier"> file-id</span> nf<span class="Identifier"> set</span> <span class="Constant">100</span>

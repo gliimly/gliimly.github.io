@@ -236,7 +236,7 @@ function gg_copy(eid, gc) {
 <!--BEGVDOC90-->
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Get sys</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain data that describes the system.<br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_285'>
 <span class="Statement"> get-sys</span> \
     <span class="Identifier"> environment</span> &lt;var name&gt; \
@@ -247,7 +247,7 @@ function gg_copy(eid, gc) {
 </div><br/>
 System-describing variables can be obtained with get-sys statement and the result stored into &lt;variable&gt;. The following system variables can be obtained:<br/>
 <ul><li>"environment" returns the name of a given environment variable &lt;var name&gt;. If this is a server program, then the environment passed from a remote caller (such as web proxy) is queried. If this is a <a href='http://gliimly.github.io/command-line.html'>command-line</a> program, then the environment from the Operating System is queried. In the following example,the QUERY_STRING variable (i.e. the actual query string from URL) is obtained:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_286'>
 <span class="Statement"> get-sys</span><span class="Identifier"> environment</span> <span class="Constant">&quot;QUERY_STRING&quot;</span><span class="Type"> to</span> qstr</pre>
 <span id=gliim_copied_286 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -261,7 +261,7 @@ System-describing variables can be obtained with get-sys statement and the resul
 </li><li>"os-version" is the version of Operating System.</li></ul>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get the name of the Operating System<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_287'>
 <span class="Statement"> get-sys</span><span class="Identifier"> os-name</span><span class="Type"> to</span> os_name</pre>
 <span id=gliim_copied_287 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>

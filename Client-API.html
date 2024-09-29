@@ -243,14 +243,14 @@ function gg_copy(eid, gc) {
 See Examples section below for detailed examples.<br/>
 <div class="vsub"><a id="Sending a request to Gliimly service"></a>Sending a request to Gliimly service</div>
 The following function is used to make a call using C API:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_86'>
  <span class="Type">int</span> gg_cli_request (gg_cli *req);</pre>
 <span id=gliim_copied_86 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_86, gliim_copied_86)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 All input and output is contained in a single variable of type "gg_cli", the pointer to which is passed to "gg_cli_request()" function that sends a request to the service. A variable of type "gg_cli" must be initialized to zero before using it (such as with {0} initialization, "memset()" or "calloc()"), or otherwise some of its members may have random values:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_89'>
  <span class="Comment">// Define and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
@@ -265,7 +265,7 @@ All input and output is contained in a single variable of type "gg_cli", the poi
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_89, gliim_copied_89)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Type "gg_cli" is defined as (i.e. public members of it):<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_91'>
  <span class="Type">typedef</span> <span class="Type">struct</span> {
      <span class="Type">const</span> <span class="Type">char</span> *server; <span class="Comment">// the IP:port/socket_path to server</span>
@@ -309,7 +309,7 @@ The following members of "gg_cli" type must be supplied in order to make a call 
 <br/>
 <span style="font-weight:bold;">- Passing environment to service</span><br/>
 "env" is any environment variables that should be passed along to the service. You can access those in Gliimly via "environment" clause of <a href='http://gliimly.github.io/get-sys.html'>get-sys</a> statement. This is an array of strings, where name/value pairs are specified one after the other, and which always must end with NULL. For example, if you want to use variable "REMOTE_USER" with value "John" and variable "MY_VARIABLE" with value "8000", then it might look like this:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_93'>
  <span class="Type">char</span> *env[<span class="Constant">5</span>];
  env[<span class="Constant">0</span>] = <span class="Constant">&quot;REMOTE_USER&quot;</span>;
@@ -360,7 +360,7 @@ You can obtain service reply when it's ready in its entirety (likely most often 
 "req_status" member of "gg_cli" type is the request status when a request had executed; it is somewhat similar to an exit status of a program. A Gliimly service request returns status by means of <a href='http://gliimly.github.io/handler-status.html'>handler-status</a> statement. Note that "req_status" is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs).<br/>
 <div class="vsub"><a id="Getting data reply (stdout)"></a>Getting data reply (stdout)</div>
 Data returned from a request is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs). In that case, use "gg_cli_data()" function, for example:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_95'>
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
@@ -379,7 +379,7 @@ Data returned from a request is valid only if "gg_cli_request()" returned GG_OKA
 "gg_cli_data()" returns the actual response (i.e. data output) from service as passed to "data" stream. Any output from service will go there, except when "to-error" clause is used in <a href='http://gliimly.github.io/pf-out.html'>pf-out</a>, <a href='http://gliimly.github.io/pf-url.html'>pf-url</a> and <a href='http://gliimly.github.io/pf-web.html'>pf-web</a> - use these constructs to output errors without stopping the service execution. Additionaly, the output of <a href='http://gliimly.github.io/report-error.html'>report-error</a> will also not go to data output.<br/>
 <div class="vsub"><a id="Getting error reply (stderr)"></a>Getting error reply (stderr)</div>
 An error reply returned from a service is valid only if "gg_cli_request()" returned GG_OKAY (or if "return_code" is GG_OKAY for multi-threaded programs). In that case, use "gg_cli_error()" function, for example:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_97'>
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
@@ -398,7 +398,7 @@ An error reply returned from a service is valid only if "gg_cli_request()" retur
 "error_len" member (of "gg_cli" type above) will have the length of error response in bytes. The response is always null-terminated as a courtesy, and "error_len" does not include the terminating null byte.<br/>
 <div class="vsub"><a id="Freeing the result of a request"></a>Freeing the result of a request</div>
 Once you have obtained the result of a request, and when no longer needed, you should free it by using "gg_cli_delete()":<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_99'>
  <span class="Comment">// Declare and initialize request variable</span>
  gg_cli req = {<span class="Constant">0</span>};
@@ -417,7 +417,7 @@ If you do not free the result, your program may experience a memory leak. If you
 You can use "gg_cli_delete()" regardless of whether "gg_cli_request()" returned GG_OKAY or not.<br/>
 <div class="vsub"><a id="Completion hook"></a>Completion hook</div>
 A function you wrote can be called when a request has completed. This is useful in multithreaded invocations, where you may want to receive complete request's results as they are available. To specify a completion hook, you must write a C function with the following signature and assign it to "done_hook" member of "gg_cli" typed variable:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_100'>
  <span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_done_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, <span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req);</pre>
 <span id=gliim_copied_100 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -430,7 +430,7 @@ See an example with asynchronous hooks.<br/>
 You can obtain the service's reply as it arrives by specifying read hooks. This is useful if the service supplies partial replies over a period of time, and your application can get those partial replies as they become available.<br/>
 <br/>
 To specify a hook for data output (i.e. from stdout), you must write a C function with the following signature and assign it to "out_hook":<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_101'>
  <span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_out_hook)(<span class="Type">char</span> *recv, <span class="Type">int</span> recv_len, gg_cli *req);</pre>
 <span id=gliim_copied_101 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -439,7 +439,7 @@ To specify a hook for data output (i.e. from stdout), you must write a C functio
 "recv" is the data received and "recv_len" is its length.<br/>
 <br/>
 To specify a hook for error output (i.e. from stderr), you must write a C function with the following signature and assign it to "err_hook":<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_76'>
  <span class="Type">typedef</span> <span class="Type">void</span> (*gg_cli_err_hook)(<span class="Type">char</span> *err, <span class="Type">int</span> err_len, gg_cli *req);</pre>
 <span id=gliim_copied_76 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -452,7 +452,7 @@ To specify a hook for error output (i.e. from stderr), you must write a C functi
 To register these functions with "gg_cli_request()" function, assign their pointers to "out_hook" and "err_hook" members of request variable of type "gg_cli" respectively. Note that the output hook (i.e. hook function of type "gg_cli_out_hook") will receive empty string ("") in "recv" and "recv_len" will be 0 when the request has completed, meaning all service output (including error) has been received. <br/>
 <br/>
 For example, functions "get_output()" and "get_err()" will capture data as it arrives and print it out, and get_complete() will print the final result:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_77'>
  <span class="Comment">// Output hook</span>
  <span class="Type">void</span> get_output(<span class="Type">char</span> *d, <span class="Type">int</span> l, gg_cli *req)
@@ -493,7 +493,7 @@ You can use API without installing Gliimly. To do that:<br/>
 </li><li>copy source files "gcli.c" and "gcli.h" to where you need to build your program,<br/>
 </li><li>add the content of Gliimly's "LICENSE" file to your own in order to include the license for these source files,<br/>
 </li><li>then make your application:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_78'>
  gcc -o cli cli.c gcli.c</pre>
 <span id=gliim_copied_78 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -504,7 +504,7 @@ Note that you do not need to install any other dependencies, as API is entirely 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class="vsub"><a id="Simple example"></a>Simple example</div>
 The following example is a simple demonstration, with minimum of options used. Copy the C code to file "cli.c" in a directory of its own:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_79'>
  <span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
 
@@ -533,14 +533,14 @@ The following example is a simple demonstration, with minimum of options used. C
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_79, gliim_copied_79)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To make this client application:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_88'>
 gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
 <span id=gliim_copied_88 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_88, gliim_copied_88)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, you're using a Unix socket to communicate with the Gliimly service. To test with a Gliimly service handler, copy the following code to "hello_simple.gliim" file in a separate directory:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_80'>
 <span class="Statement"> begin-handler</span> /hello_simple
 <span class="Statement">    silent-header</span>
@@ -550,7 +550,7 @@ In this case, you're using a Unix socket to communicate with the Gliimly service
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_80, gliim_copied_80)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the Gliimly application and run it via local Unix socket:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_90'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> helloworld
 gg <span class="Special">-q</span>
@@ -560,14 +560,14 @@ mgrg <span class="Special">-w</span> <span class="Constant">1</span> helloworld<
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_90, gliim_copied_90)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the client:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_92'>
 ./cli</pre>
 <span id=gliim_copied_92 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_92, gliim_copied_92)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output is, as expected:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_81'>
  Hi there!</pre>
 <span id=gliim_copied_81 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -577,7 +577,7 @@ The output is, as expected:<br/>
 This example demonstrates using multiple options, including using TCP sockets connecting to a host and port number, environment variables, query string, request body and request execution timeout. It will also show the separation of "data" and "error" (i.e. stdout and stderr) streams from the service.<br/>
 <br/>
 Copy this to file "cli1.c" in a directory of its own - note that in this example a server will run on localhost (127.0.0.1) and TCP port 2301:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_82'>
  <span class="PreProc">#include </span><span class="Constant">&quot;gcli.h&quot;</span>
 
@@ -640,28 +640,28 @@ Copy this to file "cli1.c" in a directory of its own - note that in this example
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_82, gliim_copied_82)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that the URL parameters (i.e. "req.url_params") could have been written as a combination of a path segment and query string (see <a href='http://gliimly.github.io/request.html'>request</a>):<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_83'>
  req.url_params = <span class="Constant">&quot;/par1/val1?par2=91&quot;</span>;</pre>
 <span id=gliim_copied_83 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_83, gliim_copied_83)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 or just as a path segment:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_84'>
  req.url_params = <span class="Constant">&quot;/par1=val1/par2=91&quot;</span>;</pre>
 <span id=gliim_copied_84 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_84, gliim_copied_84)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To make this client application:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_94'>
 gcc <span class="Special">-o</span> cli1 cli1.c <span class="PreProc">$(</span><span class="Special">gg </span><span class="Special">-i</span><span class="PreProc">)</span></pre>
 <span id=gliim_copied_94 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_94, gliim_copied_94)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To test it, you can create a Gliimly application. Copy this to "hello.gliim" file in a separate directory:<br/>
-<div class='code'  style='position:relative;padding-right:20px;'>
+<div class='code'  style='position:relative;padding-right:14px;'>
 <pre id='code_85'>
 <span class="Statement"> begin-handler</span> /hello
 <span class="Statement">     silent-header</span>
@@ -702,7 +702,7 @@ To test it, you can create a Gliimly application. Copy this to "hello.gliim" fil
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_85, gliim_copied_85)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create and make the Gliimly application and run it on local TCP port 2301 to match the client above:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_96'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> helloworld
 gg <span class="Special">-q</span>
@@ -712,14 +712,14 @@ mgrg <span class="Special">-w</span> <span class="Constant">1</span> <span class
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_96, gliim_copied_96)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the client:<br/>
-<div class="shcode" style='position:relative;padding-right:20px;'>
+<div class="shcode" style='position:relative;padding-right:14px;'>
 <pre id='code_98'>
 ./cli1</pre>
 <span id=gliim_copied_98 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(code_98, gliim_copied_98)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The output:<br/>
-<div class='ncode' style='position:relative;padding-right:20px;'>
+<div class='ncode' style='position:relative;padding-right:14px;'>
 <pre id='code_87'>
 Server status 82
 Len of data 78530
