@@ -214,12 +214,11 @@ ul {
 
 </head>
 <body>
-    <textarea id='gliimt' style='position: absolute;left: -500%;'></textarea>
 
 <script>
-function gg_copy(eid, gc) {
-  gliimt.textContent = eid.textContent;
-  gliimt.select();
+function gg_copy(gt, eid, gc) {
+  gt.textContent = eid.textContent;
+  gt.select();
   document.execCommand("copy");
   gc.style.visibility="visible"
   setTimeout(()=>{ gc.style.visibility="hidden"; }, 1000);
