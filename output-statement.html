@@ -236,13 +236,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Output statement</div><hr/><span style="font-weight:bold;">Purpose</span>: Output text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_411'>
+<pre id='code_416'>
 <span class="Statement"> @</span>&lt;text&gt;
 
 <span class="Statement"> !</span>&lt;verbatim text&gt;</pre>
-<span id=gliim_copied_411 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_411' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_411, code_411, gliim_copied_411)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_416 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_416' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_416, code_416, gliim_copied_416)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Outputting free form text is done by starting the line with "@" or "!". The text is output unencoded with a new line appended.<br/>
 <br/>
@@ -256,53 +256,53 @@ Note that all characters are output as they are written, including the escape ch
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Outputting "Hello there": <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_413'>
+<pre id='code_418'>
 <span class="Statement"> @</span>Hello there</pre>
-<span id=gliim_copied_413 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_413' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_413, code_413, gliim_copied_413)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_418 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_418' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_418, code_418, gliim_copied_418)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can use other Gliimly statements inlined and mixed with the text you are outputting:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_415'>
+<pre id='code_420'>
 <span class="Statement"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
 <span class="Statement"> @</span>Today's weather is <span class="Statement">&lt;&lt;p-out</span> weatherType<span class="Statement">&gt;&gt;</span></pre>
-<span id=gliim_copied_415 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_415' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_415, code_415, gliim_copied_415)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_420 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_420' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_420, code_420, gliim_copied_420)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would output <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_412'>
-Today&apos;s weather is sunny</pre>
-<span id=gliim_copied_412 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_412' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_412, code_412, gliim_copied_412)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-With "!" statement, the text is also output, and this example produces the same "Hello there" output as "@":<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_416'>
-<span class="Statement"> !</span>Hello there</pre>
-<span id=gliim_copied_416 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_416' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_416, code_416, gliim_copied_416)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-In contrast to "@" statement, "!" statement outputs all texts verbatim &nbsp;and does not execute any inline code:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_417'>
-<span class="Statement"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
-<span class="Statement"> !</span>Today's weather is &lt;&lt;p-out weatherType&gt;&gt;</pre>
+Today&apos;s weather is sunny</pre>
 <span id=gliim_copied_417 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_417' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_417, code_417, gliim_copied_417)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
+With "!" statement, the text is also output, and this example produces the same "Hello there" output as "@":<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_421'>
+<span class="Statement"> !</span>Hello there</pre>
+<span id=gliim_copied_421 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_421' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_421, code_421, gliim_copied_421)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+In contrast to "@" statement, "!" statement outputs all texts verbatim &nbsp;and does not execute any inline code:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_422'>
+<span class="Statement"> set-string</span> weatherType=<span class="Constant">&quot;sunny&quot;</span>
+<span class="Statement"> !</span>Today's weather is &lt;&lt;p-out weatherType&gt;&gt;</pre>
+<span id=gliim_copied_422 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_422' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_422, code_422, gliim_copied_422)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
 which would output <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_414'>
+<pre id='code_419'>
 Today&apos;s weather is &lt;&lt;p-out weatherType&gt;&gt;</pre>
-<span id=gliim_copied_414 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_414' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_414, code_414, gliim_copied_414)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_419 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_419' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_419, code_419, gliim_copied_419)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Output</span><br/>

@@ -236,13 +236,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write index</div><hr/><span style="font-weight:bold;">Purpose</span>: Insert a key/value pair into an index.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_633'>
+<pre id='code_638'>
 <span class="Statement"> write-index</span> &lt;index&gt;<span class="Identifier"> key</span> &lt;key&gt;<span class="Identifier"> value</span> &lt;value&gt; \
      [<span class="Type"> status</span> &lt;status&gt; ] \
      [<span class="Type"> new-cursor</span> &lt;cursor&gt; ]</pre>
-<span id=gliim_copied_633 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_633' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_633, code_633, gliim_copied_633)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_638 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_638' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_638, code_638, gliim_copied_638)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 write-index inserts string &lt;key&gt; and associated string &lt;value&gt; into &lt;index&gt; created by <a href='http://gliimly.github.io/new-index.html'>new-index</a>.<br/>
 <br/>
@@ -252,17 +252,17 @@ If "new-cursor" clause is used, then a &lt;cursor&gt; will be positioned on a ne
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Insert key "k" with value "d" into "myindex", and obtain status in "st":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_636'>
+<pre id='code_641'>
 <span class="Statement"> write-index</span> myindex<span class="Identifier"> key</span> k<span class="Identifier"> value</span> d<span class="Type"> status</span> st</pre>
-<span id=gliim_copied_636 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_636' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_636, code_636, gliim_copied_636)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_641 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_641' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_641, code_641, gliim_copied_641)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following is an example of a process-scoped index. Such a index keeps its data across the requests, for as long as the process is alive.<br/>
 <br/>
 In a new directory, create file indexsrv.gliim and copy to it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_638'>
+<pre id='code_643'>
 <span class="Statement"> %%</span> /indexsrv
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-index</span> t<span class="Identifier"> process-scope</span>
@@ -298,37 +298,37 @@ In a new directory, create file indexsrv.gliim and copy to it:<br/>
 <span class="Statement">         end-if</span>
 <span class="Statement">     end-if</span>
 <span class="Statement"> %%</span></pre>
-<span id=gliim_copied_638 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_638' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_638, code_638, gliim_copied_638)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_643 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_643' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_643, code_643, gliim_copied_643)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create new application ("pi" for "process index"):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_635'>
+<pre id='code_640'>
 sudo mgrg <span class="Special">-i</span> <span class="Special">-u</span> <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span> pi</pre>
-<span id=gliim_copied_635 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_635' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_635, code_635, gliim_copied_635)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_640 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_640' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_640, code_640, gliim_copied_640)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Build application:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_637'>
+<pre id='code_642'>
 gg <span class="Special">-q</span></pre>
-<span id=gliim_copied_637 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_637' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_637, code_637, gliim_copied_637)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_642 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_642' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_642, code_642, gliim_copied_642)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Run the index service:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_639'>
+<pre id='code_644'>
 mgrg <span class="Special">-w</span> <span class="Constant">1</span> pi</pre>
-<span id=gliim_copied_639 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_639' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_639, code_639, gliim_copied_639)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_644 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_644' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_644, code_644, gliim_copied_644)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Try it out, add key/value pairs, query, delete, query again:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_634'>
+<pre id='code_639'>
 # Add key=1 and data=d1
 $ gg -r --req=&quot;/indexsrv/op=add/key=1/data=d1&quot; --service --exec --silent-header
 Added [1]
@@ -352,9 +352,9 @@ Deleted [d2]
 # Query key=2
 $ gg -r --req=&quot;/indexsrv/op=query/key=2&quot; --service --exec --silent-header
 Not found, queried [2]</pre>
-<span id=gliim_copied_634 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_634' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_634, code_634, gliim_copied_634)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_639 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_639' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_639, code_639, gliim_copied_639)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='http://gliimly.github.io/read-index.html'>read-index</a> for more examples.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

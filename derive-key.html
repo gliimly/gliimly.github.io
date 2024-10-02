@@ -262,7 +262,7 @@ The salt for key derivation can be given with &lt;salt&gt; in "salt" clause. If 
 <br/>
 The number of iterations is given by &lt;iterations&gt; in "iterations" clause. The default is 1000 per <a href='https://www.rfc-editor.org/rfc/rfc8018'>RFC 8018</a>, though depending on your needs and the quality of &lt;source&gt; you may choose a different value.<br/>
 <br/>
-By default, the derived key is produced in a hexadecimal form, where each byte is encoded as two-character hexadecimal characters, so its length is 2*&lt;length&gt;. If "binary" clause is used without boolean expression &lt;binary&gt;, or if &lt;binary&gt; evaluates to true, then the output is a binary string of &lt;length&gt; bytes.<br/>
+By default, the derived key is produced in a hexadecimal form, where each byte is encoded as two-character hexadecimal characters, so its length is 2*&lt;length&gt;. If "binary" clause is used without boolean variable &lt;binary&gt;, or if &lt;binary&gt; evaluates to true, then the output is a binary string of &lt;length&gt; bytes.<br/>
 <br/>
 Key derivation is often used when storing password-derivatives in the database (with salt), and also for symmetrical key generation.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
@@ -281,6 +281,7 @@ Derived key is in variable "mk":<br/>
 <a href='http://gliimly.github.io/derive-key.html'>derive-key</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/hash-string.html'>hash-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/hmac-string.html'>hmac-string</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/random-crypto.html'>random-crypto</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/random-string.html'>random-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>

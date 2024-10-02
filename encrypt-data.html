@@ -278,7 +278,7 @@ The number of iterations used in producing a key is specified in &lt;iterations&
 <div class="vsub"><a id="Initialization vector (IV)"></a>Initialization vector (IV)</div>
 Different encrypted messages should have a different IV value, which is specified with &lt;init vector&gt; in the "init-vector" clause. See <a href='http://gliimly.github.io/random-string.html'>random-string</a> or <a href='http://gliimly.github.io/random-crypto.html'>random-crypto</a> for generating IV values. The decrypting side must use the same IV value to decrypt the message. Just like salt, IV is not a secret and is transmitted in plain text. Each cipher algorithm may require a certain number of bytes for IV.<br/>
 <div class="vsub"><a id="Encrypted data"></a>Encrypted data</div>
-The encrypted data is stored in &lt;result&gt; (in "to" clause). The encrypted data can be a binary data (if "binary" clause is present without boolean expression &lt;binary&gt;, or if &lt;binary&gt; evaluates to true), which is binary-mode encryption; or if not, it will be a null-terminated string, which is character-mode encryption, consisting of hexadecimal characters (i.e. ranging from "0" to "9" and "a" to "f"). Character mode of encryption is convenient if the result of encryption should be a human readable string, or for the purposes of non-binary storage in the database.<br/>
+The encrypted data is stored in &lt;result&gt; (in "to" clause). The encrypted data can be a binary data (if "binary" clause is present without boolean variable &lt;binary&gt;, or if &lt;binary&gt; evaluates to true), which is binary-mode encryption; or if not, it will be a null-terminated string, which is character-mode encryption, consisting of hexadecimal characters (i.e. ranging from "0" to "9" and "a" to "f"). Character mode of encryption is convenient if the result of encryption should be a human readable string, or for the purposes of non-binary storage in the database.<br/>
 <div class="vsub"><a id="Caching key"></a>Caching key</div>
 A key used to actually encrypt/decrypt data is produced by using password, salt, cipher, digest and the number of iterations. Depending on these parameters (especially the number of iterations), computing the key can be a resource intensive and lengthy operation. You can cache the key value and compute it only once (or once in a while) by using "cache" clause. If you need to recompute the key once in a while, use "clear-cache" clause. &lt;clear cache&gt; is a "bool" variable; the key cache is cleared if it is true, and stays if it is false. For example with encrypt-data (the same applies to decrypt-data):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
@@ -365,6 +365,7 @@ An example of using different algorithms:<br/>
 <a href='http://gliimly.github.io/derive-key.html'>derive-key</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/encrypt-data.html'>encrypt-data</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/hash-string.html'>hash-string</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/hmac-string.html'>hmac-string</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/random-crypto.html'>random-crypto</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/random-string.html'>random-string</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
