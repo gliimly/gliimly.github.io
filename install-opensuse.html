@@ -237,49 +237,49 @@ function gg_copy(gt, eid, gc) {
 For OpenSUSE-like distributions:<br/>
 <span style="font-weight:bold;">- Install git</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_351'>
+<pre id='code_362'>
 sudo zypper <span class="Special">-n</span> install git</pre>
-<span id=gliim_copied_351 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_351' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_351, code_351, gliim_copied_351)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_362 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_362' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_362, code_362, gliim_copied_362)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Download Gliimly</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_352'>
+<pre id='code_363'>
 git clone <a href="https://github.com/gliimly/gliimly.git">https://github.com/gliimly/gliimly.git</a>
 <span class="Statement">cd</span> gliimly
-git checkout <span class="Constant">50</span></pre>
-<span id=gliim_copied_352 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_352' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_352, code_352, gliim_copied_352)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+git checkout <span class="Constant">54</span></pre>
+<span id=gliim_copied_363 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_363' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_363, code_363, gliim_copied_363)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Install dependencies</span><br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_353'>
+<pre id='code_364'>
 sudo zypper <span class="Special">-n</span> install make gcc openssl-devel curl libcurl-devel pcre2-devel libmariadb-devel FastCGI FastCGI-devel postgresql-devel sqlite3-devel</pre>
-<span id=gliim_copied_353 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_353' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_353, code_353, gliim_copied_353)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_364 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_364' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_364, code_364, gliim_copied_364)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Build Gliimly</span><br/>
 Use DI=1 to build debug version, leave it as is for production:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_354'>
+<pre id='code_365'>
 make clean
 make <span class="Identifier">DI</span>=<span class="Constant">0</span>
 sudo make install</pre>
-<span id=gliim_copied_354 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_354' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_354, code_354, gliim_copied_354)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_365 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_365' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_365, code_365, gliim_copied_365)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <span style="font-weight:bold;">- Tools and utilities</span><br/>
 Install useful tools and utilities, also used in examples (so if you're running examples, you must install these as well):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_355'>
+<pre id='code_366'>
 sudo zypper <span class="Special">-n</span> install tar curl FastCGI</pre>
-<span id=gliim_copied_355 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_355' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_355, code_355, gliim_copied_355)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_366 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_366' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_366, code_366, gliim_copied_366)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Download and build</span><br/>

@@ -237,11 +237,11 @@ function gg_copy(gt, eid, gc) {
 <br/>
 The name of the command-line executable is the same as the application name, and its path is (assuming &lt;app name&gt; is the application name):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_106'>
+<pre id='code_116'>
 /var/lib/gg/bld/&lt;app name&gt;/&lt;app name&gt;</pre>
-<span id=gliim_copied_106 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_106' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_106, code_106, gliim_copied_106)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_116 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_116' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_116, code_116, gliim_copied_116)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Output"></a>Output</div>
 A command-line program works the same way as a service executable, and the output is the same, except that it is directed to stdout (standard output) and stderr (standard error). <br/>
@@ -250,27 +250,27 @@ To specify the exit code of a command-line program, use <a href='http://gliimly.
 <div class="vsub"><a id="Executing a request"></a>Executing a request</div>
 Here is how to execute a request "add-stock" in application "stock" with parameters "name" having a value of "ABC" and "price" a value of "300":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_107'>
+<pre id='code_117'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock?name=ABC&amp;price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=gliim_copied_107 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_107' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_107, code_107, gliim_copied_107)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_117 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_117' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_117, code_117, gliim_copied_117)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you if specify parameters as part of the path, you could write the above the same way as in a URL:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_108'>
+<pre id='code_118'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span></pre>
-<span id=gliim_copied_108 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_108' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_108, code_108, gliim_copied_108)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_118 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_118' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_118, code_118, gliim_copied_118)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can generate the shell code to execute the above without using <a href='http://gliimly.github.io/gg.html'>gg</a> by omitting "--exec" option, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_109'>
+<pre id='code_119'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=gliim_copied_109 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_109' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_109, code_109, gliim_copied_109)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_119 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_119' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_119, code_119, gliim_copied_119)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Including a request body"></a>Including a request body</div>
 You can include a request body when executing a singe-run program. It is always included as the standard input (stdin) to the program. <br/>
@@ -279,59 +279,59 @@ You must provide the length of this input and the type of input, as well as a re
 <br/>
 Here is an example of using a request body to make a POST request on the command line - the application name is "json" and request name is "process". File "prices.json" is sent as request body:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_110'>
+<pre id='code_120'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span>/json <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">'</span><span class="Constant">/process?act=get_total&amp;period=YTD</span><span class="Statement">'</span> <span class="Special">--method</span><span class="Statement">=</span>POST <span class="Special">--content</span><span class="Statement">=</span>prices.json <span class="Special">--content-type</span><span class="Statement">=</span>application/json <span class="Special">--exec</span></pre>
-<span id=gliim_copied_110 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_110' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_110, code_110, gliim_copied_110)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_120 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_120' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_120, code_120, gliim_copied_120)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can generate the shell code for the above by omitting "--exec" option of <a href='http://gliimly.github.io/gg.html'>gg</a> utility.<br/>
 <br/>
 Note that you can also include any other headers as environment variables by using the "HTTP_" convention, where custom headers are capitalized with use of underscore for dashes and prefixed with "HTTP_", for example header "Gliimly-Header" would be set as:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_111'>
+<pre id='code_121'>
 <span class="Statement">export</span> <span class="Identifier">HTTP_GLIIMLY_HEADER</span>=<span class="Statement">&quot;</span><span class="Constant">some value</span><span class="Statement">&quot;</span></pre>
-<span id=gliim_copied_111 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_111' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_111, code_111, gliim_copied_111)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_121 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_121' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_121, code_121, gliim_copied_121)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You would set the "HTTP_" variable(s) prior to executing the program.<br/>
 <div class="vsub"><a id="Suppressing HTTP header output for the entire application"></a>Suppressing HTTP header output for the entire application</div>
 If you wish to suppress the output of HTTP headers for all requests, use "--silent-header" option in "gg -r":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_112'>
+<pre id='code_122'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC/price=300</span><span class="Statement">&quot;</span> <span class="Special">--exec</span> <span class="Special">--silent-header</span></pre>
-<span id=gliim_copied_112 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_112' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_112, code_112, gliim_copied_112)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_122 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_122' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_122, code_122, gliim_copied_122)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 This will suppress the output of HTTP headers (either the default or with <a href='http://gliimly.github.io/out-header.html'>out-header</a>), or for any other case where headers are output. This has the same effect as <a href='http://gliimly.github.io/silent-header.html'>silent-header</a>, the only difference is that the environment variable applies to the entire application.<br/>
 <div class="vsub"><a id="URL-encoding the input"></a>URL-encoding the input</div>
 Any data in "--req" option (and consequently in PATH_INFO or QUERY_STRING environment vairables if calling directly from shell) must be formatted to be a valid URL; for example, data that contains special characters (like "&amp;" or "?") must be URL-encoded, for instance:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_113'>
+<pre id='code_123'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=ABC%3F/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=gliim_copied_113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_113' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_113, code_113, gliim_copied_113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_123 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_123' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_123, code_123, gliim_copied_123)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case, parameter "name" has value of "ABC?", where special character "?" is encoded as "%3F". <br/>
 <br/>
 To make sure all your input parameters are properly URL-encoded, you can use Gliimly's v1 code processor:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_114'>
+<pre id='code_124'>
 <span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">&lt;your data&gt;</span><span class="Statement">'</span><span class="PreProc">)</span></pre>
-<span id=gliim_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_114' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_114, code_114, gliim_copied_114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_124 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_124' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_124, code_124, gliim_copied_124)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 For instance, to encode "a?=b" as a parameter:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_115'>
+<pre id='code_125'>
 gg <span class="Special">-r</span> <span class="Special">--app</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/stock</span><span class="Statement">&quot;</span> <span class="Special">--req</span><span class="Statement">=</span><span class="Statement">&quot;</span><span class="Constant">/add-stock/name=</span><span class="PreProc">$($(</span><span class="Special">gg </span><span class="Special">-l</span><span class="PreProc">)</span><span class="Special">/v1 </span><span class="Special">-urlencode</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">AB?</span><span class="Statement">'</span><span class="PreProc">)</span><span class="Constant">/price=300</span><span class="Statement">&quot;</span></pre>
-<span id=gliim_copied_115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_115' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_115, code_115, gliim_copied_115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_125 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_125' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_125, code_125, gliim_copied_125)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If your parameters do not contain characters that need URL encoding, then you can skip this.<br/>
 <div class="vsub"><a id="CGI"></a>CGI</div>
