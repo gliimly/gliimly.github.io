@@ -323,7 +323,9 @@ The following members of "gg_cli" type must be supplied in order to make a call 
 <textarea id='gliimt_105' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_105, code_105, gliim_copied_105)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Thus, if you are passing N environment variables to the service, you must size "env" as "char*" array with 2*N+1 elements.<br/>
+Thus, if you are passing N environment variables to the service, you must size "env" as "char*" array with 2*N+1 elements. <br/>
+<br/>
+Note that in order to suppress output of HTTP headers from the service, you can include environment variable "GG_SILENT_HEADER" with value "yes"; to let the service control headers output (either by default, with "-z" option of <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> or with <a href='http://gliimly.github.io/silent-header.html'>silent-header</a>) simply omit this environment variable.<br/>
 <br/>
 <span style="font-weight:bold;">- Timeout</span><br/>
 "timeout" is the number of seconds a call to the service should not exceed. For instance if the remote service is taking too long or if the network connection is too slow, you can limit how long to wait for a reply. If there is no timeout, then "timeout" value should be zero. Note that DNS resolution of the host name (in case you are using a TCP socket) is not counted in timeout. Maximum value for timeout is 86400.<br/>
