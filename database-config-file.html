@@ -237,11 +237,11 @@ function gg_copy(gt, eid, gc) {
 <br/>
 When making a Gliimly application, you specify a database vendor and the database configuration file for each database your application uses (see <a href='http://gliimly.github.io/gg.html'>gg</a>), for instance:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_171'>
+<pre id='code_184'>
  gg ... --db=<span class="Constant">&quot;mariadb:db1 postgres:db2 sqlite:db3&quot;</span>  ...</pre>
-<span id=gliim_copied_171 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_171' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_171, code_171, gliim_copied_171)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_184 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_184' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_184, code_184, gliim_copied_184)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 in which case there are three database configuration files (db1, db2 and db3), with db1 being MariaDB, db2 being PostgreSQL and db3 being SQLite database.<br/>
 <br/>
@@ -251,7 +251,7 @@ Each such file contains connection information and authentication to a database,
 <br/>
 An example of database configuration file (in this case MariaDB):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_172'>
+<pre id='code_185'>
 [client]
 user=mydbuser
 password=somepwd
@@ -259,62 +259,62 @@ database=mydbname
 protocol=TCP
 host=127.0.0.1
 port=3306</pre>
-<span id=gliim_copied_172 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_172' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_172, code_172, gliim_copied_172)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_185 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_185' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_185, code_185, gliim_copied_185)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Using in your queries"></a>Using in your queries</div>
 Database statements that perform queries (such as <a href='http://gliimly.github.io/run-query.html'>run-query</a>) must specify the database configuration file used, unless your application uses only a single database. Such configuration is given by "@&lt;database config file&gt;" (for instance in <a href='http://gliimly.github.io/run-query.html'>run-query</a> or <a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a>). For example, in:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_174'>
+<pre id='code_187'>
 <span class="Statement"> run-query</span> @mydb=<span class="Constant">&quot;select name from employees&quot;</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> end-query</span></pre>
-<span id=gliim_copied_174 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_174' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_174, code_174, gliim_copied_174)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_187 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_187' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_187, code_187, gliim_copied_187)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 the query is performed on a database specified by the configuration file "mydb", as in (assuming it's PostgreSQL database):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_177'>
+<pre id='code_190'>
  gg ... --db=<span class="Constant">&quot;postgres:mydb&quot;</span>  ...</pre>
-<span id=gliim_copied_177 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_177' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_177, code_177, gliim_copied_177)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_190 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_190' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_190, code_190, gliim_copied_190)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You do not need to manually connect to the database; when your application uses it for the first time, a connection is automatically established, and lost connection is automatically re-established when needed. <br/>
 <br/>
 If a database is the only one used by your application, you can omit it, as in:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_179'>
+<pre id='code_192'>
 <span class="Statement"> run-query</span> =<span class="Constant">&quot;select name from employees&quot;</span>
 <span class="Statement"> .</span>..
 <span class="Statement"> end-query</span></pre>
-<span id=gliim_copied_179 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_179' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_179, code_179, gliim_copied_179)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_192 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_192' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_192, code_192, gliim_copied_192)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Connection settings"></a>Connection settings</div>
 The contents of a configuration file depends on the database used:<br/>
 <ul><li>MariaDB: configuration file is written as a MariaDB client options file. You can see the parameters available at <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_175'>
+<pre id='code_188'>
 https://mariadb.com/kb/en/configuring-mariadb-connectorc-with-option-files/#options</pre>
-<span id=gliim_copied_175 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_175' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_175, code_175, gliim_copied_175)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_188 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_188' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_188, code_188, gliim_copied_188)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Most of the time, though, you would likely use only a few of those options, as in (for local connection):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_178'>
+<pre id='code_191'>
 [client]
 user=myuser
 password=mypwd 
 database=mydb
 socket=/run/mysqld/mysqld.sock</pre>
-<span id=gliim_copied_178 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_178' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_178, code_178, gliim_copied_178)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_191 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_191' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_191, code_191, gliim_copied_191)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above file has fields "user" (MariaDB user), "password" (the password for MariaDB user), "database" (the MariaDB database name) and MariaDB communication "socket" location (assuming your database is local to your computer - if the database is across network you would not use sockets!). <br/>
 <br/>
@@ -322,42 +322,42 @@ If you use passwordless MariaDB login (such as when the MariaDB user name is the
 <br/>
 To get the location of the socket, you might use:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_181'>
+<pre id='code_194'>
  sudo mysql -u root -e <span class="Constant">&quot;show variables like 'socket'&quot;</span></pre>
-<span id=gliim_copied_181 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_181' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_181, code_181, gliim_copied_181)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_194 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_194' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_194, code_194, gliim_copied_194)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li><li>Postgres: configuration file has a Postgres connection string. You can see the parameters available at <br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_180'>
+<pre id='code_193'>
 https://www.postgresql.org/docs/14/libpq-connect.html#LIBPQ-CONNSTRING</pre>
-<span id=gliim_copied_180 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_180' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_180, code_180, gliim_copied_180)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_193 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_193' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_193, code_193, gliim_copied_193)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Most of the time, though, you may be using only a few of those options, as in:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_183'>
+<pre id='code_196'>
  user=myuser password=mypwd dbname=mydb</pre>
-<span id=gliim_copied_183 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_183' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_183, code_183, gliim_copied_183)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_196 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_196' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_196, code_196, gliim_copied_196)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The above file has parameters "user" (Postgres user), "password" (the password for Postgres user), "dbname" (the Postgres database name). If you use peer-authenticated (i.e. passwordless) login, then omit "password" - this is when the Postgres user name is the same as your Operating System user name and where local unix domain socket is used for authentication.<br/>
 </li><li>SQLite: configuration file should contain a single line of text, and it must be the full path to the SQLite database file used, for example (if you keep it in Gliimly's application directory):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_185'>
+<pre id='code_198'>
  /var/lib/gg/&lt;app name&gt;/app/&lt;db name&gt;.db</pre>
-<span id=gliim_copied_185 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_185' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_185, code_185, gliim_copied_185)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_198 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_198' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_198, code_198, gliim_copied_198)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 </li></ul>
 <div class="vsub"><a id="Substituting environment variables"></a>Substituting environment variables</div>
 You can use environment variables in database configuration files by means of substitution, in the form of "${VAR_NAME}". For example in file "mydb":<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_182'>
+<pre id='code_195'>
 [client]
 user=${DB_USER}
 password=${DB_PWD}
@@ -365,13 +365,13 @@ database=${DB_NAME}
 protocol=TCP
 host=127.0.0.1
 port=${DB_PORT}</pre>
-<span id=gliim_copied_182 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_182' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_182, code_182, gliim_copied_182)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_195 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_195' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_195, code_195, gliim_copied_195)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Here, environment variables DB_USER, DB_PWD, DB_NAME and DB_PORT are used. They must be defined in the shell environment prior to calling <a href='http://gliimly.github.io/gg.html'>gg</a> to make your application (if not defined the value will be empty):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_173'>
+<pre id='code_186'>
 <span class="Comment">#Define environment variables for a configuration file</span>
 <span class="Statement">export</span> <span class="Identifier">DB_USER</span>=<span class="Statement">&quot;</span><span class="Constant">my_user</span><span class="Statement">&quot;</span>
 <span class="Statement">export</span> <span class="Identifier">DB_PWD</span>=<span class="Statement">&quot;</span><span class="Constant">my_password</span><span class="Statement">&quot;</span>
@@ -380,13 +380,13 @@ Here, environment variables DB_USER, DB_PWD, DB_NAME and DB_PORT are used. They 
 
 <span class="Comment">#Make application using the above database configuration file with the environment variables specified</span>
 gg <span class="Special">-q</span> <span class="Special">--db</span><span class="Statement">=</span>mariadb:mydb</pre>
-<span id=gliim_copied_173 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_173' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_173, code_173, gliim_copied_173)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_186 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_186' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_186, code_186, gliim_copied_186)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which results in file /var/lib/gg/&lt;app name&gt;/app/db/mydb:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_184'>
+<pre id='code_197'>
 [client]
 user=my_user
 password=my_password
@@ -394,9 +394,9 @@ database=my_database
 protocol=TCP
 host=127.0.0.1
 port=3307</pre>
-<span id=gliim_copied_184 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_184' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_184, code_184, gliim_copied_184)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_197 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_197' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_197, code_197, gliim_copied_197)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Besides making application deployment easier, this also adds to its security as the information such as above (including the database password) does not need to be a part of source code and reside in source code control system (such as git).<br/>
 <br/>
@@ -404,21 +404,21 @@ Your environment variables can have any names, except that they cannot start wit
 <br/>
 Note that if your data actually has a dollar sign and is a part of the configuration file, then you can create a variable for it:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_176'>
+<pre id='code_189'>
 <span class="Statement">export</span> <span class="Identifier">DOLLAR_SIGN</span>=<span class="Statement">'</span><span class="Constant">$</span><span class="Statement">'</span></pre>
-<span id=gliim_copied_176 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_176' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_176, code_176, gliim_copied_176)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_189 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_189' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_189, code_189, gliim_copied_189)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 and in the configuration file:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_186'>
+<pre id='code_199'>
 ..
 database=my${DOLLAR_SIGN}database
 ..</pre>
-<span id=gliim_copied_186 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_186' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_186, code_186, gliim_copied_186)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_199 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_199' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_199, code_199, gliim_copied_199)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 In this case the database name is "my$database".<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

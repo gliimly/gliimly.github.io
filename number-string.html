@@ -236,13 +236,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Number string</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert number to string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_414'>
+<pre id='code_427'>
 <span class="Statement"> number-string</span> &lt;number&gt; [<span class="Type"> to</span> &lt;string&gt; ] \
      [<span class="Identifier"> base</span> &lt;base&gt; ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=gliim_copied_414 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_414' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_414, code_414, gliim_copied_414)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_427 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_427' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_427, code_427, gliim_copied_427)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 &lt;number&gt; is converted to &lt;string&gt; in "to" clause, using &lt;base&gt; in "base" clause, where &lt;base&gt; is by default 10. &lt;base&gt; can be between 2 and 36, inclusive. &lt;number&gt; can be positive or negative (i.e. signed) and can be of any integer type up to 64-bit (char, int, long, long long etc.). &nbsp;If "to" clause is omitted, then &lt;number&gt; is printed out.<br/>
 <br/>
@@ -254,30 +254,30 @@ Use of number-string (and <a href='http://gliimly.github.io/p-num.html'>p-num</a
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following will allocate memory for string "x" to be "801":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_415'>
+<pre id='code_428'>
 <span class="Statement"> set-number</span> x = <span class="Constant">801</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res</pre>
-<span id=gliim_copied_415 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_415' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_415, code_415, gliim_copied_415)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_428 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_428' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_428, code_428, gliim_copied_428)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 The following will store "-238f" to string "res":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_416'>
+<pre id='code_429'>
 <span class="Statement"> set-number</span> x = -<span class="Constant">9103</span>
 <span class="Statement"> number-string</span> x<span class="Type"> to</span> res<span class="Identifier"> base</span> <span class="Constant">16</span></pre>
-<span id=gliim_copied_416 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_416' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_416, code_416, gliim_copied_416)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_429 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_429' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_429, code_429, gliim_copied_429)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To print out a number -131:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_417'>
+<pre id='code_430'>
 <span class="Statement"> set-number</span> x = -<span class="Constant">131</span>
 <span class="Statement"> number-string</span> x</pre>
-<span id=gliim_copied_417 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_417' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_417, code_417, gliim_copied_417)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_430 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_430' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_430, code_430, gliim_copied_430)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Numbers</span><br/>

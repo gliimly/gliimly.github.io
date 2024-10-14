@@ -244,7 +244,7 @@ function gg_copy(gt, eid, gc) {
 <textarea id='gliimt_8' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_8, code_8, gliim_copied_8)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Every Gliimly request goes through a request dispatcher (see <a href='http://gliimly.github.io/request.html'>request</a>()). In order to specify your code to execute after a request is handled, create source file "after_request.gliim" and implement a handler that starts with "after-handler" and ends with "end-after-handler", which will be automatically picked up and compiled with your application. <br/>
+Every Gliimly request goes through a request dispatcher (see <a href='http://gliimly.github.io/request.html'>request</a>()). In order to specify your code to execute after a request is handled, create source file "after_handler.gliim" and implement a handler that starts with "after-handler" and ends with "end-after-handler", which will be automatically picked up and compiled with your application. <br/>
 <br/>
 If no request executes (for example if your application does not handle a given <a href='http://gliimly.github.io/request.html'>request</a>), after-handler handler does not execute either. If you use <a href='http://gliimly.github.io/exit-handler.html'>exit-handler</a> to exit current request handling, after-handler handler still executes.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
