@@ -236,11 +236,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Rename file</div><hr/><span style="font-weight:bold;">Purpose</span>: Renames a file.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_509'>
+<pre id='code_508'>
 <span class="Statement"> rename-file</span> &lt;from file&gt;<span class="Identifier"> to</span> &lt;to file&gt; [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=gliim_copied_509 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_509' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_509, code_509, gliim_copied_509)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_508 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_508' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_508, code_508, gliim_copied_508)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 rename-file will rename &lt;from file&gt; to &lt;to file&gt;. &lt;status&gt; number is GG_OKAY on success and GG_ERR_RENAME on failure.<br/>
 <br/>
@@ -248,25 +248,25 @@ rename-file will rename &lt;from file&gt; to &lt;to file&gt;. &lt;status&gt; num
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Rename files:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_510'>
+<pre id='code_509'>
 <span class="Statement"> rename-file</span> <span class="Constant">&quot;/home/u1/d1/f1&quot;</span><span class="Identifier"> to</span> <span class="Constant">&quot;/home/u1/d2/f2&quot;</span><span class="Type"> status</span> st
+<span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
+<span class="Statement">     @</span>Rename successful. &lt;br/&gt;
+<span class="Statement"> end-if</span></pre>
+<span id=gliim_copied_509 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_509' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_509, code_509, gliim_copied_509)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Rename files in the current working directory:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_510'>
+<span class="Statement"> rename-file</span> <span class="Constant">&quot;f1&quot;</span><span class="Identifier"> to</span> <span class="Constant">&quot;f2&quot;</span><span class="Type"> status</span> st
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
 <span class="Statement">     @</span>Rename successful. &lt;br/&gt;
 <span class="Statement"> end-if</span></pre>
 <span id=gliim_copied_510 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_510' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_510, code_510, gliim_copied_510)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Rename files in the current working directory:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_511'>
-<span class="Statement"> rename-file</span> <span class="Constant">&quot;f1&quot;</span><span class="Identifier"> to</span> <span class="Constant">&quot;f2&quot;</span><span class="Type"> status</span> st
-<span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_OKAY
-<span class="Statement">     @</span>Rename successful. &lt;br/&gt;
-<span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_511 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_511' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_511, code_511, gliim_copied_511)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Files</span><br/>

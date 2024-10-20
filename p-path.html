@@ -236,21 +236,21 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P path</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs URL application path.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_466'>
+<pre id='code_465'>
 <span class="Statement"> p-path</span> [<span class="Identifier"> new-line</span> ]</pre>
-<span id=gliim_copied_466 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_466' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_466, code_466, gliim_copied_466)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_465 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_465' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_465, code_465, gliim_copied_465)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 p-path outputs a URL application path (see <a href='http://gliimly.github.io/request.html'>request</a>), i.e. the leading path segment(s) prior to request name.<br/>
 <br/>
 If no "--path" option in <a href='http://gliimly.github.io/gg.html'>gg</a> is used to specify URL application path, then it is the same as application name prepended with a forward slash:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_468'>
+<pre id='code_467'>
 /&lt;app name&gt;</pre>
-<span id=gliim_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_468' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_468, code_468, gliim_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_467' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_467, code_467, gliim_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 p-path provides the leading part of a URL path after which request name and its parameters can be specified. It is used in HTML forms and URLs (either for HTML or API) to refer back to the same application.<br/>
 <br/>
@@ -258,21 +258,21 @@ Use <a href='http://gliimly.github.io/p-path.html'>p-path</a> to create the abso
 <br/>
 For example, this is a link that specifies request to service "show-notes":<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_467'>
+<pre id='code_466'>
 @<span class="Identifier">&lt;</span><span class="Statement">a</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path&gt;&gt;/show-notes?date=yesterday&quot;</span><span class="Identifier">&gt;</span><span class="Underlined">Show Notes</span><span class="Identifier">&lt;/</span><span class="Statement">a</span><span class="Identifier">&gt;</span></pre>
-<span id=gliim_copied_467 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_467' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_467, code_467, gliim_copied_467)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_466 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_466' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_466, code_466, gliim_copied_466)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If you are building HTML forms, you can add a note with:<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
-<pre id='code_469'>
+<pre id='code_468'>
 @<span class="Identifier">&lt;</span><span class="Statement">form</span><span class="Identifier"> </span><span class="Type">action</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path&gt;&gt;/add-note&quot;</span><span class="Identifier"> </span><span class="Type">method</span><span class="Identifier">=</span><span class="Constant">&quot;POST&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text&quot;</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">&quot;note&quot;</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">&quot;&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;/</span><span class="Statement">form</span><span class="Identifier">&gt;</span></pre>
-<span id=gliim_copied_469 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_469' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_469, code_469, gliim_copied_469)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_468 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_468' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_468, code_468, gliim_copied_468)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='http://gliimly.github.io/request.html'>request</a> for more on URL structure.<br/>
 <br/>
