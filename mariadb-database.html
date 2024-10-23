@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title>Utf8 text</title>
+<title>Mariadb database</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -233,55 +233,46 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Utf8 text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF8 string to text.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Mariadb database</div><hr/>MariaDB configuration file is written as a MariaDB client options file. <br/>
 <br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_660'>
-<span class="Statement"> utf8-text</span> &lt;utf8&gt; \
-     [<span class="Type"> to</span> &lt;text&gt; ] \
-     [<span class="Identifier"> length</span> &lt;length&gt; ] \
-     [<span class="Type"> status</span> &lt;status&gt; ] \
-     [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=gliim_copied_660 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_660' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_660, code_660, gliim_copied_660)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+You can see the parameters available at <a href='https://mariadb.com/kb/en/configuring-mariadb-connectorc-with-option-files/#options'>https://mariadb.com/kb/en/configuring-mariadb-connectorc-with-option-files/#options</a>. <br/>
+<br/>
+Most of the time, though, you would likely use only a few of those options, as in (for local connection):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_395'>
+[client]
+user=myuser
+password=mypwd 
+database=mydb
+socket=/run/mysqld/mysqld.sock</pre>
+<span id=gliim_copied_395 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_395' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_395, code_395, gliim_copied_395)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-utf8-text will convert &lt;utf8&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
+The above file has fields "user" (MariaDB user), "password" (the password for MariaDB user), "database" (the MariaDB database name) and MariaDB communication "socket" location (assuming your database is local to your computer - if the database is across network you would not use sockets!). <br/>
 <br/>
-&lt;utf8&gt; is a string that may contain UTF8 characters (as 2, 3 or 4 bytes representing a unicode character). Encoding creates a string that can be used as a value where text representation of UTF8 is required. utf8-text is performed according to <a href='https://datatracker.ietf.org/doc/html/rfc7159'>RFC7159</a> and <a href='https://www.rfc-editor.org/rfc/rfc3629'>RFC3629</a> (UTF8 standard).<br/>
+If you use passwordless MariaDB login (such as when the MariaDB user name is the same as your Operating System user name and where unix socket plugin is used for authentication), the password would be empty.<br/>
 <br/>
-Note that hexadecimal characters used for Unicode (such as \u21d7) are always lowercase. Solidus character ("/") is not escaped, although <a href='http://gliimly.github.io/text-utf8.html'>text-utf8</a> will correctly process it if the input has it escaped.<br/>
-<br/>
-The number of bytes in &lt;utf8&gt; to be converted can be specified with &lt;length&gt; in "length" clause. If &lt;length&gt; is not specified, it is the length of string &lt;utf8&gt;. Note that a single UTF-8 character can be anywhere between 1 to 4 bytes. For example "љ" is 2 bytes in length. <br/>
-<br/>
-The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; is the string length of the result in &lt;text&gt; (or the number of bytes output if &lt;text&gt; is omitted), or -1 if error occurred (meaning &lt;utf8&gt; is an invalid UTF8) in which case &lt;text&gt; (if specified) is an empty string and the error text can be obtained in &lt;error text&gt; in "error-text" clause.<br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-Convert UTF8 string to text and verify the expected result:<br/>
+To get the location of the socket, you might use:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_661'>
- <span class="Comment">// UTF8 string </span>
-<span class="Statement"> set-string</span> utf8_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
-
- <span class="Comment">// Convert UTF8 string to text</span>
-<span class="Statement"> utf8-text</span> utf8_str<span class="Type"> status</span> encstatus<span class="Type"> to</span> text_text
-
- <span class="Comment">// This is the text expected</span>
-<span class="Statement"> ((</span> expected_result
-<span class="Statement"> @</span>\&quot;Doc\&quot;\n\t\b\f\r\t\u21d7\u21d8\t\u25b7\u25ee\ud834\udd1e\u13eb\u2ca0\u0448\n/\&quot;()\t
-<span class="Statement"> ))</span>
-
- <span class="Comment">// Make sure conversion was okay, decs is the length of the result (encj string)</span>
-<span class="Statement"> if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
-<span class="Statement">     @</span>decode-text worked okay
-<span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_661 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_661' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_661, code_661, gliim_copied_661)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_394'>
+ sudo mysql -u root -e <span class="Constant">&quot;show variables like 'socket'&quot;</span></pre>
+<span id=gliim_copied_394 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_394' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_394, code_394, gliim_copied_394)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">UTF8</span><br/>
-<a href='http://gliimly.github.io/text-utf8.html'>text-utf8</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/utf8-text.html'>utf8-text</a> &nbsp; <br/>
+ <span style="font-weight:bold;">Database</span><br/>
+<a href='http://gliimly.github.io/begin-transaction.html'>begin-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/commit-transaction.html'>commit-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/current-row.html'>current-row</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/database-config-file.html'>database-config-file</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/db-error.html'>db-error</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/mariadb-database.html'>mariadb-database</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/postgresql-database.html'>postgresql-database</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/rollback-transaction.html'>rollback-transaction</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/run-query.html'>run-query</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/sqlite-database.html'>sqlite-database</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
