@@ -236,11 +236,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Resize array</div><hr/><span style="font-weight:bold;">Purpose</span>: Resize array's hash table.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_545'>
+<pre id='code_549'>
 <span class="Statement"> resize-array</span> &lt;array&gt;<span class="Identifier"> hash-size</span> &lt;new size&gt;</pre>
-<span id=gliim_copied_545 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_545' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_545, code_545, gliim_copied_545)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_549 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_549' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_549, code_549, gliim_copied_549)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 resize-array will resize &lt;array&gt;'s hash table (created by <a href='http://gliimly.github.io/new-array.html'>new-array</a>) to size &lt;new size&gt;, which refers to the number of "buckets", or possible array codes derived from keys stored.<br/>
 <br/>
@@ -249,11 +249,11 @@ When a number of elements stored grows, the search performance may decline if ar
 Resizing is generally expensive, so it should not be done too often, and only when needed. The goal is to amortize this expense through future gain of lookup performance. For that reason it may be better to resize proportionally (i.e. by a percentage), unless you have a specific application reason to do otherwise, or to avoid exponential growth.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_546'>
+<pre id='code_550'>
 <span class="Statement"> resize-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">100000</span></pre>
-<span id=gliim_copied_546 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_546' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_546, code_546, gliim_copied_546)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_550 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_550' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_550, code_550, gliim_copied_550)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Array</span><br/>
