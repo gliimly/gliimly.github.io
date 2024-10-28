@@ -236,15 +236,15 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read line</div><hr/><span style="font-weight:bold;">Purpose</span>: Read text file line by line in a loop.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_515'>
+<pre id='code_543'>
 <span class="Statement"> read-line</span> &lt;file&gt;<span class="Type"> to</span> &lt;line content&gt; [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> delimiter</span> &lt;delimiter&gt; ]
 
  &lt;any code&gt;
 
 <span class="Statement"> end-read-line</span></pre>
-<span id=gliim_copied_515 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_515' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_515, code_515, gliim_copied_515)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_543 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_543' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_543, code_543, gliim_copied_543)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 read-line starts the loop in which a text &lt;file&gt; is read line by line into string &lt;line content&gt;, with end-read-line ending this loop. Once the end of &lt;file&gt; has been reached, or an error occurs, the loop exits. <br/>
 <br/>
@@ -263,7 +263,7 @@ Use <a href='http://gliimly.github.io/break-loop.html'>break-loop</a> and <a hre
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To read a text file line by line, and display as a web page with line breaks:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_516'>
+<pre id='code_544'>
 <span class="Statement"> read-line</span> <span class="Constant">&quot;/home/bear/tmp/ll/filexx&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> st
 <span class="Statement">     string-length</span> one_line<span class="Type"> to</span> line_len
 <span class="Statement">     @</span>Line length is <span class="Statement">&lt;&lt;p-num</span> line_len<span class="Statement">&gt;&gt;</span>, line is <span class="Statement">&lt;&lt;p-web</span> one_line<span class="Statement">&gt;&gt;</span> status <span class="Statement">&lt;&lt;p-num</span> st<span class="Statement">&gt;&gt;</span>&lt;br/&gt;
@@ -272,18 +272,18 @@ To read a text file line by line, and display as a web page with line breaks:<br
 <span class="Statement">     get-req</span><span class="Identifier"> error</span><span class="Type"> to</span> err
 <span class="Statement">     @</span>Error in reading, error [<span class="Statement">&lt;&lt;p-out</span> err<span class="Statement">&gt;&gt;</span>]
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_516 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_516' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_516, code_516, gliim_copied_516)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_544 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_544' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_544, code_544, gliim_copied_544)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To read a text file delimited by "|" character:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_517'>
+<pre id='code_545'>
 <span class="Statement"> read-line</span> <span class="Constant">&quot;/home/user/dir/file&quot;</span><span class="Type"> to</span> one_line<span class="Type"> status</span> len<span class="Identifier"> delimiter</span> '|'
 <span class="Statement"> .</span>..</pre>
-<span id=gliim_copied_517 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_517' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_517, code_517, gliim_copied_517)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_545 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_545' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_545, code_545, gliim_copied_545)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Files</span><br/>

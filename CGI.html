@@ -239,7 +239,7 @@ To run your application with CGI, use <a href='http://gliimly.github.io/command-
 <br/>
 The following script sets up an application named "func_test" (any kind of application will do) to run as CGI (after it's been compiled with <a href='http://gliimly.github.io/gg.html'>gg</a>) on Apache web server running on Ubuntu 18 and up. For other web servers/distros, consult their documentation on how to setup CGI for a program.<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_118'>
+<pre id='code_146'>
 <span class="Comment">#prep repos</span>
     sudo apt update
 
@@ -258,20 +258,20 @@ The following script sets up an application named "func_test" (any kind of appli
     sudo <span class="Statement">sed</span> <span class="Special">-i</span> <span class="Statement">'</span><span class="Constant">1c\/usr/lib/cgi-bin/gg</span><span class="Statement">'</span> /etc/apache2/suexec/www-data
 
 <span class="Comment">#copy your program to &quot;gg&quot; directory</span>
-    sudo <span class="Statement">mv</span> /var/lib/gg/bld/func_test/func_test /usr/lib/cgi-bin/gg
-    sudo chown <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>:<span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>  /usr/lib/cgi-bin/gg/func_test
-    sudo <span class="Statement">chmod</span> <span class="Constant">700</span>  /usr/lib/cgi-bin/gg/func_test
+    sudo <span class="Statement">mv</span> /var/lib/gg/bld/func-test/func-test /usr/lib/cgi-bin/gg
+    sudo chown <span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>:<span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span>  /usr/lib/cgi-bin/gg/func-test
+    sudo <span class="Statement">chmod</span> <span class="Constant">700</span>  /usr/lib/cgi-bin/gg/func-test
 
 <span class="Comment">#add user/group of Gliim application user to suexec    </span>
     sudo <span class="Statement">sed</span> <span class="Special">-i</span> <span class="Statement">&quot;</span><span class="Constant">/SuexecUserGroup/d</span><span class="Statement">&quot;</span> /etc/apache2/sites-enabled/000-default.conf
     sudo <span class="Statement">sed</span> <span class="Special">-i</span> <span class="Statement">&quot;</span><span class="Constant">s/&lt;</span><span class="Special">\/</span><span class="Constant">VirtualHost&gt;/SuexecUserGroup </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Constant"> </span><span class="PreProc">$(</span><span class="Special">whoami</span><span class="PreProc">)</span><span class="Special">\n</span><span class="Constant">&lt;</span><span class="Special">\/</span><span class="Constant">VirtualHost&gt;/g</span><span class="Statement">&quot;</span> /etc/apache2/sites-enabled/000-default.conf
     sudo service apache2 restart
 
-<span class="Comment">#the application is at <a href="http://127.0.0.1/cgi-bin/gg/func_test?...">http://127.0.0.1/cgi-bin/gg/func_test?...</a></span>
+<span class="Comment">#the application is at <a href="http://127.0.0.1/cgi-bin/gg/func-test?...">http://127.0.0.1/cgi-bin/gg/func-test?...</a></span>
 <span class="Comment">#substitute 127.0.0.1 for your web address</span></pre>
-<span id=gliim_copied_118 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_118' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_118, code_118, gliim_copied_118)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_146 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_146' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_146, code_146, gliim_copied_146)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Running application</span><br/>

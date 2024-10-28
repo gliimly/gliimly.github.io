@@ -236,52 +236,58 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Begin handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Define a request handler.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_91'>
-<span class="Statement"> begin-handler</span> &lt;request path&gt; [<span class="Identifier"> sub-handler</span> ]
+<pre id='code_113'>
+<span class="Statement"> begin-handler</span> &lt;request path&gt; [<span class="Identifier"> private</span> |<span class="Identifier"> public</span> ]
      &lt;any code&gt;
 <span class="Statement"> end-handler</span></pre>
-<span id=gliim_copied_91 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_91' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_91, code_91, gliim_copied_91)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_113 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_113' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_113, code_113, gliim_copied_113)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 begin-handler starts the implementation of a <a href='http://gliimly.github.io/request.html'>request</a> handler for &lt;request path&gt; (see <a href='http://gliimly.github.io/request.html'>request</a>), which is &lt;any code&gt; up to end-handler. &lt;request path&gt; is not quoted.<br/>
 <br/>
-A &lt;request path&gt; can be a request name (i.e. without any forward slashes) or a path consisting of any number of path segments. A request path can have alphanumeric characters, hyphens, underscores and forward slashes, and can start only with an alphabetic character or a forward slash.<br/>
+A &lt;request path&gt; is a path consisting of any number of path segments. A request path can have alphanumeric characters, hyphens and forward slashes, and can start only with a forward slash.<br/>
 <br/>
-For example, a &lt;request path&gt; can be "wine_items" or "/wine-items" "/items/wine" etc. In general, it represents the nature of a request, such as an action on an object, a resource path handled by it etc. There is no specific way to interpret a request path, and you can construct it in a way that works for you.<br/>
+For example, a &lt;request path&gt; can be "/wine-items" or "/items/wine" etc. In general, it represents the nature of a request, such as an action on an object, a resource path handled by it etc. There is no specific way to interpret a request path, and you can construct it in a way that works for you.<br/>
 <br/>
-If "sub-handler" clause is used, then this handler can only be called from another handler by using <a href='http://gliimly.github.io/sub-handler.html'>sub-handler</a> statement; it cannot be called from an outside caller, be it a <a href='http://gliimly.github.io/service.html'>service</a> call or <a href='http://gliimly.github.io/command-line.html'>command-line</a> program. This mechanism automatically guards direct execution by outside callers of such handlers for safety, for instance by checking user credentials first. <br/>
+The source .gliim file name that implements a given begin-handler matches its path and name. For example, &lt;request path&gt; of "/items/wine" would be implemented in &nbsp;"items/wine.gliim" file (meaning in file "wine.gliim" in subdirectory "items").<br/>
 <br/>
 Note that you can also use "%%" instead of either begin-handler or end-handler or both. <br/>
+<div class="vsub"><a id="Security of request calls"></a>Security of request calls</div>
+If "public" clause is used, then a handler can be called from an outside caller, be it a web browser, some web service, <a href='http://gliimly.github.io/service.html'>service</a> call or <a href='http://gliimly.github.io/command-line.html'>command-line</a> program. <br/>
 <br/>
-The source .gliim file name that implements a given begin-handler is a decorated request path, by substituting inner forward slashes with double underscores, and hyphens with a single underscore. For example, &lt;request path&gt; of "/items/wine" would be implemented in &nbsp;"items__wine.gliim" file.<br/>
+If "private" clause is used, then a handler cannot be called from an outside caller; it can only be called from another handler by using <a href='http://gliimly.github.io/call-handler.html'>call-handler</a> statement. <br/>
+<br/>
+If neither "public" nor "private" is used, then the default is "private". This default mechanism automatically guards direct execution by outside callers of all handlers not marked "public"; it provides automatic safety guard. <br/>
+<br/>
+You can change this default behavior with "--public" option in <a href='http://gliimly.github.io/gg.html'>gg</a>, in which case the default is "public". This is useful if either all request handlers should be public, or if only a handful fixed ones are private.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-The following begin-handler is implemented in file "items__wines__red_wine.gliim":<br/>
+The following begin-handler is implemented in file "items/wines/red-wine.gliim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_92'>
+<pre id='code_114'>
 <span class="Statement"> begin-handler</span>  /items/wines/red-wine
 <span class="Statement">     @</span>This is a request handler to display a list of red wines!
 <span class="Statement"> end-handler</span></pre>
-<span id=gliim_copied_92 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_92' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_92, code_92, gliim_copied_92)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_114' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_114, code_114, gliim_copied_114)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Another way to write this is:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_93'>
+<pre id='code_115'>
 <span class="Statement"> %%</span>  /items/wines/red-wine
 <span class="Statement">     @</span>This is a request handler to display a list of red wines!
 <span class="Statement"> %%</span></pre>
-<span id=gliim_copied_93 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_93' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_93, code_93, gliim_copied_93)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_115' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_115, code_115, gliim_copied_115)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Service processing</span><br/>
 <a href='http://gliimly.github.io/after-handler.html'>after-handler</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/before-handler.html'>before-handler</a> &nbsp;<br/>
 <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/sub-handler.html'>sub-handler</a> &nbsp; <br/>
+<a href='http://gliimly.github.io/call-handler.html'>call-handler</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
