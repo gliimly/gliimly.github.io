@@ -255,7 +255,7 @@ The following example demonstrate calling a call-handler twice, and also using i
 Copy to file "callsub.gliim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_129'>
-<span class="Statement"> %%</span> /callsub
+<span class="Statement"> %%</span> /callsub<span class="Identifier"> public</span>
      <span class="Comment">//</span>
      <span class="Comment">// First call to call-handler</span>
      <span class="Comment">//</span>
@@ -287,7 +287,7 @@ Copy to file "callsub.gliim":<br/>
 And in "sub/service.gliim" file (meaning file "service.gliim" in subdirectory "sub"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_131'>
-<span class="Statement"> %%</span> /sub/service
+<span class="Statement"> %%</span> /sub/service<span class="Identifier"> public</span>
 <span class="Statement">     @</span>This is sub!
 <span class="Statement">     get-param</span> inp
 <span class="Statement">     ((</span> out

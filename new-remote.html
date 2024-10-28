@@ -288,7 +288,7 @@ A full URL path of a service request (for "srv1" for example), would be "/app/ma
 Copy this to "manage_keys.gliim" source file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_462'>
-<span class="Statement"> %%</span> /manage-keys
+<span class="Statement"> %%</span> /manage-keys<span class="Identifier"> public</span>
 <span class="Statement">    do-once</span>
 <span class="Statement">    new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
 <span class="Statement">    end-do-once</span>
@@ -330,7 +330,7 @@ Then <a href='http://gliimly.github.io/call-remote.html'>call-remote</a> will ma
 Create file "srv.gliim" and copy to it this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_464'>
-<span class="Statement"> begin-handler</span> /srv
+<span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
   <span class="Comment">// Create resources (prepare) for </span><span class="Constant">3</span><span class="Comment"> service calls</span>
   <span class="Comment">// We pass environment variable GG_SILENT_HEADER to these calls</span>
   <span class="Comment">// so they don't emit HTTP header</span>

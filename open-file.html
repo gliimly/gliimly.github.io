@@ -255,7 +255,7 @@ If "new-truncate" clause is used, a new file is created if it doesn't exist, or 
 Create a file (or truncate an existing one), write 25,000 rows and the read back those rows and display them, then close file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_473'>
-<span class="Statement"> %%</span> /ofile
+<span class="Statement"> %%</span> /ofile<span class="Identifier"> public</span>
      <span class="Comment">// Create new file, or truncate an old file if it exists</span>
 <span class="Statement">     open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf<span class="Identifier"> new-truncate</span>
 

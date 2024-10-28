@@ -241,7 +241,7 @@ Note that <a href='http://gliimly.github.io/if-true.html'>if-true</a>, <a href='
 The following code will first print out "outside" and then "inside" twice, illustrating the fact that variable "s1" is defined only in the outer scope once. Variable "s2" exists only in inner scope:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_174'>
-<span class="Statement"> begin-handler</span> /scope
+<span class="Statement"> begin-handler</span> /scope<span class="Identifier"> public</span>
 <span class="Statement">     @</span><span class="Statement">&lt;&lt;p-out</span> s1<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     set-string</span> s1=<span class="Constant">&quot;outside&quot;</span>
 <span class="Statement">     {</span>

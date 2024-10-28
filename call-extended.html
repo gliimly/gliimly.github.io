@@ -299,7 +299,7 @@ Use these in your Gliimly code with call-extended statement, for instance to use
 <pre id='code_124'>
 <span class="Statement"> extended-mode</span>
 
-<span class="Statement"> begin-handler</span> /fact
+<span class="Statement"> begin-handler</span> /fact<span class="Identifier"> public</span>
 <span class="Statement">     set-number</span> fact
 <span class="Statement">     call-extended</span> factorial (<span class="Constant">10</span>, &amp;fact)
 <span class="Statement">     p-num</span> fact
@@ -315,7 +315,7 @@ To use macro "mod10()":<br/>
 <pre id='code_125'>
 <span class="Statement"> extended-mode</span>
 
-<span class="Statement"> begin-handler</span> /mod
+<span class="Statement"> begin-handler</span> /mod<span class="Identifier"> public</span>
 <span class="Statement">     set-number</span> mod
 <span class="Statement">     call-extended</span> mod10(<span class="Constant">103</span>, mod)
 <span class="Statement">     p-num</span> mod

@@ -279,7 +279,7 @@ Writing new value with the same key and obtaining the previous value (which is "
 The following is an array key/value service, where a process-scoped array is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_693'>
-<span class="Statement"> %%</span> /arraysrv
+<span class="Statement"> %%</span> /arraysrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
 <span class="Statement">     end-do-once</span>

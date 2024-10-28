@@ -250,7 +250,7 @@ If new-message is used without "from" clause, data can be added to &lt;message&g
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_458'>
-<span class="Statement"> begin-handler</span> /msg
+<span class="Statement"> begin-handler</span> /msg<span class="Identifier"> public</span>
 <span class="Statement">     new-message</span> msg
 <span class="Statement">     write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;weather&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;nice&quot;</span>
 <span class="Statement">     write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;distance&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;near&quot;</span>

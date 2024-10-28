@@ -557,7 +557,7 @@ gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><sp
 In this case, you're using a Unix socket to communicate with the Gliimly service. To test with a Gliimly service handler, copy the following code to "hello_simple.gliim" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_151'>
-<span class="Statement"> begin-handler</span> /hello_simple
+<span class="Statement"> begin-handler</span> /hello_simple<span class="Identifier"> public</span>
 <span class="Statement">    silent-header</span>
 <span class="Statement">    @</span>Hi there!
 <span class="Statement"> end-handler</span></pre>
@@ -686,7 +686,7 @@ gcc <span class="Special">-o</span> cli1 cli1.c <span class="PreProc">$(</span><
 To test it, you can create a Gliimly application. Copy this to "hello.gliim" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_156'>
-<span class="Statement"> begin-handler</span> /hello
+<span class="Statement"> begin-handler</span> /hello<span class="Identifier"> public</span>
 <span class="Statement">     silent-header</span>
 
      <span class="Comment">// Get request body</span>

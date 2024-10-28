@@ -258,7 +258,7 @@ For tracing to have effect, debugging and tracing must be enabled (see "--debug"
 Here's an example of using the format placeholders:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_668'>
-<span class="Statement"> %%</span> /my-request
+<span class="Statement"> %%</span> /my-request<span class="Identifier"> public</span>
 <span class="Statement">     @</span>Hi
 <span class="Statement">     trace-run</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant"> it's </span><span class="Special">%ld</span><span class="Constant"> degrees outside, or with minimum width: </span><span class="Special">%20s</span><span class="Constant"> it's </span><span class="Special">%20ld</span><span class="Constant"> outside&quot;</span>, <span class="Constant">&quot;yes&quot;</span>, <span class="Constant">90</span>, <span class="Constant">&quot;yes&quot;</span>, <span class="Constant">90</span>
 <span class="Statement"> %%</span></pre>

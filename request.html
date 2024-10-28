@@ -298,7 +298,7 @@ In this case the application path is "/shopping" and the request path is "/buy-i
 The request path must match the path of the file name that implements it, with source directory being the root ("/"). Here is an example of implementing a request "/buy-item":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_561'>
-<span class="Statement"> begin-handler</span> /buy-item
+<span class="Statement"> begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> some_param
 <span class="Statement">     @</span>Bought item: <span class="Statement">&lt;&lt;p-out</span> some_param<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-handler</span></pre>
@@ -309,7 +309,7 @@ The request path must match the path of the file name that implements it, with s
 As an example of a path hierarchy, such as for example a hierarchy of resources, methods etc, <a href='http://gliimly.github.io/begin-handler.html'>begin-handler</a> may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_564'>
-<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_564 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -365,7 +365,7 @@ A parameter name can be comprised of alphanumeric characters, hyphens and unders
 Structuring your parameters, i.e. the order in a query path or path segments, and which ones (if any) are in a query string, is determined by you. Regardless of your choices, the code that handles a request is the same. In the example used here, you can obtain the parameters in request handler source file "buy-item.gliim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_566'>
-<span class="Statement"> begin-handler</span> /buy-item
+<span class="Statement"> begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> sku
 <span class="Statement">     get-param</span> price
 
@@ -379,7 +379,7 @@ Structuring your parameters, i.e. the order in a query path or path segments, an
 For a hierarchical URL path, you would write the same:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_568'>
-<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> sku
 <span class="Statement">     get-param</span> price
 

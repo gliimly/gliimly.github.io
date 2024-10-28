@@ -701,7 +701,7 @@ vim hello-world.gliim</pre>
 and copy this code to it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_17'>
-<span class="Statement"> begin-handler</span> /hello-world
+<span class="Statement"> begin-handler</span> /hello-world<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> name
 <span class="Statement">     @</span>This is Hello World from <span class="Statement">&lt;&lt;p-out</span> name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-handler</span></pre>
@@ -870,7 +870,7 @@ vi srv.gliim</pre>
 and copy and paste this:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_34'>
-<span class="Statement"> begin-handler</span> /srv
+<span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">         new-index</span> ind<span class="Identifier"> process-scope</span>
 <span class="Statement">     end-do-once</span>
@@ -1847,7 +1847,7 @@ vim insert.gliim</pre>
 Copy and paste to it (note use of database configuration "mydb" in @mydb):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_97'>
-<span class="Statement"> %%</span> /insert
+<span class="Statement"> %%</span> /insert<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> key
 <span class="Statement">     get-param</span> value
 <span class="Statement">     run-query</span> @mydb = <span class="Constant">&quot;insert into key_value(key,value) values ('</span><span class="Special">%s</span><span class="Constant">', '</span><span class="Special">%s</span><span class="Constant">')&quot;</span><span class="Identifier"> input</span> key, value<span class="Type"> error</span> err<span class="Type"> affected-rows</span> aff_rows<span class="Identifier"> no-loop</span>
@@ -2049,7 +2049,7 @@ You can change this default behavior with "--public" option in <a href='/gg.html
 The following begin-handler is implemented in file "items/wines/red-wine.gliim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_114'>
-<span class="Statement"> begin-handler</span>  /items/wines/red-wine
+<span class="Statement"> begin-handler</span>  /items/wines/red-wine<span class="Identifier"> public</span>
 <span class="Statement">     @</span>This is a request handler to display a list of red wines!
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_114 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -2059,7 +2059,7 @@ The following begin-handler is implemented in file "items/wines/red-wine.gliim":
 Another way to write this is:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_115'>
-<span class="Statement"> %%</span>  /items/wines/red-wine
+<span class="Statement"> %%</span>  /items/wines/red-wine<span class="Identifier"> public</span>
 <span class="Statement">     @</span>This is a request handler to display a list of red wines!
 <span class="Statement"> %%</span></pre>
 <span id=gliim_copied_115 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -2232,7 +2232,7 @@ Use these in your Gliimly code with call-extended statement, for instance to use
 <pre id='code_124'>
 <span class="Statement"> extended-mode</span>
 
-<span class="Statement"> begin-handler</span> /fact
+<span class="Statement"> begin-handler</span> /fact<span class="Identifier"> public</span>
 <span class="Statement">     set-number</span> fact
 <span class="Statement">     call-extended</span> factorial (<span class="Constant">10</span>, &amp;fact)
 <span class="Statement">     p-num</span> fact
@@ -2248,7 +2248,7 @@ To use macro "mod10()":<br/>
 <pre id='code_125'>
 <span class="Statement"> extended-mode</span>
 
-<span class="Statement"> begin-handler</span> /mod
+<span class="Statement"> begin-handler</span> /mod<span class="Identifier"> public</span>
 <span class="Statement">     set-number</span> mod
 <span class="Statement">     call-extended</span> mod10(<span class="Constant">103</span>, mod)
 <span class="Statement">     p-num</span> mod
@@ -2287,7 +2287,7 @@ The following example demonstrate calling a call-handler twice, and also using i
 Copy to file "callsub.gliim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_129'>
-<span class="Statement"> %%</span> /callsub
+<span class="Statement"> %%</span> /callsub<span class="Identifier"> public</span>
      <span class="Comment">//</span>
      <span class="Comment">// First call to call-handler</span>
      <span class="Comment">//</span>
@@ -2319,7 +2319,7 @@ Copy to file "callsub.gliim":<br/>
 And in "sub/service.gliim" file (meaning file "service.gliim" in subdirectory "sub"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_131'>
-<span class="Statement"> %%</span> /sub/service
+<span class="Statement"> %%</span> /sub/service<span class="Identifier"> public</span>
 <span class="Statement">     @</span>This is sub!
 <span class="Statement">     get-param</span> inp
 <span class="Statement">     ((</span> out
@@ -2989,7 +2989,7 @@ gcc <span class="Special">-o</span> cli cli.c <span class="PreProc">$(</span><sp
 In this case, you're using a Unix socket to communicate with the Gliimly service. To test with a Gliimly service handler, copy the following code to "hello_simple.gliim" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_151'>
-<span class="Statement"> begin-handler</span> /hello_simple
+<span class="Statement"> begin-handler</span> /hello_simple<span class="Identifier"> public</span>
 <span class="Statement">    silent-header</span>
 <span class="Statement">    @</span>Hi there!
 <span class="Statement"> end-handler</span></pre>
@@ -3118,7 +3118,7 @@ gcc <span class="Special">-o</span> cli1 cli1.c <span class="PreProc">$(</span><
 To test it, you can create a Gliimly application. Copy this to "hello.gliim" file in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_156'>
-<span class="Statement"> begin-handler</span> /hello
+<span class="Statement"> begin-handler</span> /hello<span class="Identifier"> public</span>
 <span class="Statement">     silent-header</span>
 
      <span class="Comment">// Get request body</span>
@@ -3263,7 +3263,7 @@ Note that <a href='/if-true.html'>if-true</a>, <a href='/run-query.html'>run-que
 The following code will first print out "outside" and then "inside" twice, illustrating the fact that variable "s1" is defined only in the outer scope once. Variable "s2" exists only in inner scope:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_174'>
-<span class="Statement"> begin-handler</span> /scope
+<span class="Statement"> begin-handler</span> /scope<span class="Identifier"> public</span>
 <span class="Statement">     @</span><span class="Statement">&lt;&lt;p-out</span> s1<span class="Statement">&gt;&gt;</span>
 <span class="Statement">     set-string</span> s1=<span class="Constant">&quot;outside&quot;</span>
 <span class="Statement">     {</span>
@@ -5736,7 +5736,7 @@ Exits current request by transferring control directly after the top-level <a hr
 Returning status of 20:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_308'>
-<span class="Statement"> begin-handler</span> /req-handler
+<span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     handler-status</span> <span class="Constant">20</span>
 <span class="Statement">     .</span>..
@@ -5750,7 +5750,7 @@ Returning status of 20:<br/>
 Returning status of 0:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_309'>
-<span class="Statement"> begin-handler</span> /req-handler
+<span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     exit-handler</span>
 <span class="Statement">     .</span>..
@@ -5762,7 +5762,7 @@ Returning status of 0:<br/>
 Returning status of 10:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_310'>
-<span class="Statement"> begin-handler</span> /req-handler
+<span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     exit-handler</span> <span class="Constant">10</span>
 <span class="Statement">     .</span>..
@@ -5800,7 +5800,7 @@ extended-mode, when specified as a very first statement in .gliim source file, a
 <pre id='code_312'>
 <span class="Statement"> extended-mode</span>
 
-<span class="Statement"> begin-handler</span> /my-handler
+<span class="Statement"> begin-handler</span> /my-handler<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement">     call-extended</span> factorial (<span class="Constant">10</span>, &amp;fact)
 <span class="Statement">     .</span>..
@@ -7128,7 +7128,7 @@ if-true can be nested, which can be up to 30 levels deep.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_393'>
-<span class="Statement"> %%</span> /if-test
+<span class="Statement"> %%</span> /if-test<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> inp
 
 <span class="Statement">     if-true</span> inp<span class="Identifier"> equal</span> <span class="Constant">&quot;1&quot;</span>
@@ -7209,7 +7209,7 @@ In the code below, "some_req" is a request handler that outputs some text, and i
 <a href='/call-handler.html'>call-handler</a> "some-req" would simply output "world":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_397'>
-<span class="Statement"> %%</span> /some-req
+<span class="Statement"> %%</span> /some-req<span class="Identifier"> public</span>
 <span class="Statement">     @</span>world
 <span class="Statement"> %%</span></pre>
 <span id=gliim_copied_397 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -7665,7 +7665,7 @@ You can use any file name (likely choose a name that signifies the purpose of a 
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_423'>
-<span class="Statement"> %%</span> /locktest
+<span class="Statement"> %%</span> /locktest<span class="Identifier"> public</span>
      <span class="Comment">// Get application home directory</span>
 <span class="Statement">     get-app</span><span class="Identifier"> directory</span><span class="Type"> to</span> dir
      <span class="Comment">// Create lock file name</span>
@@ -8357,7 +8357,7 @@ If new-message is used without "from" clause, data can be added to &lt;message&g
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_458'>
-<span class="Statement"> begin-handler</span> /msg
+<span class="Statement"> begin-handler</span> /msg<span class="Identifier"> public</span>
 <span class="Statement">     new-message</span> msg
 <span class="Statement">     write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;weather&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;nice&quot;</span>
 <span class="Statement">     write-message</span> msg<span class="Identifier"> key</span> <span class="Constant">&quot;distance&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;near&quot;</span>
@@ -8438,7 +8438,7 @@ A full URL path of a service request (for "srv1" for example), would be "/app/ma
 Copy this to "manage_keys.gliim" source file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_462'>
-<span class="Statement"> %%</span> /manage-keys
+<span class="Statement"> %%</span> /manage-keys<span class="Identifier"> public</span>
 <span class="Statement">    do-once</span>
 <span class="Statement">    new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
 <span class="Statement">    end-do-once</span>
@@ -8480,7 +8480,7 @@ Then <a href='/call-remote.html'>call-remote</a> will make three service calls t
 Create file "srv.gliim" and copy to it this code:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_464'>
-<span class="Statement"> begin-handler</span> /srv
+<span class="Statement"> begin-handler</span> /srv<span class="Identifier"> public</span>
   <span class="Comment">// Create resources (prepare) for </span><span class="Constant">3</span><span class="Comment"> service calls</span>
   <span class="Comment">// We pass environment variable GG_SILENT_HEADER to these calls</span>
   <span class="Comment">// so they don't emit HTTP header</span>
@@ -8671,7 +8671,7 @@ If "new-truncate" clause is used, a new file is created if it doesn't exist, or 
 Create a file (or truncate an existing one), write 25,000 rows and the read back those rows and display them, then close file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_473'>
-<span class="Statement"> %%</span> /ofile
+<span class="Statement"> %%</span> /ofile<span class="Identifier"> public</span>
      <span class="Comment">// Create new file, or truncate an old file if it exists</span>
 <span class="Statement">     open-file</span> <span class="Constant">&quot;testwrite&quot;</span><span class="Type"> file-id</span> nf<span class="Identifier"> new-truncate</span>
 
@@ -9910,7 +9910,7 @@ If you'd like to iterate the ordered list of keys in an index, create a &lt;curs
 In this example, a million key/value pairs are inserted into an index, and then each of them is searched for and then displayed back (see <a href='/write-index.html'>write-index</a> for more on inserting into a index). Both the key and the data are a numerical value of a key:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_538'>
-<span class="Statement"> %%</span> /index-example
+<span class="Statement"> %%</span> /index-example<span class="Identifier"> public</span>
 
 <span class="Statement">     new-index</span> myindex<span class="Identifier"> key-as</span> <span class="Constant">&quot;positive integer&quot;</span> <span class="Comment">// create new index</span>
 
@@ -10010,7 +10010,7 @@ If the element is successfuly retrieved, &lt;status&gt; number (in "status" clau
 In this example, a LIFO list is created, and two key/value pairs added. They are then retrieved in a loop and printed out (twice with rewind), and then the list is purged:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_542'>
-<span class="Statement"> %%</span> /lifo
+<span class="Statement"> %%</span> /lifo<span class="Identifier"> public</span>
 <span class="Statement">     new-lifo</span> mylist
 
      <span class="Comment">// Add data to the list</span>
@@ -10594,7 +10594,7 @@ In this case the application path is "/shopping" and the request path is "/buy-i
 The request path must match the path of the file name that implements it, with source directory being the root ("/"). Here is an example of implementing a request "/buy-item":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_561'>
-<span class="Statement"> begin-handler</span> /buy-item
+<span class="Statement"> begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> some_param
 <span class="Statement">     @</span>Bought item: <span class="Statement">&lt;&lt;p-out</span> some_param<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-handler</span></pre>
@@ -10605,7 +10605,7 @@ The request path must match the path of the file name that implements it, with s
 As an example of a path hierarchy, such as for example a hierarchy of resources, methods etc, <a href='/begin-handler.html'>begin-handler</a> may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_564'>
-<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">     .</span>..
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_564 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -10661,7 +10661,7 @@ A parameter name can be comprised of alphanumeric characters, hyphens and unders
 Structuring your parameters, i.e. the order in a query path or path segments, and which ones (if any) are in a query string, is determined by you. Regardless of your choices, the code that handles a request is the same. In the example used here, you can obtain the parameters in request handler source file "buy-item.gliim":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_566'>
-<span class="Statement"> begin-handler</span> /buy-item
+<span class="Statement"> begin-handler</span> /buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> sku
 <span class="Statement">     get-param</span> price
 
@@ -10675,7 +10675,7 @@ Structuring your parameters, i.e. the order in a query path or path segments, an
 For a hierarchical URL path, you would write the same:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_568'>
-<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item
+<span class="Statement"> begin-handler</span> /items/wine-collection/red-wine/buy-item<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> sku
 <span class="Statement">     get-param</span> price
 
@@ -11019,7 +11019,7 @@ See details for each clause in <a href='/new-remote.html'>new-remote</a> (for "l
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_591'>
-<span class="Statement"> begin-handler</span> /serv
+<span class="Statement"> begin-handler</span> /serv<span class="Identifier"> public</span>
 <span class="Statement">     run-remote</span> nf<span class="Identifier"> local</span> <span class="Constant">&quot;hash-server-yey&quot;</span> \
         <span class="Identifier"> url-path</span> <span class="Constant">&quot;/hash-server-yey/server/op=add/key=sb_XYZ/data=sdb_123&quot;</span> \
         <span class="Type"> finished-okay</span> sfok \
@@ -11305,7 +11305,7 @@ File "example.gliim" will call the above functions and display the results:<br/>
 <pre id='code_609'>
 <span class="Statement"> extended-mode</span>
 
-<span class="Statement"> begin-handler</span> /example
+<span class="Statement"> begin-handler</span> /example<span class="Identifier"> public</span>
 
 <span class="Statement">     set-number</span> fact
 <span class="Statement">     call-extended</span> get_factorial (<span class="Constant">10</span>, &amp;fact)
@@ -11720,7 +11720,7 @@ split-string will find all instances of string &lt;delimiter&gt; in &lt;string&g
 All pieces produced will be trimmed both on left and right. If a piece is double quoted, then double quotes are removed. For instance save this code in "ps.gliim" in a separate directory:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_638'>
-<span class="Statement"> %%</span> parse
+<span class="Statement"> %%</span> /parse<span class="Identifier"> public</span>
 <span class="Statement">     set-string</span> clist = <span class="Constant">&quot;a , b, </span><span class="Special">\&quot;</span><span class="Constant">c , d</span><span class="Special">\&quot;</span><span class="Constant"> , e&quot;</span>
 <span class="Statement">     split-string</span> clist<span class="Identifier"> with</span> <span class="Constant">&quot;,&quot;</span><span class="Type"> to</span> res<span class="Type"> count</span> tot
 <span class="Statement">     start-loop</span><span class="Identifier"> repeat</span> tot<span class="Type"> use</span> i
@@ -11759,7 +11759,7 @@ split-string is useful for parsing CSV (Comma Separated Values) or any other kin
 The following will parse a string containing name/value pairs (such as "name=value") separated by string "&amp;amp;":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_640'>
-<span class="Statement"> %%</span> /parse-url
+<span class="Statement"> %%</span> /parse-url<span class="Identifier"> public</span>
      <span class="Comment">// Data to parse - data/value pairs delimited by </span><span class="Constant">&quot;&amp;amp;&quot;</span><span class="Comment"> string, and data and value delimited by equal sign:</span>
 <span class="Statement">     set-string</span> url =<span class="Constant">&quot;x=23&amp;amp;y=good&amp;amp;z=hello_world&quot;</span>
 
@@ -12306,7 +12306,7 @@ For tracing to have effect, debugging and tracing must be enabled (see "--debug"
 Here's an example of using the format placeholders:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_668'>
-<span class="Statement"> %%</span> /my-request
+<span class="Statement"> %%</span> /my-request<span class="Identifier"> public</span>
 <span class="Statement">     @</span>Hi
 <span class="Statement">     trace-run</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant"> it's </span><span class="Special">%ld</span><span class="Constant"> degrees outside, or with minimum width: </span><span class="Special">%20s</span><span class="Constant"> it's </span><span class="Special">%20ld</span><span class="Constant"> outside&quot;</span>, <span class="Constant">&quot;yes&quot;</span>, <span class="Constant">90</span>, <span class="Constant">&quot;yes&quot;</span>, <span class="Constant">90</span>
 <span class="Statement"> %%</span></pre>
@@ -12757,7 +12757,7 @@ Writing new value with the same key and obtaining the previous value (which is "
 The following is an array key/value service, where a process-scoped array is created. It provides inserting, deleting and querying key/value pairs. Such a service process can run indefinitely:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_693'>
-<span class="Statement"> %%</span> /arraysrv
+<span class="Statement"> %%</span> /arraysrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-array</span> h<span class="Identifier"> hash-size</span> <span class="Constant">1024</span><span class="Identifier"> process-scope</span>
 <span class="Statement">     end-do-once</span>
@@ -12990,7 +12990,7 @@ The following is an example of a process-scoped index. Such a index keeps its da
 In a new directory, create file indexsrv.gliim and copy to it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_706'>
-<span class="Statement"> %%</span> /indexsrv
+<span class="Statement"> %%</span> /indexsrv<span class="Identifier"> public</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-index</span> t<span class="Identifier"> process-scope</span>
 <span class="Statement">     end-do-once</span>
@@ -13159,7 +13159,7 @@ Add a key/value pair to the end of the list:<br/>
 The following is a list that is process-scoped, i.e. it is a linked-list server, which can add, delete, read and position to various elements:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_714'>
-<span class="Statement"> %%</span> /llsrv
+<span class="Statement"> %%</span> /llsrv<span class="Identifier"> public</span>
      <span class="Comment">// Create linked list just once for the life of the process</span>
 <span class="Statement">     do-once</span>
 <span class="Statement">     new-list</span> t<span class="Identifier"> process-scope</span>
@@ -13486,7 +13486,7 @@ The following uses a call-handler inside write-string:<br/>
 The "other-service" may be:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_735'>
-<span class="Statement"> begin-handler</span> /other-service
+<span class="Statement"> begin-handler</span> /other-service<span class="Identifier"> public</span>
 <span class="Statement">     @</span>&quot;Hello from other service&quot;
 <span class="Statement"> end-handler</span></pre>
 <span id=gliim_copied_735 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
