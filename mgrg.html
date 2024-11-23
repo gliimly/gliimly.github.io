@@ -258,7 +258,7 @@ Initialize the directory and file structure for application &lt;app name&gt;. If
 </li><li>-u &lt;user&gt;<br/>
 The owner of your application. This is only used when initializing directory structure used by mgrg (see -i option). Do not use it otherwise. It cannot be root. <br/>
 </li><li>-r &lt;proxy group&gt;<br/>
-The group of proxy web server (such as Apache or Nginx). This is only used when initializing directory structure used by mgrg (see -i option). Do not use it otherwise. It restricts the ability to connect to your application only to the members of said group (in addition to the user who owns your server), otherwise anyone can connect.<br/>
+The group of proxy web server (such as Apache or Nginx). This is only used when initializing directory structure used by mgrg (see -i option). Do not use it otherwise. It restricts the ability to connect to your application only to the members of said group (in addition to the user who owns your server) when a Unix socket is used, otherwise anyone can connect.<br/>
 </li><li>-f<br/>
 Run in the foreground. The process does not return to the command line prompt until it is stopped. Useful for debugging and where foreground processing is required.<br/>
 </li><li>-p &lt;port number&gt;<br/>

@@ -6545,7 +6545,7 @@ gg <span class="Statement">&lt;</span>options<span class="Statement">&gt;</span>
 </div><br/>
 <div class="vsub"><a id="Command-line options"></a>Command-line options</div>
 <ul><li>-k &lt;app name&gt;<br/>
-Create Gliimly application &lt;app name&gt; with default settings (see <a href='/mgrg.html'>mgrg</a> with "-i" option on creating applications with non-default settings). You must have sudo privilege to create an application (this is the only option that requires it). This option does nothing if the application already exists. You can combine this option with "-q" to create and then build an application in the same step.<br/>
+Create Gliimly application &lt;app name&gt; with default settings (see <a href='/mgrg.html'>mgrg</a> with "-i" option on creating applications with non-default settings). The default settings mean that your application is owned by the currently-logged on Operating System user (see "-u" option in mgrg), and that a Unix socket connecting to your application server isn't restricted by any group (see "-r" option in mgrg). You must have sudo privilege to create an application (this is the only option that requires it). This option does nothing if the application already exists. You can combine this option with "-q" to create and then build an application in the same step.<br/>
 <br/>
 </li><li>-q Build Gliimly application from source code in the current directory. <a href='/mgrg.html'>mgrg</a> must run first in this directory with "-i" option to create the application. You must have at least one Gliimly source file (.gliim file), with each such file implementing a single <a href='/request.html'>request</a> handler. All application source files must be contained in a flat directory; however, each request handler can handle any hierarchical path, so your API can be fully hierarchical.<br/>
 <br/>
@@ -7936,7 +7936,7 @@ Initialize the directory and file structure for application &lt;app name&gt;. If
 </li><li>-u &lt;user&gt;<br/>
 The owner of your application. This is only used when initializing directory structure used by mgrg (see -i option). Do not use it otherwise. It cannot be root. <br/>
 </li><li>-r &lt;proxy group&gt;<br/>
-The group of proxy web server (such as Apache or Nginx). This is only used when initializing directory structure used by mgrg (see -i option). Do not use it otherwise. It restricts the ability to connect to your application only to the members of said group (in addition to the user who owns your server), otherwise anyone can connect.<br/>
+The group of proxy web server (such as Apache or Nginx). This is only used when initializing directory structure used by mgrg (see -i option). Do not use it otherwise. It restricts the ability to connect to your application only to the members of said group (in addition to the user who owns your server) when a Unix socket is used, otherwise anyone can connect.<br/>
 </li><li>-f<br/>
 Run in the foreground. The process does not return to the command line prompt until it is stopped. Useful for debugging and where foreground processing is required.<br/>
 </li><li>-p &lt;port number&gt;<br/>
