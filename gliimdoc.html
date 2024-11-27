@@ -233,7 +233,7 @@ function gg_copy(gt, eid, gc) {
 
 
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div>
-<div class='vhub'>Gliimly Single-Page Documentation for version 109</div><hr/>
+<div class='vhub'>Gliimly Single-Page Documentation for version 114</div><hr/>
 This page contains all of Gliimly documentation topics combined into one. It may be easier to search. <!--GLIIMBEGDOC39--><br/><br/>
 <a href='#123-hello-world.html'>123-hello-world</a><br/>
 <a href='#about-gliim.html'>about-gliim</a><br/>
@@ -2231,7 +2231,7 @@ Calls another handler within the same request in the same process. You can call 
 <br/>
 Use <a href='/set-param.html'>set-param</a> and <a href='/get-param.html'>get-param</a> to pass parameters between the caller and callee handlers.<br/>
 <br/>
-call-handler uses the same high-performance hash table used by a <a href='/request.html'>request</a> to route requests by name.<br/>
+call-handler uses the same high-performance hash table used by a <a href='/request.html'>request</a> to route requests by name; if &lt;request path&gt; is a constant string, then a hash table lookup is performed only once for the life of the process and all subsequent calls use a cached address of the request handler.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 The following example demonstrate calling a call-handler twice, and also using its output inline in the caller. An input parameter is passed to it, and an output obtained:<br/>
 <br/>
@@ -4870,7 +4870,7 @@ ln <span class="Special">-s</span> /home/disk0/file /var/lib/gg/<span class="Sta
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='documentation.html'></a>
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Documentation</div><hr/><div class="vsub"><a id="Reference for Gliimly version 109"></a>Reference for Gliimly version 109</div>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Documentation</div><hr/><div class="vsub"><a id="Reference for Gliimly version 114"></a>Reference for Gliimly version 114</div>
 <span style="font-weight:bold;">Note</span>: All the topics below are available as a <a href='/gliimdoc.html'>single-page documentation</a>. <br/>
 <br/>
 <ul><br/>
@@ -7226,7 +7226,7 @@ sudo pacman <span class="Special">--noconfirm</span> <span class="Special">-Sy</
 <pre id='code_395'>
 git clone <a href="https://github.com/gliimly/gliimly.git">https://github.com/gliimly/gliimly.git</a>
 <span class="Statement">cd</span> gliimly
-git checkout <span class="Constant">109</span></pre>
+git checkout <span class="Constant">114</span></pre>
 <span id=gliim_copied_395 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_395' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_395, code_395, gliim_copied_395)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -7277,7 +7277,7 @@ sudo apt <span class="Special">-y</span> install git</pre>
 <pre id='code_399'>
 git clone <a href="https://github.com/gliimly/gliimly.git">https://github.com/gliimly/gliimly.git</a>
 <span class="Statement">cd</span> gliimly
-git checkout <span class="Constant">109</span></pre>
+git checkout <span class="Constant">114</span></pre>
 <span id=gliim_copied_399 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_399' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_399, code_399, gliim_copied_399)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -7327,7 +7327,7 @@ sudo dnf <span class="Special">-y</span> install git</pre>
 <pre id='code_403'>
 git clone <a href="https://github.com/gliimly/gliimly.git">https://github.com/gliimly/gliimly.git</a>
 <span class="Statement">cd</span> gliimly
-git checkout <span class="Constant">109</span></pre>
+git checkout <span class="Constant">114</span></pre>
 <span id=gliim_copied_403 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_403' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_403, code_403, gliim_copied_403)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -7396,7 +7396,7 @@ sudo zypper <span class="Special">-n</span> install git</pre>
 <pre id='code_407'>
 git clone <a href="https://github.com/gliimly/gliimly.git">https://github.com/gliimly/gliimly.git</a>
 <span class="Statement">cd</span> gliimly
-git checkout <span class="Constant">109</span></pre>
+git checkout <span class="Constant">114</span></pre>
 <span id=gliim_copied_407 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_407' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_407, code_407, gliim_copied_407)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
