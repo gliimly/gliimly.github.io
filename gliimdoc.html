@@ -9209,16 +9209,16 @@ Create a query text string by means of <a href='/write-string.html'>write-string
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='/documentation.html'>documentation</a><br/>
 <a id='p-path.html'></a>
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P path</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs URL application path.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P path</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs URL application and request path of a request handler.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_499'>
-<span class="Statement"> p-path</span> [<span class="Identifier"> new-line</span> ]</pre>
+<span class="Statement"> p-path</span> &lt;request path&gt; [<span class="Identifier"> new-line</span> ]</pre>
 <span id=gliim_copied_499 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_499' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_499, code_499, gliim_copied_499)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-p-path outputs a URL application path (see <a href='/request.html'>request</a>), i.e. the leading path segment(s) prior to request name.<br/>
+p-path outputs a URL application path (see <a href='/request.html'>request</a>) with &lt;request path&gt; following immediately afterwards.<br/>
 <br/>
 If no "--path" option in <a href='/gg.html'>gg</a> is used to specify URL application path, then it is the same as application name prepended with a forward slash:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
@@ -9228,14 +9228,14 @@ If no "--path" option in <a href='/gg.html'>gg</a> is used to specify URL applic
 <textarea id='gliimt_501' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_501, code_501, gliim_copied_501)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-p-path provides the leading part of a URL path after which request name and its parameters can be specified. It is used in HTML forms and URLs (either for HTML or API) to refer back to the same application.<br/>
+p-path is used in construction of URLs or HTML forms (either for HTML or API) to refer back to the same application.<br/>
 <br/>
 Use <a href='/p-path.html'>p-path</a> to create the absolute URL path to refer back to your service so you can issue <a href='/request.html'>request</a>s to it. <br/>
 <br/>
 For example, this is a link that specifies request to service "show-notes":<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
 <pre id='code_500'>
-@<span class="Identifier">&lt;</span><span class="Statement">a</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path&gt;&gt;/show-notes?date=yesterday&quot;</span><span class="Identifier">&gt;</span><span class="Underlined">Show Notes</span><span class="Identifier">&lt;/</span><span class="Statement">a</span><span class="Identifier">&gt;</span></pre>
+@<span class="Identifier">&lt;</span><span class="Statement">a</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path &quot;</span><span class="Identifier">/show-notes</span><span class="Constant">&quot;&gt;&gt;?date=yesterday&quot;</span><span class="Identifier">&gt;</span><span class="Underlined">Show Notes</span><span class="Identifier">&lt;/</span><span class="Statement">a</span><span class="Identifier">&gt;</span></pre>
 <span id=gliim_copied_500 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_500' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_500, code_500, gliim_copied_500)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -9243,7 +9243,7 @@ For example, this is a link that specifies request to service "show-notes":<br/>
 If you are building HTML forms, you can add a note with:<br/>
 <div class='htmlcode' style='position:relative;padding-right:16px;'>
 <pre id='code_502'>
-@<span class="Identifier">&lt;</span><span class="Statement">form</span><span class="Identifier"> </span><span class="Type">action</span><span class="Identifier">=</span><span class="Constant">&quot;&lt;&lt;p-path&gt;&gt;/add-note&quot;</span><span class="Identifier"> </span><span class="Type">method</span><span class="Identifier">=</span><span class="Constant">&quot;POST&quot;</span><span class="Identifier">&gt;</span>
+@<span class="Identifier">&lt;</span><span class="Statement">form</span><span class="Identifier"> </span><span class="Type">action</span><span class="Identifier">=</span><span class="Constant">'&lt;&lt;p-path &quot;/add-note&quot;&gt;&gt;'</span><span class="Identifier"> </span><span class="Type">method</span><span class="Identifier">=</span><span class="Constant">&quot;POST&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text&quot;</span><span class="Identifier"> </span><span class="Type">name</span><span class="Identifier">=</span><span class="Constant">&quot;note&quot;</span><span class="Identifier"> </span><span class="Type">value</span><span class="Identifier">=</span><span class="Constant">&quot;&quot;</span><span class="Identifier">&gt;</span>
 @<span class="Identifier">&lt;/</span><span class="Statement">form</span><span class="Identifier">&gt;</span></pre>
 <span id=gliim_copied_502 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
@@ -9252,7 +9252,7 @@ If you are building HTML forms, you can add a note with:<br/>
 </div><br/>
 See <a href='/request.html'>request</a> for more on URL structure.<br/>
 <br/>
-If "new-line" clause is used, then a new line ("\n") is output after the path.<br/>
+If "new-line" clause is used, then a new line ("\n") is output after the URL path.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Output</span><br/>
 <a href='/finish-output.html'>finish-output</a> &nbsp;<br/>
