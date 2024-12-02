@@ -236,15 +236,15 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Write file</div><hr/><span style="font-weight:bold;">Purpose</span>: Write to a file.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_702'>
+<pre id='code_707'>
 <span class="Statement"> write-file</span> &lt;file&gt; | (<span class="Identifier"> file-id</span> &lt;file id&gt; ) \
     <span class="Identifier"> from</span> &lt;content&gt; \
      [<span class="Identifier"> length</span> &lt;length&gt; ] \
      [ (<span class="Identifier"> position</span> &lt;position&gt; ) | (<span class="Identifier"> append</span> [ &lt;append&gt; ] ) ] \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=gliim_copied_702 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_702' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_702, code_702, gliim_copied_702)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_707 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_707' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_707, code_707, gliim_copied_707)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Without file-id"></a>Without file-id</div>
 This is a simple method of writing a file. File named &lt;file&gt; is opened, data written, and file is closed. &lt;file&gt; can be a full path name, or a path relative to the application home directory (see <a href='http://gliimly.github.io/directories.html'>directories</a>).<br/>
@@ -270,39 +270,39 @@ If "status" clause is used, then the number of bytes written is stored to &lt;st
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To overwrite file "/path/to/file" with "Hello World":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_703'>
+<pre id='code_708'>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;/path/to/file&quot;</span><span class="Identifier"> from</span> <span class="Constant">&quot;Hello World&quot;</span></pre>
-<span id=gliim_copied_703 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_703' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_703, code_703, gliim_copied_703)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_708 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_708' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_708, code_708, gliim_copied_708)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To append "Hello World" to file:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_704'>
+<pre id='code_709'>
 <span class="Statement"> set-string</span> path=<span class="Constant">&quot;/path/to/file&quot;</span>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
 <span class="Statement"> write-file</span> path<span class="Identifier"> from</span> cont<span class="Identifier"> append</span></pre>
-<span id=gliim_copied_704 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_704' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_704, code_704, gliim_copied_704)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_709 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_709' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_709, code_709, gliim_copied_709)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write only 5 bytes (i.e. "Hello") and get status (if successful, number "st" would be "5"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_705'>
+<pre id='code_710'>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello World&quot;</span>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> length</span> <span class="Constant">5</span><span class="Type"> status</span> st</pre>
-<span id=gliim_copied_705 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_705' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_705, code_705, gliim_copied_705)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_710 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_710' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_710, code_710, gliim_copied_710)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 To write a string "Hello" at byte position 3 in the existing "file":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_706'>
+<pre id='code_711'>
 <span class="Statement"> set-string</span> cont=<span class="Constant">&quot;Hello&quot;</span>
 <span class="Statement"> write-file</span> <span class="Constant">&quot;file&quot;</span><span class="Identifier"> from</span> cont<span class="Identifier"> position</span> <span class="Constant">3</span><span class="Type"> status</span> st</pre>
-<span id=gliim_copied_706 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_706' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_706, code_706, gliim_copied_706)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_711 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_711' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_711, code_711, gliim_copied_711)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 See <a href='http://gliimly.github.io/open-file.html'>open-file</a> for an example with "file-id" clause.<br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>

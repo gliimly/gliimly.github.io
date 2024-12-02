@@ -236,11 +236,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;P out</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs a string without encoding.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_504'>
+<pre id='code_509'>
 <span class="Statement"> p-out</span> &lt;string&gt; [<span class="Identifier"> length</span> &lt;length&gt; ] [<span class="Identifier"> new-line</span> ]</pre>
-<span id=gliim_copied_504 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_504' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_504, code_504, gliim_copied_504)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_509 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_509' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_509, code_509, gliim_copied_509)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 p-out outputs a string expression given by &lt;string&gt;, without any encoding (meaning a string is output exactly as it appears). <br/>
 <br/>
@@ -252,34 +252,34 @@ Note that all bytes of &lt;string&gt; are output, even if &lt;string&gt; contain
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To output data verbatim to a client:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_505'>
+<pre id='code_510'>
 <span class="Statement"> set-string</span> mydata=<span class="Constant">&quot;Hello world&quot;</span>
 <span class="Statement"> p-out</span> mydata</pre>
-<span id=gliim_copied_505 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_505' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_505, code_505, gliim_copied_505)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_510 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_510' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_510, code_510, gliim_copied_510)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Writing to client, outputting text followed by a horizontal rule - the text is output to a client (such as browser) as it is, and the browser will interpret tags "&lt;br/&gt;" and "&lt;hr/&gt;" as a line break and a horizonal line and display them as such:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_506'>
+<pre id='code_511'>
 <span class="Statement"> p-out</span> <span class="Constant">&quot;This is a non-encoded output&lt;br/&gt;&quot;</span><span class="Identifier"> new-line</span>
 <span class="Statement"> p-out</span> <span class="Constant">&quot;&lt;hr/&gt;&quot;</span></pre>
-<span id=gliim_copied_506 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_506' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_506, code_506, gliim_copied_506)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_511 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_511' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_511, code_511, gliim_copied_511)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create a query text string by means of <a href='http://gliimly.github.io/write-string.html'>write-string</a> statement:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_507'>
+<pre id='code_512'>
  <span class="Comment">//</span>
  <span class="Comment">// Construct the run-time text of dynamic SQL</span>
  <span class="Comment">//</span>
 <span class="Statement"> write-string</span> qry_txt
 <span class="Statement">    @</span>select * from <span class="Statement">&lt;&lt;p-out</span> table_name<span class="Statement">&gt;&gt;</span>
 <span class="Statement"> end-write-string</span></pre>
-<span id=gliim_copied_507 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_507' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_507, code_507, gliim_copied_507)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_512 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_512' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_512, code_512, gliim_copied_512)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Output</span><br/>
