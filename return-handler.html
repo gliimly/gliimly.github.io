@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title>Upper string</title>
+<title>Return handler</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -233,40 +233,53 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Upper string</div><hr/><span style="font-weight:bold;">Purpose</span>: Upper-case a string.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Return handler</div><hr/><span style="font-weight:bold;">Purpose</span>: Return from current request handler back to its caller.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_696'>
-<span class="Statement"> upper-string</span> &lt;string&gt;</pre>
-<span id=gliim_copied_696 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_696' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_696, code_696, gliim_copied_696)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_588'>
+<span class="Statement"> return-handler</span></pre>
+<span id=gliim_copied_588 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_588' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_588, code_588, gliim_copied_588)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-upper-string converts all &lt;string&gt;'s characters to upper case.<br/>
+Returns from current request handler by transferring control back to its caller. If the current request handler was called from an outside caller (such as web browser, API, command line etc.), then return-handler is equivalent to <a href='http://gliimly.github.io/exit-handler.html'>exit-handler</a>. If the current request handler was called from another request handler with <a href='http://gliimly.github.io/call-handler.html'>call-handler</a>, then control transfers back to that handler immediately after call-handler.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-The resulting "str" is "GOOD":<br/>
+In this example, "req-handler" (the caller) will call "other-handler" (the callee), which will return to the caller (immediately after call-handler). Here's the caller:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_697'>
-<span class="Statement"> set-string</span> str=<span class="Constant">&quot;good&quot;</span>
-<span class="Statement"> upper-string</span> str</pre>
-<span id=gliim_copied_697 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_697' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_697, code_697, gliim_copied_697)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_589'>
+<span class="Statement"> begin-handler</span> /req-handler<span class="Identifier"> public</span>
+<span class="Statement">     .</span>..
+<span class="Statement">     call-handler</span> other-handler
+<span class="Statement">     .</span>..
+<span class="Statement"> end-handler</span></pre>
+<span id=gliim_copied_589 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_589' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_589, code_589, gliim_copied_589)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+The callee handler:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_590'>
+<span class="Statement"> begin-handler</span> /other-handler<span class="Identifier"> public</span>
+<span class="Statement">     .</span>..
+<span class="Statement">     return-handler</span>
+<span class="Statement">     .</span>..
+<span class="Statement"> end-handler</span></pre>
+<span id=gliim_copied_590 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_590' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_590, code_590, gliim_copied_590)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <span style="font-weight:bold;">Strings</span><br/>
-<a href='http://gliimly.github.io/copy-string.html'>copy-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/count-substring.html'>count-substring</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/delete-string.html'>delete-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/lower-string.html'>lower-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/read-split.html'>read-split</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/replace-string.html'>replace-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/set-string.html'>set-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/split-string.html'>split-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/string-length.html'>string-length</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/trim-string.html'>trim-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/upper-string.html'>upper-string</a> &nbsp;<br/>
-<a href='http://gliimly.github.io/write-string.html'>write-string</a> &nbsp; <br/>
+ <span style="font-weight:bold;">Program flow</span><br/>
+<a href='http://gliimly.github.io/break-loop.html'>break-loop</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/code-blocks.html'>code-blocks</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/continue-loop.html'>continue-loop</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/do-once.html'>do-once</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/exit-handler.html'>exit-handler</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/if-defined.html'>if-defined</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/if-true.html'>if-true</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/return-handler.html'>return-handler</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/set-bool.html'>set-bool</a> &nbsp;<br/>
+<a href='http://gliimly.github.io/start-loop.html'>start-loop</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='http://gliimly.github.io/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
