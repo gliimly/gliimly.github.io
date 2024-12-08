@@ -233,7 +233,7 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div>Gliimly is a programming language and a platform for web services. It's:<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div>Gliimly is a programming language and a platform for web services. It includes compiler, application server and tools for a complete web development platform. It's:<br/>
 <ul><li>service-oriented, <br/>
 </li><li>modeling, <br/>
 </li><li>declarative, <br/>
@@ -246,9 +246,11 @@ function gg_copy(gt, eid, gc) {
 </li><li><a href='http://gliimly.github.io/license.html'>Apache 2</a> Free Open Source.</li></ul>
 <a href='http://gliimly.github.io/install.html'>Install Gliimly</a>. See <a href='http://gliimly.github.io/documentation.html'>Documentation</a>. Source at <a href='https://github.com/gliimly/gliimly'>github.com</a>. <br/>
 <br/>
+Current version is 124. Check <a href='https://gliimly.blogspot.com/'>Blog</a> for change log.<br/>
+<br/>
 Example of Gliimly code (from <a href='https://gliimly.blogspot.com/2024/11/multi-tenant-saas-notes-web-application.html'>SaaS example</a>):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_402'>
+<pre id='code_417'>
  <span class="Comment">// Check that email verification token is the one actually sent to the email address</span>
 <span class="Statement"> begin-handler</span> /session/verify-signup<span class="Identifier"> public</span>
 <span class="Statement">     get-param</span> code, email
@@ -262,13 +264,14 @@ Example of Gliimly code (from <a href='https://gliimly.blogspot.com/2024/11/mult
 <span class="Statement">     @</span>Could not verify the code. Please try &lt;a href=&quot;<span class="Statement">&lt;&lt;p-path</span> <span class="Constant">&quot;/session/user/new/verify-form&quot;</span><span class="Statement">&gt;&gt;</span>&quot;&gt;again&lt;/a&gt;.
 <span class="Statement">     exit-handler</span>
 <span class="Statement"> end-handler</span></pre>
-<span id=gliim_copied_402 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_402' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_402, code_402, gliim_copied_402)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_417 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_417' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_417, code_417, gliim_copied_417)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <br/>
 <a href='https://gliimly.blogspot.com/'>Blog</a> release updates, articles and examples:<br/>
-<ul><li>2024-12-04 <a href='https://gliimly.blogspot.com/2024/12/gliimly-121-released.html'>Gliimly 121 released</a></li>
+<ul><li>2024-12-08 <a href='https://gliimly.blogspot.com/2024/12/gliimly-124-released.html'>Gliimly 124 released</a></li>
+<li>2024-12-04 <a href='https://gliimly.blogspot.com/2024/12/gliimly-121-released.html'>Gliimly 121 released</a></li>
 <li>2024-12-02 <a href='https://gliimly.blogspot.com/2024/12/passing-parameters-between-local.html'>Passing parameters between local request handlers</a></li>
 <li>2024-11-29 <a href='https://gliimly.blogspot.com/2024/11/gliimly-117-released.html'>Gliimly 117 released</a></li>
 <li>2024-11-26 <a href='https://gliimly.blogspot.com/2024/11/gliimly-114-released.html'>Gliimly 114 released</a></li>

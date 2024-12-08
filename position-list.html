@@ -236,13 +236,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Position list</div><hr/><span style="font-weight:bold;">Purpose</span>: Set current element in a linked list.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_505'>
+<pre id='code_520'>
 <span class="Statement"> position-list</span> &lt;list&gt; \
      [<span class="Identifier"> first</span> |<span class="Identifier"> last</span> |<span class="Identifier"> end</span> |<span class="Identifier"> previous</span> |<span class="Identifier"> next</span> | \
      [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=gliim_copied_505 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_505' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_505, code_505, gliim_copied_505)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_520 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_520' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_520, code_520, gliim_copied_520)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 position-list changes the current element of linked &lt;list&gt;. A current element is the one that is read with <a href='http://gliimly.github.io/read-list.html'>read-list</a>. A newly added element is written with <a href='http://gliimly.github.io/write-list.html'>write-list</a> by inserting it just before the current element, thus becoming a new current element. Reading from &lt;list&gt; does not change its current element; use position-list to explicitly change it.<br/>
 <br/>
@@ -256,22 +256,22 @@ If you attempt to position prior to the first element, after the end of &lt;list
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Position to the next element in list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_506'>
+<pre id='code_521'>
 <span class="Statement"> position-list</span> mylist<span class="Identifier"> next</span><span class="Type"> status</span> st
 <span class="Statement"> if-true</span> st<span class="Identifier"> equal</span> GG_ERR_EXIST
 <span class="Statement">     @</span>Beyond the end of list
 <span class="Statement"> end-if</span></pre>
-<span id=gliim_copied_506 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_506' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_506, code_506, gliim_copied_506)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_521 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_521' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_521, code_521, gliim_copied_521)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Position to the first element in list:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_507'>
+<pre id='code_522'>
 <span class="Statement"> position-list</span> mylist<span class="Identifier"> first</span></pre>
-<span id=gliim_copied_507 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_507' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_507, code_507, gliim_copied_507)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_522 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_522' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_522, code_522, gliim_copied_522)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Linked list</span><br/>

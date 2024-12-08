@@ -236,23 +236,23 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Hmac string</div><hr/><span style="font-weight:bold;">Purpose</span>: Create HMAC.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_385'>
+<pre id='code_400'>
 <span class="Statement"> hmac-string</span> &lt;string&gt;<span class="Type"> to</span> &lt;result&gt; \
     <span class="Identifier"> key</span> &lt;key&gt; \
      [<span class="Identifier"> binary</span> [ &lt;binary&gt; ] \
      [<span class="Identifier"> digest</span> &lt;digest algorithm&gt; ]</pre>
-<span id=gliim_copied_385 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_385' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_385, code_385, gliim_copied_385)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_400 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_400' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_400, code_400, gliim_copied_400)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 hmac-string produces by default a SHA256-based HMAC (Hash Message Authentication Code) of &lt;string&gt; (if "digest" clause is not used) using secret &lt;key&gt;, and stores the result into &lt;result&gt;. &nbsp;You can use a different &lt;digest algorithm&gt; in "digest" clause (for example "SHA3-256"). To see a list of available digests:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_386'>
+<pre id='code_401'>
 <span class="Comment">#get digests</span>
 openssl list <span class="Special">-digest-algorithms</span></pre>
-<span id=gliim_copied_386 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_386' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_386, code_386, gliim_copied_386)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_401 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_401' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_401, code_401, gliim_copied_401)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 If "binary" clause is used without boolean variable &lt;binary&gt;, or if &lt;binary&gt; evaluates to true, then the &lt;result&gt; is a binary string that may contain null-characters. With the default SHA256, it is 32 bytes in length, while for instance with SHA3-384 it is 48 bytes in length, etc. <br/>
 <br/>
@@ -260,28 +260,28 @@ Without "binary" clause, or if &lt;binary&gt; evaluates to false, each binary by
 <div class="vsub"><a id="Examples"></a>Examples</div>
 String "result" will have a HMAC value of a given string, an example of which might look like "2d948cc89148ef96fa4f1876e74af4ce984423d355beb12f7fdba5383143bee0"<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_387'>
+<pre id='code_402'>
 <span class="Statement"> hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Type"> to</span> result</pre>
-<span id=gliim_copied_387 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_387' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_387, code_387, gliim_copied_387)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_402 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_402' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_402, code_402, gliim_copied_402)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Using a different digest:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_388'>
+<pre id='code_403'>
 <span class="Statement"> hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Type"> to</span> result<span class="Identifier"> digest</span> <span class="Constant">&quot;sha3-384&quot;</span></pre>
-<span id=gliim_copied_388 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_388' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_388, code_388, gliim_copied_388)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_403 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_403' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_403, code_403, gliim_copied_403)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Producing a binary value instead of a null-terminated hexadecimal string, and then making a Base64 string out of it:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_389'>
+<pre id='code_404'>
 <span class="Statement"> hmac-string</span> <span class="Constant">&quot;some data&quot;</span><span class="Identifier"> key</span> <span class="Constant">&quot;mykey&quot;</span><span class="Identifier"> digest</span> <span class="Constant">&quot;SHA256&quot;</span><span class="Type"> to</span> result<span class="Identifier"> binary</span>
 <span class="Statement"> encode-base64</span> result<span class="Type"> to</span> bresult</pre>
-<span id=gliim_copied_389 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_389' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_389, code_389, gliim_copied_389)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_404 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_404' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_404, code_404, gliim_copied_404)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>
