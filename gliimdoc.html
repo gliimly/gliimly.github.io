@@ -679,7 +679,7 @@ You can run your application as <a href='/service.html'>service</a>, <a href='/C
 <a id='article-file-manager.html'></a>
 Uploading and download files in web browser is a common task in virtually any web application or service. This article shows how to do this with very little coding - in less than 100 lines of code. The database used is PostgreSQL, and the web server is Nginx.<br/>
 <br/>
-You will use Gliimly as an application server and the programming language. It will run behind the web server for performance and security, as well as to enable richer web functionality. This way end-user cannot talk to your application server directly because all such requests go through the web server, while your back-end application can talk directly your application server for better performance.<br/>
+You will use Gliimly as an application server and the programming language. It will run behind the web server for performance and security, as well as to enable richer web functionality. This way end-user cannot talk to your application server directly because all such requests go through the web server, while your back-end application can talk directly to your application server for better performance.<br/>
 <br/>
 Assuming your currently logged-on Linux user will own the application, create a source code directory and also create Gliimly application named "file-manager":<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
@@ -718,7 +718,7 @@ Create SQL table that will hold files currently stored on the server:<br/>
 <textarea id='gliimt_25' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_25, code_25, gliim_copied_25)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Finally, create source Gliimly files, first "start.gliimly" and copy and paste:<br/>
+Finally, create source Gliimly files. First create "start.gliim" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_17'>
 <span class="Statement"> begin-handler</span> /start<span class="Identifier"> public</span>
@@ -738,7 +738,7 @@ Finally, create source Gliimly files, first "start.gliimly" and copy and paste:<
 <textarea id='gliimt_17' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_17, code_17, gliim_copied_17)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create "list.gliimly" and copy and paste:<br/>
+Create "list.gliim" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_20'>
 <span class="Statement"> begin-handler</span> /list<span class="Identifier"> public</span>
@@ -750,7 +750,7 @@ Create "list.gliimly" and copy and paste:<br/>
 <span class="Statement">     @</span>&lt;/tr&gt;
 <span class="Statement">     run-query</span> @db= \
          <span class="Constant">&quot;select fileName, description, fileSize, fileID from files order by fileSize desc&quot;</span> \
-        <span class="Type"> output</span> file_name, description, file_size, file_ID
+        <span class="Type"> output</span> file_name, description<span class="Identifier"> noencode</span>, file_size, file_ID
 <span class="Statement">         @</span>&lt;tr&gt;
 <span class="Statement">         @</span>    &lt;td&gt;<span class="Statement">&lt;&lt;p-web</span> file_name<span class="Statement">&gt;&gt;</span>&lt;/td&gt;&lt;td&gt;<span class="Statement">&lt;&lt;p-web</span> description<span class="Statement">&gt;&gt;</span>&lt;td&gt;<span class="Statement">&lt;&lt;p-web</span> file_size<span class="Statement">&gt;&gt;</span>&lt;/td&gt;
 <span class="Statement">         @</span>    &lt;td&gt;&lt;a href=&quot;<span class="Statement">&lt;&lt;p-path</span> <span class="Constant">&quot;/download&quot;</span><span class="Statement">&gt;&gt;</span>/file_id=<span class="Statement">&lt;&lt;p-url</span> file_ID<span class="Statement">&gt;&gt;</span>&quot;&gt;Show&lt;/a&gt;&lt;/td&gt;
@@ -763,7 +763,7 @@ Create "list.gliimly" and copy and paste:<br/>
 <textarea id='gliimt_20' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_20, code_20, gliim_copied_20)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create "upload.gliimly" and copy and paste:<br/>
+Create "upload.gliim" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_22'>
 <span class="Statement"> begin-handler</span> /upload<span class="Identifier"> public</span>
@@ -786,7 +786,7 @@ Create "upload.gliimly" and copy and paste:<br/>
 <textarea id='gliimt_22' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_22, code_22, gliim_copied_22)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create "download.gliimly" and copy and paste:<br/>
+Create "download.gliim" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_24'>
 <span class="Statement"> begin-handler</span> /download<span class="Identifier"> public</span>
@@ -813,7 +813,7 @@ Create "download.gliimly" and copy and paste:<br/>
 <textarea id='gliimt_24' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_24, code_24, gliim_copied_24)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Create "delete.gliimly" and copy and paste:<br/>
+Create "delete.gliim" file and copy and paste:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_26'>
 <span class="Statement"> begin-handler</span> /delete<span class="Identifier"> public</span>
@@ -872,10 +872,11 @@ sudo vi /etc/nginx/sites-enabled/default</pre>
 <textarea id='gliimt_29' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_29, code_29, gliim_copied_29)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Add this in "server {}" section:<br/>
+Add this in "server {}" section ("client_max_body_size" allows for images of typical sizes to be uploaded):<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
 <pre id='code_18'>
-location /notes/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///var/lib/gg/notes/sock/sock; }</pre>
+location /file-manager/ { include /etc/nginx/fastcgi_params; fastcgi_pass  unix:///var/lib/gg/file-manager/sock/sock; }
+client_max_body_size 100M;</pre>
 <span id=gliim_copied_18 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_18' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_18, code_18, gliim_copied_18)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
@@ -895,6 +896,20 @@ Go to your web browser, and enter:<br/>
 <span id=gliim_copied_31 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_31' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_31, code_31, gliim_copied_31)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+This is what the end result looks like. Obviously, we used just bare-bone HTML, but that's not the point here at all. You can use any kind of front-end technology, the point is to demonstrate Gliimly as a back-end server for web applications/services.<br/>
+<br/>
+Here's the home screen, with the form to upload a file and a link to list of files:<br/>
+<br/><div class='vimg'><img class='imgs' src='file-manager-home.png' alt='Gliimly'></img>
+</div><br/>
+Listing files:<br/>
+<br/><div class='vimg'><img class='imgs' src='file-manager-list.png' alt='Gliimly'></img>
+</div><br/>
+Asking to delete a file:<br/>
+<br/><div class='vimg'><img class='imgs' src='file-manager-delete.png' alt='Gliimly'></img>
+</div><br/>
+Confirmation of deletion:<br/>
+<br/><div class='vimg'><img class='imgs' src='file-manager-delete-done.png' alt='Gliimly'></img>
 </div><br/>
 <a id='article-hello-world.html'></a>
 <br/>
