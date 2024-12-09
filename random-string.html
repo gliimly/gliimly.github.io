@@ -236,13 +236,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Random string</div><hr/><span style="font-weight:bold;">Purpose</span>: Obtain a random string.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_549'>
+<pre id='code_548'>
 <span class="Statement"> random-string</span><span class="Type"> to</span> &lt;random string&gt; \
      [<span class="Identifier"> length</span> &lt;string length&gt; ] \
      [<span class="Identifier"> number</span> |<span class="Identifier"> binary</span> ]</pre>
-<span id=gliim_copied_549 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_549' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_549, code_549, gliim_copied_549)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_548 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_548' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_548, code_548, gliim_copied_548)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 random-string obtains a random string of length &lt;string length&gt;. If "length" clause is omitted, the length is 20 by default. <br/>
 <br/>
@@ -256,29 +256,29 @@ Random generator is based on the Linux random() generator seeded by local proces
 <div class="vsub"><a id="Examples"></a>Examples</div>
 Get a 100-digit long random value (as an alphanumeric string):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_550'>
+<pre id='code_549'>
 <span class="Statement"> random-string</span><span class="Type"> to</span> str<span class="Identifier"> length</span> <span class="Constant">100</span>
+<span class="Statement"> pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, str</pre>
+<span id=gliim_copied_549 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_549' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_549, code_549, gliim_copied_549)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Get a random number of length 10 in string representation:<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_550'>
+<span class="Statement"> random-string</span><span class="Type"> to</span> str<span class="Identifier"> length</span> <span class="Constant">10</span><span class="Identifier"> number</span>
 <span class="Statement"> pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, str</pre>
 <span id=gliim_copied_550 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_550' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_550, code_550, gliim_copied_550)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-Get a random number of length 10 in string representation:<br/>
+Get a random binary value that is 8 bytes in length - this value may contain null bytes (i.e. it will contain bytes with values ranging from 0 to 255):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_551'>
-<span class="Statement"> random-string</span><span class="Type"> to</span> str<span class="Identifier"> length</span> <span class="Constant">10</span><span class="Identifier"> number</span>
-<span class="Statement"> pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, str</pre>
+<span class="Statement"> random-string</span><span class="Type"> to</span> str<span class="Identifier"> length</span> <span class="Constant">8</span><span class="Identifier"> binary</span></pre>
 <span id=gliim_copied_551 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_551' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_551, code_551, gliim_copied_551)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Get a random binary value that is 8 bytes in length - this value may contain null bytes (i.e. it will contain bytes with values ranging from 0 to 255):<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_552'>
-<span class="Statement"> random-string</span><span class="Type"> to</span> str<span class="Identifier"> length</span> <span class="Constant">8</span><span class="Identifier"> binary</span></pre>
-<span id=gliim_copied_552 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_552' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_552, code_552, gliim_copied_552)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Encryption</span><br/>
