@@ -236,11 +236,11 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Delete cookie</div><hr/><span style="font-weight:bold;">Purpose</span>: Deletes a cookie.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_282'>
+<pre id='code_299'>
 <span class="Statement"> delete-cookie</span> &lt;cookie name&gt; [<span class="Identifier"> path</span> &lt;cookie path&gt; ] [<span class="Type"> status</span> &lt;status&gt; ] [<span class="Identifier"> secure</span> &lt;secure&gt; ]</pre>
-<span id=gliim_copied_282 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_282' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_282, code_282, gliim_copied_282)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_299 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_299' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_299, code_299, gliim_copied_299)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 delete-cookie marks a cookie named &lt;cookie name&gt; for deletion, so it is sent back in the reply telling the client (such as browser) to delete it. <br/>
 <br/>
@@ -255,13 +255,13 @@ A cookie can be deleted before or after header is sent out (see <a href='http://
 The same cookie name may be stored under different URL paths. You can use "path" clause to specify &lt;cookie path&gt; to ensure the desired cookie is deleted. <br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_283'>
+<pre id='code_300'>
 <span class="Statement"> delete-cookie</span> <span class="Constant">&quot;my_cookie&quot;</span>
 <span class="Statement"> set-bool</span> is_secure = <span class="Constant">true</span>
 <span class="Statement"> delete-cookie</span> <span class="Constant">&quot;my_cookie&quot;</span><span class="Identifier"> path</span> <span class="Constant">&quot;/path&quot;</span><span class="Identifier"> secure</span> is_secure</pre>
-<span id=gliim_copied_283 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_283' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_283, code_283, gliim_copied_283)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_300 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_300' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_300, code_300, gliim_copied_300)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Cookies</span><br/>
