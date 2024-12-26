@@ -243,13 +243,22 @@ function gg_copy(gt, eid, gc) {
 </div><br/>
 You can use number expressions anywhere number is expected as an input to any statement.<br/>
 <br/>
-Note that character constants (such as 'A', 'z' etc.) are considered numbers with the value equal to their single-byte equivalent, for example this will assign 65 to "num":<br/>
+Note that character constants (such as 'A', 'z' etc.) are considered numbers with the value equal to their single-byte ASCII equivalent (i.e. unsigned numbers 0-255), for example this will assign 65 to "num":<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
 <pre id='code_531'>
 <span class="Statement"> set-number</span> num = 'A'</pre>
 <span id=gliim_copied_531 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_531' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_531, code_531, gliim_copied_531)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Any subscripted string is also considered a number, for instance "num" would be 117 (since 's' is 115):<br/>
+<div class='code'  style='position:relative;padding-right:16px;'>
+<pre id='code_532'>
+<span class="Statement"> set-string</span> str = 'some'
+<span class="Statement"> set-number</span> num = str[<span class="Constant">0</span>] + <span class="Constant">2</span></pre>
+<span id=gliim_copied_532 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_532' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_532, code_532, gliim_copied_532)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Numbers</span><br/>

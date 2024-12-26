@@ -236,13 +236,13 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Pf out</div><hr/><span style="font-weight:bold;">Purpose</span>: Outputs a formatted string without encoding.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_555'>
+<pre id='code_556'>
 <span class="Statement"> pf-out</span> &lt;format&gt;<span class="Identifier"> ,</span> &lt;variable&gt; [<span class="Identifier"> ,</span> &lt;variable&gt; ]... \
      [<span class="Identifier"> to-error</span> ] \
      [<span class="Type"> to</span> &lt;string&gt; ]</pre>
-<span id=gliim_copied_555 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_555' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_555, code_555, gliim_copied_555)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_556 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_556' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_556, code_556, gliim_copied_556)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 pf-out formats a string according to the &lt;format&gt; string and a list of &lt;variable&gt;s and then outputs the result without any encoding (meaning a string is output exactly as it is, and the client may interpret such text in any way it sees fit). <br/>
 <div class="vsub"><a id="Format"></a>Format</div>
@@ -259,24 +259,24 @@ If "to" clause is used, then the output of pf-out is stored into &lt;string&gt;.
 <div class="vsub"><a id="Examples"></a>Examples</div>
 To output data (the string output is "the number is 20"):<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_556'>
+<pre id='code_557'>
 <span class="Statement"> pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant"> is </span><span class="Special">%d</span><span class="Constant">&quot;</span>, <span class="Constant">&quot;the number&quot;</span>, <span class="Constant">20</span></pre>
-<span id=gliim_copied_556 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_556' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_556, code_556, gliim_copied_556)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_557 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_557' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_557, code_557, gliim_copied_557)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Create a query text string by means of <a href='http://gliimly.github.io/write-string.html'>write-string</a> statement:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_557'>
+<pre id='code_558'>
  <span class="Comment">//</span>
  / Construct the run-time text of dynamic SQL
  <span class="Comment">//</span>
 <span class="Statement"> write-string</span> qry_txt
 <span class="Statement"> @</span>select * from <span class="Statement">&lt;&lt;pf-out</span> <span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant"> where id=&quot;</span><span class="Special">%ld</span><span class="Constant">&quot;, table_name, id_num&gt;&gt;</span>
 <span class="Constant"> end-write-string</span></pre>
-<span id=gliim_copied_557 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_557' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_557, code_557, gliim_copied_557)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_558 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_558' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_558, code_558, gliim_copied_558)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
  <span style="font-weight:bold;">Output</span><br/>
