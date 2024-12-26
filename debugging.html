@@ -236,19 +236,19 @@ function gg_copy(gt, eid, gc) {
 <div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='http://gliimly.github.io' style='border-bottom:0px'><img src='http://gliimly.github.io/gliim.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Debugging</div><hr/><div class="vsub"><a id="Tracing and Backtrace file"></a>Tracing and Backtrace file</div>
 To see any errors reported by Gliimly, use -e option of <a href='http://gliimly.github.io/gg.html'>gg</a> and check backtrace file. For example, to see the last 3 error messages:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_309'>
+<pre id='code_310'>
 gg <span class="Special">-e</span> <span class="Constant">3</span></pre>
-<span id=gliim_copied_309 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_309' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_309, code_309, gliim_copied_309)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_310 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_310' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_310, code_310, gliim_copied_310)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 You can use <a href='http://gliimly.github.io/trace-run.html'>trace-run</a> statement to create run-time traces (see <a href='http://gliimly.github.io/directories.html'>directories</a> for directory location). To quickly find the location of recently written-to trace files, use -t option of <a href='http://gliimly.github.io/gg.html'>gg</a>, for example for 5 most recently used trace files:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_311'>
+<pre id='code_312'>
 gg <span class="Special">-t</span> <span class="Constant">5</span></pre>
-<span id=gliim_copied_311 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_311' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_311, code_311, gliim_copied_311)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_312 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_312' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_312, code_312, gliim_copied_312)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Use <a href='http://gliimly.github.io/get-req.html'>get-req</a> to get the trace file location at run-time from your application.<br/>
 <div class="vsub"><a id="Output from Gliimly application without web server"></a>Output from Gliimly application without web server</div>
@@ -256,20 +256,20 @@ Use <a href='http://gliimly.github.io/gg.html'>gg</a> (see -r option) to send a 
 <div class="vsub"><a id="Issues in starting mgrg"></a>Issues in starting mgrg</div>
 <a href='http://gliimly.github.io/mgrg.html'>mgrg</a> starts your web application, running as <a href='http://gliimly.github.io/service.html'>service</a> processes. If you're having issues with mgrg, check out its log. Assuming your application name is "app_name", the log file is:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_308'>
+<pre id='code_309'>
 /var/lib/gg/app_name/mgrglog/log</pre>
-<span id=gliim_copied_308 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_308' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_308, code_308, gliim_copied_308)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_309 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_309' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_309, code_309, gliim_copied_309)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <div class="vsub"><a id="Web server error log"></a>Web server error log</div>
 If you are using a web server as a reverse proxy, check its error log, which would store the error messages emitted. Typically, such files are in the following location:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_310'>
+<pre id='code_311'>
 /var/log/&lt;web server&gt;</pre>
-<span id=gliim_copied_310 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_310' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_310, code_310, gliim_copied_310)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_311 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_311' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_311, code_311, gliim_copied_311)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 (for example /var/log/apache2), but the location may vary - consult your web server's documentation.<br/>
 <div class="vsub"><a id="Using gdb debugger"></a>Using gdb debugger</div>
@@ -277,45 +277,45 @@ In order to use gdb debugger, you must make your application with "--debug" flag
 <br/>
 Ultimately, you can attach a debugger to a running Gliimly process. If your application name is "app_name", first find the PID (process ID) of its process(es):<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_313'>
+<pre id='code_314'>
 ps <span class="Special">-ef</span>|<span class="Statement">grep</span> app_name.srvc</pre>
-<span id=gliim_copied_313 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_313' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_313, code_313, gliim_copied_313)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_314 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_314' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_314, code_314, gliim_copied_314)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 Note that you can control the number of worker processes started, and thus have only a single worker process (or the minimum necessary), which will make attaching to the process that actually processes a request easier (see <a href='http://gliimly.github.io/gg.html'>gg</a>).<br/>
 <br/>
 Use gdb to load your program:<br/>
 <div class="shcode" style='position:relative;padding-right:16px;'>
-<pre id='code_315'>
+<pre id='code_316'>
 sudo gdb /var/lib/gg/bld/app_name/app_name.srvc</pre>
+<span id=gliim_copied_316 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_316' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_316, code_316, gliim_copied_316)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+and then attach to the process (&lt;PID&gt; is the process ID you obtained above):<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_313'>
+att &lt;PID&gt;</pre>
+<span id=gliim_copied_313 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_313' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_313, code_313, gliim_copied_313)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+</div><br/>
+Once attached, you can break in the request you're debugging:<br/>
+<div class='ncode' style='position:relative;padding-right:16px;'>
+<pre id='code_315'>
+br &lt;request name&gt;</pre>
 <span id=gliim_copied_315 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
 <textarea id='gliimt_315' style='position: absolute;left: -500%;'></textarea>
 <img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_315, code_315, gliim_copied_315)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-and then attach to the process (&lt;PID&gt; is the process ID you obtained above):<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_312'>
-att &lt;PID&gt;</pre>
-<span id=gliim_copied_312 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_312' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_312, code_312, gliim_copied_312)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-Once attached, you can break in the request you're debugging:<br/>
-<div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_314'>
-br &lt;request name&gt;</pre>
-<span id=gliim_copied_314 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_314' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_314, code_314, gliim_copied_314)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
 or in general Gliimly request dispatcher:<br/>
 <div class='ncode' style='position:relative;padding-right:16px;'>
-<pre id='code_316'>
+<pre id='code_317'>
 br gg_dispatch_request</pre>
-<span id=gliim_copied_316 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='gliimt_316' style='position: absolute;left: -500%;'></textarea>
-<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_316, code_316, gliim_copied_316)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<span id=gliim_copied_317 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='gliimt_317' style='position: absolute;left: -500%;'></textarea>
+<img src='http://gliimly.github.io/gliim-copy-small-1.png' id='gliimb' onclick='gg_copy(gliimt_317, code_317, gliim_copied_317)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 which would handle any request to your application.<br/>
 <br/>
