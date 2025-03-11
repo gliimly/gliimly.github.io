@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="refresh" content="0; url=https://golf-lang.com/read-fifo.html">
-<title>Read fifo</title>
+<meta http-equiv="refresh" content="0; url=https://golf-lang.com/utf-text.html">
+<title>Utf text</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/read-fifo.html" />
+<link rel="canonical" href="https://golf-lang.com/utf-text.html" />
 <style>
 
 
@@ -240,70 +240,55 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Read fifo</div><hr/><span style="font-weight:bold;">Purpose</span>: Reads key/value pair from a FIFO list.<br/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Utf text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF (UTF8 or UTF16) string to text.<br/>
 <br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_672'>
-<span class="Statement"> read-fifo</span> &lt;list&gt; \
-    <span class="Type"> key</span> &lt;key&gt; \
-    <span class="Type"> value</span> &lt;value&gt; \
-     [<span class="Type"> status</span> &lt;status&gt; ]</pre>
-<span id=golf_copied_672 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_672' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_672, code_672, golf_copied_672)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<pre id='code_842'>
+<span class="Statement"> utf-text</span> &lt;utf&gt; \
+     [<span class="Type"> to</span> &lt;text&gt; ] \
+     [<span class="Identifier"> length</span> &lt;length&gt; ] \
+     [<span class="Type"> status</span> &lt;status&gt; ] \
+     [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
+<span id=golf_copied_842 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_842' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_842, code_842, golf_copied_842)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
-read-fifo retrieves an element from the FIFO &lt;list&gt; into &lt;key&gt; string &nbsp;(in "key" clause) and &lt;value&gt; string (in "value" clause).<br/>
+utf-text will convert &lt;utf&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
 <br/>
-Once an element has been retrieved, the next use of read-fifo will obtain the following one, in the same order they were put in. read-fifo starts with the first element put in, and moves forward from there, unless <a href='https://golf-lang.com/rewind-fifo.html'>rewind-fifo</a> is called, which positions back to the first one.<br/>
+&lt;utf&gt; is a string that may contain UTF characters (as 2, 3 or 4 bytes representing a unicode character). Encoding creates a string that can be used as a value where text representation of UTF is required. utf-text is performed according to <a href='https://datatracker.ietf.org/doc/html/rfc7159'>RFC7159</a> and <a href='https://www.rfc-editor.org/rfc/rfc3629'>RFC3629</a> (UTF standard).<br/>
 <br/>
-If the element is successfuly retrieved, &lt;status&gt; number (in "status" clause) is GG_OKAY, otherwise it is GG_ERR_EXIST, which means there are no more elements to retrieve.<br/>
+Note that hexadecimal characters used for Unicode (such as \u21d7) are always lowercase. Solidus character ("/") is not escaped, although <a href='https://golf-lang.com/text-utf.html'>text-utf</a> will correctly process it if the input has it escaped.<br/>
+<br/>
+The number of bytes in &lt;utf&gt; to be converted can be specified with &lt;length&gt; in "length" clause. If &lt;length&gt; is not specified, it is the length of string &lt;utf&gt;. Note that a single UTF character can be anywhere between 1 to 4 bytes. For example "љ" is 2 bytes in length. <br/>
+<br/>
+The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; is the string length of the result in &lt;text&gt; (or the number of bytes output if &lt;text&gt; is omitted), or -1 if error occurred (meaning &lt;utf&gt; is an invalid UTF) in which case &lt;text&gt; (if specified) is an empty string and the error text can be obtained in &lt;error text&gt; in "error-text" clause.<br/>
 <div class="vsub"><a id="Examples"></a>Examples</div>
-In this example, a FIFO list is created, and two key/value pairs added. They are then retrieved in a loop and printed out (twice with rewind), and then the list is purged:<br/>
+Convert UTF string to text and verify the expected result:<br/>
 <div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_673'>
- <span class="Comment">// Create a list</span>
-<span class="Statement"> new-fifo</span> mylist
+<pre id='code_843'>
+ <span class="Comment">// UTF string </span>
+<span class="Statement"> set-string</span> utf_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
 
- <span class="Comment">// Add data to the list</span>
-<span class="Statement"> write-fifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;key1&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;value1&quot;</span>
-<span class="Statement"> write-fifo</span> mylist<span class="Identifier"> key</span> <span class="Constant">&quot;some2&quot;</span><span class="Identifier"> value</span> <span class="Constant">&quot;other2&quot;</span>
+ <span class="Comment">// Convert UTF string to text</span>
+<span class="Statement"> utf-text</span> utf_str<span class="Type"> status</span> encstatus<span class="Type"> to</span> text_text
 
-<span class="Statement"> start-loop</span>
-     <span class="Comment">// Get data from the list</span>
-<span class="Statement">     read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
+ <span class="Comment">// This is the text expected</span>
+<span class="Statement"> ((</span> expected_result
+<span class="Statement"> @</span>\&quot;Doc\&quot;\n\t\b\f\r\t\u21d7\u21d8\t\u25b7\u25ee\ud834\udd1e\u13eb\u2ca0\u0448\n/\&quot;()\t
+<span class="Statement"> ))</span>
 
-     <span class="Comment">// Check if no more data</span>
-<span class="Statement">     if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
-         <span class="Statement">break</span>
-<span class="Statement">     end-if</span>
-
-<span class="Statement">     @</span>Obtained key <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
-<span class="Statement"> end-loop</span>
-
- <span class="Comment">// Go through the list again, use rewind-fifo for that</span>
-<span class="Statement"> rewind-fifo</span> mylist
-
-<span class="Statement"> start-loop</span>
-<span class="Statement">     read-fifo</span> mylist<span class="Type"> key</span> k<span class="Type"> value</span> v<span class="Type"> status</span> st
-<span class="Statement">     if-true</span> st<span class="Identifier"> not-equal</span> GG_OKAY
-         <span class="Statement">break</span>
-<span class="Statement">     end-if</span>
-<span class="Statement">     @</span>Again obtained key <span class="Statement">&lt;&lt;p-out</span> k<span class="Statement">&gt;&gt;</span> with value <span class="Statement">&lt;&lt;p-out</span> v<span class="Statement">&gt;&gt;</span>
-<span class="Statement"> end-loop</span>
-
-<span class="Statement"> purge-fifo</span> mylist</pre>
-<span id=golf_copied_673 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_673' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_673, code_673, golf_copied_673)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+ <span class="Comment">// Make sure conversion was okay, decs is the length of the result (encj string)</span>
+<span class="Statement"> if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
+<span class="Statement">     @</span>decode-text worked okay
+<span class="Statement"> end-if</span></pre>
+<span id=golf_copied_843 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_843' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_843, code_843, golf_copied_843)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <a name='FIFO'></a><span style="font-weight:bold;">FIFO</span><br/>
-<a href='https://golf-lang.com/delete-fifo.html'>delete-fifo</a> &nbsp;<br/>
-<a href='https://golf-lang.com/new-fifo.html'>new-fifo</a> &nbsp;<br/>
-<a href='https://golf-lang.com/purge-fifo.html'>purge-fifo</a> &nbsp;<br/>
-<a href='https://golf-lang.com/read-fifo.html'>read-fifo</a> &nbsp;<br/>
-<a href='https://golf-lang.com/rewind-fifo.html'>rewind-fifo</a> &nbsp;<br/>
-<a href='https://golf-lang.com/write-fifo.html'>write-fifo</a> &nbsp; <br/>
+ <a name='UTF'></a><span style="font-weight:bold;">UTF</span><br/>
+<a href='https://golf-lang.com/text-utf.html'>text-utf</a> &nbsp;<br/>
+<a href='https://golf-lang.com/utf-text.html'>utf-text</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
