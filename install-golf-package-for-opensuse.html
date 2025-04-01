@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="refresh" content="0; url=https://golf-lang.com/utf-text.html">
-<title>Utf text</title>
+<meta http-equiv="refresh" content="0; url=https://golf-lang.com/install-golf-package-for-opensuse.html">
+<title>Install golf package for opensuse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="https://golf-lang.com/utf-text.html" />
+<link rel="canonical" href="https://golf-lang.com/install-golf-package-for-opensuse.html" />
 <style>
 
 
@@ -240,55 +240,30 @@ function gg_copy(gt, eid, gc) {
 
 
 <!--BEGVDOC90-->
-<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Utf text</div><hr/><span style="font-weight:bold;">Purpose</span>: Convert UTF (UTF8 or UTF16) string to text.<br/>
-<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_861'>
- utf-text &lt;utf&gt; \
-     [<span class="Statement"> to</span> &lt;text&gt; ] \
-     [<span class="Statement"> length</span> &lt;length&gt; ] \
-     [<span class="Type"> status</span> &lt;status&gt; ] \
-     [<span class="Type"> error-text</span> &lt;error text&gt; ]</pre>
-<span id=golf_copied_861 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_861' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_861, code_861, golf_copied_861)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
-</div><br/>
-utf-text will convert &lt;utf&gt; text to &lt;text&gt; (specified with "to" clause). If &lt;text&gt; is omitted, then the result of conversion is output.<br/>
-<br/>
-&lt;utf&gt; is a string that may contain UTF characters (as 2, 3 or 4 bytes representing a unicode character). Encoding creates a string that can be used as a value where text representation of UTF is required. utf-text is performed according to <a href='https://datatracker.ietf.org/doc/html/rfc7159'>RFC7159</a> and <a href='https://www.rfc-editor.org/rfc/rfc3629'>RFC3629</a> (UTF standard).<br/>
-<br/>
-Note that hexadecimal characters used for Unicode (such as \u21d7) are always lowercase. Solidus character ("/") is not escaped, although <a href='https://golf-lang.com/text-utf.html'>text-utf</a> will correctly process it if the input has it escaped.<br/>
-<br/>
-The number of bytes in &lt;utf&gt; to be converted can be specified with &lt;length&gt; in "length" clause. If &lt;length&gt; is not specified, it is the length of string &lt;utf&gt;. Note that a single UTF character can be anywhere between 1 to 4 bytes. For example "љ" is 2 bytes in length. <br/>
-<br/>
-The status of encoding can be obtained in number &lt;status&gt;. &lt;status&gt; is the string length of the result in &lt;text&gt; (or the number of bytes output if &lt;text&gt; is omitted), or -1 if error occurred (meaning &lt;utf&gt; is an invalid UTF) in which case &lt;text&gt; (if specified) is an empty string and the error text can be obtained in &lt;error text&gt; in "error-text" clause.<br/>
-<div class="vsub"><a id="Examples"></a>Examples</div>
-Convert UTF string to text and verify the expected result:<br/>
-<div class='code'  style='position:relative;padding-right:16px;'>
-<pre id='code_862'>
- <span class="Comment">// UTF string </span>
-<span class="Statement"> set-string</span> utf_str = <span class="Constant">&quot;</span><span class="Special">\&quot;</span><span class="Constant">Doc</span><span class="Special">\&quot;\n\t\b\f\r\t</span><span class="Constant">⇗⇘</span><span class="Special">\t</span><span class="Constant">▷◮𝄞ᏫⲠш</span><span class="Special">\n</span><span class="Constant">/</span><span class="Special">\&quot;</span><span class="Constant">()</span><span class="Special">\t</span><span class="Constant">&quot;</span>
-
- <span class="Comment">// Convert UTF string to text</span>
- utf-text utf_str status encstatus to text_text
-
- <span class="Comment">// This is the text expected</span>
-<span class="Statement"> ((</span> expected_result
-<span class="Statement"> @</span>\&quot;Doc\&quot;\n\t\b\f\r\t\u21d7\u21d8\t\u25b7\u25ee\ud834\udd1e\u13eb\u2ca0\u0448\n/\&quot;()\t
-<span class="Statement"> ))</span>
-
- <span class="Comment">// Make sure conversion was okay, decs is the length of the result (encj string)</span>
-<span class="Statement"> if-true</span> text_text<span class="Identifier"> equal</span> expected_result<span class="Identifier"> and</span> encstatus<span class="Identifier"> not-equal</span> -<span class="Constant">1</span>
-<span class="Statement">     @</span>decode-text worked okay
-<span class="Statement"> end-if</span></pre>
-<span id=golf_copied_862 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
-<textarea id='golft_862' style='position: absolute;left: -500%;'></textarea>
-<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_862, code_862, golf_copied_862)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
+<div class='vhub' style='margin-top:10px;margin-right:20px;text-align:right;background-color:white;'><a href='https://golf-lang.com' style='border-bottom:0px'><img src='https://golf-lang.com/golf.png'/></a></div><div class='vhub' style='margin-top:10px;'>&nbsp;Install golf package for opensuse</div><hr/><div class="vsub"><a id="Install Golf package on Opensuse opensuse_tumbleweed"></a>Install Golf package on Opensuse opensuse_tumbleweed</div>
+<div class="shcode" style='position:relative;padding-right:16px;'>
+<pre id='code_565'>
+wget <span class="Statement">&quot;</span><span class="Constant"><a href="https://golf-lang.com/packages/opensuse-opensuse-opensuse_tumbleweed/golf-340-1.x86_64.rpm">https://golf-lang.com/packages/opensuse-opensuse-opensuse_tumbleweed/golf-340-1.x86_64.rpm</a></span><span class="Statement">&quot;</span> <span class="Special">-O</span> golf-335-1.x86_64.rpm
+sudo zypper <span class="Special">-n</span> install  <span class="Special">--replacefiles</span> golf-340-1.x86_64.rpm</pre>
+<span id=golf_copied_565 style='position:absolute;right:-14px;top:-30px; cursor: pointer;visibility:hidden;background:white;'>Copied!</span>
+<textarea id='golft_565' style='position: absolute;left: -500%;'></textarea>
+<img src='https://golf-lang.com/golf-copy-small-1.png' id='golfb' onclick='gg_copy(golft_565, code_565, golf_copied_565)' style='position:absolute;right:0;top:0; cursor: pointer;opacity:0.5;'/>
 </div><br/>
 <!--BEFSAL13--><div class="vsub"><a id="See also"></a>See also</div>
- <a name='UTF'></a><span style="font-weight:bold;">UTF</span><br/>
-<a href='https://golf-lang.com/text-utf.html'>text-utf</a> &nbsp;<br/>
-<a href='https://golf-lang.com/utf-text.html'>utf-text</a> &nbsp; <br/>
+ <a name='Download and build'></a><span style="font-weight:bold;">Download and build</span><br/>
+<a href='https://golf-lang.com/install.html'>install</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-from-external-sources.html'>install-from-external-sources</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-for-arch-from-source.html'>install-golf-for-arch-from-source</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-for-debian-from-source.html'>install-golf-for-debian-from-source</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-for-fedora-from-source.html'>install-golf-for-fedora-from-source</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-for-opensuse-from-source.html'>install-golf-for-opensuse-from-source</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-package-for-arch.html'>install-golf-package-for-arch</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-package-for-debian.html'>install-golf-package-for-debian</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-package-for-fedora.html'>install-golf-package-for-fedora</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-package-for-opensuse.html'>install-golf-package-for-opensuse</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-package-for-redhat.html'>install-golf-package-for-redhat</a> &nbsp;<br/>
+<a href='https://golf-lang.com/install-golf-package-for-ubuntu.html'>install-golf-package-for-ubuntu</a> &nbsp;<br/>
+<a href='https://golf-lang.com/uninstall.html'>uninstall</a> &nbsp; <br/>
 <span style="font-weight:bold;">See all</span> <br/>
 <a href='https://golf-lang.com/documentation.html'>documentation</a><br/>
 <!--ENDVDOC90-->
